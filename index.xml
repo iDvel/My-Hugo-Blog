@@ -21,7 +21,7 @@
         <description>
 
 &lt;blockquote&gt;
-&lt;p&gt;粗略的记录了一些重点、难点，或可能会遗忘/懒得记忆的东西。&lt;/p&gt;
+&lt;p&gt;粗略的记录了一些重点、难点、可能会遗忘、懒得记忆、方便查阅的东西。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&#34;第-1-章-安装&#34;&gt;第 1 章 - 安装&lt;/h1&gt;
@@ -30,7 +30,9 @@
 &lt;p&gt;如何安装和设置 Flask 框架&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;在 Python 3 中由标准库 &lt;code&gt;venv&lt;/code&gt; 创建虚拟环境：&lt;/p&gt;
+&lt;h4 id=&#34;venv&#34;&gt;venv&lt;/h4&gt;
+
+&lt;p&gt;在 Python 3 中由标准库 &lt;code&gt;venv&lt;/code&gt; 创建虚拟环境&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -62,6 +64,218 @@
 &lt;blockquote&gt;
 &lt;p&gt;通过一个简单的应用介绍如何使用 Flask&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;h4 id=&#34;路由&#34;&gt;路由&lt;/h4&gt;
+
+&lt;p&gt;Flask 使用  &lt;code&gt;app.route&lt;/code&gt; 装饰器或者作用想通的 &lt;code&gt;app.add_url_rule()&lt;/code&gt; 方法构建映射。&lt;/p&gt;
+
+&lt;h4 id=&#34;上下文&#34;&gt;上下文&lt;/h4&gt;
+
+&lt;p&gt;为了避免大量可有可无的参数把视图函数弄得一团糟，Flask 使用上下文临时把某些对象变为全局可访问。&lt;/p&gt;
+
+&lt;h4 id=&#34;表格-flask-上下文全局变量&#34;&gt;『表格』Flask 上下文全局变量&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;变量名&lt;/th&gt;
+&lt;th&gt;上下文&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;current_app&lt;/td&gt;
+&lt;td&gt;应用上下文&lt;/td&gt;
+&lt;td&gt;当前应用的应用实例&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;g&lt;/td&gt;
+&lt;td&gt;应用上下文&lt;/td&gt;
+&lt;td&gt;处理请求时用作临时存储的对象，每次请求都会重设这个变量&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;request&lt;/td&gt;
+&lt;td&gt;请求上下文&lt;/td&gt;
+&lt;td&gt;请求对象，封装了客户端发出的 HTTP 请求中的内容&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;session&lt;/td&gt;
+&lt;td&gt;请求上下文&lt;/td&gt;
+&lt;td&gt;用户会话，值为一个字典，存储请求之间需要『记住』的值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;表格-flask-请求对象&#34;&gt;『表格』Flask 请求对象&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;属性或方法&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;form&lt;/td&gt;
+&lt;td&gt;一个字典，存储请求提交的所有表单字段&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;args&lt;/td&gt;
+&lt;td&gt;一个字典，存储通过 URL 查询字符串传递的所有参数&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;values&lt;/td&gt;
+&lt;td&gt;一个字典，form 和 args 的合集&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;cookies&lt;/td&gt;
+&lt;td&gt;一个字典，存储请求的所有 cookies&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;headers&lt;/td&gt;
+&lt;td&gt;一个字典，存储请求的所有 HTTP 首部&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;files&lt;/td&gt;
+&lt;td&gt;一个字典，存储请求上传的所有文件&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;get_data()&lt;/td&gt;
+&lt;td&gt;返回请求主体缓冲的数据&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;get_json()&lt;/td&gt;
+&lt;td&gt;返回一个 Python 字典，包含解析请求主体后得到的 JSON&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;blueprint&lt;/td&gt;
+&lt;td&gt;处理请求的 Flask 蓝本的名称；蓝本在第 7 章介绍&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;endpoint&lt;/td&gt;
+&lt;td&gt;处理请求的 Flask 端点的名称；Flask 把视图函数的名称用作路由端点的名称&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;scheme&lt;/td&gt;
+&lt;td&gt;URL 方案（http 或 https）&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;is_secure()&lt;/td&gt;
+&lt;td&gt;通过安全的连接（HTTPS）发送请求时返回 True&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;host&lt;/td&gt;
+&lt;td&gt;请求定义的主机名，如果客户端定义了端口号，还包括端口号&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;path&lt;/td&gt;
+&lt;td&gt;URL 的路径部分&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;query_string&lt;/td&gt;
+&lt;td&gt;URL 的查询字符串部分，返回原始二进制值&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;full_path&lt;/td&gt;
+&lt;td&gt;URL 的路径和查询字符串部分&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td&gt;客户端请求的完整 URL&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;base_url&lt;/td&gt;
+&lt;td&gt;同 url，但没有查询字符串部分&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;remote_addr&lt;/td&gt;
+&lt;td&gt;客户端的 IP 地址&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;environ&lt;/td&gt;
+&lt;td&gt;请求的原始 WSGI 环境字典&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;表格-flask-响应对象&#34;&gt;『表格』Flask 响应对象&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;属性或方法&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;status_code&lt;/td&gt;
+&lt;td&gt;HTTP 数字状态码&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;headers&lt;/td&gt;
+&lt;td&gt;一个类似字典的对象，包含随响应发送的所有首部&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;set_cookie()&lt;/td&gt;
+&lt;td&gt;为响应添加一个 cookie&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;delete_cookie()&lt;/td&gt;
+&lt;td&gt;删除一个 cookie&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;content_length&lt;/td&gt;
+&lt;td&gt;响应主体的长度&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;content_type&lt;/td&gt;
+&lt;td&gt;响应主体的媒体类型&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;set_data()&lt;/td&gt;
+&lt;td&gt;使用字符串或字节值设定响应&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;get_data()&lt;/td&gt;
+&lt;td&gt;获取响应主体&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </description>
       
     </item>
