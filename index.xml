@@ -1,0 +1,2720 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dvel&#39;s Blog</title>
+    <link>http://Dvel.xyz/</link>
+    <description>Recent content on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Fri, 22 Feb 2019 06:21:12 +0800</lastBuildDate>
+    
+        <atom:link href="http://Dvel.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>《Flask Web 开发》笔记</title>
+      <link>http://Dvel.xyz/post/18/</link>
+      <pubDate>Fri, 22 Feb 2019 06:21:12 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/18/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;粗略的记录了一些重点、难点，或可能会遗忘/懒得记忆的东西。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;第-1-章-安装&#34;&gt;第 1 章 - 安装&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;如何安装和设置 Flask 框架&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在 Python 3 中由标准库 &lt;code&gt;venv&lt;/code&gt; 创建虚拟环境：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ python3 -m venv virtual-environment-name&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;使用虚拟环境：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; venv/bin/activate&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;取消：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ deactivate&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;第-2-章-应用的基本结构&#34;&gt;第 2 章 - 应用的基本结构&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;通过一个简单的应用介绍如何使用 Flask&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Python 异步 IO 笔记</title>
+      <link>http://Dvel.xyz/post/17/</link>
+      <pubDate>Thu, 03 Jan 2019 09:09:32 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/17/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;协程初探&#34;&gt;协程初探&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432090171191d05dae6e129940518d1d6cf6eeaaa969000&#34;&gt;协程 - 廖雪峰 Python 教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;多进程与多线程均由操作系统调度，不过协程由程序员在协程的代码里显式调度。&lt;/p&gt;
+
+&lt;p&gt;协程没有线程切换的开销，和多线程比，线程数量越多，协程的性能优势就越明显。&lt;/p&gt;
+
+&lt;h1 id=&#34;yield-send&#34;&gt;yield/send()&lt;/h1&gt;
+
+&lt;p&gt;刚看廖老师协程一章的代码时是一脸懵逼，那么从 0 开始，了解 &lt;code&gt;yield&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;10 年前的好文章： &lt;a href=&#34;http://www.cnblogs.com/coderzh/articles/1202040.html&#34;&gt;深入理解 yield&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;看完再回顾廖老师的 [生产者-消费者] 模型：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-pytho&#34; data-lang=&#34;pytho&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-pytho&#34; data-lang=&#34;pytho&#34;&gt;def c():
+	...
+	n = yield r
+	...
+
+def p(c):
+	...
+	r = c.send(n)
+	...&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;终于理解 &lt;code&gt;yield&lt;/code&gt; 表达式与&lt;code&gt;send()&lt;/code&gt; 函数两者皆可发送与反馈，协同工作，相辅相成。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;send(n)&lt;/code&gt;，p 发送了 &lt;code&gt;n&lt;/code&gt; 给 c，c 怎么接收，&lt;code&gt;yield&lt;/code&gt; 的返回值即是。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;yield r&lt;/code&gt;，c 反馈了 &lt;code&gt;r&lt;/code&gt; 给 p，p 怎么接收，&lt;code&gt;send()&lt;/code&gt; 的返回值即是。&lt;/p&gt;
+
+&lt;h1 id=&#34;asyncio-coroutine-yield-from&#34;&gt;@asyncio.coroutine/yield from&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;yield from&lt;/code&gt; 语法由 Python 3.3 引进。&lt;/p&gt;
+
+&lt;p&gt;附：&lt;a href=&#34;https://juejin.im/post/5b3af9fb51882507d4487144&#34;&gt;深入理解Python的yield from语法 &lt;/a&gt; ，摘抄部分代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 子生成器&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;average_gen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;total&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;average&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;new_num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;yield&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;average&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;total&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new_num&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;average&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;total&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;count&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# 委托生成器&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;proxy_gen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;yield&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;average_gen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# 调用方&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;calc_average&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;proxy_gen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+    &lt;span class=&#34;nb&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calc_average&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;# 预激下生成器&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calc_average&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;send&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 打印：10.0&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calc_average&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;send&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 打印：15.0&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calc_average&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;send&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 打印：20.0&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;vm&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;asyncio&lt;/code&gt;是 Python 3.4 版本引入的标准库，直接内置了对异步 IO 的支持。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;用 &lt;code&gt;asyncio&lt;/code&gt; 提供的 &lt;code&gt;@asyncio.coroutine&lt;/code&gt; 可以把一个 generator 标记为 coroutine 类型，然后在 coroutine 内部用 &lt;code&gt;yield from&lt;/code&gt; 调用另一个 coroutine 实现异步操作。&lt;/p&gt;
+
+&lt;p&gt;使用 &lt;code&gt;yield from&lt;/code&gt; 关键字将一个 &lt;code&gt;asyncio.Future&lt;/code&gt; 对象向下传递给事件循环，当这个 &lt;code&gt;Future&lt;/code&gt; 对象还未就绪时，该协程就暂时挂起以处理其他任务。一旦 &lt;code&gt;Future&lt;/code&gt; 对象完成，事件循环将会侦测到状态变化，会将 &lt;code&gt;Future&lt;/code&gt; 对象的结果通过 &lt;code&gt;send&lt;/code&gt; 方法方法返回给生成器协程，然后生成器恢复工作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;asyncio&lt;/span&gt;
+
+&lt;span class=&#34;nd&#34;&gt;@asyncio.coroutine&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;foo start&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;yield&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;asyncio.sleep&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;foo end&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;nd&#34;&gt;@asyncio.coroutine&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;bar start&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;yield&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;asyncio.sleep&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;bar end&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;loop&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;asyncio&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_event_loop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;loop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run_until_complete&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;asyncio&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;wait&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()]))&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;loop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# 输出结果&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# bar start&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# foo start&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# (等了5秒的IO操作)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# foo end&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#（又等了5秒的IO操作）&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# bar end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;async-await&#34;&gt;async/await&lt;/h1&gt;
+
+&lt;p&gt;Python3.5 中引入的新语法 &lt;strong&gt;async&lt;/strong&gt; 和 &lt;strong&gt;await&lt;/strong&gt; 可以让协程代码更简洁易读，也让协程表面上与生成器区分开。&lt;/p&gt;
+
+&lt;p&gt;代码仅需进行简单的替换：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;asyncio&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;foo start&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;await&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;asyncio&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sleep&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;foo end&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;bar start&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;await&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;asyncio&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sleep&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;bar end&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;loop&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;asyncio&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_event_loop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;loop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run_until_complete&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;asyncio&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;wait&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()]))&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;loop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;另推荐一篇好文章：&lt;a href=&#34;http://bigsec.com/bigsec-news/wechat-20171130-Python&#34;&gt;谈谈Python协程技术的演进&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>再见，双点医院！</title>
+      <link>http://Dvel.xyz/post/16/</link>
+      <pubDate>Sun, 09 Sep 2018 05:53:17 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/16/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;终于肝完了主题医院的精神续作——双点医院。。。&lt;/p&gt;
+
+&lt;p&gt;太肝了。。。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这一代的病人依然没有摒弃「请病人不要死在走廊上」的优良传统，如果你把一个病人治死了，他会坚持换完衣服走出病房，然后再在走廊死掉，再化为鬼魂，为周围的病人启动一个「加速行走」的Buff。。。&lt;/p&gt;
+
+&lt;p&gt;因为这个加速行走的Buff，我甚至都不招聘有抓鬼技能的员工了。&lt;/p&gt;
+
+&lt;h1 id=&#34;游戏进程&#34;&gt;游戏进程&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;入场&lt;/li&gt;
+&lt;li&gt;接待&lt;/li&gt;
+&lt;li&gt;诊断&lt;/li&gt;
+&lt;li&gt;治疗&lt;/li&gt;
+&lt;li&gt;离场&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;中途可能包含「愤怒离开」「治疗效果不佳」「死亡」。&lt;/p&gt;
+
+&lt;p&gt;在接受治疗前就死亡，是因为排队排太久，健康值降为 0。&lt;/p&gt;
+
+&lt;p&gt;愤怒离开的主要原因是心情降为 0。&lt;/p&gt;
+
+&lt;h1 id=&#34;诊断流程-妈的智障&#34;&gt;诊断流程 （妈的智障）&lt;/h1&gt;
+
+&lt;p&gt;→ 全科 → 诊断 → 全科 → 诊断 → 全科 → 治疗&lt;/p&gt;
+
+&lt;p&gt;如果第一次全科就100%，直接治疗。&lt;/p&gt;
+
+&lt;p&gt;即便到诊断室已经100%了，病人也会再次返回全科。（大夫可能是说你去照个X光回来给我看看）&lt;/p&gt;
+
+&lt;p&gt;如果已有的诊断室已经用完，仍没到100%，会发出消息，问你是送回家、等待、治疗？&lt;/p&gt;
+
+&lt;p&gt;在后期基本只有这两种情况：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;进场 → 全科 → 治疗 → 离场或死亡&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;进场 → 全科 → 某个诊断室 → 全科 → 治疗 → 离场或死亡&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;全科技能跟上的话，很少有第三次复诊。&lt;/p&gt;
+
+&lt;h1 id=&#34;科室&#34;&gt;科室&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;设施&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;护士&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;医生&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;接待处&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;药房&lt;/td&gt;
+&lt;td&gt;3 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;【全科】&lt;/td&gt;
+&lt;td&gt;3 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;休息室&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;【综合诊断】&lt;/td&gt;
+&lt;td&gt;3 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;【精神病学】&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;3 x 3&lt;/td&gt;
+&lt;td&gt;精神学&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;厕所&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;【心脏病科】&lt;/td&gt;
+&lt;td&gt;3 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;脱光诊所&lt;/td&gt;
+&lt;td&gt;3 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;培训&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;注射室&lt;/td&gt;
+&lt;td&gt;3 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;研究&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;【体液分析】&lt;/td&gt;
+&lt;td&gt;3 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;【DNA实验室】&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;4 x 3&lt;/td&gt;
+&lt;td&gt;遗传学&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;营销学&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;咖啡厅&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;【病房】&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;4 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;流行锅实验室&lt;/td&gt;
+&lt;td&gt;4 x 4&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;骨科病房&lt;/td&gt;
+&lt;td&gt;4 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;拔头室&lt;/td&gt;
+&lt;td&gt;4 x 4&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;色疗室&lt;/td&gt;
+&lt;td&gt;4 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;电疗&lt;/td&gt;
+&lt;td&gt;4 x 4&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;木乃伊&lt;/td&gt;
+&lt;td&gt;4 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;分辨率&lt;/td&gt;
+&lt;td&gt;4 x 4&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;【X 光】&lt;/td&gt;
+&lt;td&gt;4 x 4&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;有害动物&lt;/td&gt;
+&lt;td&gt;4 x 4&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;【超级磁力共振】&lt;/td&gt;
+&lt;td&gt;4 x 4&lt;/td&gt;
+&lt;td&gt;放射学&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;小丑诊所&lt;/td&gt;
+&lt;td&gt;4 x 4&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;折疗室&lt;/td&gt;
+&lt;td&gt;5 x 3&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;手术室（医+护）&lt;/td&gt;
+&lt;td&gt;4 x 3&lt;/td&gt;
+&lt;td&gt;外科学&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;上表【 】中为具有诊断功能的科室。&lt;/p&gt;
+
+&lt;p&gt;加粗项「病房」「精神病」「DNA」都是既可以诊断又可以治疗的。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;培训室：一个就够，至少弄 50 个 4% 加成的书柜，增加培训效率。&lt;/li&gt;
+&lt;li&gt;研究：一个都不要，之前地图的研究是通用的。（你在这关如果有新研究，回老地图研发也是可以的）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;房间等级，5 级封顶，豪华房间对员工有加成，￥300 的奖章是最高性价比。&lt;/p&gt;
+
+&lt;h1 id=&#34;人物需求&#34;&gt;人物需求&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;人生在世，无外乎吃喝玩乐。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;温度&lt;/li&gt;
+&lt;li&gt;卫生&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;上面两个洗手液和暖气/空调可以简单解决。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;吃&lt;/li&gt;
+&lt;li&gt;喝&lt;/li&gt;
+&lt;li&gt;玩&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;售货机解决吃喝。&lt;/p&gt;
+
+&lt;p&gt;游戏机解决玩。&lt;/p&gt;
+
+&lt;p&gt;咖啡厅可以同时解决「吃」和「喝」，并赐予一个开心 Buff。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;厕所&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果你建了一些吃喝建筑，但没有厕所。。。&lt;/p&gt;
+
+&lt;p&gt;他就会把新鲜的大便拉到地上，地上时而出现的一滩水就是病人撒的尿。&lt;/p&gt;
+
+&lt;h1 id=&#34;技能选择&#34;&gt;技能选择&lt;/h1&gt;
+
+&lt;p&gt;简单来说，方便管理的话。。。&lt;/p&gt;
+
+&lt;p&gt;因为后期全科技能很高，一个往返基本能就诊断 100%。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;勤杂工：留一个升级，剩下全维护。&lt;/li&gt;
+&lt;li&gt;客服：无脑接待&lt;/li&gt;
+&lt;li&gt;护士：全部治疗，不要诊断，无需任何管理操作，自动轮换。&lt;/li&gt;
+&lt;li&gt;医生：全部治疗，不要诊断，无需任何管理操作，自动轮换。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这么玩主要还是因为放弃了很多诊断室，治疗技能是为了保障治愈率。&lt;/p&gt;
+
+&lt;p&gt;其中需要规划一下全科大夫，全部加全科，只负责全科科室，20级以下的医院十个足够。&lt;/p&gt;
+
+&lt;h1 id=&#34;核心战略&#34;&gt;核心战略&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;让员工开心，Buff 加成，咖啡厅 + 休息室 + 厕所 + 5级全科科室。（咖啡厅与厕所设置成只允许员工使用）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;科室里不放咖啡机和零食，让员工休息时去咖啡厅吃喝。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;让病人迅速滚蛋，不要让他吃、喝、玩乐、拉撒，150天内要么把他治好，要么把他治死。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这是一个塔防游戏。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;让病人保持高效率，除了已经避免的吃喝和上厕所，长椅也不摆，让病人在排队时一直排排站好。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;无论病人得了什么病，任何诊断室（包括全科）都能检查出来&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;地域分配——集中诊断：集中全科与诊断室，让病人走最少的步数完成诊断。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;治疗区：随便放，放远处，这是病人的最后一步，在进入治疗室付款前别死了就行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;舍弃无用的诊断室，「病房」、「精神」、「DNA」充当诊断室。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;为保持循环效率，「病房」的床位、「精神」与「DNA」的数量要适当增加。&lt;/p&gt;
+
+&lt;p&gt;超级磁力共振是收费最高的诊断科室，可以考虑。&lt;/p&gt;
+
+&lt;h1 id=&#34;前期迅速赚钱战略&#34;&gt;前期迅速赚钱战略&lt;/h1&gt;
+
+&lt;p&gt;落地：一接待一全科一病房。&lt;/p&gt;
+
+&lt;p&gt;除了病房这样的，全部按最小空间建造，方便后期调整位置。&lt;/p&gt;
+
+&lt;p&gt;全科慢慢增加。&lt;/p&gt;
+
+&lt;p&gt;病房吞吐量大，多弄几个护士和床位。&lt;/p&gt;
+
+&lt;p&gt;然后一个一个的补治疗室，先不补「精神」和「DNA」。&lt;/p&gt;
+
+&lt;p&gt;病人在完成「全科 → 病房 → 全科」这个诊断流程后就会弹出信息，诊断率只有xxx，治疗还是送回家？送去治疗就好，前期不要在乎治愈率，能赚钱就好。&lt;/p&gt;
+
+&lt;p&gt;期间招聘跟上，然后完善科室就可以了，这样是稳赚不赔的。&lt;/p&gt;
+
+&lt;p&gt;在满足人员配置后，一次性补足「精神」和「DNA」，如果先补这俩但是数量不足，病人就会去排大长队。&lt;/p&gt;
+
+&lt;p&gt;所有规划完毕后，上培训，慢慢就进入后期了。&lt;/p&gt;
+
+&lt;h1 id=&#34;摩天塔通关配置&#34;&gt;摩天塔通关配置&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/C6W7albd.png&#34; alt=&#34;双点医院摩天塔&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;中间为集中诊断区，左下为治疗区，右下就放了个培训室。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这是我第三次干摩天塔了，之前铺的满地图都是，13 个场地铺满 9 个了，然后铺烦了删档重来了。&lt;/p&gt;
+
+&lt;p&gt;这个低配简配，本来是想着舍弃外围 8 个场地，只玩内围 4 个场地的，没想到直接干到通关了。&lt;/p&gt;
+
+&lt;p&gt;全科：8 个房间，10 个员工。&lt;/p&gt;
+
+&lt;p&gt;精神：4 个房间，4 个员工。&lt;/p&gt;
+
+&lt;p&gt;DNA：4 个房间，4 个员工。&lt;/p&gt;
+
+&lt;p&gt;病房：1 个 6 床及以上的房间，4 个及以上的员工，因为员工老瞎溜达，效率不够，人数来凑。&lt;/p&gt;
+
+&lt;p&gt;每个治疗室 1 个，员工自己可以补三四个轮休的。&lt;/p&gt;
+
+&lt;p&gt;手术室太费时间，适当增加。&lt;/p&gt;
+
+&lt;p&gt;等级压到 20 级以下，这样全科不会产生排队。&lt;/p&gt;
+
+&lt;h1 id=&#34;评价&#34;&gt;评价&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;差评。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;没有「房间模板」或「复制房间」这个功能。（关键点，有这个功能就是好评）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;前期造全科就够烦的了。&lt;/p&gt;
+
+&lt;p&gt;最后一关摩天塔，我第一次想铺开玩大医院，病人数量增加的太多，没有复制功能烦的我重新开档了。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;价格偏高，关卡游戏性重复。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;伤肝。。。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;没有一键「让所有已诊断病人滚去治疗」选项，前期拥堵的时候得一个一个点。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;人物 AI 智障&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;比如病房排队人多的时候，有人同时开门和关门，能把人挤出去。&lt;/p&gt;
+
+&lt;p&gt;休息室、培训室这种大量进出，员工都跟傻子似的，开关门效率低。&lt;/p&gt;
+
+&lt;p&gt;病房的屏风，如果你在门左右各方一个，病人只会去右边的，即便左边是空的，病人还会去右边排队，除非右边已经有人排队，他才会去左边的，利用效率低下。&lt;/p&gt;
+
+&lt;p&gt;排队，科室没有病人，2 号位已经站在门前，1 号位刚拉完屎从远方赶来，2 号位就干等着他。&lt;/p&gt;
+
+&lt;p&gt;如果你仔细看一会病房，包括骨科，护士们的治疗效率真是太低了急死人，各种不知所谓乱走动。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;各种 BUG，据说病房 BUG 已经修复，这个 BUG 是真tm烦。&lt;/li&gt;
+&lt;li&gt;逼死强迫症！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最后一关了，45 星全部到手了，玩家要真真正正的开始创造大医院了，不能复制房间我都忍了。&lt;/p&gt;
+
+&lt;p&gt;结果最后一关居然是不对称的。。。最外围有两处和别的长得不一样，偏小还少了个门。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;管理方式弱智&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;玩过 Rimworld 后很难接受这种糟糕的管理方式了，尤其是最后一关铺大医院的时候，我需要统计全科的员工人数、精神和DNA的员工人数，病房专属的员工人数等等来方便我招聘，你只能一页一页的翻。&lt;/p&gt;
+
+&lt;p&gt;逼得我自己使用表格进行管理，如图。。。：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/q5oUgQFR.png&#34; alt=&#34;双点医院&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;绿底色为【诊断】，红色字为【诊断+治疗】&lt;/p&gt;
+
+&lt;p&gt;表格我放谷歌文档上了 &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1n93n7JlrkRTsPIibfZGoCDb4gzwXMyQmjeulHPflnJk/edit?usp=sharing&#34;&gt;https://docs.google.com/spreadsheets/d/1n93n7JlrkRTsPIibfZGoCDb4gzwXMyQmjeulHPflnJk/edit?usp=sharing&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Python 学习计划</title>
+      <link>http://Dvel.xyz/post/15/</link>
+      <pubDate>Mon, 27 Aug 2018 22:11:29 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/15/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;只是为了设定计划与监督自己，记录下自己的学习路径。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/30237842/&#34;&gt;《笨办法学Python 3》（Learn python the hard way）&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;读了几章发现学习模式过于基础，比较适合第一次编程的纯新手。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/6049132/&#34;&gt;《Python 学习手册》（Learning Python）&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;网上大部分评论为：啰嗦 / 细致，可能和封面一样，喜欢细嚼慢咽的朋友可以慢慢的啃这本书。。。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/26829016/&#34;&gt;《Python编程：从入门到实践》（Python Crash Course）&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;如书名，看目录能看出来，第 12 章后开始是各种小项目，甚至还有 Django 的小入门教程。&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://book.douban.com/subject/26675127/&#34;&gt;《Python 语言及其应用》（Introducing Python）&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最终还是选择这本书入门。&lt;/p&gt;
+
+&lt;p&gt;前 7 章是中规中矩的语言入门，翻译质量很好。&lt;/p&gt;
+
+&lt;p&gt;第 8 章开始涉及的门类较多，基本上都属于程序员必备技能，都是点到为止，看起来也不困难，可以增加知识面。&lt;/p&gt;
+
+&lt;p&gt;学习时长：69 个番茄&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://pythoncaff.com/docs/tutorial/3.7.0&#34;&gt;Python 官方文档：入门教程&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;PythonCaff 社区，基于 3.7 的最新翻译版，官方的入门教程，过一遍准没错。&lt;/p&gt;
+
+&lt;p&gt;感觉第 8、9 章的翻译有点生涩难懂。&lt;/p&gt;
+
+&lt;p&gt;稍微有点收获吧，比如上本书没有讲清楚 Python 中各种 &lt;code&gt;import&lt;/code&gt; 语句的不同效果。&lt;/p&gt;
+
+&lt;p&gt;学习时长：19 个番茄&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://www.liaoxuefeng.com/&#34;&gt;廖雪峰 Python 教程&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我觉得阅读完一门基础书籍后再看廖老师的教程比较合适，廖老师的教程精简干练，适合查漏补缺。&lt;/p&gt;
+
+&lt;p&gt;学习时长：50个番茄&lt;/p&gt;
+
+&lt;p&gt;又重新过了一遍，最后的实战没看，感觉没有承前启后看的非常费解，准备直接看看其他 web 的书籍了。&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://book.douban.com/subject/27028517/&#34;&gt;《流畅的 Python》（Fluent Python）&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;待看&amp;hellip;&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://book.douban.com/subject/26381341/&#34;&gt;《Python Cookbook》&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;待看&amp;hellip;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>解决 CNAME 与 MX 记录冲突</title>
+      <link>http://Dvel.xyz/post/14/</link>
+      <pubDate>Wed, 01 Aug 2018 23:23:26 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/14/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;需求&#34;&gt;需求&lt;/h1&gt;
+
+&lt;p&gt;需求是这样的：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;我的博客是 dvel.me，已经部署在 Coding Pages 或 Github Pages 上，域名解析用的是 &lt;strong&gt;CNAME&lt;/strong&gt; 记录。&lt;/li&gt;
+&lt;li&gt;我希望我的域名邮箱是后缀是 @dvel.me，域名解析用的是 &lt;strong&gt;MX&lt;/strong&gt; 记录。&lt;/li&gt;
+&lt;li&gt;冲突了。。。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;@	CNAME	-	pages.coding.me
+@	MX	1	aspmx.l.google.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;因为都用了裸域，如果要放弃裸域，采用 www.dvel.me 又觉得强迫症，Coding 又不提供 A 解析。&lt;/p&gt;
+
+&lt;h1 id=&#34;用-cloudxns-快速解决&#34;&gt;用 CloudXNS 快速解决&lt;/h1&gt;
+
+&lt;p&gt;CloudXNS 有一个 &lt;strong&gt;LINK&lt;/strong&gt; 记录：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;LINK：CloudXNS的私有类型，可将用户配置的CNAME隐藏。
+别名链接记录，隐式将解析权委托给目标域名。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;官方详解：&lt;a href=&#34;https://www.cloudxns.net/Support/detail/id/126.html&#34;&gt;CloudXNS之详解LINK记录&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;需要额外使用一个域名，假设这个域名为 another.com。&lt;/p&gt;
+
+&lt;p&gt;将裸域的 &lt;strong&gt;CNAME&lt;/strong&gt; 记录改成 &lt;strong&gt;LINK&lt;/strong&gt;，记录值为 &lt;code&gt;@another.com&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;@	LINK	-	@another.com
+@	MX	1	aspmx.l.google.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;进入 another.com 的解析设置页面正常设置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;@	CNAME	-	pages.coding.me&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;以上，相当于绕了个弯。&lt;/p&gt;
+
+&lt;p&gt;我用的是 Coding Pages 与 G Suite，博客访问与邮件收发均无问题。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>你好，Hugo！</title>
+      <link>http://Dvel.xyz/post/13/</link>
+      <pubDate>Tue, 31 Jul 2018 19:08:55 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/13/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;曾经升级完 Node 后对 Hexo 一顿折腾，感觉有点麻烦，新MBP入手后懒得再折腾一遍，想换到 Hugo 试试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;开心！我正准备去 Godaddy 拍卖别的域名的时候，发现这个域名的原主人 dvelme.com 已经放弃了 dvel.me，马上入手，正好换 Hugo 全都翻新。&lt;/p&gt;
+
+&lt;h1 id=&#34;quick-start&#34;&gt;Quick Start&lt;/h1&gt;
+
+&lt;h5 id=&#34;安装&#34;&gt;安装：&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ brew install hugo&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h5 id=&#34;查看&#34;&gt;查看：&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ hugo version&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h5 id=&#34;建站&#34;&gt;建站：&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ hugo new site site-name&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h5 id=&#34;快速添加主题&#34;&gt;快速添加主题：&lt;/h5&gt;
+
+&lt;p&gt;&lt;em&gt;（以我正在使用的 Jane 为例）&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ cd site-name
+$ git init
+$ git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane
+$ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.toml&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h5 id=&#34;写博客&#34;&gt;写博客：&lt;/h5&gt;
+
+&lt;p&gt;页面：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ hugo new page-name.md&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;文章：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ hugo new post/post-name.md&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h5 id=&#34;预览&#34;&gt;预览：&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ hugo server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;浏览器打开 &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt; 即可预览。&lt;/p&gt;
+
+&lt;h5 id=&#34;生成&#34;&gt;生成：&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ hugo&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;超级简单！超级轻松！生成速度超级快！&lt;/p&gt;
+
+&lt;h5 id=&#34;部署&#34;&gt;部署：&lt;/h5&gt;
+
+&lt;p&gt;将 &lt;code&gt;public&lt;/code&gt; 中所有内容部署到 Github Pages 或 Coding Pages 即可。&lt;/p&gt;
+
+&lt;h1 id=&#34;url管理&#34;&gt;URL管理&lt;/h1&gt;
+
+&lt;p&gt;我喜欢这样的 url ：&lt;code&gt;dvel.me/post/1&lt;/code&gt; &lt;code&gt;dvel.me/post/2&lt;/code&gt; &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;编辑 &lt;code&gt;config.toml&lt;/code&gt; ，修改或增加：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;[permalinks]
+  post = &amp;#34;/post/:slug&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在文章的 Front Matter 中新增 &lt;code&gt;slug&lt;/code&gt; 并正确填写即可。&lt;/p&gt;
+
+&lt;h1 id=&#34;coding-pages&#34;&gt;Coding Pages&lt;/h1&gt;
+
+&lt;p&gt;非金牌及以上会员好像必须加 &lt;code&gt;Hosted on CODING Pages&lt;/code&gt; ，否则强制广告。&lt;/p&gt;
+
+&lt;p&gt;一般在 &lt;code&gt;themes/***/layouts/partials/footer.html&lt;/code&gt; 中可以修改 footer。&lt;/p&gt;
+
+&lt;h1 id=&#34;参考-感谢&#34;&gt;参考 &amp;amp; 感谢&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.olowolo.com/post/hugo-quick-start/&#34;&gt;Hugo 从入门到会用&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>为 Mac 打造 zsh command line 环境</title>
+      <link>http://Dvel.xyz/post/12/</link>
+      <pubDate>Mon, 30 Jul 2018 02:49:46 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/12/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;刚折腾完，做个备忘&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;样图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/2000/1*JR3-ExMjs20SbXwUmjI44g.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;iterm-2&#34;&gt;iTerm 2&lt;/h1&gt;
+
+&lt;p&gt;配置一番。&lt;/p&gt;
+
+&lt;p&gt;主题：Tomorrow Night&lt;/p&gt;
+
+&lt;h1 id=&#34;zsh&#34;&gt;zsh&lt;/h1&gt;
+
+&lt;h2 id=&#34;安装-zsh&#34;&gt;安装 zsh：&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ brew install zsh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;将 &lt;code&gt;/usr/local/bin/zsh&lt;/code&gt; 加入到 &lt;code&gt;/etc/shells&lt;/code&gt; 中：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ sudo sh -c &amp;#34;echo $(which zsh) &amp;gt;&amp;gt; /etc/shells&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;设置默认 shell：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ chsh -s $(which zsh)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;安装-oh-my-zsh-https-github-com-robbyrussell-oh-my-zsh&#34;&gt;安装 &lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh&#34;&gt;oh-my-zsh&lt;/a&gt;：&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;安装后出现目录 &lt;code&gt;~/.oh-my-zsh/&lt;/code&gt; 及配置文件 &lt;code&gt;~/.zshrc&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;安装-zsh-主题-powerlevel9k-https-github-com-bhilburn-powerlevel9k&#34;&gt;安装 zsh 主题 &lt;a href=&#34;https://github.com/bhilburn/powerlevel9k&#34;&gt;powerlevel9k&lt;/a&gt;：&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;设置主题，编辑 &lt;code&gt;~/.zshrc&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;ZSH_THEME=&amp;#34;powerlevel9k/powerlevel9k&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;安装-zsh-高亮插件&#34;&gt;安装 zsh 高亮插件&lt;/h2&gt;
+
+&lt;p&gt;安装 &lt;a href=&#34;https://github.com/zsh-users/zsh-syntax-highlighting&#34;&gt;zsh-syntax-highlighting&lt;/a&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ brew install zsh-syntax-highlighting&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;确认 &lt;code&gt;~/zshrc&lt;/code&gt; 中有以下语句：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;参考-感谢&#34;&gt;参考 &amp;amp; 感谢&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f&#34;&gt;超簡單！十分鐘打造漂亮又好用的 zsh command line 環境&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>新 Mac 新装修</title>
+      <link>http://Dvel.xyz/post/11/</link>
+      <pubDate>Fri, 27 Jul 2018 17:35:04 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/11/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;新 MBP 到手后，我就预感要折腾好一阵子，因为之前把系统整的太凌乱，决定不使用 Time Machine，从头开始对 MBP 新装新居，每做几步就做个简单的记录，写着玩玩吧，好久都不写博客了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;上手体验&#34;&gt;上手体验&lt;/h1&gt;
+
+&lt;p&gt;新 MBP（2018 15寸） 对比我的老款 MBP（2014 mid 15寸）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;信仰灯几年前就开始不亮了。。。&lt;/li&gt;
+&lt;li&gt;bar 上的 esc 键可能需要太长时间来适应，居然还不在最左边！&lt;/li&gt;
+&lt;li&gt;蝶式键盘的键程极短，基本已经适应&lt;/li&gt;
+&lt;li&gt;方向键的 ↑ ↓ 感觉比老款增大了误触几率&lt;/li&gt;
+&lt;li&gt;默认分辨率稍高（1680 x 1050），老版为（1440 x 900）&lt;/li&gt;
+&lt;li&gt;原彩显示，体验极佳！&lt;/li&gt;
+&lt;li&gt;触摸板过大，但做了很好的防误触处理&lt;/li&gt;
+&lt;li&gt;指纹识别，not bad&lt;/li&gt;
+&lt;li&gt;USB-C * 4 。。。&lt;/li&gt;
+&lt;li&gt;发烫，通病，4 年了还是老味道&lt;/li&gt;
+&lt;li&gt;独显性能提升（毕竟 4 年了，老 Mac 玩影子战术低档还卡，新 Mac 高档流畅）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;配件&#34;&gt;配件&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Apple USB-C 转 USB 转换器&lt;/li&gt;
+&lt;li&gt;戴尔 DA300&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;偏好设置&#34;&gt;偏好设置&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;系统所有偏好设置&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;通用：关闭文稿时要求保存更改&lt;/li&gt;
+&lt;li&gt;Dock：将窗口最小化为应用程序图标，连按最小化&lt;/li&gt;
+&lt;li&gt;吮吸效果：&lt;code&gt;defaults write com.apple.dock mineffect suck; Killall Dock&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;添加空白格：&lt;code&gt;defaults write com.apple.dock persistent-apps -array-add &#39;{&amp;quot;tile-type&amp;quot;=&amp;quot;spacer-tile&amp;quot;;}&#39;; Killall Dock&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;堆栈区网格高亮：&lt;code&gt;defaults write com.apple.dock mouse-over-hilite-stack -bool TRUE;killall Dock&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;调度中心：关闭仪表盘，设置触发角（右下角显示桌面）&lt;/li&gt;
+&lt;li&gt;触摸板：辅助点按、轻点、滚动方向&lt;/li&gt;
+&lt;li&gt;Siri：关闭&lt;/li&gt;
+&lt;li&gt;辅助功能 - 鼠标与触控板 - 触控板选项：启动拖移(三指拖移)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Finder 偏好设置&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;边栏调整&lt;/li&gt;
+&lt;li&gt;显示所有文件扩展名&lt;/li&gt;
+&lt;li&gt;显示 - 显示各种栏&lt;/li&gt;
+&lt;li&gt;标题栏显示完整路径：&lt;code&gt;defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES;killall Finder&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;部分快捷键重设（极具个人风格）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;双击 command：Alfred&lt;/li&gt;
+&lt;li&gt;command + 空格：切换输入法&lt;/li&gt;
+&lt;li&gt;option + 空格：Alfred - File search - Navigation&lt;/li&gt;
+&lt;li&gt;control + 空格：spotlight&lt;/li&gt;
+&lt;li&gt;shift + 空格：iTerm&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;禁用大部分 iCloud 同步&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;先安装能快速还原使用习惯的app&#34;&gt;先安装能快速还原使用习惯的App&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;提前挂好 Xcode，下载慢&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;输入法&lt;/li&gt;
+&lt;li&gt;Firefox / Chrome&lt;/li&gt;
+&lt;li&gt;Surge&lt;/li&gt;
+&lt;li&gt;Dropbox&lt;/li&gt;
+&lt;li&gt;Alfred&lt;/li&gt;
+&lt;li&gt;1Password&lt;/li&gt;
+&lt;li&gt;Spark&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;至此，基本上只差功能性App了，大部分的使用习惯都找了回来&lt;/p&gt;
+
+&lt;h1 id=&#34;app库&#34;&gt;App库&lt;/h1&gt;
+
+&lt;p&gt;开始一个一个的下载App，这时才发现还是 Time Machine 好啊。&lt;/p&gt;
+
+&lt;p&gt;特别注意个别 App 的反激活与同步。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1Password ，妈的 7 不带老用户玩了，需订阅或再次买断
+
+&lt;ul&gt;
+&lt;li&gt;之前买断的可以从 MAS 购买记录里重新下载&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Fantastical 2 根本没有反激活。。。&lt;/li&gt;
+&lt;li&gt;NTFS 需要在官网反激活一下，看到 Licences 有点变化
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Microsoft NTFS for Mac by Paragon Software&lt;/strong&gt; 新版可用的&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Paragon NTFS For Mac 14 (Multilingual)&lt;/strong&gt; 好像是曾经的叫法，已不可用，下载14也无法打开&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参考老Mac导出的App列表，由于数量庞大几乎大部分时间都花在App的下载与设置上了。&lt;/p&gt;
+
+&lt;h1 id=&#34;配置-command-line&#34;&gt;配置 command line&lt;/h1&gt;
+
+&lt;p&gt;一步一步折腾，真希望iTerm能集成一切且同步&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;iTerm&lt;/li&gt;
+&lt;li&gt;zsh&lt;/li&gt;
+&lt;li&gt;oh-my-zsh&lt;/li&gt;
+&lt;li&gt;powerlevel9k&lt;/li&gt;
+&lt;li&gt;zsh-syntax-highlighting&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;完事了-洗洗睡了&#34;&gt;完事了，洗洗睡了&lt;/h1&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>汽车金融行业离职总结</title>
+      <link>http://Dvel.xyz/post/10/</link>
+      <pubDate>Thu, 19 Jul 2018 11:20:43 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/10/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;接触了汽车行业约有一年，期间也接触了几个大公司的整套运行体系，最近离开了这个行业，不写给任何人看，只当是做一个简单总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;汽车贷款大致分类&#34;&gt;汽车贷款大致分类&lt;/h1&gt;
+
+&lt;h2 id=&#34;厂家免息&#34;&gt;厂家免息&lt;/h2&gt;
+
+&lt;p&gt;限额：各大厂家的免息金额约在八万以内或首付五成以上。&lt;/p&gt;
+
+&lt;p&gt;风控严：信用及资质评审较为严格。&lt;/p&gt;
+
+&lt;p&gt;年限短：大部分最高也就 12 / 18 期或 2 年。&lt;/p&gt;
+
+&lt;h2 id=&#34;银行系&#34;&gt;银行系&lt;/h2&gt;
+
+&lt;p&gt;一般为本地银行为本地人提供的服务，利息低，但是资质及征信要求严格&lt;/p&gt;
+
+&lt;h2 id=&#34;担保系&#34;&gt;担保系&lt;/h2&gt;
+
+&lt;p&gt;如中安金控，作为担保，上面接工商银行，下面接客户。&lt;/p&gt;
+
+&lt;p&gt;风控自由：在满足银行底线要求的情况下，自行承担风险，风控可松可严。&lt;/p&gt;
+
+&lt;p&gt;操作流程麻烦：如中安至少需要 20 份合同，需担保人等共同签署、拍照、视频。&lt;/p&gt;
+
+&lt;p&gt;贷款年限、金额都较为放松。&lt;/p&gt;
+
+&lt;h2 id=&#34;金融系&#34;&gt;金融系&lt;/h2&gt;
+
+&lt;p&gt;如奇瑞徽银。&lt;/p&gt;
+
+&lt;p&gt;风控正常：电话风控，只要客户正常交流没有问题，且是真实买车，有还款能力。&lt;/p&gt;
+
+&lt;p&gt;贷款额超过 20 万极为严格。&lt;/p&gt;
+
+&lt;h2 id=&#34;融资租赁&#34;&gt;融资租赁&lt;/h2&gt;
+
+&lt;p&gt;利息高、流程繁琐。&lt;/p&gt;
+
+&lt;p&gt;主要针对征信不良人群及黑户。&lt;/p&gt;
+
+&lt;h2 id=&#34;以租代购&#34;&gt;以租代购&lt;/h2&gt;
+
+&lt;p&gt;如弹个车、大白。&lt;/p&gt;
+
+&lt;p&gt;免上牌烦恼，只要结尾款过户不是问题即可。&lt;/p&gt;
+
+&lt;p&gt;暗藏大笔金额，神不知鬼不觉的融进客户的贷款额里。&lt;/p&gt;
+
+&lt;h2 id=&#34;黑户专享&#34;&gt;黑户专享&lt;/h2&gt;
+
+&lt;p&gt;如农商银行。&lt;/p&gt;
+
+&lt;p&gt;利息要多高有多高，流程要多繁琐有多繁琐，主要针对征信不良及黑户。&lt;/p&gt;
+
+&lt;h1 id=&#34;产品特点&#34;&gt;产品特点&lt;/h1&gt;
+
+&lt;p&gt;几乎每家的产品都有各自的特点。&lt;/p&gt;
+
+&lt;p&gt;要么年限长，要么征信松，要么流程简便，要么不看查询次数，要么可以单签，要么可以融保险购置税等等。&lt;/p&gt;
+
+&lt;h1 id=&#34;合作模式&#34;&gt;合作模式&lt;/h1&gt;
+
+&lt;p&gt;贷款机构与车商达成合作。&lt;/p&gt;
+
+&lt;p&gt;一个车商往往有高至 10 几种的合作。&lt;/p&gt;
+
+&lt;p&gt;车商会挑选利润最大或最方便的产品带给客户。&lt;/p&gt;
+
+&lt;h1 id=&#34;大致操作流程&#34;&gt;大致操作流程&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;查征信&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;实际上需要用户首先签署征信查询授权书并上传面签照，但大部分金融都是后补或代签的。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;风控&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;各有不同。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;签署合同&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;简单只需两三张合同，复杂的多至 30 份左右并需要拍照、视频。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;上牌 / 抵押&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;抵押相关证件&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;各金融要的都不一样，大部分都是：发票、绿本、保单。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;结清后办理解押&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;车务&#34;&gt;车务&lt;/h1&gt;
+
+&lt;p&gt;车务主要就是上牌、抵押。&lt;/p&gt;
+
+&lt;p&gt;在客户完成上牌后得到绿本（机动车登记证书），按国家要求如果车辆抵押到金融或银行，应当去车管所办理抵押登记手续——也就是在绿本上打上一行字：已抵押到XXX。&lt;/p&gt;
+
+&lt;p&gt;车务是车商或贷款机构的重要线索，而且车务本身的要价区间很大，在各地区都有自己熟悉的联系人可以省去很大的成本。&lt;/p&gt;
+
+&lt;p&gt;比如实际上 200 元的代办成本，贷款方可能管车商要500，车商管客户要 1000。&lt;/p&gt;
+
+&lt;p&gt;另一个事情，就是“人车不去”四个字。&lt;/p&gt;
+
+&lt;p&gt;众所周知车辆上牌需车主本人持相关证件开着车前往车管所办理。&lt;/p&gt;
+
+&lt;p&gt;如京津廊这些地区，外地人在当地无居住证且不想回老家上牌时，可委托车商代办一些城市的拍照，从上牌到抵押整个流程，人和车都不用去，只需邮寄车辆手续及本人证件即可。&lt;/p&gt;
+
+&lt;p&gt;一些库存车不能上河北北京拍照时，也会走这些渠道。&lt;/p&gt;
+
+&lt;p&gt;因为并不合规，所以时而会出现暂停，目前已知的有蒙A、黑A、山西大同朔州，这些代办费用约在 2000 元左右。&lt;/p&gt;
+
+&lt;h1 id=&#34;贷款利率&#34;&gt;贷款利率&lt;/h1&gt;
+
+&lt;p&gt;除了免息及银行系的低息，市场上正常的利率在年化 6% 左右。&lt;/p&gt;
+
+&lt;p&gt;5% ~ 7% 都是很常见的，高于7%的基本上都是针对黑户的了。&lt;/p&gt;
+
+&lt;p&gt;本地银行一般在 3% ~ 5% 之间。&lt;/p&gt;
+
+&lt;h1 id=&#34;征信&#34;&gt;征信&lt;/h1&gt;
+
+&lt;p&gt;查询客户征信时，实际上需要客户签署征信查询授权书一类的文件的，但因各金融机构的把控不一，且多数为了图方便，大多都是后补或代签的。&lt;/p&gt;
+
+&lt;p&gt;征信状况：大多数是“连三累六”，2 年内不连续 3 次逾期，不累计 6 次。&lt;/p&gt;
+
+&lt;p&gt;征信查询次数：这是风控判断客户资质的良好参考，如果你申请了过多的贷款机构，表明你被拒绝了很多次，你可能是个危险客户。&lt;/p&gt;
+
+&lt;p&gt;大数据：你的违法情况全能查到，如果你有法院执行，吸毒史等，基本做不了。&lt;/p&gt;
+
+&lt;p&gt;一些号称“不看征信”的贷款机构仍然会审查其他条件。&lt;/p&gt;
+
+&lt;p&gt;总之市面上现有的产品很难做到骗贷了，针对黑户及征信不良人群的审查及合同签署方式都异常繁琐。&lt;/p&gt;
+
+&lt;h1 id=&#34;车商的利润&#34;&gt;车商的利润&lt;/h1&gt;
+
+&lt;p&gt;只谈贷款方面的利润：&lt;/p&gt;
+
+&lt;p&gt;各大贷款机构对车商皆有返点，比如返还车商贷款额的 1~3 个点，或定额返现。&lt;/p&gt;
+
+&lt;p&gt;大部分产品都可以加息，比如一个三年 15% 利率的产品，车商可酌情加到三年 18%，这样会多出很多返点。&lt;/p&gt;
+
+&lt;p&gt;一旦客户选择分期购车，车商基本都会收取一些贷款服务费，实际上并没有服务什么。&lt;/p&gt;
+
+&lt;p&gt;大部分贷款机构都会要求安装 GPS，而车商拿到的 GPS 成本接近为 0，销售给客户时约在 500~1500。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>iCloud的替换方案</title>
+      <link>http://Dvel.xyz/post/9/</link>
+      <pubDate>Tue, 30 Jan 2018 06:40:15 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/9/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;首先是-icloud-的应用范围&#34;&gt;首先是 iCloud 的应用范围：&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;iCloud Drive&lt;/strong&gt; [建议保留]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;照片&lt;/strong&gt; [Google Photo]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;邮件&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通讯录&lt;/strong&gt; [google]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;日历&lt;/strong&gt; [google]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;提醒事项&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Safari&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;备忘录&lt;/strong&gt; [google]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Siri&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;钥匙串&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;回到我的Mac&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;查找我的Mac&lt;/strong&gt; [建议保留]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;iCloud Drive&lt;/strong&gt; 建议保留，众多App有很多无关紧要的备份文件都得以保留，另外诸如surge或其它App和Mac之间配合的，走iCloud存储会更方便一点。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;查找我的 Mac&lt;/strong&gt; 肯定最好是保留。&lt;/p&gt;
+
+&lt;p&gt;其中&lt;strong&gt;通讯录、日历、备忘录&lt;/strong&gt;都可以移至iOS所支持的互联网账户内，比如 Google。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;照片&lt;/strong&gt;，&lt;del&gt;相信iCloud迁移至国内后备份情况会有所好转&lt;/del&gt;，除此之外分备份方案也众多，如果不是照片大户，Google Photos 的15G原始尺寸免费存储方案也够存N多年的照片了。&lt;/p&gt;
+
+&lt;h1 id=&#34;手机备份方案&#34;&gt;手机备份方案&lt;/h1&gt;
+
+&lt;p&gt;推荐 &lt;a href=&#34;https://imazing.com/&#34;&gt;iMazing&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;关键字：增量备份、Wifi 自动备份、应用程序管理（可下载更新已购买但被下架的 App）&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>秦皇岛暑期自驾的烦恼</title>
+      <link>http://Dvel.xyz/post/8/</link>
+      <pubDate>Mon, 31 Jul 2017 04:32:56 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/8/</guid>
+      
+        <description>&lt;p&gt;&lt;strong&gt;注意不要周六日去。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;周六早上 7 点出发，大概 3 个小时车程的京哈高速，足足开了 6 个多小时。&lt;/p&gt;
+
+&lt;p&gt;小宾馆没有停车位，大宾馆贵几十块钱，有停车位，有警察叔叔在路边贴条。&lt;/p&gt;
+
+&lt;p&gt;景点停车位告急。&lt;/p&gt;
+
+&lt;p&gt;新澳海底世界路上拥堵，10 分钟的路程堵了半个多小时，完事又告诉我没车位了，说前面还有停车场。&lt;/p&gt;
+
+&lt;p&gt;尼玛前面没有停车场了好不！！！&lt;/p&gt;
+
+&lt;p&gt;我再开出去 10 分钟，大热天的再背着东西走回来，太难受了。&lt;/p&gt;
+
+&lt;p&gt;干脆饶了回来，在停车场入口死等，一直等到有车位空出来。&lt;/p&gt;
+
+&lt;p&gt;周日返程同样耗费了双倍时间。&lt;/p&gt;
+
+&lt;p&gt;开车时长超过玩耍时长。。。&lt;/p&gt;
+
+&lt;p&gt;整个京哈高速，约 200 公里左右，开的非常难受。&lt;/p&gt;
+
+&lt;p&gt;不断的超车超车超车，还走了 6 个小时，不知道那些快车道慢悠悠的司机怎么想的。&lt;/p&gt;
+
+&lt;p&gt;那两天太阳不算烈，没涂防晒霜，最好还是涂上，这次又晒脱皮了。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>苹果公司开发者账号申请流程</title>
+      <link>http://Dvel.xyz/post/7/</link>
+      <pubDate>Thu, 11 May 2017 12:17:17 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/7/</guid>
+      
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;刚申请完（2017-04-19 至 2017-05-11），简单记录。&lt;/p&gt;
+
+&lt;p&gt;申请类型为：公司（Company）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;提前准备&#34;&gt;提前准备&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;公司网站域名&lt;/li&gt;
+&lt;li&gt;请公司提供邮箱（公司的域名邮箱，即网站的域名后缀）
+
+&lt;ul&gt;
+&lt;li&gt;尴尬的是我们公司没有企业域名邮箱，于是我试了试 &lt;code&gt;公司名称拼音@sina.com&lt;/code&gt;，总之顺利申请下来了。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;请公司提供 VISA + 银联，或 万事达 + 银联 的双标信用卡（VISA单标卡目前不可用）&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;准备一个公司高层领导的姓名、性别、职位、电话&lt;/li&gt;
+&lt;li&gt;准备一个公司备用联系人的姓名、电话、邮箱&lt;/li&gt;
+&lt;li&gt;公司的一些细节（在下面）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;注册-apple-id&#34;&gt;注册 Apple ID&lt;/h1&gt;
+
+&lt;p&gt;2017年4月19日&lt;/p&gt;
+
+&lt;p&gt;拿这个邮箱，先去注册 Apple ID，姓名我填我自己的了，反正也能改。。。&lt;/p&gt;
+
+&lt;p&gt;注意保存好密码、密保什么的，离职时留给下一任。&lt;/p&gt;
+
+&lt;h1 id=&#34;申请邓白氏编码&#34;&gt;申请邓白氏编码&lt;/h1&gt;
+
+&lt;p&gt;2017年4月19日&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/programs/cn/&#34;&gt;https://developer.apple.com/programs/cn/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;按流程操作&lt;/li&gt;
+&lt;li&gt;选择类型时，选择 &lt;strong&gt;Company / Organization&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;会弹出一个警告，很多文字，在 &lt;code&gt;A D-U-N-S Number&lt;/code&gt; 这栏有一个 &lt;code&gt;Check now &amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;开始查询是否已经有邓白氏编码，如果没有直接按填写的信息进行注册了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注意全部使用英文，要公司的英文名、英文地址之类的。&lt;/p&gt;
+
+&lt;p&gt;英文地址我直接参考了公司营业执照，自己翻译了一下。&lt;/p&gt;
+
+&lt;h2 id=&#34;坑&#34;&gt;坑：&lt;/h2&gt;
+
+&lt;p&gt;这个页面同时让我填写了公司座机；和所谓的 &amp;ldquo;Your work contact infomation&amp;rdquo;（我填的自己的联系方式）。&lt;/p&gt;
+
+&lt;p&gt;事实上，邓白氏会联系你填写的座机。（妈蛋，那要我的工作联系方式干啥？？？）&lt;/p&gt;
+
+&lt;h2 id=&#34;邓白氏回应&#34;&gt;邓白氏回应&lt;/h2&gt;
+
+&lt;p&gt;2017年4月21日&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;Thank you for submitting your D-U-N-S Number request / update to D&amp;amp;B. It should be completed by 05/04/2017, or sooner.
+Your request id is: xxxxxx-xxxxxx. 
+A D&amp;amp;B representative may be contacting you directly. Your cooperation will help to expedite the resolution of this request.
+Please contact applecs@dnb.com if you have any questions.&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;xxxxxx-xxxxxx&lt;/code&gt; 是一串数字，也就是你的 request id。邓白氏跟我说最晚会在 5月4日 处理完毕。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;开始漫长的等待，期间我拨打了上海邓白氏总部的电话来查询进度：
+
+1. 上海总部 021 2321 3636，用了一口流利上海话跟我说10点以后再打过来
+2. 再次拨打，让我转邓氏编码热线：400 820 2669
+3. 邓氏编码热线，让我转专门负责苹果开发者账号这方面的同事的电话：021-26107457
+4. 021-26107457，打了两次，不接
+5. mlgb
+6. 继续等&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;2017年4月28日&lt;/p&gt;
+
+&lt;p&gt;再次回复，看邮件是没打通我们公司座机，所以建议留一个你能接到的座机。&lt;/p&gt;
+
+&lt;p&gt;还好我查了一下邮箱，居然让我下午3点前回复，我下午2点多看到的。。。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;您好，
+我是上海华夏邓白氏公司，我们需要向您核实一下企业信息。由于拨打电话xxxx-xxxxxxx无人接听，请收到邮件于4月28日下午3点前回复以下信息：
+请提供
+公司中文名(工商注册的中文名，如有更名请提供更名前和更名后的名称):
+英文名（如无正式的英文名按字面翻译，每个单词首字母大写，英文名后缀请以Co., Ltd./LLC/Inc.结尾）：
+中文地址（办公地址）:
+英文地址：
+邮编:
+企业类型:
+是否是独立企业(下设有分公司或办事处吗):
+公司英文简称或英文商标:
+主营业务（公司最主要从事的业务）:
+员工人数：
+联系人姓名：
+性别：
+电话（公司座机和手机）：
+职位:
+营业执照：
+ 
+如果您用其它邮箱回复请在邮件中注明一下之前的邮箱以便我们区分.
+ 
+谢谢！&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;和部门经理沟通后回复了邮件，1小时内，收到回复：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;好的，我这边收到了您的回复，正在核实你们公司的信息，稍后办理好，24小时内系统会自动发编码到苹果注册邮箱内，最晚14个工作日编码才能使用。若着急使用，可以在一周后尝试，但请注意尝试次数不要超过3次，超过次数编码会被锁住，解锁及注册方面问题请找苹果客服，电话：4006701855
+注：包含邓白氏编码的邮件是由系统自动发送的，里面的信息是当时您自己在苹果网站上提交的原始信息，并不是核实好的内容。由于使用编码时需要再次填写公司信息，请和今天核实好的公司名字与地址保持一致。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;邓白氏申请成功&#34;&gt;邓白氏申请成功&lt;/h1&gt;
+
+&lt;p&gt;2017年5月2日&lt;/p&gt;
+
+&lt;p&gt;收到邮件，邓白氏申请成功。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;Your D-U-N-S Number request/update submitted on 4/20/2017 with ID Number 102122-419095 has been completed. You may start using your number in 14 days.
+D-U-N-S Number: xxxxxxxxx
+Resolution Description: New Record Created
+The following information was submitted as part of your request:
+Business Name: xxxx Technology Co., Ltd 
+City: xx 
+Country: CHINA PEOPLES REP
+Thank you for using D&amp;amp;B&amp;#39;s Mini Investigation Service.&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;申请开发者账号&#34;&gt;申请开发者账号&lt;/h1&gt;
+
+&lt;p&gt;2017年5月9日&lt;/p&gt;
+
+&lt;p&gt;之前告诉我了14天后才可以使用邓白氏编码，我侥幸试了一下，已经可以使用了，但如果失败的话，建议不要尝试超过2次。&lt;/p&gt;
+
+&lt;p&gt;这个步骤就简单了，这回我留了公司副总的手机号。&lt;/p&gt;
+
+&lt;p&gt;申请完后就显示正在处理，等两三天就行了。&lt;/p&gt;
+
+&lt;p&gt;2017年5月10日&lt;/p&gt;
+
+&lt;p&gt;副总接到了 Apple 的电话，到办公室找到我= =。。。&lt;/p&gt;
+
+&lt;p&gt;我问客服有什么事情，客服说让我留一个公司备份联系人的电话。&lt;/p&gt;
+
+&lt;p&gt;我说必须现在立马给您吗，客服说邮件解决也行。&lt;/p&gt;
+
+&lt;p&gt;一来一回收发了下邮件。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;您好：
+
+我们负责跟进您的 Apple Developer Program 注册 ID xxxxxxxxxxx 所存在的问题。
+为了在紧急情况下能够联系到您的组织，我们希望存档一位备用联系人。当我们无法直接联系您时，我们会联系这位备用联系人。
+请回复此电子邮件，并提供该备用联系人的信息。
+
+名字：
+姓氏：
+电话号码：
+电子邮件地址：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;我们收到了您的请求，并会在一个工作日内给您回复。您的案例编号是 xxxxxxxxxxx.
+如果您想与开发者支持顾问通话，请联系我们 https://developer.apple.com/contact/phone/cn。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;同日下午的邮件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;Dear xxx,
+
+Your enrollment request has been accepted. You may now review the Program License Agreement to continue your organization&amp;#39;s enrollment in the Apple Developer Program. 
+
+Review now 
+
+Best regards, 
+Apple Developer Program Support&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;万事俱备，只差钱了。&lt;/p&gt;
+
+&lt;h1 id=&#34;付款&#34;&gt;付款&lt;/h1&gt;
+
+&lt;p&gt;2017年5月11日&lt;/p&gt;
+
+&lt;p&gt;据说是 $99 美元，但我实际上在网页看到的是明确的￥688人民币。（之前给财务写的申请单写少了= =）&lt;/p&gt;
+
+&lt;p&gt;只支持 VISA 或 万事达。&lt;/p&gt;
+
+&lt;p&gt;一开始用的是副总的 VISA单标卡，一直付款失败。&lt;/p&gt;
+
+&lt;p&gt;后换到 VISA+银联双标卡，成功。&lt;/p&gt;
+
+&lt;p&gt;此处可以申请纸质发票。&lt;/p&gt;
+
+&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+
+&lt;p&gt;如果有什么不懂的地方，请大家尽情拨打 Apple 的 400 客服电话，台湾腔、声音温柔甜美，记得外放给同事们听。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>UIScrollView中使用Masonry</title>
+      <link>http://Dvel.xyz/post/6/</link>
+      <pubDate>Tue, 25 Apr 2017 13:12:11 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/6/</guid>
+      
+        <description>
+
+&lt;p&gt;昨天耽误了一阵子在 scrollView 的布局上，记录一下。&lt;/p&gt;
+
+&lt;p&gt;如果可以提前确定 &lt;code&gt;scrollView&lt;/code&gt; 的 &lt;code&gt;contentSize&lt;/code&gt;，就简单多了，但这种情况很少。&lt;/p&gt;
+
+&lt;p&gt;一般还是按照 &lt;code&gt;subViews&lt;/code&gt; 自适应的比较合适，这样就需要一个 &lt;code&gt;containerView&lt;/code&gt; 来撑起 &lt;code&gt;scrollView&lt;/code&gt; 的 &lt;code&gt;contentSize&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h1 id=&#34;简单的代码示例&#34;&gt;简单的代码示例：&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-objective-c&#34; data-lang=&#34;objective-c&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-objective-c&#34; data-lang=&#34;objective-c&#34;&gt;&lt;span class=&#34;n&#34;&gt;UIScrollView&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;scrollView&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UIScrollVie&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;view&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;addSubview&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;scrollView&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+                            
+&lt;span class=&#34;n&#34;&gt;UIView&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;containerView&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UIView&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;scrollView&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;addSubview&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;containerView&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+                            
+&lt;span class=&#34;n&#34;&gt;UIView&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UIView&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;v1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;backgroundColor&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UIColor&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;redColor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;containerView&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;addSubview&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+                            
+&lt;span class=&#34;n&#34;&gt;UIView&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UIView&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;v2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;backgroundColor&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UIColor&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;blueColor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;containerView&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;addSubview&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+                
+&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;如上，我想让v1、v2纵向排列，让scrollView可以上下滚动。
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;// scrollView正常进行约束
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;scrollView&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;mas_makeConstraints&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;edges&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;equalTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;view&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}];&lt;/span&gt;
+                      
+&lt;span class=&#34;c1&#34;&gt;// 容器视图
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;containerView&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;mas_makeConstraints&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;edges&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;width&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;equalTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;scrollView&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 试了发现这里好像必须要约束一下width
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}];&lt;/span&gt;
+                      
+&lt;span class=&#34;c1&#34;&gt;// v1、v2都放在容器里
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v1&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;mas_makeConstraints&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;top&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;right&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;equalTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;containerView&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;height&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;equalTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;@400&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}];&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v2&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;mas_makeConstraints&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;top&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;equalTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mas_bottom&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;right&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;equalTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;height&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;equalTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;@400&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}];&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;// 这里需要补刀，来撑起contentSize
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;containerView&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;mas_makeConstraints&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MASConstraintMaker&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;bottom&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;equalTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>解决 CocoaPods 的类库 import 没有提示</title>
+      <link>http://Dvel.xyz/post/5/</link>
+      <pubDate>Mon, 24 Apr 2017 13:19:34 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/5/</guid>
+      
+        <description>&lt;p&gt;网上搜了一些，添加 &lt;code&gt;$(PODS_ROOT)&lt;/code&gt; 到 &lt;strong&gt;User Header Search Paths&lt;/strong&gt; 就行了。&lt;/p&gt;
+
+&lt;p&gt;但是提示中会多出一些不想要的东西。&lt;/p&gt;
+
+&lt;p&gt;改成这个就好了：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$(PODS_ROOT)/Headers/Public&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/19qZI4ms.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>iOS 使用 CocoaPods 的快速回顾</title>
+      <link>http://Dvel.xyz/post/4/</link>
+      <pubDate>Mon, 17 Apr 2017 16:45:51 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/4/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
+
+&lt;p&gt;Mac 自带 Ruby 环境，查看：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ gem -v&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;通过 surge 等工具实现终端科学上网，或更改 gem 源。&lt;/p&gt;
+
+&lt;p&gt;安装 &amp;amp; 更新 Pod：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ sudo gem install cocoapods&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;确认：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ pod --version&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
+
+&lt;p&gt;进入工程根目录，创建 &lt;code&gt;Podfile&lt;/code&gt; 文件。&lt;/p&gt;
+
+&lt;p&gt;写入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;platform :ios, &amp;#39;8.0&amp;#39;
+target &amp;#39;svnt&amp;#39; do
+pod &amp;#39;AFNetworking&amp;#39;, &amp;#39;~&amp;gt; 3.0&amp;#39;
+end&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;即最低支持 iOS 8，第三方框架 AFN 的版本为 3.0。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;cd&lt;/code&gt; 进 &lt;code&gt;Podfile&lt;/code&gt; 所在目录，进行安装第三方库：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ pod install&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;后续使用&#34;&gt;后续使用&lt;/h1&gt;
+
+&lt;p&gt;查询框架是否有新版本：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ pod outdated&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;更新框架：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ pod update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;参考-感谢&#34;&gt;参考 &amp;amp; 感谢&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jianshu.com/p/82d0ba43f8c3&#34;&gt;iOS开发 - CocoaPods安装和使用教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jianshu.com/p/689368568cf7&#34;&gt;CocoaPods相关问题总结&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>GitBook简单生成本地静态HTML的方法</title>
+      <link>http://Dvel.xyz/post/2/</link>
+      <pubDate>Thu, 23 Feb 2017 22:23:27 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/2/</guid>
+      
+        <description>
+
+&lt;p&gt;偶尔可能要写一些生成本地文件发给朋友看，所以。。。&lt;/p&gt;
+
+&lt;h1 id=&#34;简单生成本地静态-html-的方法&#34;&gt;简单生成本地静态 HTML 的方法&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;安装：&lt;code&gt;$ npm install gitbook-cli -g&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;生成：&lt;code&gt;$ gitbook build&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;结果：左侧目录无法点击。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;$ gitbook serve&lt;/code&gt; 可通过localhost访问，没有任何问题。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;问题：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;自某版本后 &lt;code&gt;$ gitbook build&lt;/code&gt; 生成的 website 不支持 local 打开了，具体哪个版本未实践。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;解决办法：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ gitbook build --gitbook=2.6.7&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;使用2.6.7版本，会自动安装并生成，左侧目录可点击，Firefox、Chrome暂无任何问题。&lt;/p&gt;
+
+&lt;h1 id=&#34;常用命令&#34;&gt;常用命令&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;帮助&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ gitbook help&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;更新&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ gitbook update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;生成静态网页&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ gitbook build
+$ gitbook build --gitbook=2.6.7 // 生成对应版本的，本地无此版本会自动下载&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;生成静态网页并运行到服务器&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ gitbook serve&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;列出远程所有可用版本&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ gitbook ls-remote&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;列出本地所有已安装版本&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ gitbook ls&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;卸载本地某版本&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ gitbook uninstall x.x.x&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;参考-感谢&#34;&gt;参考&amp;amp;感谢&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/zhangjikai/gitbook-use&#34;&gt;hangjikai/gitbook-use&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>为Hexo博客弄一个图床，再搭配一个神器</title>
+      <link>http://Dvel.xyz/post/1/</link>
+      <pubDate>Mon, 28 Nov 2016 02:17:30 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/1/</guid>
+      
+        <description>
+
+&lt;p&gt;图床的优点：一次上传，到处使用。&lt;/p&gt;
+
+&lt;p&gt;Markdown 编辑器、自己的博客、论坛、Quiver 这类的笔记本里，看图都是简单明了的。&lt;/p&gt;
+
+&lt;h2 id=&#34;图床&#34;&gt;图床&lt;/h2&gt;
+
+&lt;p&gt;七牛、又拍、阿里云&lt;/p&gt;
+
+&lt;p&gt;新浪、imgur、sm.ms&lt;/p&gt;
+
+&lt;p&gt;很多随便选，按需求决定，我用的V2EX的，因为我图片量不大。&lt;/p&gt;
+
+&lt;h2 id=&#34;图床神器-ipic&#34;&gt;图床神器 iPic&lt;/h2&gt;
+
+&lt;p&gt;在选择好图床后，还发现一个超级好用的软件——&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/933WxxrL.jpeg&#34; alt=&#34;iPic&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;总之就是搭配Markdown的神器啦。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;支持拖动上传&lt;/li&gt;
+&lt;li&gt;自动生成Markdown语法，插图方便&lt;/li&gt;
+&lt;li&gt;支持众多图床，基本主流的都支持啦&lt;/li&gt;
+&lt;li&gt;最神奇的出现啦：&lt;a href=&#34;https://toolinbox.net/iPic/iPicUploader_Typora.html&#34;&gt;Typora集成了iPic的上传服务&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;具体的看这里吧：&lt;a href=&#34;https://toolinbox.net/iPic/&#34;&gt; 图床神器 iPic &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;*特效*，注意看地址：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/dNQ05ykt.gif&#34; alt=&#34;Typora iPic&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>你好, Hexo！</title>
+      <link>http://Dvel.xyz/post/0/</link>
+      <pubDate>Sun, 27 Nov 2016 00:48:36 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/0/</guid>
+      
+        <description>
+
+&lt;p&gt;因为之前的 WordPress 博客域名被墙，加上 Hexo 正好满足于简单的书写要求，所以更换为 Hexo。&lt;/p&gt;
+
+&lt;p&gt;主要还是记录了自己的搭建过程，因为对 Linux 不太熟悉，以备忘为主。&lt;/p&gt;
+
+&lt;p&gt;后面换到了Coding Pages 上搭建，主要是简单方便省心，自带了 https，速度也凑合。&lt;/p&gt;
+
+&lt;h1 id=&#34;方法一&#34;&gt;方法一：&lt;/h1&gt;
+
+&lt;h2 id=&#34;本地搭建&#34;&gt;本地搭建&lt;/h2&gt;
+
+&lt;h3 id=&#34;安装-node-js&#34;&gt;安装 node.js&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ brew install node&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;安装-hexo&#34;&gt;安装 Hexo&lt;/h3&gt;
+
+&lt;p&gt;先cd进入创建好的hexo目录：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ sudo npm install -g hexo-cli
+$ hexo init
+$ npm install
+$ hexo d -fg
+$ hexo serve&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;打开&lt;a href=&#34;http://localhost:4000如果看到hexo的初始页面证明安装成功。&#34;&gt;http://localhost:4000如果看到hexo的初始页面证明安装成功。&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;ssh-秘钥&#34;&gt;ssh 秘钥&lt;/h3&gt;
+
+&lt;p&gt;一路回车生成公钥和私钥：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ ssh-keygen -t rsa -C &amp;#34;email@example.com&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;之后在本地目录 &lt;code&gt;~/.ssh/&lt;/code&gt; 下可以看到私钥 &lt;code&gt;id_rsa&lt;/code&gt; 和公钥 &lt;code&gt;id_rsa.pub&lt;/code&gt; 已经生成。&lt;/p&gt;
+
+&lt;p&gt;安装 &lt;code&gt;ssh-copy-id&lt;/code&gt; 等会用，方便上传公钥。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ brew install ssh-copy-id&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;vps-端搭建&#34;&gt;VPS 端搭建&lt;/h2&gt;
+
+&lt;h3 id=&#34;更新与安装-centos&#34;&gt;更新与安装（centOS）&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ yum update
+$ yum install nginx -y
+$ yum install git-core&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;创建-git-用户及设置-ssh-免密码登陆&#34;&gt;创建 git 用户及设置 ssh 免密码登陆&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ adduser git
+$ passwd git
+$ chmod 740 /etc/sudoers
+$ vim /etc/sudoers
+(提示没有安装vim的可以用vi命令，或安装vim:)
+$ yum -y install vim*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在编辑器中找到以下内容并添加一行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;## Allow root to run any commands anywhere
+root    ALL=(ALL)     ALL
+git     ALL=(ALL)     ALL (这行是添加的)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;保存退出并执行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ chmod 440 /etc/sudoers&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;接下来切到本地的终端，上传公钥：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ ssh-copy-id -i ~/.ssh/id_rsa.pub git@123.123.123.123&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;测试一下，如果 &lt;code&gt;$ ssh git@VPS的IP地址&lt;/code&gt; ,能够免密码登录的话，则表示成功。&lt;/p&gt;
+
+&lt;h3 id=&#34;回到-vps-创建-git-仓库&#34;&gt;回到 VPS，创建 git 仓库:&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ su git
+$ cd ~
+$ mkdir hexo.git &amp;amp;&amp;amp; cd hexo.git
+$ git init --bare&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;创建网站目录并赋予-git-对网站目录的所有权&#34;&gt;创建网站目录并赋予 git 对网站目录的所有权&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ su root
+$ cd /var/www
+$ mkdir hexo
+$ chown git:git -R /var/www/hexo&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;配置-git-hooks&#34;&gt;配置 git hooks&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ su git
+$ cd /home/git/hexo.git/hooks
+$ vim post-receive&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;写入以下内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;GIT_REPO&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/home/git/hexo.git &lt;span class=&#34;c1&#34;&gt;#git仓库&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;TMP_GIT_CLONE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/tmp/hexo
+&lt;span class=&#34;nv&#34;&gt;PUBLIC_WWW&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/var/www/hexo &lt;span class=&#34;c1&#34;&gt;#网站目录&lt;/span&gt;
+rm -rf &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;TMP_GIT_CLONE&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;
+git clone &lt;span class=&#34;nv&#34;&gt;$GIT_REPO&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$TMP_GIT_CLONE&lt;/span&gt;
+rm -rf &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;PUBLIC_WWW&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/*
+cp -rf &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;TMP_GIT_CLONE&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/* &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;PUBLIC_WWW&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后赋予脚本的执行权限&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ chmod +x post-receive&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;配置-nginx&#34;&gt;配置 Nginx&lt;/h3&gt;
+
+&lt;p&gt;启动 nginX:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;systemctl status nginx.service      // 查看服务当前状态
+systemctl start nginx.service       // 启动nginx服务
+systemctl restart nginx.service     // 重新启动服务
+
+systemctl enable nginx.service      // 设置开机自启动
+systemctl disable nginx.service     // 停止开机自启动
+
+systemctl list-units --type=service // 查看所有已启动的服务&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ vim /etc/nginx/conf.d/hexo.conf&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;插入如下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;server {
+    listen         80 ;
+    root /var/www/hexo;//这里可以改成你的网站目录地址，我将网站放在/var/www/hexo
+    server_name example.com www.example.com;//这里输入你的域名或IP地址
+    access_log  /var/log/nginx/hexo_access.log;
+    error_log   /var/log/nginx/hexo_error.log;
+    location ~* ^.+\.(ico|gif|jpg|jpeg|png)$ {
+            root /var/www/hexo;
+            access_log   off;
+            expires      1d;
+    }
+    location ~* ^.+\.(css|js|txt|xml|swf|wav)$ {
+        root /var/www/hexo;
+        access_log   off;
+        expires      10m;
+    }
+    location / {
+        root /var/www/hexo;//这里可以改成你的网站目录地址，我将网站放在/var/www/hexo
+        if (-f $request_filename) {
+            rewrite ^/(.*)$  /$1 break;
+        }
+    }
+}&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后重启nginx，此时刷新网页应该显示的是403。&lt;/p&gt;
+
+&lt;h2 id=&#34;本机的最后配置&#34;&gt;本机的最后配置&lt;/h2&gt;
+
+&lt;p&gt;位于 &lt;code&gt;hexo&lt;/code&gt; 文件夹下，&lt;code&gt;_config.yml&lt;/code&gt;,修改 &lt;code&gt;deploy&lt;/code&gt; 选项，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;deploy:
+  type: git
+  message: update  # 这个可以不写，会默认生成update日期
+  repo: git@123.123.123.123:hexo.git,master # 逗号后面写分支&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;部署到多个仓库可以这么写：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;deploy: 
+  - type: git
+    repo: git@git.coding.net:Dvel/Dvel.git,master
+  - type: git
+    repo: git@github.com:iDvel/Dvel-Hexo.git,master&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;每次更新博客也可以让github上长点绿草了。。。&lt;/p&gt;
+
+&lt;p&gt;接下来安装 &lt;strong&gt;hexo-deployer-git&lt;/strong&gt; ，否则部署时会报这个错&amp;rdquo;&lt;em&gt;ERROR Deployer not found: git&lt;/em&gt;&amp;ldquo;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ npm install hexo-deployer-git --save&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;接着&lt;code&gt;$ hexo g &amp;amp;&amp;amp; hexo d&lt;/code&gt;，如果一切正常，静态文件已经被成功的push到了blog的仓库里。&lt;/p&gt;
+
+&lt;p&gt;期间我忘了还出了个什么错，删除&lt;code&gt;hexo&lt;/code&gt;目录下的&lt;code&gt;.deploy_git&lt;/code&gt;后再次&lt;code&gt;hexo g &amp;amp;&amp;amp; hexo d&lt;/code&gt;就可以了。&lt;/p&gt;
+
+&lt;p&gt;以上，博客已经完全建好了。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ hexo generate&lt;/code&gt;是生成静态文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ hexo deploy&lt;/code&gt;是部署，我们这里选择了Git，Hexo还支持其他部署形式。&lt;/p&gt;
+
+&lt;p&gt;所以每次写完文章，执行这两个命令后，就对网站完成了更新。&lt;/p&gt;
+
+&lt;p&gt;简化操作就是：&lt;code&gt;$ hexo g &amp;amp;&amp;amp; hexo d&lt;/code&gt; ，再简化就是&lt;code&gt;$ hexo d -g&lt;/code&gt;，效果一样。&lt;/p&gt;
+
+&lt;h1 id=&#34;方法二-利用一键安装包&#34;&gt;方法二，利用一键安装包&lt;/h1&gt;
+
+&lt;p&gt;因为不太熟悉 Linux，所以我选择了一键安装包，多站点管理方便些。&lt;/p&gt;
+
+&lt;p&gt;我用的这个 -&amp;gt; &lt;a href=&#34;https://oneinstack.com/&#34;&gt;OneinStack官网&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;步骤和上面差不多，但是很多路径要改一下，也可以很简单的搭建出Hexo。&lt;/p&gt;
+
+&lt;h1 id=&#34;方法三-coding-pages&#34;&gt;方法三，Coding Pages&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;coding 中创建项目&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;站点配置文件&lt;code&gt;_config.yml&lt;/code&gt; 中 &lt;code&gt;deploy&lt;/code&gt; 中写好 coding 项目的 git 地址&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;push 上去：&lt;code&gt;$ hexo d -g&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在 coding 上你的项目，开启 Pages 服务：可以自定义分支，绑定域名，开启 https&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;大功告成&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;p&gt;这个相对简单一些，Coding Pages 服务目前提供 100M 空间的支持，一般来说没有写文章的话，生成的 &lt;code&gt;public&lt;/code&gt; 文件夹大约小于5M。&lt;/p&gt;
+
+&lt;p&gt;100M 基本够写很多年的博客，至于图片应该另寻图床，不要放到 coding 上，否则空间很快用完。&lt;/p&gt;
+
+&lt;h1 id=&#34;编写文章-更新博客&#34;&gt;编写文章、更新博客&lt;/h1&gt;
+
+&lt;p&gt;使用一款 MarkDown 编辑器写文章 ，写完后将文件以 *.md 的格式保存在本地 &lt;code&gt;[网站目录]\source_posts&lt;/code&gt; 中。&lt;/p&gt;
+
+&lt;p&gt;Markdown 编辑器，强烈安利 Typora。&lt;/p&gt;
+
+&lt;p&gt;每篇 Blog 都有固定的参数必须填写，参数如下，注意每个参数的 : 后都有一个空格。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;title: title
+date: yyyy-mm-dd
+categories: category  
+tags: tag
+#多标签请这样写：  
+#tags: [tag1,tag2,tag3]
+#或者这样写： 
+#tags:
+#- tag1 
+#- tag2  
+#- tag3  
+---  
+正文  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;或者使用 &lt;code&gt;$ hexo new&lt;/code&gt; 命令，具体官网有详细说明。&lt;/p&gt;
+
+&lt;p&gt;编写完后，只需要在hexo文件夹下执行 &lt;code&gt;hexo g &amp;amp;&amp;amp; hexo d&lt;/code&gt;，博客即可更新。&lt;/p&gt;
+
+&lt;h1 id=&#34;遇到的坑&#34;&gt;遇到的坑&lt;/h1&gt;
+
+&lt;p&gt;设置了 ssh 免密码登陆后，依然需要密码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;这整段是以前使用的方法，过时了。。。
+设置ssh免密码登陆：
+su git
+cd ~
+mkdir .ssh &amp;amp;&amp;amp; cd .ssh
+touch authorized_keys
+vim authorized_keys  //在这个文件中粘贴进刚刚申请的key（在id_rsa.pub文件中）
+设置权限：
+chmod o-w ~/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+
+测试免密码登陆
+ssh -vvT git@123.123.123.123   // 你的VPS的IP地址
+发现依然需要密码，搜了好几天没找到解决办法，后来采用了ssh-copy-id，解决了这个问题。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果过程中重新初始化过 VPS 的磁盘，ssh 连接 VPS 的时候可能会提示 &lt;code&gt;Host key verification failed.&lt;/code&gt; 。&lt;br /&gt;
+运行此命令即可：&lt;code&gt;$ ssh-keygen -R 123.123.123.123&lt;/code&gt;，将 123.123.123.123 改成你的 VPS 的 IP。&lt;br /&gt;
+或者简单粗暴直接删除 &lt;code&gt;known_hosts&lt;/code&gt; 文件。&lt;/p&gt;
+
+&lt;h1 id=&#34;参考-感谢&#34;&gt;参考&amp;amp;感谢&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tiktoking.github.io/2016/01/26/hexo/#u521B_u5EFA_u7F51_u7AD9_u76EE_u5F55&#34;&gt;在VPS上搭建hexo博客，利用git更新 - WikiLibrary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://buzhidao.me/2016/02/01/%E5%9C%A8VPS%E4%B8%8A%E9%85%8D%E7%BD%AEhexo%E5%8D%9A%E5%AE%A2/&#34;&gt;在VPS上配置hexo博客 - Springwon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://huifeng.me/2015/08/16/deploy-hexo-to-vps/&#34;&gt;Deploy Hexo sites to VPS - 回风.Me&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://Dvel.xyz/about/</link>
+      <pubDate>Wed, 26 Aug 1992 00:00:00 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/about/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;He gets down to the end of his life, and he looks back and decides that all those years he suffered, those were the best years of his life, cos they made him who he was. All the years he was happy, you know, total waste. Didn&amp;rsquo;t learn a thing.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;「他走到了生命的尽头，回顾自己的一生时，却认为自己最苦的那些年是他这一辈子最棒的时光，因为苦难铸就了他。而那些开心的日子呢，你知道啦，完全浪费了，因为什么都没学到。」&lt;/p&gt;
+
+&lt;p&gt;—— 《Little Miss Sunshine》&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;有空了写写博客，纯当打发时间啦~~&lt;/p&gt;
+
+&lt;p&gt;自学Python中，希望可以早点找到工作&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Friends</title>
+      <link>http://Dvel.xyz/friends/</link>
+      <pubDate>Thu, 01 Jan 1970 08:33:36 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/friends/</guid>
+      
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://chuangzaoshi.com/&#34;&gt;创造狮导航 - 为创意工作者而设计&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

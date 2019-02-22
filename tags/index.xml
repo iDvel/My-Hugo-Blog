@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Dvel&#39;s Blog</title>
+    <link>http://Dvel.xyz/tags/</link>
+    <description>Recent content in Tags on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Thu, 11 May 2017 12:17:17 +0000</lastBuildDate>
+    
+	<atom:link href="http://Dvel.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apple Id</title>
+      <link>http://Dvel.xyz/tags/apple-id/</link>
+      <pubDate>Thu, 11 May 2017 12:17:17 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/apple-id/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asyncio</title>
+      <link>http://Dvel.xyz/tags/asyncio/</link>
+      <pubDate>Thu, 03 Jan 2019 09:09:32 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/asyncio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>http://Dvel.xyz/tags/blog/</link>
+      <pubDate>Wed, 01 Aug 2018 23:23:26 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cname</title>
+      <link>http://Dvel.xyz/tags/cname/</link>
+      <pubDate>Wed, 01 Aug 2018 23:23:26 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/cname/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cocoapods</title>
+      <link>http://Dvel.xyz/tags/cocoapods/</link>
+      <pubDate>Mon, 24 Apr 2017 13:19:34 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/cocoapods/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coroutine</title>
+      <link>http://Dvel.xyz/tags/coroutine/</link>
+      <pubDate>Thu, 03 Jan 2019 09:09:32 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/coroutine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dns</title>
+      <link>http://Dvel.xyz/tags/dns/</link>
+      <pubDate>Wed, 01 Aug 2018 23:23:26 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flask</title>
+      <link>http://Dvel.xyz/tags/flask/</link>
+      <pubDate>Fri, 22 Feb 2019 06:21:12 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>G Suite</title>
+      <link>http://Dvel.xyz/tags/g-suite/</link>
+      <pubDate>Wed, 01 Aug 2018 23:23:26 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/g-suite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Game</title>
+      <link>http://Dvel.xyz/tags/game/</link>
+      <pubDate>Sun, 09 Sep 2018 05:53:17 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gitbook</title>
+      <link>http://Dvel.xyz/tags/gitbook/</link>
+      <pubDate>Thu, 23 Feb 2017 22:23:27 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/gitbook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Photos</title>
+      <link>http://Dvel.xyz/tags/google-photos/</link>
+      <pubDate>Tue, 30 Jan 2018 06:40:15 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/google-photos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>http://Dvel.xyz/tags/hexo/</link>
+      <pubDate>Mon, 28 Nov 2016 02:17:30 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://Dvel.xyz/tags/hugo/</link>
+      <pubDate>Tue, 31 Jul 2018 19:08:55 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Imazing</title>
+      <link>http://Dvel.xyz/tags/imazing/</link>
+      <pubDate>Tue, 30 Jan 2018 06:40:15 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/imazing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ios</title>
+      <link>http://Dvel.xyz/tags/ios/</link>
+      <pubDate>Tue, 30 Jan 2018 06:40:15 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ipic</title>
+      <link>http://Dvel.xyz/tags/ipic/</link>
+      <pubDate>Mon, 28 Nov 2016 02:17:30 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/ipic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>http://Dvel.xyz/tags/mac/</link>
+      <pubDate>Mon, 30 Jul 2018 02:49:46 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mx</title>
+      <link>http://Dvel.xyz/tags/mx/</link>
+      <pubDate>Wed, 01 Aug 2018 23:23:26 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/mx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://Dvel.xyz/tags/python/</link>
+      <pubDate>Fri, 22 Feb 2019 06:21:12 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/tags/python/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

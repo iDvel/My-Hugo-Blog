@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Asyncio on Dvel&#39;s Blog</title>
+    <link>http://Dvel.xyz/tags/asyncio/</link>
+    <description>Recent content in Asyncio on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Thu, 03 Jan 2019 09:09:32 +0800</lastBuildDate>
+    
+	<atom:link href="http://Dvel.xyz/tags/asyncio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python 异步 IO 笔记</title>
+      <link>http://Dvel.xyz/post/17/</link>
+      <pubDate>Thu, 03 Jan 2019 09:09:32 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/17/</guid>
+      <description>协程初探 协程 - 廖雪峰 Python 教程 多进程与多线程均由操作系统调度，不过协程由程序员在协程的代码里显式调度。 协程没有线程切换的开销，和多线程比，线程数</description>
+    </item>
+    
+  </channel>
+</rss>

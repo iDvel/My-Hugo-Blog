@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apple Id on Dvel&#39;s Blog</title>
+    <link>http://Dvel.xyz/tags/apple-id/</link>
+    <description>Recent content in Apple Id on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Thu, 11 May 2017 12:17:17 +0000</lastBuildDate>
+    
+	<atom:link href="http://Dvel.xyz/tags/apple-id/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>苹果公司开发者账号申请流程</title>
+      <link>http://Dvel.xyz/post/7/</link>
+      <pubDate>Thu, 11 May 2017 12:17:17 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/7/</guid>
+      <description>刚申请完（2017-04-19 至 2017-05-11），简单记录。 申请类型为：公司（Company） 提前准备 公司网站域名 请公司提供邮箱（公司</description>
+    </item>
+    
+  </channel>
+</rss>

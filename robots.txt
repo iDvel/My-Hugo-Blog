@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://Dvel.xyz/sitemap.xml

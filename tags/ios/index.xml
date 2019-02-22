@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ios on Dvel&#39;s Blog</title>
+    <link>http://Dvel.xyz/tags/ios/</link>
+    <description>Recent content in Ios on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Tue, 30 Jan 2018 06:40:15 +0000</lastBuildDate>
+    
+	<atom:link href="http://Dvel.xyz/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iCloud的替换方案</title>
+      <link>http://Dvel.xyz/post/9/</link>
+      <pubDate>Tue, 30 Jan 2018 06:40:15 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/9/</guid>
+      <description>首先是 iCloud 的应用范围： iCloud Drive [建议保留] 照片 [Google Photo] 邮件 通讯录 [google] 日历 [google] 提醒事项 Safari 备忘录 [google] Siri 钥匙串 回到我的Mac 查找我的Mac [建议保留] iCloud Drive 建议保留</description>
+    </item>
+    
+    <item>
+      <title>苹果公司开发者账号申请流程</title>
+      <link>http://Dvel.xyz/post/7/</link>
+      <pubDate>Thu, 11 May 2017 12:17:17 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/7/</guid>
+      <description>刚申请完（2017-04-19 至 2017-05-11），简单记录。 申请类型为：公司（Company） 提前准备 公司网站域名 请公司提供邮箱（公司</description>
+    </item>
+    
+    <item>
+      <title>UIScrollView中使用Masonry</title>
+      <link>http://Dvel.xyz/post/6/</link>
+      <pubDate>Tue, 25 Apr 2017 13:12:11 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/6/</guid>
+      <description>昨天耽误了一阵子在 scrollView 的布局上，记录一下。 如果可以提前确定 scrollView 的 contentSize，就简单多了，但这种情况很少。 一般还是按照 subViews 自适应的比较合</description>
+    </item>
+    
+    <item>
+      <title>解决 CocoaPods 的类库 import 没有提示</title>
+      <link>http://Dvel.xyz/post/5/</link>
+      <pubDate>Mon, 24 Apr 2017 13:19:34 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/5/</guid>
+      <description>网上搜了一些，添加 $(PODS_ROOT) 到 User Header Search Paths 就行了。 但是提示中会多出一些不想要的东西。 改成这个就好了： 1 $(PODS_ROOT)/Headers/Public 图：</description>
+    </item>
+    
+    <item>
+      <title>iOS 使用 CocoaPods 的快速回顾</title>
+      <link>http://Dvel.xyz/post/4/</link>
+      <pubDate>Mon, 17 Apr 2017 16:45:51 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/4/</guid>
+      <description>安装 Mac 自带 Ruby 环境，查看： 1 $ gem -v 通过 surge 等工具实现终端科学上网，或更改 gem 源。 安装 &amp;amp; 更新 Pod： 1 $ sudo gem install cocoapods 确认： 1 $ pod --version 使用 进入工程根目录，创</description>
+    </item>
+    
+  </channel>
+</rss>

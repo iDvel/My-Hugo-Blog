@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mx on Dvel&#39;s Blog</title>
+    <link>http://Dvel.xyz/tags/mx/</link>
+    <description>Recent content in Mx on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Wed, 01 Aug 2018 23:23:26 +0800</lastBuildDate>
+    
+	<atom:link href="http://Dvel.xyz/tags/mx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决 CNAME 与 MX 记录冲突</title>
+      <link>http://Dvel.xyz/post/14/</link>
+      <pubDate>Wed, 01 Aug 2018 23:23:26 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/14/</guid>
+      <description>需求 需求是这样的： 我的博客是 dvel.me，已经部署在 Coding Pages 或 Github Pages 上，域名解析用的是 CNAME 记录。 我希望我的域名邮箱是后缀是 @dvel.me，域名解</description>
+    </item>
+    
+  </channel>
+</rss>

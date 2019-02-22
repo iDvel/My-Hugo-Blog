@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Dvel&#39;s Blog</title>
+    <link>http://Dvel.xyz/tags/blog/</link>
+    <description>Recent content in Blog on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Wed, 01 Aug 2018 23:23:26 +0800</lastBuildDate>
+    
+	<atom:link href="http://Dvel.xyz/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决 CNAME 与 MX 记录冲突</title>
+      <link>http://Dvel.xyz/post/14/</link>
+      <pubDate>Wed, 01 Aug 2018 23:23:26 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/14/</guid>
+      <description>需求 需求是这样的： 我的博客是 dvel.me，已经部署在 Coding Pages 或 Github Pages 上，域名解析用的是 CNAME 记录。 我希望我的域名邮箱是后缀是 @dvel.me，域名解</description>
+    </item>
+    
+    <item>
+      <title>你好，Hugo！</title>
+      <link>http://Dvel.xyz/post/13/</link>
+      <pubDate>Tue, 31 Jul 2018 19:08:55 +0800</pubDate>
+      
+      <guid>http://Dvel.xyz/post/13/</guid>
+      <description>曾经升级完 Node 后对 Hexo 一顿折腾，感觉有点麻烦，新MBP入手后懒得再折腾一遍，想换到 Hugo 试试。 开心！我正准备去 Godaddy 拍卖别的域名的时候，发现这个域名的原</description>
+    </item>
+    
+    <item>
+      <title>你好, Hexo！</title>
+      <link>http://Dvel.xyz/post/0/</link>
+      <pubDate>Sun, 27 Nov 2016 00:48:36 +0000</pubDate>
+      
+      <guid>http://Dvel.xyz/post/0/</guid>
+      <description>因为之前的 WordPress 博客域名被墙，加上 Hexo 正好满足于简单的书写要求，所以更换为 Hexo。 主要还是记录了自己的搭建过程，因为对 Linux 不太熟悉，以备忘为主。 后</description>
+    </item>
+    
+  </channel>
+</rss>
