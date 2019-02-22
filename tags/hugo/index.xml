@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Dvel&#39;s Blog</title>
-    <link>http://Dvel.xyz/tags/hugo/</link>
+    <link>https://Dvel.xyz/tags/hugo/</link>
     <description>Recent content in Hugo on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Tue, 31 Jul 2018 19:08:55 +0800</lastBuildDate>
     
-	<atom:link href="http://Dvel.xyz/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Dvel.xyz/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>你好，Hugo！</title>
-      <link>http://Dvel.xyz/post/13/</link>
+      <link>https://Dvel.xyz/post/13/</link>
       <pubDate>Tue, 31 Jul 2018 19:08:55 +0800</pubDate>
       
-      <guid>http://Dvel.xyz/post/13/</guid>
+      <guid>https://Dvel.xyz/post/13/</guid>
       <description>曾经升级完 Node 后对 Hexo 一顿折腾，感觉有点麻烦，新MBP入手后懒得再折腾一遍，想换到 Hugo 试试。 开心！我正准备去 Godaddy 拍卖别的域名的时候，发现这个域名的原</description>
     </item>
     

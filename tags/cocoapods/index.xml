@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cocoapods on Dvel&#39;s Blog</title>
-    <link>http://Dvel.xyz/tags/cocoapods/</link>
+    <link>https://Dvel.xyz/tags/cocoapods/</link>
     <description>Recent content in Cocoapods on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Mon, 24 Apr 2017 13:19:34 +0000</lastBuildDate>
     
-	<atom:link href="http://Dvel.xyz/tags/cocoapods/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Dvel.xyz/tags/cocoapods/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>解决 CocoaPods 的类库 import 没有提示</title>
-      <link>http://Dvel.xyz/post/5/</link>
+      <link>https://Dvel.xyz/post/5/</link>
       <pubDate>Mon, 24 Apr 2017 13:19:34 +0000</pubDate>
       
-      <guid>http://Dvel.xyz/post/5/</guid>
+      <guid>https://Dvel.xyz/post/5/</guid>
       <description>网上搜了一些，添加 $(PODS_ROOT) 到 User Header Search Paths 就行了。 但是提示中会多出一些不想要的东西。 改成这个就好了： 1 $(PODS_ROOT)/Headers/Public 图：</description>
     </item>
     
     <item>
       <title>iOS 使用 CocoaPods 的快速回顾</title>
-      <link>http://Dvel.xyz/post/4/</link>
+      <link>https://Dvel.xyz/post/4/</link>
       <pubDate>Mon, 17 Apr 2017 16:45:51 +0000</pubDate>
       
-      <guid>http://Dvel.xyz/post/4/</guid>
+      <guid>https://Dvel.xyz/post/4/</guid>
       <description>安装 Mac 自带 Ruby 环境，查看： 1 $ gem -v 通过 surge 等工具实现终端科学上网，或更改 gem 源。 安装 &amp;amp; 更新 Pod： 1 $ sudo gem install cocoapods 确认： 1 $ pod --version 使用 进入工程根目录，创</description>
     </item>
     

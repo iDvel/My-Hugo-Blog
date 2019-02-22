@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://Dvel.xyz/sitemap.xml
+Sitemap: https://Dvel.xyz/sitemap.xml
