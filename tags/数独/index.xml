@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数独 on Dvel&#39;s Blog</title>
+    <link>https://Dvel.xyz/tags/%E6%95%B0%E7%8B%AC/</link>
+    <description>Recent content in 数独 on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Mon, 25 Feb 2019 14:07:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://Dvel.xyz/tags/%E6%95%B0%E7%8B%AC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python 数独</title>
+      <link>https://Dvel.xyz/post/19/</link>
+      <pubDate>Mon, 25 Feb 2019 14:07:58 +0800</pubDate>
+      
+      <guid>https://Dvel.xyz/post/19/</guid>
+      <description>这么多年来，排队、无聊、打发时间的手机游戏就是 2048 和 数独了。 Python 初级水平，我回顾了一下代码，基本上看完任何一本入门书籍都看得懂。 数独 1 2 3 4 5 6</description>
+    </item>
+    
+  </channel>
+</rss>

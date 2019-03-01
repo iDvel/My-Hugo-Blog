@@ -6,10 +6,494 @@
     <description>Recent content on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 22 Feb 2019 06:21:12 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Feb 2019 14:07:58 +0800</lastBuildDate>
     
         <atom:link href="https://Dvel.xyz/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python 数独</title>
+      <link>https://Dvel.xyz/post/19/</link>
+      <pubDate>Mon, 25 Feb 2019 14:07:58 +0800</pubDate>
+      
+      <guid>https://Dvel.xyz/post/19/</guid>
+      
+        <description>
+
+&lt;p&gt;这么多年来，排队、无聊、打发时间的手机游戏就是 2048 和 数独了。&lt;/p&gt;
+
+&lt;p&gt;Python 初级水平，我回顾了一下代码，基本上看完任何一本入门书籍都看得懂。&lt;/p&gt;
+
+&lt;h1 id=&#34;数独&#34;&gt;数独&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;+-------+-------+-------+
+| 4 2 · | · 5 · | 3 · 1 |
+| 8 · 5 | 9 · · | · 4 · |
+| · · · | · · · | 6 · · |
++-------+-------+-------+
+| · 1 · | · 7 · | 2 · · |
+| · · · | 2 · 5 | · · · |
+| · · 7 | · 1 · | · 3 · |
++-------+-------+-------+
+| · · 2 | · · · | · · · |
+| · 9 · | · · 7 | 1 · 3 |
+| 7 · 6 | · 8 · | · 2 9 |
++-------+-------+-------+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;宫：每个 3x3 的小九宫格为一宫&lt;/li&gt;
+&lt;li&gt;行：&amp;hellip;&lt;/li&gt;
+&lt;li&gt;列：…&lt;/li&gt;
+&lt;li&gt;数独规则：玩家需要根据 9×9 盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、列、宫内的数字均含 1-9，不重复。&lt;/li&gt;
+&lt;li&gt;不可解：高级数独如「▻数独」的大师局，HoDoKu 的 Extreme 难度，到后期是无法准确推演出下一个数字的，只能试错&lt;/li&gt;
+&lt;li&gt;测试：
+
+&lt;ul&gt;
+&lt;li&gt;手机端用的 App Store 中的「▻数独 来自 Finger Arts」大师局进行游玩&lt;/li&gt;
+&lt;li&gt;PC 端用的 &lt;a href=&#34;http://hodoku.sourceforge.net/en/index.php&#34;&gt;HoDoKu&lt;/a&gt;，方便来测试思路&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;思考-再思考&#34;&gt;思考 &amp;amp; 再思考&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;躺床上就一直在思考怎么把人类解数独的思路代入到代码里。。。&lt;/p&gt;
+
+&lt;p&gt;（排除法、扫看法，我自己按习惯命名的）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;循环：找到几种 100% 能确定数字的方法，循环这些方法
+
+&lt;ul&gt;
+&lt;li&gt;排除法&lt;/li&gt;
+&lt;li&gt;扫看法&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;递归：在高级数独达到不可解状态时，用递归进行试错。可以直接用这个方法求出所有解，但如果发展的分支太多，会大大增加十到百倍的运行时间，所以先用循环中的方法先解出容易解的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;思路：&lt;/p&gt;
+
+&lt;h4 id=&#34;1-直接描绘出所有的潜在数字-候选数字-candidates&#34;&gt;1. 直接描绘出所有的潜在数字/候选数字（candidates）：&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/X5ZR76t9.png&#34; alt=&#34;数独&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;每次填充数字-删除同宫-行-列的潜在数字&#34;&gt;*. 每次填充数字，删除同宫、行、列的潜在数字&lt;/h4&gt;
+
+&lt;p&gt;数独规则：同一个宫、行、列有且仅有一种数字，所以确定正确数字后，删除同宫、行、列的潜在数字，以供后面的方法进行准确寻找。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-排除法&#34;&gt;2. 排除法&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/QaA2J7PO.png&#34; alt=&#34;数独&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第 3 行、第 6 列的格子，在其宫、行、列中已经有了「12345789」8 种数字，所以它必定是缺失的 6。&lt;/p&gt;
+
+&lt;p&gt;同样，6 一确定，第 3 行 仅剩一个 9，所以必定是 9。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;代码思路&lt;/em&gt;&lt;/strong&gt;：这个格子只有一个候选数字，就是它了！&lt;/p&gt;
+
+&lt;h4 id=&#34;3-扫看法&#34;&gt;3. 扫看法&lt;/h4&gt;
+
+&lt;p&gt;按人类逻辑可以很快用扫看法推算出下一个数字，用代码来实现这种思路感觉很麻烦，但是现在已经漏出一些端倪了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/0Om2mxSe.png&#34; alt=&#34;数独&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;代码思路&lt;/em&gt;&lt;/strong&gt;：候选数字在当前宫唯一，则此格为此数。&lt;/p&gt;
+
+&lt;h4 id=&#34;4-剔除潜在数字&#34;&gt;*4. 剔除潜在数字&lt;/h4&gt;
+
+&lt;p&gt;当宫内某一批候选数字形成一行或以列，则其他宫的此行此列的候选数字需要被剔除。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/E4fkIwRx.png&#34; alt=&#34;数独&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;代码思路&lt;/em&gt;&lt;/strong&gt;：遍历宫中个数 &amp;lt;= 3 的候选数字，如果它们在同一行、列，则删除其他宫中同一行、列的候选数字&lt;/p&gt;
+
+&lt;p&gt;转换成代码太麻烦了。。。跳过这一步吧，而且经过我的测试，高级数独补上这一步也是不可解状态&lt;/p&gt;
+
+&lt;h4 id=&#34;5-循环&#34;&gt;5. 循环&lt;/h4&gt;
+
+&lt;p&gt;循环第 2 和第 3 步，我发现初级数独已经能全解了，高级数独还不行。&lt;/p&gt;
+
+&lt;h4 id=&#34;6-试错-天下密码-没有暴力破解不出来的&#34;&gt;6. 试错，天下密码，没有暴力破解不出来的&lt;/h4&gt;
+
+&lt;p&gt;—— 如果有，那就无限延长破解时间。&lt;/p&gt;
+
+&lt;p&gt;递归思路：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;找到一个只有两种候选数字的格子，填入第一种&lt;/li&gt;
+&lt;li&gt;循环扫看法候补法 进行新一轮的操作… … 循环停滞后检测合法性
+
+&lt;ul&gt;
+&lt;li&gt;不合法：返回上一层，填入另一个数字&lt;/li&gt;
+&lt;li&gt;合法：继续循环，循环不出新数字后再递归&lt;/li&gt;
+&lt;li&gt;不合法：返回上一层，填入另一个数字&lt;/li&gt;
+&lt;li&gt;合法：继续循环，循环不出新数字后再递归
+
+&lt;ul&gt;
+&lt;li&gt;最后一次不合法：返回上一层，填入另一个数字&lt;/li&gt;
+&lt;li&gt;最后一次合法：完成&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ python suduku.py
+请逐行输入数独内容，空白格用空格键代替，输入「A」初始化默认初级数独，输入「S」初始化默认最难数独，直接回车初始化默认高级数独
+请输入第 &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; 行的内容：  &lt;span class=&#34;m&#34;&gt;17&lt;/span&gt;   &lt;span class=&#34;m&#34;&gt;29&lt;/span&gt;
+请输入第 &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; 行的内容：78 &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;     
+请输入第 &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; 行的内容：  &lt;span class=&#34;m&#34;&gt;9&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt;  
+请输入第 &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; 行的内容： &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;    &lt;span class=&#34;m&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;
+请输入第 &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; 行的内容：   &lt;span class=&#34;m&#34;&gt;682&lt;/span&gt;   
+请输入第 &lt;span class=&#34;m&#34;&gt;6&lt;/span&gt; 行的内容：9 &lt;span class=&#34;m&#34;&gt;6&lt;/span&gt;    &lt;span class=&#34;m&#34;&gt;7&lt;/span&gt; 
+请输入第 &lt;span class=&#34;m&#34;&gt;7&lt;/span&gt; 行的内容：  &lt;span class=&#34;m&#34;&gt;34&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;  
+请输入第 &lt;span class=&#34;m&#34;&gt;8&lt;/span&gt; 行的内容：     &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;96&lt;/span&gt;
+请输入第 &lt;span class=&#34;m&#34;&gt;9&lt;/span&gt; 行的内容：17   &lt;span class=&#34;m&#34;&gt;62&lt;/span&gt;  &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;。。。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;*** 循环结束 共计填入过 87 次 ***                                       
++-------+-------+-------+
+| · 6 · | 3 · · | · · 1 |
+| 9 · · | · · 6 | 7 · · |
+| 4 · 3 | · · · | · 2 · |
++-------+-------+-------+
+| 5 · 9 | 8 · · | · · · |
+| · · 4 | 5 · 7 | 3 · · |
+| · · · | · · 3 | 6 · 8 |
++-------+-------+-------+
+| · 4 · | · · · | 8 · 3 |
+| · · 1 | 2 · · | · · 7 |
+| 3 · · | · · 8 | · 4 · |
++-------+-------+-------+
+
++-------+-------+-------+
+| 7 6 2 | 3 9 5 | 4 8 1 |
+| 9 1 8 | 4 2 6 | 7 3 5 |
+| 4 5 3 | 7 8 1 | 9 2 6 |
++-------+-------+-------+
+| 5 3 9 | 8 6 2 | 1 7 4 |
+| 6 8 4 | 5 1 7 | 3 9 2 |
+| 1 2 7 | 9 4 3 | 6 5 8 |
++-------+-------+-------+
+| 2 4 5 | 6 7 9 | 8 1 3 |
+| 8 9 1 | 2 3 4 | 5 6 7 |
+| 3 7 6 | 1 5 8 | 2 4 9 |
++-------+-------+-------+
+数独已全解
+共计用时 31.01515769958496 毫秒&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;代码思路&#34;&gt;代码思路&lt;/h1&gt;
+
+&lt;p&gt;代码：&lt;a href=&#34;https://github.com/iDvel/sudoku&#34;&gt;https://github.com/iDvel/sudoku&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;数独二维数组样式&#34;&gt;数独二维数组样式：&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;[[{}, {}, {}, {}, {}, {}, {}, {}, {}],
+ [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+ [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+ [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+ [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+ [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+ [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+ [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+ [{}, {}, {}, {}, {}, {}, {}, {}, {}]]
+# 字典：
+# num: 初始数字及后期已算出确定的数字，str
+# can: candidates，候选数字，如果已确定数字则显示为[1]这种格式，方便调试，str
+# box: 所在宫 row: 所在行 col: 所在列，int&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;让格子变成字典，方便寻找和调试。&lt;/p&gt;
+
+&lt;h4 id=&#34;填充候选数字&#34;&gt;填充候选数字：&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fill_candidates&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&amp;#34;填充所有候选数字&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;col&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;col&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;num&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;·&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;num&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_list_of&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;box&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;box&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])])&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;num&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]])&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;num&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_list_of&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;col&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;col&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])])&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;remove&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;·&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;3&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;4&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;5&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;6&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;7&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;8&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;9&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;can&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;sorted&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
+    &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;can&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;候选数字填写完毕&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这么搞主要是调试的时候方便我观察。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;*** 候选数字填写完毕 ***
++----------------------------+----------------------------+----------------------------+
+|    278      [6]     2578   |    [3]    245789    2459   |    459      589      [1]   |
+|    [9]     1258      258   |    14      12458     [6]   |    [7]      358      45    |
+|    [4]     1578      [3]   |    179     15789     159   |    59       [2]      569   |
++----------------------------+----------------------------+----------------------------+
+|    [5]     1237      [9]   |    [8]     1246      124   |    124      17       24    |
+|   1268      128      [4]   |    [5]     1269      [7]   |    [3]      19       29    |
+|    127      127      27    |    149     1249      [3]   |    [6]     1579      [8]   |
++----------------------------+----------------------------+----------------------------+
+|    267      [4]     2567   |   1679     15679     159   |    [8]     1569      [3]   |
+|    68       589      [1]   |    [2]     34569     459   |    59       569      [7]   |
+|    [3]     2579     2567   |   1679     15679     [8]   |   1259      [4]     2569   |
++----------------------------+----------------------------+----------------------------+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;排除法&#34;&gt;排除法&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;method_paichu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&amp;#34;排除：当前格只有一个候选数字，则此格为此数&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;col&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;col&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;can&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+                &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fill_number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;can&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+                &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fill_count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method_count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;can&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;desc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;第 {} 次排除完毕，本次填充了 {} 个数字&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method_count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;扫看法&#34;&gt;扫看法&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;method_saokan&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&amp;#34;扫看：候选数字在当前宫唯一，则此格为此数&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;box&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_list_of&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;boxes&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;c1&#34;&gt;# 先得到只出现一次的数字&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;l&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;box&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;[&amp;#39;&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;can&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]:&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extend&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;can&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+        &lt;span class=&#34;c1&#34;&gt;# 存入列表，因为每个宫可能有不止一个&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;only_one_list&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Counter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;box&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;the_one&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;only_one_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+                &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;the_one&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;can&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]:&lt;/span&gt;
+                    &lt;span class=&#34;c1&#34;&gt;# 填入数字，删除同行同列的相同候选数字&lt;/span&gt;
+                    &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fill_number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;the_one&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                    &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+                    &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fill_count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+
+    &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method_count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;can&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;第 {} 次扫看完毕，本次填充了 {} 个数字&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method_count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;递归&#34;&gt;递归&lt;/h4&gt;
+
+&lt;p&gt;写了个半吊子递归，等以后再优化一下吧。&lt;/p&gt;
+
+&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+
+&lt;p&gt;数独难度大致可分为 3 种：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;简单，每个格子都能准确推演，运行时间 10ms 左右&lt;/li&gt;
+&lt;li&gt;高级，中后期只需试错几次，运行时间 30ms 左右&lt;/li&gt;
+&lt;li&gt;变态，前期几乎每次都要试错，运行时间 3000ms 左右&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;变态版数独：
++-------+-------+-------+
+| 8 · · | · · · | · · · |
+| · · 3 | 6 · · | · · · |
+| · 7 · | · 9 · | 2 · · |
++-------+-------+-------+
+| · 5 · | · · 7 | · · · |
+| · · · | · 4 5 | 7 · · |
+| · · · | 1 · · | · 3 · |
++-------+-------+-------+
+| · · 1 | · · · | · 6 8 |
+| · · 8 | 5 · · | · 1 · |
+| · 9 · | · · · | 4 · · |
++-------+-------+-------+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;写完了发现挺乱的，去搜索了一下，数独其实用深度优先搜索算法最合适，我写了一大堆有的没的，运行时间还比人家慢了 10 倍。。。主要是耗时在递归上了。&lt;/p&gt;
+
+&lt;p&gt;深度优先版运行变态版数独的时间大约在 300ms，等我学了相关算法再来优化吧。。。&lt;/p&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>《Flask Web 开发》笔记</title>
@@ -21,7 +505,7 @@
         <description>
 
 &lt;blockquote&gt;
-&lt;p&gt;粗略的记录了一些重点、难点、可能会遗忘、懒得记忆、方便查阅的东西。&lt;/p&gt;
+&lt;p&gt;粗略的记录了一些大纲、重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&#34;第-1-章-安装&#34;&gt;第 1 章 - 安装&lt;/h1&gt;
@@ -69,6 +553,21 @@
 
 &lt;p&gt;Flask 使用  &lt;code&gt;app.route&lt;/code&gt; 装饰器或者作用想通的 &lt;code&gt;app.add_url_rule()&lt;/code&gt; 方法构建映射。&lt;/p&gt;
 
+&lt;h4 id=&#34;flask-run&#34;&gt;flask run&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;FLASK_APP&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;hello.py
+$ &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;FLASK_DEBUG&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+（或本行）$ &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;FLASK_ENV&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;development 效果同上&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+$ flask run&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;h4 id=&#34;上下文&#34;&gt;上下文&lt;/h4&gt;
 
 &lt;p&gt;为了避免大量可有可无的参数把视图函数弄得一团糟，Flask 使用上下文临时把某些对象变为全局可访问。&lt;/p&gt;
@@ -276,6 +775,375 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;h1 id=&#34;第-3-章-模板&#34;&gt;第 3 章 - 模板&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;介绍如何在 Flask 应用中使用模板&lt;/p&gt;
+
+&lt;p&gt;学习了 Jinja2 的简单使用，&lt;code&gt;Flask-Bootstrap&lt;/code&gt;  扩展的应用，&lt;code&gt;Flask-Moment&lt;/code&gt; 的本地化时间。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;表格-jinja2-变量过滤器&#34;&gt;『表格』Jinja2 变量过滤器&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;过滤器名&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;safe&lt;/td&gt;
+&lt;td&gt;渲染值时不转义&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;capitalize&lt;/td&gt;
+&lt;td&gt;把值的首字母转换成大写，其他字母转换成小写&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;lower&lt;/td&gt;
+&lt;td&gt;把值转换成小写形式&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;upper&lt;/td&gt;
+&lt;td&gt;把值转换成大写形式&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;把值中每个单词的首字母都转换成大写&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;trim&lt;/td&gt;
+&lt;td&gt;把值的首位空格删掉&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;striptags&lt;/td&gt;
+&lt;td&gt;渲染之前把值中所有的 HTML 标签都删掉&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;第-4-章-web-表单&#34;&gt;第 4 章 - Web 表单&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;介绍 Web 表单&lt;/p&gt;
+
+&lt;p&gt;使用 &lt;code&gt;Flask-WTF&lt;/code&gt; 扩展处理 Web 表单。&lt;/p&gt;
+
+&lt;p&gt;使用 &lt;code&gt;Flask-WTF&lt;/code&gt; 和 &lt;code&gt;Flask-Bootstrap&lt;/code&gt; 快速渲染表单。&lt;/p&gt;
+
+&lt;p&gt;用 POST/Redirect/GET 模式解决表单页面刷新时重复 POST 提交的问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;flask.flash&lt;/code&gt; 模块闪现消息的使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;第-5-章-数据库&#34;&gt;第 5 章 数据库&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;介绍数据库&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;5.1 SQL数据库　　44
+5.2 NoSQL数据库　　45
+5.3 使用SQL还是NoSQL　　46
+5.4 Python数据库框架　　46
+5.5 使用Flask-SQLAlchemy管理数据库　　47
+5.6 定义模型　　48
+5.7 关系　　49
+5.8 数据库操作　　51
+5.8.1 创建表　　51
+5.8.2 插入行　　51
+5.8.3 修改行　　53
+5.8.4 删除行　　53
+5.8.5 查询行　　53
+5.9 在视图函数中操作数据库　　55
+5.10 集成Python shell　　56
+5.11 使用Flask-Migrate实现数据库迁移　　56
+5.11.1 创建迁移仓库　　57
+5.11.2 创建迁移脚本　　57
+5.11.3 更新数据库　　58
+5.11.4 添加几个迁移　　59&lt;/p&gt;
+
+&lt;h4 id=&#34;表格-最常用的-sqlalchemy-列类型&#34;&gt;『表格』最常用的 SQLAlchemy 列类型&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;类型名&lt;/th&gt;
+&lt;th&gt;Python 类型&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;普通整形，通常是 32 位&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SmallInteger&lt;/td&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;取值范围小的整数，通常是 16 位&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;BigInteger&lt;/td&gt;
+&lt;td&gt;int 或 long&lt;/td&gt;
+&lt;td&gt;不限制精度的整数&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Float&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;浮点数&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Numeric&lt;/td&gt;
+&lt;td&gt;decimal.Decimal&lt;/td&gt;
+&lt;td&gt;定点数&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;str&lt;/td&gt;
+&lt;td&gt;变长字符串&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Text&lt;/td&gt;
+&lt;td&gt;str&lt;/td&gt;
+&lt;td&gt;变长字符串，对较长或不限长度的字符串做了优化&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Unicode&lt;/td&gt;
+&lt;td&gt;unicode&lt;/td&gt;
+&lt;td&gt;变成 Unicode 字符串&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;UnicodeText&lt;/td&gt;
+&lt;td&gt;unicode&lt;/td&gt;
+&lt;td&gt;变长 Unicode 字符串，对较长或不限长度的字符串做了优化&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Boolean&lt;/td&gt;
+&lt;td&gt;bool&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;datetime.date&lt;/td&gt;
+&lt;td&gt;日期&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Time&lt;/td&gt;
+&lt;td&gt;datetime.time&lt;/td&gt;
+&lt;td&gt;时间&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DateTime&lt;/td&gt;
+&lt;td&gt;datetime.datetime&lt;/td&gt;
+&lt;td&gt;日期和时间&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Interval&lt;/td&gt;
+&lt;td&gt;datetime.timedelta&lt;/td&gt;
+&lt;td&gt;时间间隔&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Enum&lt;/td&gt;
+&lt;td&gt;str&lt;/td&gt;
+&lt;td&gt;一组字符串&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PickleType&lt;/td&gt;
+&lt;td&gt;任何 Python 对象&lt;/td&gt;
+&lt;td&gt;自动使用 Pickle 序列化&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LargeBinary&lt;/td&gt;
+&lt;td&gt;str&lt;/td&gt;
+&lt;td&gt;二进制 blob&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;表格-最常用的-sqlalchemy-列选项&#34;&gt;『表格』最常用的 SQLAlchemy 列选项&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;选项名&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;primary_key&lt;/td&gt;
+&lt;td&gt;如果设为 True，列为表的主键&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;unique&lt;/td&gt;
+&lt;td&gt;如果设为 True，列不允许出现重复的值&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;index&lt;/td&gt;
+&lt;td&gt;如果设为 True，为列创建索引，提升查询效率&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;nullable&lt;/td&gt;
+&lt;td&gt;如果设为 True，列允许使用空值；如果设为 False，列不允许使用空值&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;default&lt;/td&gt;
+&lt;td&gt;为列定义默认值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;表格-常用的-sqlalchemy-查询过滤器&#34;&gt;『表格』常用的 SQLAlchemy 查询过滤器&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;过滤器&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;filter()&lt;/td&gt;
+&lt;td&gt;把过滤器添加到原查询上，返回一个新查询&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;filter_by()&lt;/td&gt;
+&lt;td&gt;把等值过滤器添加到原查询上，返回一个新查询&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;limit()&lt;/td&gt;
+&lt;td&gt;使用指定的的值限制原查询返回的结果数量，返回一个新查询&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;offset()&lt;/td&gt;
+&lt;td&gt;偏移原查询返回的结果，返回一个新查询&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;order_by()&lt;/td&gt;
+&lt;td&gt;根据指定条件对原查询结果进行排序，返回一个新查询&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;group_by()&lt;/td&gt;
+&lt;td&gt;根据指定条件对原查询结果进行分组，返回一个新查询&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;表格-最常用的-sqlalchemy-查询执行方法&#34;&gt;『表格』最常用的 SQLAlchemy 查询执行方法&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方法&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;all()&lt;/td&gt;
+&lt;td&gt;以列表形式返回查询的所有结果&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;first()&lt;/td&gt;
+&lt;td&gt;返回查询的第一个结果，如果没有结果，则返回 None&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;first_or_404()&lt;/td&gt;
+&lt;td&gt;返回查询的第一个结果，如果没有结果，则终止请求，返回 404 错误响应&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;get()&lt;/td&gt;
+&lt;td&gt;返回指定主键对应的行，如果没有对应的行，则返回 None&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;get_or_404()&lt;/td&gt;
+&lt;td&gt;返回指定主键对应的行，如果没找到指定的主键，则终止请求，返回 404 错误响应&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;count()&lt;/td&gt;
+&lt;td&gt;返回查询结果的数量&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;paginate()&lt;/td&gt;
+&lt;td&gt;返回一个 Paginate 对象，包含指定范围内的结果&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;第-6-章-电子邮件&#34;&gt;第 6 章 电子邮件&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;介绍如何实现电子邮件支持&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;第-7-章-大型应用的结构&#34;&gt;第 7 章 大型应用的结构&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;提供一个可供中大型程序使用的应用结构&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;本书涉及到的-pip-包&#34;&gt;本书涉及到的 pip 包&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;flask&lt;/li&gt;
+&lt;li&gt;Jinja2&lt;/li&gt;
+&lt;li&gt;flask-bootstrap&lt;/li&gt;
+&lt;li&gt;flask-moment&lt;/li&gt;
+&lt;li&gt;flask-wtf&lt;/li&gt;
+&lt;li&gt;flask-sqlachemy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;番茄计数：（按章节）&lt;/p&gt;
+
+&lt;p&gt;（一 ~ 四）2+4+6+3+&lt;/p&gt;
 </description>
       
     </item>
@@ -2909,23 +3777,7 @@ ssh -vvT git@123.123.123.123   // 你的VPS的IP地址
 &lt;p&gt;—— 《Little Miss Sunshine》&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;有空了写写博客，纯当打发时间啦~~&lt;/p&gt;
-
 &lt;p&gt;自学Python中，希望可以早点找到工作&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Friends</title>
-      <link>https://Dvel.xyz/friends/</link>
-      <pubDate>Thu, 01 Jan 1970 08:33:36 +0800</pubDate>
-      
-      <guid>https://Dvel.xyz/friends/</guid>
-      
-        <description>&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://chuangzaoshi.com/&#34;&gt;创造狮导航 - 为创意工作者而设计&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
       
     </item>
