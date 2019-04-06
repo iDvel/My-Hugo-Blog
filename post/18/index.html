@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-02-22T06:21:12&#43;08:00" />
 <meta itemprop="dateModified" content="2019-02-22T06:21:12&#43;08:00" />
-<meta itemprop="wordCount" content="1991">
+<meta itemprop="wordCount" content="2230">
 
 
 
@@ -284,16 +284,7 @@
 </ul></li>
 </ul></li>
 </ul></li>
-<li><a href="#第-3-章-模板">第 3 章 - 模板</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#表格-jinja2-变量过滤器">『表格』Jinja2 变量过滤器</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
+<li><a href="#第-3-章-模板">第 3 章 - 模板</a></li>
 <li><a href="#第-4-章-web-表单">第 4 章 - Web 表单</a></li>
 <li><a href="#第-5-章-数据库">第 5 章 数据库</a>
 <ul>
@@ -309,8 +300,20 @@
 </ul></li>
 </ul></li>
 <li><a href="#第-6-章-电子邮件">第 6 章 电子邮件</a></li>
-<li><a href="#第-7-章-大型应用的结构">第 7 章 大型应用的结构</a></li>
-<li><a href="#本书涉及到的-pip-包">本书涉及到的 pip 包</a></li>
+<li><a href="#第-7-章-大型应用的结构">第 7 章 大型应用的结构</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#项目结构">项目结构：</a></li>
+<li><a href="#需求文件-requirements-txt">需求文件 requirements.txt</a></li>
+<li><a href="#蓝本">蓝本</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#第-8-章-用户身份验证">第 8 章 用户身份验证</a></li>
+<li><a href="#涉及到的-pip-包">涉及到的 pip 包</a></li>
 </ul>
 </nav>
   </div>
@@ -600,54 +603,6 @@ $ flask run</code></pre></td></tr></table>
 <p>学习了 Jinja2 的简单使用，<code>Flask-Bootstrap</code>  扩展的应用，<code>Flask-Moment</code> 的本地化时间。</p>
 </blockquote>
 
-<h4 id="表格-jinja2-变量过滤器">『表格』Jinja2 变量过滤器</h4>
-
-<table>
-<thead>
-<tr>
-<th>过滤器名</th>
-<th>说明</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>safe</td>
-<td>渲染值时不转义</td>
-</tr>
-
-<tr>
-<td>capitalize</td>
-<td>把值的首字母转换成大写，其他字母转换成小写</td>
-</tr>
-
-<tr>
-<td>lower</td>
-<td>把值转换成小写形式</td>
-</tr>
-
-<tr>
-<td>upper</td>
-<td>把值转换成大写形式</td>
-</tr>
-
-<tr>
-<td>title</td>
-<td>把值中每个单词的首字母都转换成大写</td>
-</tr>
-
-<tr>
-<td>trim</td>
-<td>把值的首位空格删掉</td>
-</tr>
-
-<tr>
-<td>striptags</td>
-<td>渲染之前把值中所有的 HTML 标签都删掉</td>
-</tr>
-</tbody>
-</table>
-
 <h1 id="第-4-章-web-表单">第 4 章 - Web 表单</h1>
 
 <blockquote>
@@ -927,7 +882,115 @@ $ flask run</code></pre></td></tr></table>
 <p>提供一个可供中大型程序使用的应用结构</p>
 </blockquote>
 
-<h1 id="本书涉及到的-pip-包">本书涉及到的 pip 包</h1>
+<h4 id="项目结构">项目结构：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.
+├── app/
+│   ├── /__init__.py  
+│   ├── /email.py
+│   ├── /models.py
+│   ├── /static/
+│   └── /templates/
+│   ├── /main/
+│      ├── /__init__.py
+│      ├── /errors.py	
+│      ├── /forms.py
+│      ├── /views.py
+├── migrations/
+├── tests/
+└── venv/
+├── config.py
+├── flasky.py
+├── requirements.txt</pre></td></tr></table>
+</div>
+</div>
+<p>编写配置模块，配合工厂函数可以创建多个实例，便于测试。</p>
+
+<p>Flask 提供蓝本(blueprint)功能，蓝本中定义的路由和错误处理程序处于休眠状态，直到蓝本注册到应用上后才生效。</p>
+
+<p>定义相关的环境变量启动 Flask：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ export FLASKY_ADMIN=xxx@xxx.com
+$ export MAIL_USERNAME=xxx@xxx.com
+$ export MAIL_PASSWORD=xxx
+
+$ export FLASK_APP=flasky.py
+$ export FLASK_DEBUG=1
+
+$ flask run</pre></td></tr></table>
+</div>
+</div>
+<h4 id="需求文件-requirements-txt">需求文件 requirements.txt</h4>
+
+<p>用 pip 生成 requirements.txt 文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ pip freeze &gt;requirements.txt</pre></td></tr></table>
+</div>
+</div>
+<p>安装或升级包后，需手动更新。</p>
+
+<p>其他人利用 requirements.txt 文件创建副本，先创建好虚拟环境，执行以下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ pip install -r requirements.txt</pre></td></tr></table>
+</div>
+</div>
+<h4 id="蓝本">蓝本</h4>
+
+<p><a href="https://spacewander.github.io/explore-flask-zh">Flask 之旅</a></p>
+
+<p><a href="https://www.zhihu.com/question/31748237">如何理解Flask中的蓝本</a></p>
+
+<p>​</p>
+
+<h1 id="第-8-章-用户身份验证">第 8 章 用户身份验证</h1>
+
+<blockquote>
+<p>实现用户身份验证系统</p>
+</blockquote>
+
+<h1 id="涉及到的-pip-包">涉及到的 pip 包</h1>
+
+<p>第一部分：1~7 章</p>
 
 <ul>
 <li>flask</li>
@@ -940,9 +1003,17 @@ $ flask run</code></pre></td></tr></table>
 <li>flask-mail（电子邮件）</li>
 </ul>
 
+<p>第二部分：8~14 章</p>
+
+<ul>
+<li>Flask-Login (用户身份验证)</li>
+</ul>
+
 <p>番茄计数：（按章节）</p>
 
-<p>（一 ~ 六）2+4+6+3+7+2</p>
+<p>（一 ~ 七）　2+4+6+3+7+2+8=32</p>
+
+<p>（八 ~ 十四）</p>
 
     </div>
 

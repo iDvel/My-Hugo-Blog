@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://Dvel.xyz/post/20/</loc>
+    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/19/</loc>
     <lastmod>2019-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -206,7 +213,7 @@
   
   <url>
     <loc>https://Dvel.xyz/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -228,6 +235,13 @@
   <url>
     <loc>https://Dvel.xyz/tags/game/</loc>
     <lastmod>2018-09-09T05:53:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/git/</loc>
+    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -297,7 +311,7 @@
   
   <url>
     <loc>https://Dvel.xyz/post/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

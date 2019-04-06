@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Dvel&#39;s Blog</title>
+    <link>https://Dvel.xyz/tags/git/</link>
+    <description>Recent content in Git on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sun, 07 Apr 2019 03:33:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://Dvel.xyz/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git 入门与进阶</title>
+      <link>https://Dvel.xyz/post/20/</link>
+      <pubDate>Sun, 07 Apr 2019 03:33:15 +0800</pubDate>
+      
+      <guid>https://Dvel.xyz/post/20/</guid>
+      <description>虽然用了很久的 Git 了，但基本上只是 init、add、commit、push、pull。。。 有时间系统的学习了一下，并做一下记录。 Setup 1 $ brew install git 之</description>
+    </item>
+    
+  </channel>
+</rss>

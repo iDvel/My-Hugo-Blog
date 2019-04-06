@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dvel&#39;s Blog</title>
+  <title>Git 入门与进阶 - Dvel&#39;s Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Dvel" />
-  <meta name="description" content="Dvel&#39;s Blog" />
+  <meta name="description" content="虽然用了很久的 Git 了，但基本上只是 init、add、commit、push、pull。。。 有时间系统的学习了一下，并做一下记录。 Setup 1 $ brew install git 之" />
+
   <meta name="keywords" content="Dvel" />
 
 
@@ -34,8 +35,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 
-<link rel="canonical" href="https://Dvel.xyz/" />
-<link href="https://Dvel.xyz/index.xml" rel="alternate" type="application/rss+xml" title="Dvel&#39;s Blog" />
+<link rel="canonical" href="https://Dvel.xyz/post/20/" />
 
 
 
@@ -57,19 +57,27 @@
 
 
 
-<meta property="og:title" content="Dvel&#39;s Blog" />
-<meta property="og:description" content="Dvel&#39;s Blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://Dvel.xyz/" />
+<meta property="og:title" content="Git 入门与进阶" />
+<meta property="og:description" content="虽然用了很久的 Git 了，但基本上只是 init、add、commit、push、pull。。。 有时间系统的学习了一下，并做一下记录。 Setup 1 $ brew install git 之" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Dvel.xyz/post/20/" />
+<meta property="article:published_time" content="2019-04-07T03:33:15&#43;08:00"/>
+<meta property="article:modified_time" content="2019-04-07T03:33:15&#43;08:00"/>
 
-<meta property="og:updated_time" content="2019-04-07T03:33:15&#43;08:00"/>
+<meta itemprop="name" content="Git 入门与进阶">
+<meta itemprop="description" content="虽然用了很久的 Git 了，但基本上只是 init、add、commit、push、pull。。。 有时间系统的学习了一下，并做一下记录。 Setup 1 $ brew install git 之">
 
-<meta itemprop="name" content="Dvel&#39;s Blog">
-<meta itemprop="description" content="Dvel&#39;s Blog">
 
+<meta itemprop="datePublished" content="2019-04-07T03:33:15&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-07T03:33:15&#43;08:00" />
+<meta itemprop="wordCount" content="122">
+
+
+
+<meta itemprop="keywords" content="Git," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Dvel&#39;s Blog"/>
-<meta name="twitter:description" content="Dvel&#39;s Blog"/>
+<meta name="twitter:title" content="Git 入门与进阶"/>
+<meta name="twitter:description" content="虽然用了很久的 Git 了，但基本上只是 init、add、commit、push、pull。。。 有时间系统的学习了一下，并做一下记录。 Setup 1 $ brew install git 之"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -155,7 +163,7 @@
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -220,238 +228,143 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Git 入门与进阶</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-04-07" class="post-time">
+          2019-04-07
+        </time>
+        
+        
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#config">Config</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<blockquote>
+<p>虽然用了很久的 Git 了，但基本上只是 init、add、commit、push、pull。。。</p>
+
+<p>有时间系统的学习了一下，并做一下记录。</p>
+</blockquote>
+
+<h1 id="setup">Setup</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ brew install git</pre></td></tr></table>
+</div>
+</div>
+<p>之前一直用的 macOS 自带的 git，升级或用 brew 安装一个最新版的，默认应该是系统语言。</p>
+
+<h1 id="config">Config</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git config --global user.name &#34;my-name&#34;
+$ git config --global user.email johndoe@example.com</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Dvel</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-04-07</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/reward/wechat-reward-image.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/reward/alipay-reward-image.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://Dvel.xyz/tags/git/">Git</a>
           
-  <section id="posts" class="posts">
-    
-    
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/20/">Git 入门与进阶</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2019-04-07" class="post-time">
-        2019-04-07
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      虽然用了很久的 Git 了，但基本上只是 init、add、commit、push、pull。。。 有时间系统的学习了一下，并做一下记录。 Setup 1 $ brew install git 之
-    </div>
-    <div class="read-more">
-      <a href="/post/20/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
+        </div>
 
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
       
-      <a class="post-link" href="/post/19/">Python 数独</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2019-02-25" class="post-time">
-        2019-02-25
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      这么多年来，排队、无聊、打发时间的手机游戏就是 2048 和 数独了。 Python 初级水平，我回顾了一下代码，基本上看完任何一本入门书籍都看得懂。 数独 1 2 3 4 5 6
-    </div>
-    <div class="read-more">
-      <a href="/post/19/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/19/">
+            <span class="next-text nav-default">Python 数独</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
 
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/18/">《Flask Web 开发》笔记</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2019-02-22" class="post-time">
-        2019-02-22
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      粗略的记录了一些大纲、重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 如何安装和设置 Flask 框架 venv 在 Python 3 中由标准库 venv 创
-    </div>
-    <div class="read-more">
-      <a href="/post/18/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/17/">Python 异步 IO 笔记</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2019-01-03" class="post-time">
-        2019-01-03
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      协程初探 协程 - 廖雪峰 Python 教程 多进程与多线程均由操作系统调度，不过协程由程序员在协程的代码里显式调度。 协程没有线程切换的开销，和多线程比，线程数
-    </div>
-    <div class="read-more">
-      <a href="/post/17/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/16/">再见，双点医院！</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2018-09-09" class="post-time">
-        2018-09-09
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      终于肝完了主题医院的精神续作——双点医院。。。 太肝了。。。 这一代的病人依然没有摒弃「请病人不要死在走廊上」的优良传统，如果你把一个病人治死了
-    </div>
-    <div class="read-more">
-      <a href="/post/16/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/15/">Python 学习计划</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2018-08-27" class="post-time">
-        2018-08-27
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      只是为了设定计划与监督自己，记录下自己的学习路径。 《笨办法学Python 3》（Learn python the hard way） 读了几章发现学习模式过于基础，比较适合
-    </div>
-    <div class="read-more">
-      <a href="/post/15/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/14/">解决 CNAME 与 MX 记录冲突</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2018-08-01" class="post-time">
-        2018-08-01
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      需求 需求是这样的： 我的博客是 dvel.me，已经部署在 Coding Pages 或 Github Pages 上，域名解析用的是 CNAME 记录。 我希望我的域名邮箱是后缀是 @dvel.me，域名解
-    </div>
-    <div class="read-more">
-      <a href="/post/14/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-  </section>
-
-  
-  
-
-
-
-  
-  
-  
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
@@ -463,29 +376,12 @@
   
 
   
+
   
-  <nav class="pagination">
-    <ul>
-      
-      <li  class="active" >
-        <a href="/">1</a>
-      </li>
-      
-      <li >
-        <a href="/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/page/3/">3</a>
-      </li>
-      
-    </ul>
-  </nav>
 
   
   
-
-
+    
 
 
 

@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2018-07-30T02:49:46&#43;08:00" />
 <meta itemprop="dateModified" content="2018-07-30T02:49:46&#43;08:00" />
-<meta itemprop="wordCount" content="315">
+<meta itemprop="wordCount" content="371">
 
 
 
@@ -403,6 +403,17 @@
 <li><a href="https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f">超簡單！十分鐘打造漂亮又好用的 zsh command line 環境</a></li>
 </ul>
 
+<p>后来发现在 iTerm 中进入 Python 的虚拟环境时，不显示当前虚拟环境的名称。</p>
+
+<p>在 <code>~/.zshrc</code> 中添加此句可解决：(等号左右不能含有空格)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
