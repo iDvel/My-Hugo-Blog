@@ -263,87 +263,192 @@ $ git diff --word-diff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;24b9da6552252987aa493b52f8696cd6d3b00373&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值。 实际上，Git 数据库中保存的信息都是以文件内容的哈希值来索引，而不是文件名。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git log --oneline&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;每行一个简短的概要：标识符+提交信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git log --patch&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在原始 log 显示内容的基础上，增加每次提交的代码改动情况。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git log --stat&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在原始 log 显示内容的基础上，增加每次提交的代码改动情况。(不输出代码改动，仅仅告诉你哪些文件遭遇了改动，类似 diff 中的 &lt;code&gt;--stat&lt;/code&gt; 效果)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git log -- directory/filename.ext&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;后接 &lt;code&gt;--&lt;/code&gt; 再接文件名，可以查看仅针对此文件的 log 记录。&lt;/p&gt;
+
+&lt;p&gt;常用组合命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git log --graph --all --decorate --oneline&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;支持分支、标签的查看，快速了解整个项目的发展历程。&lt;/p&gt;
+
+&lt;h1 id=&#34;remove&#34;&gt;Remove&lt;/h1&gt;
+
+&lt;h4 id=&#34;git-rm&#34;&gt;&lt;code&gt;$ git rm&lt;/code&gt;&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git rm xxx&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;该命令完成两件事：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;删除文件&lt;/li&gt;
+&lt;li&gt;将删除文件这个操作&amp;rdquo;登记&amp;rdquo;到暂存区&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如果你在本次变更中只进行了此次操作，可以直接 &lt;code&gt;commit&lt;/code&gt;，不用再 &lt;code&gt;add&lt;/code&gt;  登记了。&lt;/p&gt;
+
+&lt;p&gt;如果你通过终端执行了 &lt;code&gt;rm&lt;/code&gt; 操作 / 在编辑器或 IDE 中执行了删除操作 / 在电脑上直接删除文件：&lt;/p&gt;
+
+&lt;p&gt;则只完成了第一步的内容，仍然可以通过 &lt;code&gt;git rm xxx&lt;/code&gt; 命令将删除文件这个改动登记到暂存区。&lt;/p&gt;
+
+&lt;h4 id=&#34;git-add&#34;&gt;&lt;code&gt;$ git add .&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;在谷歌前几页几乎所有的博客中都强调了这一点：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git add -A&lt;/code&gt;  = &lt;code&gt;git add -u&lt;/code&gt; + &lt;code&gt;git add .&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt;       将文件的修改、新建，登记到暂存区&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add -u&lt;/code&gt;     将文件的修改、删除，登记到暂存区&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add -A&lt;/code&gt;     将文件的修改、新建、删除，登记到暂存区&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论中看到，&lt;strong&gt;2.0 版本后 &lt;code&gt;git add .&lt;/code&gt; 已经和 &lt;code&gt;git add -A&lt;/code&gt; 效果相同&lt;/strong&gt;。(&lt;a href=&#34;https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048&#34;&gt;https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;所以大家只需记得更新你的 git，并只记住 &lt;code&gt;$ git add .&lt;/code&gt; 这一个命令就足够了。&lt;/p&gt;
+
+&lt;h4 id=&#34;git-rm-cached&#34;&gt;&lt;code&gt;$ git rm --cached&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;这个命令将删除一个文件，但并不是从系统中真正的删除。只是告诉 git 请不要再跟踪这个文件，这个文件将仍然保留在我的工作区中。&lt;/p&gt;
+
+&lt;p&gt;情景说明：当我使用 JetBrains 全家桶时，项目下面会有一个 &lt;code&gt;.idea/&lt;/code&gt; 的目录，里面也许会包含一些个人信息或无用信息，这个目录已经被纳入 git 管理了。&lt;/p&gt;
+
+&lt;p&gt;目的：并不在本地删除 &lt;code&gt;.idea/&lt;/code&gt; 目录及其中文件，只是取消被 git 追踪。&lt;/p&gt;
+
+&lt;p&gt;需配合 &lt;code&gt;.gitignore&lt;/code&gt; 文件使用。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;创建 &lt;code&gt;.gitignore&lt;/code&gt; 文件，写入一行内容：&lt;code&gt;.idea/&lt;/code&gt; 即可。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git rm -r --cached .idea/&lt;/code&gt; （-r 是递归目录，如果只是单个文件可取消这个参数）&lt;/li&gt;
+&lt;li&gt;add 与 commit 完成本次修改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以后即使 &lt;code&gt;.idea/&lt;/code&gt; 目录里面发生了文件的增删改，git 也不会理会。&lt;/p&gt;
+
+&lt;h1 id=&#34;move&#34;&gt;Move&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git mv file.ext xxx/file.ext&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;与 &lt;code&gt;rm&lt;/code&gt; 类似，同时完成移动与 add。&lt;/p&gt;
+
+&lt;p&gt;基本很少用到，一般都用系统自带的文件管理器或 IDE、编辑器来移动文件，然后 &lt;code&gt;add&lt;/code&gt; 即可。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git log --stat -M --follow directory/file.ext&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;加上 &lt;code&gt;-M —follow&lt;/code&gt; 参数，可以 log 出文件的移动。&lt;/p&gt;
+
+&lt;h1 id=&#34;ship-of-theseus-忒修斯之船&#34;&gt;Ship of Theseus (忒修斯之船)&lt;/h1&gt;
+
+&lt;p&gt;用&lt;a href=&#34;https://zh.wikipedia.org/zh-hans/%E5%BF%92%E4%BF%AE%E6%96%AF%E4%B9%8B%E8%88%B9&#34;&gt;忒修斯悖论&lt;/a&gt;来比喻代码修改：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;某些 CVS：当移动文件后，它认为只是一个完全不同的东西，无法追踪文件的移动过程。&lt;/li&gt;
+&lt;li&gt;某些企业版 CVS：每个文件都有标识，有个数据库来记录，可以轻易的追踪文件的移动。&lt;/li&gt;
+&lt;li&gt;Git：当一个文件至少有 50% 相似度时，这是同一个文件，小于 50% 时，这是一个新文件。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在移动并修改文件后 commit，Git 会反馈出一个百分比：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;[master 48f02f2] 本次提交信息
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename xxx =&amp;gt; xxx/xxx (100%)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;100% 即代表是纯移动，未做修改。&lt;/p&gt;
+
+&lt;p&gt;默认为 50%，低于这个阈值时，Git 会直接显示创建与删除：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&amp;gt; 24b9da6552252987aa493b52f8696cd6d3b00373
-&amp;gt; ```
-&amp;gt;
-&amp;gt; Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值。 实际上，Git 数据库中保存的信息都是以文件内容的哈希值来索引，而不是文件名。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;[master 9a28f41] 本次提交信息
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 xxx
+ delete mode 100644 xxx/xxx&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git log &amp;ndash;oneline&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;每行一个简短的概要：标识符+提交信息&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git log &amp;ndash;patch&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;在原始 log 显示内容的基础上，增加每次提交的代码改动情况。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git log &amp;ndash;stat&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;在原始 log 显示内容的基础上，增加每次提交的代码改动情况。(不输出代码改动，仅仅告诉你哪些文件遭遇了改动，类似 diff 中的 `--stat` 效果)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git log &amp;ndash; directory/filename.ext&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;后接 `--` 再接文件名，可以查看仅针对此文件的 log 记录。
+&lt;p&gt;50% 这个默认数值是可以修改的，视频只是简单打了个示例代码并未详细说明，我觉得这是个几乎永远不会用到的功能。&lt;/p&gt;
 
+&lt;h1 id=&#34;ignore&#34;&gt;Ignore&lt;/h1&gt;
 
+&lt;p&gt;创建 &lt;code&gt;.gitignore&lt;/code&gt; 文件并写入规则，来使 Git 去忽略哪些你不想纳入版本控制的文件与文件夹。&lt;/p&gt;
 
-常用组合命令&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git log &amp;ndash;graph &amp;ndash;all &amp;ndash;decorate &amp;ndash;oneline&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;支持分支、标签的查看，快速了解整个项目的发展历程。
+&lt;p&gt;在被 gitignore 之前已经被 Git 追踪的文件不受 gitignore 规则的影响。&lt;/p&gt;
 
+&lt;p&gt;比如 Python 生成的 &lt;code&gt;__pycache__&lt;/code&gt; 文件夹，JB 全家桶的 &lt;code&gt;.idea&lt;/code&gt; 文件夹，macOS 的 &lt;code&gt;.DS_Store&lt;/code&gt; 文件，都属于无用文件。或者存储了数据库密码的配置文件，是绝对不能纳入版本控制的。&lt;/p&gt;
 
-
-
-
-# Remove
-
-#### `$ git rm` &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git rm xxx&lt;/p&gt;
+&lt;h4 id=&#34;gitignore-书写规则&#34;&gt;.gitignore 书写规则&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -371,460 +476,176 @@ $ git diff --word-diff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;该命令完成两件事：
+&lt;pre class=&#34;chroma&#34;&gt;# 注释行以 # 开头
+# 文件名中有 # 怎么办 -&amp;gt; 加一个反斜杠转义
+# 文件名中有 ! 怎么办 -&amp;gt; 加一个反斜杠转义
+# 文件名最后有空格怎么办 -&amp;gt; 加一个反斜杠转义
 
-1. 删除文件
-2. 将删除文件这个操作&amp;#39;&amp;#39;登记&amp;#39;&amp;#39;到暂存区
+# 忽略文件，直接书写文件名
+.DS_Store
 
-如果你在本次变更中只进行了此次操作，可以直接 `commit`，不用再 `add`  登记了。
+# 忽略目录，以 / 结尾
+# foo/ 会忽略 foo 目录及此目录下所有内容，但不忽略同名的 foo 文件。
+foo/
 
+# 支持通配符 *，忽略所有以 .log 结尾的文件
+*.log
 
+# 此文件除外
+!a.log
+# 如果 a.log 父级目录被忽略，Git 并不会递归这个目录来寻找 a.log
+# 即如果 a.log 在 foo/ 中（foo/ 目录已被忽略），写这条规则也没用
 
-如果你通过终端执行了 `rm` 操作 / 在编辑器或 IDE 中执行了删除操作 / 在电脑上直接删除文件：
+# 递归忽略所有 foo 文件和目录
+**/foo
 
-则只完成了第一步的内容，仍然可以通过 `git rm xxx` 命令将删除文件这个改动登记到暂存区。
-
-
-
-#### `$ git add .`
-
-在谷歌前几页几乎所有的博客中都强调了这一点：
-
-`git add -A`  = `git add -u` + `git add .`
-
-- `git add .`       将文件的修改、新建，登记到暂存区
-- `git add -u`     将文件的修改、删除，登记到暂存区
-- `git add -A`     将文件的修改、新建、删除，登记到暂存区
-
-macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论中看到，**2.0 版本后 `git add .` 已经和 `git add -A` 效果相同**。(&amp;lt;https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048&amp;gt;)
-
-所以大家只需记得更新你的 git，并只记住 `$ git add .` 这一个命令就足够了。
-
-
-
-#### `$ git rm --cached` 
-
-这个命令将删除一个文件，但并不是从系统中真正的删除。只是告诉 git 请不要再跟踪这个文件，这个文件将仍然保留在我的工作区中。
-
-
-
-情景说明：当我使用 JetBrains 全家桶时，项目下面会有一个 `.idea/` 的目录，里面也许会包含一些个人信息或无用信息，这个目录已经被纳入 git 管理了。
-
-目的：并不在本地删除 `.idea/` 目录及其中文件，只是取消被 git 追踪。
-
-需配合 `.gitignore` 文件使用。
-
-1. 创建 `.gitignore` 文件，写入一行内容：`.idea/` 即可。
-2. `$ git rm -r --cached .idea/` （-r 是递归目录，如果只是单个文件可取消这个参数）
-3. add 与 commit 完成本次修改
-
-以后即使 `.idea/` 目录里面发生了文件的增删改，git 也不会理会。
-
-
-
-
-
-# Move&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+# 递归忽略所有 foo 目录及其子目录下的 bar.txt 文件
+foo/**/bar.txt&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git mv file.ext xxx/file.ext&lt;/p&gt;
+&lt;h4 id=&#34;全局忽略&#34;&gt;全局忽略&lt;/h4&gt;
+
+&lt;p&gt;在 &lt;code&gt;~/.gitconfig&lt;/code&gt; 中查看全局忽略文件的配置（默认即可）：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;与 `rm` 类似，同时完成移动与 add。
-
-基本很少用到，一般都用系统自带的文件管理器或 IDE、编辑器来移动文件，然后 `add` 即可。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git log &amp;ndash;stat -M &amp;ndash;follow directory/file.ext&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;加上 `-M —follow` 参数，可以 log 出文件的移动。
-
-
-
-
-
-# Ship of Theseus (忒修斯之船)
-
-用[忒修斯悖论](https://zh.wikipedia.org/zh-hans/%E5%BF%92%E4%BF%AE%E6%96%AF%E4%B9%8B%E8%88%B9)来比喻代码修改：
-
-- 某些 CVS：当移动文件后，它认为只是一个完全不同的东西，无法追踪文件的移动过程。
-- 某些企业版 CVS：每个文件都有标识，有个数据库来记录，可以轻易的追踪文件的移动。
-- Git：当一个文件至少有 50% 相似度时，这是同一个文件，小于 50% 时，这是一个新文件。
-
-
-
-在移动并修改文件后 commit，Git 会反馈出一个百分比：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;[master 48f02f2] 本次提交信息
- 1 file changed, 0 insertions(+), 0 deletions(-)
- rename xxx =&amp;gt; xxx/xxx (100%)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;100% 即代表是纯移动，未做修改。
-
-默认为 50%，低于这个阈值时，Git 会直接显示创建与删除：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;[master 9a28f41] 本次提交信息
- 2 files changed, 3 insertions(+), 1 deletion(-)
- create mode 100644 xxx
- delete mode 100644 xxx/xxx&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;50% 这个默认数值是可以修改的，视频只是简单打了个示例代码并未详细说明，我觉得这是个几乎永远不会用到的功能。
-
-
-
-
-
-# Ignore
-
-创建 `.gitignore` 文件并写入规则，来使 Git 去忽略哪些你不想纳入版本控制的文件与文件夹。
-
-在被 gitignore 之前已经被 Git 追踪的文件不受 gitignore 规则的影响。
-
-比如 Python 生成的 `__pycache__` 文件夹，JB 全家桶的 `.idea` 文件夹，macOS 的 `.DS_Store` 文件，都属于无用文件。或者存储了数据库密码的配置文件，是绝对不能纳入版本控制的。
-
-
-
-#### .gitignore 书写规则&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;注释行以-开头&#34;&gt;注释行以 # 开头&lt;/h1&gt;
-
-&lt;h1 id=&#34;文件名中有-怎么办-加一个反斜杠转义&#34;&gt;文件名中有 # 怎么办 -&amp;gt; 加一个反斜杠转义&lt;/h1&gt;
-
-&lt;h1 id=&#34;文件名中有-怎么办-加一个反斜杠转义-1&#34;&gt;文件名中有 ! 怎么办 -&amp;gt; 加一个反斜杠转义&lt;/h1&gt;
-
-&lt;h1 id=&#34;文件名最后有空格怎么办-加一个反斜杠转义&#34;&gt;文件名最后有空格怎么办 -&amp;gt; 加一个反斜杠转义&lt;/h1&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&#34;忽略文件-直接书写文件名&#34;&gt;忽略文件，直接书写文件名&lt;/h1&gt;
-
-&lt;p&gt;.DS_Store&lt;/p&gt;
-
-&lt;h1 id=&#34;忽略目录-以-结尾&#34;&gt;忽略目录，以 / 结尾&lt;/h1&gt;
-
-&lt;h1 id=&#34;foo-会忽略-foo-目录及此目录下所有内容-但不忽略同名的-foo-文件&#34;&gt;foo/ 会忽略 foo 目录及此目录下所有内容，但不忽略同名的 foo 文件。&lt;/h1&gt;
-
-&lt;p&gt;foo/&lt;/p&gt;
-
-&lt;h1 id=&#34;支持通配符-忽略所有以-log-结尾的文件&#34;&gt;支持通配符 *，忽略所有以 .log 结尾的文件&lt;/h1&gt;
-
-&lt;p&gt;*.log&lt;/p&gt;
-
-&lt;h1 id=&#34;此文件除外&#34;&gt;此文件除外&lt;/h1&gt;
-
-&lt;p&gt;!a.log&lt;/p&gt;
-
-&lt;h1 id=&#34;如果-a-log-父级目录被忽略-git-并不会递归这个目录来寻找-a-log&#34;&gt;如果 a.log 父级目录被忽略，Git 并不会递归这个目录来寻找 a.log&lt;/h1&gt;
-
-&lt;h1 id=&#34;即如果-a-log-在-foo-中-foo-目录已被忽略-写这条规则也没用&#34;&gt;即如果 a.log 在 foo/ 中（foo/ 目录已被忽略），写这条规则也没用&lt;/h1&gt;
-
-&lt;h1 id=&#34;递归忽略所有-foo-文件和目录&#34;&gt;递归忽略所有 foo 文件和目录&lt;/h1&gt;
-
-&lt;p&gt;**/foo&lt;/p&gt;
-
-&lt;h1 id=&#34;递归忽略所有-foo-目录及其子目录下的-bar-txt-文件&#34;&gt;递归忽略所有 foo 目录及其子目录下的 bar.txt 文件&lt;/h1&gt;
-
-&lt;p&gt;foo/**/bar.txt&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;#### 全局忽略
-
-在 `~/.gitconfig` 中查看全局忽略文件的配置（默认即可）：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;&amp;hellip;
+&lt;pre class=&#34;chroma&#34;&gt;...
 [core]
 	excludesfile = /Users/xxx/.gitignore_global
-&amp;hellip;&lt;/p&gt;
+...&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;编辑 &lt;code&gt;~/.gitignore_global&lt;/code&gt; 文件，规则相同。&lt;/p&gt;
+
+&lt;p&gt;在 macOS 中安装完 Git，默认的 &lt;code&gt;.gitignore_global&lt;/code&gt; 应该是这样的：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;编辑 `~/.gitignore_global` 文件，规则相同。
-
-在 macOS 中安装完 Git，默认的 `.gitignore_global` 应该是这样的：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;*~
+.DS_Store&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;*~
-.DS_Store&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;忽略了所有以 `~` 结尾的文件，忽略了所有 `.DS_Store` 文件。
+&lt;p&gt;忽略了所有以 &lt;code&gt;~&lt;/code&gt; 结尾的文件，忽略了所有 &lt;code&gt;.DS_Store&lt;/code&gt; 文件。&lt;/p&gt;
 
+&lt;p&gt;全局忽略适用于那些无论使用任何语言或 IDE 都需要忽略的文件，但是此文件只对自己有效，如果想让忽略规则对协作开发的所有成员有效，需要在项目目录正常建立 &lt;code&gt;.gitignore&lt;/code&gt; 文件并纳入版本控制。&lt;/p&gt;
 
-
-全局忽略适用于那些无论使用任何语言或 IDE 都需要忽略的文件，但是此文件只对自己有效，如果想让忽略规则对协作开发的所有成员有效，需要在项目目录正常建立 `.gitignore` 文件并纳入版本控制。
-
-
-
-#### 查看当前已被忽略的所有内容&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git ls-files &amp;ndash;others &amp;ndash;ignored &amp;ndash;exclude-standard&lt;/p&gt;
+&lt;h4 id=&#34;查看当前已被忽略的所有内容&#34;&gt;查看当前已被忽略的所有内容&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;#### 强制 add 被 gitignore 忽略的文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git ls-files --others --ignored --exclude-standard&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git add -f filename&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;#### 检测 gitignore 规则
-
-在日常 `git add .` 时发现某一文件并不想忽略，但是已经被忽略了，检测命令：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git check-ignore -v filename&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;# Branch
-
-#### 查看分支&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git branch&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;显示分支一览表，当前所在分支前面有 * 表示。
-
-
-
-#### 创建分支&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git branch 新分支名&lt;/p&gt;
+&lt;h4 id=&#34;强制-add-被-gitignore-忽略的文件&#34;&gt;强制 add 被 gitignore 忽略的文件&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;#### 删除分支&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git add -f filename&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git branch -d 分支名&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;如果当前分支没有被完全合并，Git 会抛出一个 warning，提示你需要将 `-d` 改成 `-D`。
+&lt;h4 id=&#34;检测-gitignore-规则&#34;&gt;检测 gitignore 规则&lt;/h4&gt;
 
-
-
-#### 切换分支&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git checkout 分支名&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;# Checkout
-
-#### 切换分支&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git checkout 分支名&lt;/p&gt;
+&lt;p&gt;在日常 &lt;code&gt;git add .&lt;/code&gt; 时发现某一文件并不想忽略，但是已经被忽略了，检测命令：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;#### 创建并切换分支&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git check-ignore -v filename&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git checkout -b 分支名&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;相当于同时执行了 `git branch 分支名` 和 `git checkout 分支名`。
+&lt;h1 id=&#34;branch&#34;&gt;Branch&lt;/h1&gt;
 
-
-
-#### Detached head (头指针分离)
-
-先通过 log 查找到某一时刻的 commit 16 进制标识码。
-
-这个命令会让你的工作区会改变为这次提交时的状态：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git checkout 12563de6382baaaaf78c58085b4b9abbe5b26608&lt;/p&gt;
+&lt;h4 id=&#34;查看分支&#34;&gt;查看分支&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;Git 会提示：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git branch&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;注意：正在检出 &amp;lsquo;12563de6382baaaaf78c58085b4b9abbe5b26608&amp;rsquo;。&lt;/p&gt;
+&lt;p&gt;显示分支一览表，当前所在分支前面有 * 表示。&lt;/p&gt;
 
-&lt;p&gt;您正处于分离头指针状态。您可以查看、做试验性的修改及提交，并且您可以通过另外
-的检出分支操作丢弃在这个状态下所做的任何提交。&lt;/p&gt;
-
-&lt;p&gt;如果您想要通过创建分支来保留在此状态下所做的提交，您可以通过在检出命令添加
-参数 -b 来实现（现在或稍后）。例如：&lt;/p&gt;
-
-&lt;p&gt;git checkout -b &amp;lt;新分支名&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;HEAD 目前位于 12563de 本次的commit message&lt;/p&gt;
+&lt;h4 id=&#34;创建分支&#34;&gt;创建分支&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;这时 checkout 命令相当于一个时光穿梭机，你可以检出任意一次提交时的状态。
-
-注意这不是版本回退。如果你强行修改 + add + commit，Git 会自动帮你创建一个分支。
-
-退出时光穿梭机：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git branch 新分支名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git checkout 分支名&lt;/p&gt;
+&lt;h4 id=&#34;删除分支&#34;&gt;删除分支&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git branch -d 分支名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果当前分支没有被完全合并，Git 会抛出一个 warning，提示你需要将 &lt;code&gt;-d&lt;/code&gt; 改成 &lt;code&gt;-D&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h4 id=&#34;切换分支&#34;&gt;切换分支&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git checkout 分支名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;checkout&#34;&gt;Checkout&lt;/h1&gt;
+
+&lt;h4 id=&#34;切换分支-1&#34;&gt;切换分支&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git checkout 分支名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;创建并切换分支&#34;&gt;创建并切换分支&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git checkout -b 分支名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;相当于同时执行了 &lt;code&gt;git branch 分支名&lt;/code&gt; 和 &lt;code&gt;git checkout 分支名&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h4 id=&#34;detached-head-头指针分离&#34;&gt;Detached head (头指针分离)&lt;/h4&gt;
+
+&lt;p&gt;先通过 log 查找到某一时刻的 commit 16 进制标识码。&lt;/p&gt;
+
+&lt;p&gt;这个命令会让你的工作区会改变为这次提交时的状态：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git checkout 12563de6382baaaaf78c58085b4b9abbe5b26608&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Git 会提示：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -838,26 +659,138 @@ macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;狗书《Flask Web 开发》作者配合使用 Tag 功能做了一个相当方便的时光穿梭机，比如第一章第一部分代码使用 1a 作为标签，第二章第三部分代码使用 2c 作为标签，读者只需执行 `git checkout 2c` 即可查看此次代码。
+&lt;pre class=&#34;chroma&#34;&gt;注意：正在检出 &amp;#39;12563de6382baaaaf78c58085b4b9abbe5b26608&amp;#39;。
 
+您正处于分离头指针状态。您可以查看、做试验性的修改及提交，并且您可以通过另外
+的检出分支操作丢弃在这个状态下所做的任何提交。
 
+如果您想要通过创建分支来保留在此状态下所做的提交，您可以通过在检出命令添加
+参数 -b 来实现（现在或稍后）。例如：
 
-#### Discarding edits (撤销修改)
+  git checkout -b &amp;lt;新分支名&amp;gt;
 
-[见下面章节](#撤销修改、版本回退)
-
-
-
-# Merge
-
-#### 合并分支&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+HEAD 目前位于 12563de 本次的commit message&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git merge dev&lt;/p&gt;
+&lt;p&gt;这时 checkout 命令相当于一个时光穿梭机，你可以检出任意一次提交时的状态。&lt;/p&gt;
+
+&lt;p&gt;注意这不是版本回退。如果你强行修改 + add + commit，Git 会自动帮你创建一个分支。&lt;/p&gt;
+
+&lt;p&gt;退出时光穿梭机：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git checkout 分支名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;狗书《Flask Web 开发》作者配合使用 Tag 功能做了一个相当方便的时光穿梭机，比如第一章第一部分代码使用 1a 作为标签，第二章第三部分代码使用 2c 作为标签，读者只需执行 &lt;code&gt;git checkout 2c&lt;/code&gt; 即可查看此次代码。&lt;/p&gt;
+
+&lt;h4 id=&#34;discarding-edits-撤销修改&#34;&gt;Discarding edits (撤销修改)&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;#撤销修改、版本回退&#34;&gt;见下面章节&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;merge&#34;&gt;Merge&lt;/h1&gt;
+
+&lt;h4 id=&#34;合并分支&#34;&gt;合并分支&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git merge dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;将 dev 分支合并到当前分支，dev 分支会仍然存在。&lt;/p&gt;
+
+&lt;h4 id=&#34;fast-forward&#34;&gt;Fast-forward&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;假设当前只有 master 分支&lt;/li&gt;
+&lt;li&gt;创建 dev 分支&lt;/li&gt;
+&lt;li&gt;进行了一次或 N 次的修改，但是 master 分支根本没人动&lt;/li&gt;
+&lt;li&gt;切换到 master 分支，合并 dev 分支&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;即便会导致冲突的地方，也会被 dev 分支的内容覆盖。&lt;/p&gt;
+
+&lt;p&gt;这就是 Fast-forward （快进）合并模式，关键点在于 master 分支无人推进。&lt;/p&gt;
+
+&lt;h4 id=&#34;解决冲突&#34;&gt;解决冲突&lt;/h4&gt;
+
+&lt;p&gt;当 master 和 dev 两条分支都并行推进的时候，在 master 分支合并 dev 分支时，如果同一行都被修改了，就会产生冲突。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;自动合并 xxx
+冲突（内容）：合并冲突于 xxx
+自动合并失败，修正冲突然后提交修正的结果。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;冲突以  &lt;code&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&lt;/code&gt;  &lt;code&gt;=======&lt;/code&gt;  &lt;code&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt; 隔开，分别展示两个分支的不同内容。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
+master!!!
+=======
+dev!!!
+&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;取其一或将这一整体变成你想要的内容即可。&lt;/p&gt;
+
+&lt;h4 id=&#34;abort&#34;&gt;&lt;code&gt;--abort&lt;/code&gt;&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git merge dev
+... (发现冲突)
+$ git merge --abort&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;--abort&lt;/code&gt; 选项会尝试恢复到你运行合并前的状态，相当于你没有进行本次合并。&lt;/p&gt;
+
+&lt;h4 id=&#34;suqash&#34;&gt;&lt;code&gt;--suqash&lt;/code&gt;&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git merge dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这个命令是正常的合并，会将 dev 分支的所有 commit 都纳入版本控制，log 查看时会阅读到 dev 分支的 commit 记录。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git merge --squash dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果你在 dev 分支上的 commit message 都写成流水账了，为了 log 记录不那么丑陋，为了只保留简单的 release 信息，使用 &lt;code&gt;--squash&lt;/code&gt; 参数进行合并，可以丢弃 dev 分支上的 commit 记录。&lt;/p&gt;
+
+&lt;h1 id=&#34;network&#34;&gt;Network&lt;/h1&gt;
+
+&lt;h4 id=&#34;remotes&#34;&gt;Remotes&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -878,213 +811,146 @@ macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;将 dev 分支合并到当前分支，dev 分支会仍然存在。
+&lt;pre class=&#34;chroma&#34;&gt;$ git remote add 远端名称 远端地址
+# 例如：
+$ git remote add origin https://github.com/aaa/bbb
 
+# 修改 URL
+$ git remote set-url origin https://github.com/aaa/ccc
 
+# 删除远端链接
+$ git remote rm 远端名称
+# 例如：
+$ git remote rm origin
 
-#### Fast-forward
+# 查看所有远端链接
+$ git remote -v
 
-1. 假设当前只有 master 分支
-2. 创建 dev 分支
-3. 进行了一次或 N 次的修改，但是 master 分支根本没人动
-4. 切换到 master 分支，合并 dev 分支
-
-即便会导致冲突的地方，也会被 dev 分支的内容覆盖。
-
-这就是 Fast-forward （快进）合并模式，关键点在于 master 分支无人推进。
-
-
-
-
-
-#### 解决冲突
-
-当 master 和 dev 两条分支都并行推进的时候，在 master 分支合并 dev 分支时，如果同一行都被修改了，就会产生冲突。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+# 查看所有远端分支名
+$ git branch -r
+# 所有远端的分支前都加上了远端名称，例如 origin/master、origin/dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;自动合并 xxx
-冲突（内容）：合并冲突于 xxx
-自动合并失败，修正冲突然后提交修正的结果。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;冲突以  `&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;`  `=======`  `&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;` 隔开，分别展示两个分支的不同内容。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD&lt;/p&gt;
-
-&lt;h1 id=&#34;master&#34;&gt;master!!!&lt;/h1&gt;
-
-&lt;p&gt;dev!!!
-&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; dev&lt;/p&gt;
+&lt;h4 id=&#34;fetch-pull-push&#34;&gt;Fetch, Pull, Push&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;取其一或将这一整体变成你想要的内容即可。
-
-
-
-#### `--abort`&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git merge dev
-&amp;hellip; (发现冲突)
-$ git merge &amp;ndash;abort&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;`--abort` 选项会尝试恢复到你运行合并前的状态，相当于你没有进行本次合并。
-
-
-
-#### `--suqash`&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git merge dev&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;这个命令是正常的合并，会将 dev 分支的所有 commit 都纳入版本控制，log 查看时会阅读到 dev 分支的 commit 记录。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git merge &amp;ndash;squash dev&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;如果你在 dev 分支上的 commit message 都写成流水账了，为了 log 记录不那么丑陋，为了只保留简单的 release 信息，使用 `--squash` 参数进行合并，可以丢弃 dev 分支上的 commit 记录。
-
-
-
-
-
-# Network
-
-#### Remotes&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git remote add 远端名称 远端地址&lt;/p&gt;
-
-&lt;h1 id=&#34;例如&#34;&gt;例如：&lt;/h1&gt;
-
-&lt;p&gt;$ git remote add origin &lt;a href=&#34;https://github.com/aaa/bbb&#34;&gt;https://github.com/aaa/bbb&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;修改-url&#34;&gt;修改 URL&lt;/h1&gt;
-
-&lt;p&gt;$ git remote set-url origin &lt;a href=&#34;https://github.com/aaa/ccc&#34;&gt;https://github.com/aaa/ccc&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;删除远端链接&#34;&gt;删除远端链接&lt;/h1&gt;
-
-&lt;p&gt;$ git remote rm 远端名称&lt;/p&gt;
-
-&lt;h1 id=&#34;例如-1&#34;&gt;例如：&lt;/h1&gt;
-
-&lt;p&gt;$ git remote rm origin&lt;/p&gt;
-
-&lt;h1 id=&#34;查看所有远端链接&#34;&gt;查看所有远端链接&lt;/h1&gt;
-
-&lt;p&gt;$ git remote -v&lt;/p&gt;
-
-&lt;h1 id=&#34;查看所有远端分支名&#34;&gt;查看所有远端分支名&lt;/h1&gt;
-
-&lt;p&gt;$ git branch -r&lt;/p&gt;
-
-&lt;h1 id=&#34;所有远端的分支前都加上了远端名称-例如-origin-master-origin-dev&#34;&gt;所有远端的分支前都加上了远端名称，例如 origin/master、origin/dev&lt;/h1&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;#### Fetch, Pull, Push&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git fetch origin master # 先拉取更新，fetch 不会更改本地工作区内容
-$ git merge origin/master master # 将远程内容与本地内容合并&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git pull origin master # 拉取并合并&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git push origin master # 将本地内容推送到远程仓库&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;只有单个远程主机时，一般都命名为 origin。
-
-
-
-在任何分支第一次 push 时，Git 会提示：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;fatal: 当前分支 xxx 没有对应的上游分支。
-为推送当前分支并建立与远程上游的跟踪，使用&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;git push --set-upstream origin xxx&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git fetch origin master # 先拉取更新，fetch 不会更改本地工作区内容
+$ git merge origin/master master # 将远程内容与本地内容合并&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;你可以输入这个命令让本地分支与远程分支建立连接。
+&lt;pre class=&#34;chroma&#34;&gt;$ git pull origin master # 拉取并合并&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git push origin master # 将本地内容推送到远程仓库&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;只有单个远程主机时，一般都命名为 origin。&lt;/p&gt;
 
-也可以在每个分支的第一次 push 时使用 `-u` 参数：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;在任何分支第一次 push 时，Git 会提示：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;fatal: 当前分支 xxx 没有对应的上游分支。
+为推送当前分支并建立与远程上游的跟踪，使用
+
+    git push --set-upstream origin xxx&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git push -u origin xxx&lt;/p&gt;
+&lt;p&gt;你可以输入这个命令让本地分支与远程分支建立连接。&lt;/p&gt;
+
+&lt;p&gt;也可以在每个分支的第一次 push 时使用 &lt;code&gt;-u&lt;/code&gt; 参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git push -u origin xxx&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;以后就可以使用简化命令 &lt;code&gt;git push&lt;/code&gt; 了。&lt;/p&gt;
+
+&lt;p&gt;Push 所有分支到远端：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git push --all&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;有多个远程主机时，比如 Hexo、Hugo 博客可能同时会部署到 GitHub 和 Coding，也会起不同的远程主机名，这时 &lt;code&gt;-u&lt;/code&gt; 参数可以指定一个默认主机，不带参数时就默认 push 到这个远程主机。&lt;/p&gt;
+
+&lt;h1 id=&#34;github-相关章节&#34;&gt;GitHub 相关章节&lt;/h1&gt;
+
+&lt;p&gt;GUI：主要是 GitHub Desktop 的介绍，我个人日常操作更喜欢用命令行，但是 GUI 在查看历史进度和 Diff 时更方便快捷。&lt;/p&gt;
+
+&lt;p&gt;GitHub：GitHub 的相关介绍&lt;/p&gt;
+
+&lt;p&gt;Forking：GitHub 的 Fork 功能相关介绍。&lt;/p&gt;
+
+&lt;p&gt;Pull Requests：GitHub 的 Pull Requests 功能相关介绍。&lt;/p&gt;
+
+&lt;h1 id=&#34;reset&#34;&gt;Reset&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;#撤销修改、版本回退&#34;&gt;见下面章节&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;撤销修改-版本回退&#34;&gt;撤销修改、版本回退&lt;/h1&gt;
+
+&lt;p&gt;必须理解的概念：&lt;/p&gt;
+
+&lt;p&gt;三个区：工作区、暂存区、版本库，或三棵树：Working Directory、Index、HEAD。&lt;/p&gt;
+
+&lt;p&gt;→ 改动代码，工作区改动&lt;/p&gt;
+
+&lt;p&gt;→ add，将改动登记到暂存区&lt;/p&gt;
+
+&lt;p&gt;→ commit，将暂存区提交到版本库，HEAD 指向当前分支的最后一次提交&lt;/p&gt;
+
+&lt;p&gt;→ &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;→ 又一次 commit，将暂存区提交到版本库，HEAD 依然指向当前分支的最后一次提交&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做 &lt;strong&gt;你的上一次提交&lt;/strong&gt; 的快照。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&#34;撤销修改&#34;&gt;撤销修改&lt;/h5&gt;
+
+&lt;p&gt;当你对修改不太满意，想恢复初始状态：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;# 单个文件撤销
+$ git checkout -- 文件名
+# 所有文件撤销
+$ git checkout . &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果 &lt;code&gt;add&lt;/code&gt; 进暂存区了，先撤销暂存区，再撤销工作区：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1092,248 +958,104 @@ $ git merge origin/master master # 将远程内容与本地内容合并&lt;/p&gt
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;以后就可以使用简化命令 `git push` 了。
-
-
-
-Push 所有分支到远端：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;# 单个文件：
+$ git reset HEAD 文件名
+$ git checkout -- 文件名
+# 多个文件：
+$ git reset HEAD
+$ git checkout .&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git push &amp;ndash;all&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;有多个远程主机时，比如 Hexo、Hugo 博客可能同时会部署到 GitHub 和 Coding，也会起不同的远程主机名，这时 `-u` 参数可以指定一个默认主机，不带参数时就默认 push 到这个远程主机。
+&lt;p&gt;如果 &lt;code&gt;commit&lt;/code&gt; 进版本库了，那就用 &lt;code&gt;reset&lt;/code&gt; 进行版本回退。&lt;/p&gt;
 
+&lt;h5 id=&#34;reset-1&#34;&gt;Reset&lt;/h5&gt;
 
+&lt;p&gt;reset 分为三种模式：&lt;/p&gt;
 
-# GitHub 相关章节
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--soft&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--mixed&lt;/code&gt; 默认&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--hard&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-GUI：主要是 GitHub Desktop 的介绍，我个人日常操作更喜欢用命令行，但是 GUI 在查看历史进度和 Diff 时更方便快捷。
+&lt;p&gt;它们的主要区别在于作用覆盖的区域（工作区、暂存区、版本库）不一样，在敲完命令后可以用 diff 的三种比较模式去验证。&lt;/p&gt;
 
-GitHub：GitHub 的相关介绍
-
-Forking：GitHub 的 Fork 功能相关介绍。
-
-Pull Requests：GitHub 的 Pull Requests 功能相关介绍。
-
-
-
-# Reset
-
-[见下面章节](#撤销修改、版本回退)
-
-
-
-
-
-# 撤销修改、版本回退
-
-必须理解的概念：
-
-三个区：工作区、暂存区、版本库，或三棵树：Working Directory、Index、HEAD。
-
-→ 改动代码，工作区改动
-
-→ add，将改动登记到暂存区
-
-→ commit，将暂存区提交到版本库，HEAD 指向当前分支的最后一次提交
-
-→ ...
-
-→ 又一次 commit，将暂存区提交到版本库，HEAD 依然指向当前分支的最后一次提交
-
-&amp;gt; HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做 **你的上一次提交** 的快照。
-
-
-
-##### 撤销修改
-
-当你对修改不太满意，想恢复初始状态：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;单个文件撤销&#34;&gt;单个文件撤销&lt;/h1&gt;
-
-&lt;p&gt;$ git checkout &amp;ndash; 文件名&lt;/p&gt;
-
-&lt;h1 id=&#34;所有文件撤销&#34;&gt;所有文件撤销&lt;/h1&gt;
-
-&lt;p&gt;$ git checkout .&lt;/p&gt;
+&lt;p&gt;以一个例子来讲，这是目前的状况。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;如果 `add` 进暂存区了，先撤销暂存区，再撤销工作区：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;单个文件&#34;&gt;单个文件：&lt;/h1&gt;
-
-&lt;p&gt;$ git reset HEAD 文件名
-$ git checkout &amp;ndash; 文件名&lt;/p&gt;
-
-&lt;h1 id=&#34;多个文件&#34;&gt;多个文件：&lt;/h1&gt;
-
-&lt;p&gt;$ git reset HEAD
-$ git checkout .&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;如果 `commit` 进版本库了，那就用 `reset` 进行版本回退。
-
-
-
-##### Reset
-
-reset 分为三种模式：
-
-- `--soft` 
-- `--mixed` 默认
-- `--hard`
-
-它们的主要区别在于作用覆盖的区域（工作区、暂存区、版本库）不一样，在敲完命令后可以用 diff 的三种比较模式去验证。
-
-
-
-以一个例子来讲，这是目前的状况。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git log &amp;ndash;oneline
+&lt;pre class=&#34;chroma&#34;&gt;$ git log --oneline
 4a9dabc (HEAD -&amp;gt; master) 3
 e285589 2
-116eee9 1&lt;/p&gt;
+116eee9 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git reset --soft e285589&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;工作区：无变化&lt;/li&gt;
+&lt;li&gt;暂存区：无变化&lt;/li&gt;
+&lt;li&gt;版本库：HEAD 指向此版本&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git reset e285589
+$ git reset --mixed e285589 # 同上&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git reset &amp;ndash;soft e285589&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;工作区：无变化&lt;/li&gt;
+&lt;li&gt;暂存区：变成此版本&lt;/li&gt;
+&lt;li&gt;版本库：HEAD 指向此版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git reset --hard e285589&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;工作区：变成此版本&lt;/li&gt;
+&lt;li&gt;暂存区：变成此版本&lt;/li&gt;
+&lt;li&gt;版本库：HEAD 指向此版本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;压缩提交&#34;&gt;压缩提交&lt;/h1&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;- 工作区：无变化
-- 暂存区：无变化
-- 版本库：HEAD 指向此版本&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git reset e285589
-$ git reset &amp;ndash;mixed e285589 # 同上&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;- 工作区：无变化
-- 暂存区：变成此版本
-- 版本库：HEAD 指向此版本&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git reset &amp;ndash;hard e285589&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;- 工作区：变成此版本
-- 暂存区：变成此版本
-- 版本库：HEAD 指向此版本
-
-
-
-
-
-# 压缩提交
-
-例子：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git log &amp;ndash;oneline
+&lt;pre class=&#34;chroma&#34;&gt;$ git log --oneline
 900db85 (HEAD -&amp;gt; master) 修复刚才修复刚才修复错误导致的错误导致的错误
 656915e 修复刚才修复错误导致的错误
 2d7e668 修复错误
@@ -1341,42 +1063,48 @@ $ git reset &amp;ndash;mixed e285589 # 同上&lt;/p&gt;
 ed32739 4
 6a15af1 3
 e285589 2
-116eee9 1&lt;/p&gt;
+116eee9 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;我认为最后三次这种 commit message 应该合并成一个。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;我认为最后三次这种 commit message 应该合并成一个。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git reset --soft 57335f5&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git reset &amp;ndash;soft 57335f5&lt;/p&gt;
+&lt;p&gt;HEAD 指向了&amp;rdquo;版本5&amp;rdquo;，但是工作区和暂存区都是目前的状态，直接 commit 即可。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;HEAD 指向了&amp;#34;版本5&amp;#34;，但是工作区和暂存区都是目前的状态，直接 commit 即可。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git commit -m &amp;#34;fixed a big bug&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;$ git commit -m &amp;ldquo;fixed a big bug&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;再 log 查看：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;再 log 查看：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;$ git log &amp;ndash;oneline
+&lt;pre class=&#34;chroma&#34;&gt;$ git log --oneline
 5827469 (HEAD -&amp;gt; master) fixed a big bug
 57335f5 5
 ed32739 4
 6a15af1 3
 e285589 2
-116eee9 1
-```&lt;/p&gt;
-
+116eee9 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;h1 id=&#34;rebase-变基&#34;&gt;Rebase (变基)&lt;/h1&gt;
 </description>
       

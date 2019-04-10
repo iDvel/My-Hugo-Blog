@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-04-07T03:33:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-07T03:33:15&#43;08:00" />
-<meta itemprop="wordCount" content="6218">
+<meta itemprop="wordCount" content="5855">
 
 
 
@@ -296,31 +296,102 @@
 </ul></li>
 </ul></li>
 <li><a href="#log">Log</a></li>
-<li><a href="#注释行以-开头">注释行以 # 开头</a></li>
-<li><a href="#文件名中有-怎么办-加一个反斜杠转义">文件名中有 # 怎么办 -&gt; 加一个反斜杠转义</a></li>
-<li><a href="#文件名中有-怎么办-加一个反斜杠转义-1">文件名中有 ! 怎么办 -&gt; 加一个反斜杠转义</a></li>
-<li><a href="#文件名最后有空格怎么办-加一个反斜杠转义">文件名最后有空格怎么办 -&gt; 加一个反斜杠转义</a></li>
-<li><a href="#忽略文件-直接书写文件名">忽略文件，直接书写文件名</a></li>
-<li><a href="#忽略目录-以-结尾">忽略目录，以 / 结尾</a></li>
-<li><a href="#foo-会忽略-foo-目录及此目录下所有内容-但不忽略同名的-foo-文件">foo/ 会忽略 foo 目录及此目录下所有内容，但不忽略同名的 foo 文件。</a></li>
-<li><a href="#支持通配符-忽略所有以-log-结尾的文件">支持通配符 *，忽略所有以 .log 结尾的文件</a></li>
-<li><a href="#此文件除外">此文件除外</a></li>
-<li><a href="#如果-a-log-父级目录被忽略-git-并不会递归这个目录来寻找-a-log">如果 a.log 父级目录被忽略，Git 并不会递归这个目录来寻找 a.log</a></li>
-<li><a href="#即如果-a-log-在-foo-中-foo-目录已被忽略-写这条规则也没用">即如果 a.log 在 foo/ 中（foo/ 目录已被忽略），写这条规则也没用</a></li>
-<li><a href="#递归忽略所有-foo-文件和目录">递归忽略所有 foo 文件和目录</a></li>
-<li><a href="#递归忽略所有-foo-目录及其子目录下的-bar-txt-文件">递归忽略所有 foo 目录及其子目录下的 bar.txt 文件</a></li>
-<li><a href="#master">master!!!</a></li>
-<li><a href="#例如">例如：</a></li>
-<li><a href="#修改-url">修改 URL</a></li>
-<li><a href="#删除远端链接">删除远端链接</a></li>
-<li><a href="#例如-1">例如：</a></li>
-<li><a href="#查看所有远端链接">查看所有远端链接</a></li>
-<li><a href="#查看所有远端分支名">查看所有远端分支名</a></li>
-<li><a href="#所有远端的分支前都加上了远端名称-例如-origin-master-origin-dev">所有远端的分支前都加上了远端名称，例如 origin/master、origin/dev</a></li>
-<li><a href="#单个文件撤销">单个文件撤销</a></li>
-<li><a href="#所有文件撤销">所有文件撤销</a></li>
-<li><a href="#单个文件">单个文件：</a></li>
-<li><a href="#多个文件">多个文件：</a></li>
+<li><a href="#remove">Remove</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#git-rm"><code>$ git rm</code></a></li>
+<li><a href="#git-add"><code>$ git add .</code></a></li>
+<li><a href="#git-rm-cached"><code>$ git rm --cached</code></a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#move">Move</a></li>
+<li><a href="#ship-of-theseus-忒修斯之船">Ship of Theseus (忒修斯之船)</a></li>
+<li><a href="#ignore">Ignore</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#gitignore-书写规则">.gitignore 书写规则</a></li>
+<li><a href="#全局忽略">全局忽略</a></li>
+<li><a href="#查看当前已被忽略的所有内容">查看当前已被忽略的所有内容</a></li>
+<li><a href="#强制-add-被-gitignore-忽略的文件">强制 add 被 gitignore 忽略的文件</a></li>
+<li><a href="#检测-gitignore-规则">检测 gitignore 规则</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#branch">Branch</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#查看分支">查看分支</a></li>
+<li><a href="#创建分支">创建分支</a></li>
+<li><a href="#删除分支">删除分支</a></li>
+<li><a href="#切换分支">切换分支</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#checkout">Checkout</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#切换分支-1">切换分支</a></li>
+<li><a href="#创建并切换分支">创建并切换分支</a></li>
+<li><a href="#detached-head-头指针分离">Detached head (头指针分离)</a></li>
+<li><a href="#discarding-edits-撤销修改">Discarding edits (撤销修改)</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#merge">Merge</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#合并分支">合并分支</a></li>
+<li><a href="#fast-forward">Fast-forward</a></li>
+<li><a href="#解决冲突">解决冲突</a></li>
+<li><a href="#abort"><code>--abort</code></a></li>
+<li><a href="#suqash"><code>--suqash</code></a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#network">Network</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#remotes">Remotes</a></li>
+<li><a href="#fetch-pull-push">Fetch, Pull, Push</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#github-相关章节">GitHub 相关章节</a></li>
+<li><a href="#reset">Reset</a></li>
+<li><a href="#撤销修改-版本回退">撤销修改、版本回退</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#撤销修改">撤销修改</a></li>
+<li><a href="#reset-1">Reset</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#压缩提交">压缩提交</a></li>
 <li><a href="#rebase-变基">Rebase (变基)</a></li>
 </ul>
 </nav>
@@ -574,87 +645,192 @@ $ git diff --word-diff</pre></td></tr></table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">24b9da6552252987aa493b52f8696cd6d3b00373</pre></td></tr></table>
+</div>
+</div>
+<p>Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值。 实际上，Git 数据库中保存的信息都是以文件内容的哈希值来索引，而不是文件名。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git log --oneline</pre></td></tr></table>
+</div>
+</div>
+<p>每行一个简短的概要：标识符+提交信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git log --patch</pre></td></tr></table>
+</div>
+</div>
+<p>在原始 log 显示内容的基础上，增加每次提交的代码改动情况。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git log --stat</pre></td></tr></table>
+</div>
+</div>
+<p>在原始 log 显示内容的基础上，增加每次提交的代码改动情况。(不输出代码改动，仅仅告诉你哪些文件遭遇了改动，类似 diff 中的 <code>--stat</code> 效果)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git log -- directory/filename.ext</pre></td></tr></table>
+</div>
+</div>
+<p>后接 <code>--</code> 再接文件名，可以查看仅针对此文件的 log 记录。</p>
+
+<p>常用组合命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git log --graph --all --decorate --oneline</pre></td></tr></table>
+</div>
+</div>
+<p>支持分支、标签的查看，快速了解整个项目的发展历程。</p>
+
+<h1 id="remove">Remove</h1>
+
+<h4 id="git-rm"><code>$ git rm</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git rm xxx</pre></td></tr></table>
+</div>
+</div>
+<p>该命令完成两件事：</p>
+
+<ol>
+<li>删除文件</li>
+<li>将删除文件这个操作&rdquo;登记&rdquo;到暂存区</li>
+</ol>
+
+<p>如果你在本次变更中只进行了此次操作，可以直接 <code>commit</code>，不用再 <code>add</code>  登记了。</p>
+
+<p>如果你通过终端执行了 <code>rm</code> 操作 / 在编辑器或 IDE 中执行了删除操作 / 在电脑上直接删除文件：</p>
+
+<p>则只完成了第一步的内容，仍然可以通过 <code>git rm xxx</code> 命令将删除文件这个改动登记到暂存区。</p>
+
+<h4 id="git-add"><code>$ git add .</code></h4>
+
+<p>在谷歌前几页几乎所有的博客中都强调了这一点：</p>
+
+<p><code>git add -A</code>  = <code>git add -u</code> + <code>git add .</code></p>
+
+<ul>
+<li><code>git add .</code>       将文件的修改、新建，登记到暂存区</li>
+<li><code>git add -u</code>     将文件的修改、删除，登记到暂存区</li>
+<li><code>git add -A</code>     将文件的修改、新建、删除，登记到暂存区</li>
+</ul>
+
+<p>macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论中看到，<strong>2.0 版本后 <code>git add .</code> 已经和 <code>git add -A</code> 效果相同</strong>。(<a href="https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048">https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048</a>)</p>
+
+<p>所以大家只需记得更新你的 git，并只记住 <code>$ git add .</code> 这一个命令就足够了。</p>
+
+<h4 id="git-rm-cached"><code>$ git rm --cached</code></h4>
+
+<p>这个命令将删除一个文件，但并不是从系统中真正的删除。只是告诉 git 请不要再跟踪这个文件，这个文件将仍然保留在我的工作区中。</p>
+
+<p>情景说明：当我使用 JetBrains 全家桶时，项目下面会有一个 <code>.idea/</code> 的目录，里面也许会包含一些个人信息或无用信息，这个目录已经被纳入 git 管理了。</p>
+
+<p>目的：并不在本地删除 <code>.idea/</code> 目录及其中文件，只是取消被 git 追踪。</p>
+
+<p>需配合 <code>.gitignore</code> 文件使用。</p>
+
+<ol>
+<li>创建 <code>.gitignore</code> 文件，写入一行内容：<code>.idea/</code> 即可。</li>
+<li><code>$ git rm -r --cached .idea/</code> （-r 是递归目录，如果只是单个文件可取消这个参数）</li>
+<li>add 与 commit 完成本次修改</li>
+</ol>
+
+<p>以后即使 <code>.idea/</code> 目录里面发生了文件的增删改，git 也不会理会。</p>
+
+<h1 id="move">Move</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git mv file.ext xxx/file.ext</pre></td></tr></table>
+</div>
+</div>
+<p>与 <code>rm</code> 类似，同时完成移动与 add。</p>
+
+<p>基本很少用到，一般都用系统自带的文件管理器或 IDE、编辑器来移动文件，然后 <code>add</code> 即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git log --stat -M --follow directory/file.ext</pre></td></tr></table>
+</div>
+</div>
+<p>加上 <code>-M —follow</code> 参数，可以 log 出文件的移动。</p>
+
+<h1 id="ship-of-theseus-忒修斯之船">Ship of Theseus (忒修斯之船)</h1>
+
+<p>用<a href="https://zh.wikipedia.org/zh-hans/%E5%BF%92%E4%BF%AE%E6%96%AF%E4%B9%8B%E8%88%B9">忒修斯悖论</a>来比喻代码修改：</p>
+
+<ul>
+<li>某些 CVS：当移动文件后，它认为只是一个完全不同的东西，无法追踪文件的移动过程。</li>
+<li>某些企业版 CVS：每个文件都有标识，有个数据库来记录，可以轻易的追踪文件的移动。</li>
+<li>Git：当一个文件至少有 50% 相似度时，这是同一个文件，小于 50% 时，这是一个新文件。</li>
+</ul>
+
+<p>在移动并修改文件后 commit，Git 会反馈出一个百分比：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[master 48f02f2] 本次提交信息
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename xxx =&gt; xxx/xxx (100%)</pre></td></tr></table>
+</div>
+</div>
+<p>100% 即代表是纯移动，未做修改。</p>
+
+<p>默认为 50%，低于这个阈值时，Git 会直接显示创建与删除：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">&gt; 24b9da6552252987aa493b52f8696cd6d3b00373
-&gt; ```
-&gt;
-&gt; Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值。 实际上，Git 数据库中保存的信息都是以文件内容的哈希值来索引，而不是文件名。</pre></td></tr></table>
+<pre class="chroma">[master 9a28f41] 本次提交信息
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 xxx
+ delete mode 100644 xxx/xxx</pre></td></tr></table>
 </div>
 </div>
-<p>$ git log &ndash;oneline</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">每行一个简短的概要：标识符+提交信息</pre></td></tr></table>
-</div>
-</div>
-<p>$ git log &ndash;patch</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">在原始 log 显示内容的基础上，增加每次提交的代码改动情况。</pre></td></tr></table>
-</div>
-</div>
-<p>$ git log &ndash;stat</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">在原始 log 显示内容的基础上，增加每次提交的代码改动情况。(不输出代码改动，仅仅告诉你哪些文件遭遇了改动，类似 diff 中的 `--stat` 效果)</pre></td></tr></table>
-</div>
-</div>
-<p>$ git log &ndash; directory/filename.ext</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">后接 `--` 再接文件名，可以查看仅针对此文件的 log 记录。
+<p>50% 这个默认数值是可以修改的，视频只是简单打了个示例代码并未详细说明，我觉得这是个几乎永远不会用到的功能。</p>
 
+<h1 id="ignore">Ignore</h1>
 
+<p>创建 <code>.gitignore</code> 文件并写入规则，来使 Git 去忽略哪些你不想纳入版本控制的文件与文件夹。</p>
 
-常用组合命令</pre></td></tr></table>
-</div>
-</div>
-<p>$ git log &ndash;graph &ndash;all &ndash;decorate &ndash;oneline</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">支持分支、标签的查看，快速了解整个项目的发展历程。
+<p>在被 gitignore 之前已经被 Git 追踪的文件不受 gitignore 规则的影响。</p>
 
+<p>比如 Python 生成的 <code>__pycache__</code> 文件夹，JB 全家桶的 <code>.idea</code> 文件夹，macOS 的 <code>.DS_Store</code> 文件，都属于无用文件。或者存储了数据库密码的配置文件，是绝对不能纳入版本控制的。</p>
 
-
-
-
-# Remove
-
-#### `$ git rm` </pre></td></tr></table>
-</div>
-</div>
-<p>$ git rm xxx</p>
+<h4 id="gitignore-书写规则">.gitignore 书写规则</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -682,460 +858,176 @@ $ git diff --word-diff</pre></td></tr></table>
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">该命令完成两件事：
+<pre class="chroma"># 注释行以 # 开头
+# 文件名中有 # 怎么办 -&gt; 加一个反斜杠转义
+# 文件名中有 ! 怎么办 -&gt; 加一个反斜杠转义
+# 文件名最后有空格怎么办 -&gt; 加一个反斜杠转义
 
-1. 删除文件
-2. 将删除文件这个操作&#39;&#39;登记&#39;&#39;到暂存区
+# 忽略文件，直接书写文件名
+.DS_Store
 
-如果你在本次变更中只进行了此次操作，可以直接 `commit`，不用再 `add`  登记了。
+# 忽略目录，以 / 结尾
+# foo/ 会忽略 foo 目录及此目录下所有内容，但不忽略同名的 foo 文件。
+foo/
 
+# 支持通配符 *，忽略所有以 .log 结尾的文件
+*.log
 
+# 此文件除外
+!a.log
+# 如果 a.log 父级目录被忽略，Git 并不会递归这个目录来寻找 a.log
+# 即如果 a.log 在 foo/ 中（foo/ 目录已被忽略），写这条规则也没用
 
-如果你通过终端执行了 `rm` 操作 / 在编辑器或 IDE 中执行了删除操作 / 在电脑上直接删除文件：
+# 递归忽略所有 foo 文件和目录
+**/foo
 
-则只完成了第一步的内容，仍然可以通过 `git rm xxx` 命令将删除文件这个改动登记到暂存区。
-
-
-
-#### `$ git add .`
-
-在谷歌前几页几乎所有的博客中都强调了这一点：
-
-`git add -A`  = `git add -u` + `git add .`
-
-- `git add .`       将文件的修改、新建，登记到暂存区
-- `git add -u`     将文件的修改、删除，登记到暂存区
-- `git add -A`     将文件的修改、新建、删除，登记到暂存区
-
-macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论中看到，**2.0 版本后 `git add .` 已经和 `git add -A` 效果相同**。(&lt;https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048&gt;)
-
-所以大家只需记得更新你的 git，并只记住 `$ git add .` 这一个命令就足够了。
-
-
-
-#### `$ git rm --cached` 
-
-这个命令将删除一个文件，但并不是从系统中真正的删除。只是告诉 git 请不要再跟踪这个文件，这个文件将仍然保留在我的工作区中。
-
-
-
-情景说明：当我使用 JetBrains 全家桶时，项目下面会有一个 `.idea/` 的目录，里面也许会包含一些个人信息或无用信息，这个目录已经被纳入 git 管理了。
-
-目的：并不在本地删除 `.idea/` 目录及其中文件，只是取消被 git 追踪。
-
-需配合 `.gitignore` 文件使用。
-
-1. 创建 `.gitignore` 文件，写入一行内容：`.idea/` 即可。
-2. `$ git rm -r --cached .idea/` （-r 是递归目录，如果只是单个文件可取消这个参数）
-3. add 与 commit 完成本次修改
-
-以后即使 `.idea/` 目录里面发生了文件的增删改，git 也不会理会。
-
-
-
-
-
-# Move</pre></td></tr></table>
+# 递归忽略所有 foo 目录及其子目录下的 bar.txt 文件
+foo/**/bar.txt</pre></td></tr></table>
 </div>
 </div>
-<p>$ git mv file.ext xxx/file.ext</p>
+<h4 id="全局忽略">全局忽略</h4>
+
+<p>在 <code>~/.gitconfig</code> 中查看全局忽略文件的配置（默认即可）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">与 `rm` 类似，同时完成移动与 add。
-
-基本很少用到，一般都用系统自带的文件管理器或 IDE、编辑器来移动文件，然后 `add` 即可。</pre></td></tr></table>
-</div>
-</div>
-<p>$ git log &ndash;stat -M &ndash;follow directory/file.ext</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">加上 `-M —follow` 参数，可以 log 出文件的移动。
-
-
-
-
-
-# Ship of Theseus (忒修斯之船)
-
-用[忒修斯悖论](https://zh.wikipedia.org/zh-hans/%E5%BF%92%E4%BF%AE%E6%96%AF%E4%B9%8B%E8%88%B9)来比喻代码修改：
-
-- 某些 CVS：当移动文件后，它认为只是一个完全不同的东西，无法追踪文件的移动过程。
-- 某些企业版 CVS：每个文件都有标识，有个数据库来记录，可以轻易的追踪文件的移动。
-- Git：当一个文件至少有 50% 相似度时，这是同一个文件，小于 50% 时，这是一个新文件。
-
-
-
-在移动并修改文件后 commit，Git 会反馈出一个百分比：</pre></td></tr></table>
-</div>
-</div>
-<p>[master 48f02f2] 本次提交信息
- 1 file changed, 0 insertions(+), 0 deletions(-)
- rename xxx =&gt; xxx/xxx (100%)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">100% 即代表是纯移动，未做修改。
-
-默认为 50%，低于这个阈值时，Git 会直接显示创建与删除：</pre></td></tr></table>
-</div>
-</div>
-<p>[master 9a28f41] 本次提交信息
- 2 files changed, 3 insertions(+), 1 deletion(-)
- create mode 100644 xxx
- delete mode 100644 xxx/xxx</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">50% 这个默认数值是可以修改的，视频只是简单打了个示例代码并未详细说明，我觉得这是个几乎永远不会用到的功能。
-
-
-
-
-
-# Ignore
-
-创建 `.gitignore` 文件并写入规则，来使 Git 去忽略哪些你不想纳入版本控制的文件与文件夹。
-
-在被 gitignore 之前已经被 Git 追踪的文件不受 gitignore 规则的影响。
-
-比如 Python 生成的 `__pycache__` 文件夹，JB 全家桶的 `.idea` 文件夹，macOS 的 `.DS_Store` 文件，都属于无用文件。或者存储了数据库密码的配置文件，是绝对不能纳入版本控制的。
-
-
-
-#### .gitignore 书写规则</pre></td></tr></table>
-</div>
-</div>
-<h1 id="注释行以-开头">注释行以 # 开头</h1>
-
-<h1 id="文件名中有-怎么办-加一个反斜杠转义">文件名中有 # 怎么办 -&gt; 加一个反斜杠转义</h1>
-
-<h1 id="文件名中有-怎么办-加一个反斜杠转义-1">文件名中有 ! 怎么办 -&gt; 加一个反斜杠转义</h1>
-
-<h1 id="文件名最后有空格怎么办-加一个反斜杠转义">文件名最后有空格怎么办 -&gt; 加一个反斜杠转义</h1>
-</blockquote>
-
-<h1 id="忽略文件-直接书写文件名">忽略文件，直接书写文件名</h1>
-
-<p>.DS_Store</p>
-
-<h1 id="忽略目录-以-结尾">忽略目录，以 / 结尾</h1>
-
-<h1 id="foo-会忽略-foo-目录及此目录下所有内容-但不忽略同名的-foo-文件">foo/ 会忽略 foo 目录及此目录下所有内容，但不忽略同名的 foo 文件。</h1>
-
-<p>foo/</p>
-
-<h1 id="支持通配符-忽略所有以-log-结尾的文件">支持通配符 *，忽略所有以 .log 结尾的文件</h1>
-
-<p>*.log</p>
-
-<h1 id="此文件除外">此文件除外</h1>
-
-<p>!a.log</p>
-
-<h1 id="如果-a-log-父级目录被忽略-git-并不会递归这个目录来寻找-a-log">如果 a.log 父级目录被忽略，Git 并不会递归这个目录来寻找 a.log</h1>
-
-<h1 id="即如果-a-log-在-foo-中-foo-目录已被忽略-写这条规则也没用">即如果 a.log 在 foo/ 中（foo/ 目录已被忽略），写这条规则也没用</h1>
-
-<h1 id="递归忽略所有-foo-文件和目录">递归忽略所有 foo 文件和目录</h1>
-
-<p>**/foo</p>
-
-<h1 id="递归忽略所有-foo-目录及其子目录下的-bar-txt-文件">递归忽略所有 foo 目录及其子目录下的 bar.txt 文件</h1>
-
-<p>foo/**/bar.txt</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">#### 全局忽略
-
-在 `~/.gitconfig` 中查看全局忽略文件的配置（默认即可）：</pre></td></tr></table>
-</div>
-</div>
-<p>&hellip;
+<pre class="chroma">...
 [core]
 	excludesfile = /Users/xxx/.gitignore_global
-&hellip;</p>
+...</pre></td></tr></table>
+</div>
+</div>
+<p>编辑 <code>~/.gitignore_global</code> 文件，规则相同。</p>
+
+<p>在 macOS 中安装完 Git，默认的 <code>.gitignore_global</code> 应该是这样的：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">编辑 `~/.gitignore_global` 文件，规则相同。
-
-在 macOS 中安装完 Git，默认的 `.gitignore_global` 应该是这样的：</pre></td></tr></table>
+<pre class="chroma">*~
+.DS_Store</pre></td></tr></table>
 </div>
 </div>
-<p>*~
-.DS_Store</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">忽略了所有以 `~` 结尾的文件，忽略了所有 `.DS_Store` 文件。
+<p>忽略了所有以 <code>~</code> 结尾的文件，忽略了所有 <code>.DS_Store</code> 文件。</p>
 
+<p>全局忽略适用于那些无论使用任何语言或 IDE 都需要忽略的文件，但是此文件只对自己有效，如果想让忽略规则对协作开发的所有成员有效，需要在项目目录正常建立 <code>.gitignore</code> 文件并纳入版本控制。</p>
 
-
-全局忽略适用于那些无论使用任何语言或 IDE 都需要忽略的文件，但是此文件只对自己有效，如果想让忽略规则对协作开发的所有成员有效，需要在项目目录正常建立 `.gitignore` 文件并纳入版本控制。
-
-
-
-#### 查看当前已被忽略的所有内容</pre></td></tr></table>
-</div>
-</div>
-<p>$ git ls-files &ndash;others &ndash;ignored &ndash;exclude-standard</p>
+<h4 id="查看当前已被忽略的所有内容">查看当前已被忽略的所有内容</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">#### 强制 add 被 gitignore 忽略的文件</pre></td></tr></table>
+<pre class="chroma">$ git ls-files --others --ignored --exclude-standard</pre></td></tr></table>
 </div>
 </div>
-<p>$ git add -f filename</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">#### 检测 gitignore 规则
-
-在日常 `git add .` 时发现某一文件并不想忽略，但是已经被忽略了，检测命令：</pre></td></tr></table>
-</div>
-</div>
-<p>$ git check-ignore -v filename</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># Branch
-
-#### 查看分支</pre></td></tr></table>
-</div>
-</div>
-<p>$ git branch</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">显示分支一览表，当前所在分支前面有 * 表示。
-
-
-
-#### 创建分支</pre></td></tr></table>
-</div>
-</div>
-<p>$ git branch 新分支名</p>
+<h4 id="强制-add-被-gitignore-忽略的文件">强制 add 被 gitignore 忽略的文件</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">#### 删除分支</pre></td></tr></table>
+<pre class="chroma">$ git add -f filename</pre></td></tr></table>
 </div>
 </div>
-<p>$ git branch -d 分支名</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">如果当前分支没有被完全合并，Git 会抛出一个 warning，提示你需要将 `-d` 改成 `-D`。
+<h4 id="检测-gitignore-规则">检测 gitignore 规则</h4>
 
-
-
-#### 切换分支</pre></td></tr></table>
-</div>
-</div>
-<p>$ git checkout 分支名</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># Checkout
-
-#### 切换分支</pre></td></tr></table>
-</div>
-</div>
-<p>$ git checkout 分支名</p>
+<p>在日常 <code>git add .</code> 时发现某一文件并不想忽略，但是已经被忽略了，检测命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">#### 创建并切换分支</pre></td></tr></table>
+<pre class="chroma">$ git check-ignore -v filename</pre></td></tr></table>
 </div>
 </div>
-<p>$ git checkout -b 分支名</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">相当于同时执行了 `git branch 分支名` 和 `git checkout 分支名`。
+<h1 id="branch">Branch</h1>
 
-
-
-#### Detached head (头指针分离)
-
-先通过 log 查找到某一时刻的 commit 16 进制标识码。
-
-这个命令会让你的工作区会改变为这次提交时的状态：</pre></td></tr></table>
-</div>
-</div>
-<p>$ git checkout 12563de6382baaaaf78c58085b4b9abbe5b26608</p>
+<h4 id="查看分支">查看分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">Git 会提示：</pre></td></tr></table>
+<pre class="chroma">$ git branch</pre></td></tr></table>
 </div>
 </div>
-<p>注意：正在检出 &lsquo;12563de6382baaaaf78c58085b4b9abbe5b26608&rsquo;。</p>
+<p>显示分支一览表，当前所在分支前面有 * 表示。</p>
 
-<p>您正处于分离头指针状态。您可以查看、做试验性的修改及提交，并且您可以通过另外
-的检出分支操作丢弃在这个状态下所做的任何提交。</p>
-
-<p>如果您想要通过创建分支来保留在此状态下所做的提交，您可以通过在检出命令添加
-参数 -b 来实现（现在或稍后）。例如：</p>
-
-<p>git checkout -b &lt;新分支名&gt;</p>
-
-<p>HEAD 目前位于 12563de 本次的commit message</p>
+<h4 id="创建分支">创建分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">这时 checkout 命令相当于一个时光穿梭机，你可以检出任意一次提交时的状态。
-
-注意这不是版本回退。如果你强行修改 + add + commit，Git 会自动帮你创建一个分支。
-
-退出时光穿梭机：</pre></td></tr></table>
+<pre class="chroma">$ git branch 新分支名</pre></td></tr></table>
 </div>
 </div>
-<p>$ git checkout 分支名</p>
+<h4 id="删除分支">删除分支</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git branch -d 分支名</pre></td></tr></table>
+</div>
+</div>
+<p>如果当前分支没有被完全合并，Git 会抛出一个 warning，提示你需要将 <code>-d</code> 改成 <code>-D</code>。</p>
+
+<h4 id="切换分支">切换分支</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git checkout 分支名</pre></td></tr></table>
+</div>
+</div>
+<h1 id="checkout">Checkout</h1>
+
+<h4 id="切换分支-1">切换分支</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git checkout 分支名</pre></td></tr></table>
+</div>
+</div>
+<h4 id="创建并切换分支">创建并切换分支</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git checkout -b 分支名</pre></td></tr></table>
+</div>
+</div>
+<p>相当于同时执行了 <code>git branch 分支名</code> 和 <code>git checkout 分支名</code>。</p>
+
+<h4 id="detached-head-头指针分离">Detached head (头指针分离)</h4>
+
+<p>先通过 log 查找到某一时刻的 commit 16 进制标识码。</p>
+
+<p>这个命令会让你的工作区会改变为这次提交时的状态：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git checkout 12563de6382baaaaf78c58085b4b9abbe5b26608</pre></td></tr></table>
+</div>
+</div>
+<p>Git 会提示：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -1149,26 +1041,138 @@ macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">狗书《Flask Web 开发》作者配合使用 Tag 功能做了一个相当方便的时光穿梭机，比如第一章第一部分代码使用 1a 作为标签，第二章第三部分代码使用 2c 作为标签，读者只需执行 `git checkout 2c` 即可查看此次代码。
+<pre class="chroma">注意：正在检出 &#39;12563de6382baaaaf78c58085b4b9abbe5b26608&#39;。
 
+您正处于分离头指针状态。您可以查看、做试验性的修改及提交，并且您可以通过另外
+的检出分支操作丢弃在这个状态下所做的任何提交。
 
+如果您想要通过创建分支来保留在此状态下所做的提交，您可以通过在检出命令添加
+参数 -b 来实现（现在或稍后）。例如：
 
-#### Discarding edits (撤销修改)
+  git checkout -b &lt;新分支名&gt;
 
-[见下面章节](#撤销修改、版本回退)
-
-
-
-# Merge
-
-#### 合并分支</pre></td></tr></table>
+HEAD 目前位于 12563de 本次的commit message</pre></td></tr></table>
 </div>
 </div>
-<p>$ git merge dev</p>
+<p>这时 checkout 命令相当于一个时光穿梭机，你可以检出任意一次提交时的状态。</p>
+
+<p>注意这不是版本回退。如果你强行修改 + add + commit，Git 会自动帮你创建一个分支。</p>
+
+<p>退出时光穿梭机：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git checkout 分支名</pre></td></tr></table>
+</div>
+</div>
+<p>狗书《Flask Web 开发》作者配合使用 Tag 功能做了一个相当方便的时光穿梭机，比如第一章第一部分代码使用 1a 作为标签，第二章第三部分代码使用 2c 作为标签，读者只需执行 <code>git checkout 2c</code> 即可查看此次代码。</p>
+
+<h4 id="discarding-edits-撤销修改">Discarding edits (撤销修改)</h4>
+
+<p><a href="#撤销修改、版本回退">见下面章节</a></p>
+
+<h1 id="merge">Merge</h1>
+
+<h4 id="合并分支">合并分支</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git merge dev</pre></td></tr></table>
+</div>
+</div>
+<p>将 dev 分支合并到当前分支，dev 分支会仍然存在。</p>
+
+<h4 id="fast-forward">Fast-forward</h4>
+
+<ol>
+<li>假设当前只有 master 分支</li>
+<li>创建 dev 分支</li>
+<li>进行了一次或 N 次的修改，但是 master 分支根本没人动</li>
+<li>切换到 master 分支，合并 dev 分支</li>
+</ol>
+
+<p>即便会导致冲突的地方，也会被 dev 分支的内容覆盖。</p>
+
+<p>这就是 Fast-forward （快进）合并模式，关键点在于 master 分支无人推进。</p>
+
+<h4 id="解决冲突">解决冲突</h4>
+
+<p>当 master 和 dev 两条分支都并行推进的时候，在 master 分支合并 dev 分支时，如果同一行都被修改了，就会产生冲突。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">自动合并 xxx
+冲突（内容）：合并冲突于 xxx
+自动合并失败，修正冲突然后提交修正的结果。</pre></td></tr></table>
+</div>
+</div>
+<p>冲突以  <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>  <code>=======</code>  <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 隔开，分别展示两个分支的不同内容。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+master!!!
+=======
+dev!!!
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</pre></td></tr></table>
+</div>
+</div>
+<p>取其一或将这一整体变成你想要的内容即可。</p>
+
+<h4 id="abort"><code>--abort</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git merge dev
+... (发现冲突)
+$ git merge --abort</pre></td></tr></table>
+</div>
+</div>
+<p><code>--abort</code> 选项会尝试恢复到你运行合并前的状态，相当于你没有进行本次合并。</p>
+
+<h4 id="suqash"><code>--suqash</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git merge dev</pre></td></tr></table>
+</div>
+</div>
+<p>这个命令是正常的合并，会将 dev 分支的所有 commit 都纳入版本控制，log 查看时会阅读到 dev 分支的 commit 记录。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git merge --squash dev</pre></td></tr></table>
+</div>
+</div>
+<p>如果你在 dev 分支上的 commit message 都写成流水账了，为了 log 记录不那么丑陋，为了只保留简单的 release 信息，使用 <code>--squash</code> 参数进行合并，可以丢弃 dev 分支上的 commit 记录。</p>
+
+<h1 id="network">Network</h1>
+
+<h4 id="remotes">Remotes</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt"> 1
@@ -1189,213 +1193,146 @@ macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">将 dev 分支合并到当前分支，dev 分支会仍然存在。
+<pre class="chroma">$ git remote add 远端名称 远端地址
+# 例如：
+$ git remote add origin https://github.com/aaa/bbb
 
+# 修改 URL
+$ git remote set-url origin https://github.com/aaa/ccc
 
+# 删除远端链接
+$ git remote rm 远端名称
+# 例如：
+$ git remote rm origin
 
-#### Fast-forward
+# 查看所有远端链接
+$ git remote -v
 
-1. 假设当前只有 master 分支
-2. 创建 dev 分支
-3. 进行了一次或 N 次的修改，但是 master 分支根本没人动
-4. 切换到 master 分支，合并 dev 分支
-
-即便会导致冲突的地方，也会被 dev 分支的内容覆盖。
-
-这就是 Fast-forward （快进）合并模式，关键点在于 master 分支无人推进。
-
-
-
-
-
-#### 解决冲突
-
-当 master 和 dev 两条分支都并行推进的时候，在 master 分支合并 dev 分支时，如果同一行都被修改了，就会产生冲突。</pre></td></tr></table>
+# 查看所有远端分支名
+$ git branch -r
+# 所有远端的分支前都加上了远端名称，例如 origin/master、origin/dev</pre></td></tr></table>
 </div>
 </div>
-<p>自动合并 xxx
-冲突（内容）：合并冲突于 xxx
-自动合并失败，修正冲突然后提交修正的结果。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">冲突以  `&lt;&lt;&lt;&lt;&lt;&lt;&lt;`  `=======`  `&gt;&gt;&gt;&gt;&gt;&gt;&gt;` 隔开，分别展示两个分支的不同内容。</pre></td></tr></table>
-</div>
-</div>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-
-<h1 id="master">master!!!</h1>
-
-<p>dev!!!
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</p>
+<h4 id="fetch-pull-push">Fetch, Pull, Push</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">取其一或将这一整体变成你想要的内容即可。
-
-
-
-#### `--abort`</pre></td></tr></table>
-</div>
-</div>
-<p>$ git merge dev
-&hellip; (发现冲突)
-$ git merge &ndash;abort</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">`--abort` 选项会尝试恢复到你运行合并前的状态，相当于你没有进行本次合并。
-
-
-
-#### `--suqash`</pre></td></tr></table>
-</div>
-</div>
-<p>$ git merge dev</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">这个命令是正常的合并，会将 dev 分支的所有 commit 都纳入版本控制，log 查看时会阅读到 dev 分支的 commit 记录。</pre></td></tr></table>
-</div>
-</div>
-<p>$ git merge &ndash;squash dev</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">如果你在 dev 分支上的 commit message 都写成流水账了，为了 log 记录不那么丑陋，为了只保留简单的 release 信息，使用 `--squash` 参数进行合并，可以丢弃 dev 分支上的 commit 记录。
-
-
-
-
-
-# Network
-
-#### Remotes</pre></td></tr></table>
-</div>
-</div>
-<p>$ git remote add 远端名称 远端地址</p>
-
-<h1 id="例如">例如：</h1>
-
-<p>$ git remote add origin <a href="https://github.com/aaa/bbb">https://github.com/aaa/bbb</a></p>
-
-<h1 id="修改-url">修改 URL</h1>
-
-<p>$ git remote set-url origin <a href="https://github.com/aaa/ccc">https://github.com/aaa/ccc</a></p>
-
-<h1 id="删除远端链接">删除远端链接</h1>
-
-<p>$ git remote rm 远端名称</p>
-
-<h1 id="例如-1">例如：</h1>
-
-<p>$ git remote rm origin</p>
-
-<h1 id="查看所有远端链接">查看所有远端链接</h1>
-
-<p>$ git remote -v</p>
-
-<h1 id="查看所有远端分支名">查看所有远端分支名</h1>
-
-<p>$ git branch -r</p>
-
-<h1 id="所有远端的分支前都加上了远端名称-例如-origin-master-origin-dev">所有远端的分支前都加上了远端名称，例如 origin/master、origin/dev</h1>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">#### Fetch, Pull, Push</pre></td></tr></table>
-</div>
-</div>
-<p>$ git fetch origin master # 先拉取更新，fetch 不会更改本地工作区内容
-$ git merge origin/master master # 将远程内容与本地内容合并</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"></pre></td>
-<td class="lntd">
-<pre class="chroma"></pre></td></tr></table>
-</div>
-</div>
-<p>$ git pull origin master # 拉取并合并</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"></pre></td>
-<td class="lntd">
-<pre class="chroma"></pre></td></tr></table>
-</div>
-</div>
-<p>$ git push origin master # 将本地内容推送到远程仓库</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">只有单个远程主机时，一般都命名为 origin。
-
-
-
-在任何分支第一次 push 时，Git 会提示：</pre></td></tr></table>
-</div>
-</div>
-<p>fatal: 当前分支 xxx 没有对应的上游分支。
-为推送当前分支并建立与远程上游的跟踪，使用</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">git push --set-upstream origin xxx</pre></td></tr></table>
+<pre class="chroma">$ git fetch origin master # 先拉取更新，fetch 不会更改本地工作区内容
+$ git merge origin/master master # 将远程内容与本地内容合并</pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">你可以输入这个命令让本地分支与远程分支建立连接。
+<pre class="chroma">$ git pull origin master # 拉取并合并</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git push origin master # 将本地内容推送到远程仓库</pre></td></tr></table>
+</div>
+</div>
+<p>只有单个远程主机时，一般都命名为 origin。</p>
 
-也可以在每个分支的第一次 push 时使用 `-u` 参数：</pre></td></tr></table>
+<p>在任何分支第一次 push 时，Git 会提示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">fatal: 当前分支 xxx 没有对应的上游分支。
+为推送当前分支并建立与远程上游的跟踪，使用
+
+    git push --set-upstream origin xxx</pre></td></tr></table>
 </div>
 </div>
-<p>$ git push -u origin xxx</p>
+<p>你可以输入这个命令让本地分支与远程分支建立连接。</p>
+
+<p>也可以在每个分支的第一次 push 时使用 <code>-u</code> 参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git push -u origin xxx</pre></td></tr></table>
+</div>
+</div>
+<p>以后就可以使用简化命令 <code>git push</code> 了。</p>
+
+<p>Push 所有分支到远端：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git push --all</pre></td></tr></table>
+</div>
+</div>
+<p>有多个远程主机时，比如 Hexo、Hugo 博客可能同时会部署到 GitHub 和 Coding，也会起不同的远程主机名，这时 <code>-u</code> 参数可以指定一个默认主机，不带参数时就默认 push 到这个远程主机。</p>
+
+<h1 id="github-相关章节">GitHub 相关章节</h1>
+
+<p>GUI：主要是 GitHub Desktop 的介绍，我个人日常操作更喜欢用命令行，但是 GUI 在查看历史进度和 Diff 时更方便快捷。</p>
+
+<p>GitHub：GitHub 的相关介绍</p>
+
+<p>Forking：GitHub 的 Fork 功能相关介绍。</p>
+
+<p>Pull Requests：GitHub 的 Pull Requests 功能相关介绍。</p>
+
+<h1 id="reset">Reset</h1>
+
+<p><a href="#撤销修改、版本回退">见下面章节</a></p>
+
+<h1 id="撤销修改-版本回退">撤销修改、版本回退</h1>
+
+<p>必须理解的概念：</p>
+
+<p>三个区：工作区、暂存区、版本库，或三棵树：Working Directory、Index、HEAD。</p>
+
+<p>→ 改动代码，工作区改动</p>
+
+<p>→ add，将改动登记到暂存区</p>
+
+<p>→ commit，将暂存区提交到版本库，HEAD 指向当前分支的最后一次提交</p>
+
+<p>→ &hellip;</p>
+
+<p>→ 又一次 commit，将暂存区提交到版本库，HEAD 依然指向当前分支的最后一次提交</p>
+
+<blockquote>
+<p>HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做 <strong>你的上一次提交</strong> 的快照。</p>
+</blockquote>
+
+<h5 id="撤销修改">撤销修改</h5>
+
+<p>当你对修改不太满意，想恢复初始状态：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 单个文件撤销
+$ git checkout -- 文件名
+# 所有文件撤销
+$ git checkout . </pre></td></tr></table>
+</div>
+</div>
+<p>如果 <code>add</code> 进暂存区了，先撤销暂存区，再撤销工作区：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -1403,248 +1340,104 @@ $ git merge origin/master master # 将远程内容与本地内容合并</p>
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">以后就可以使用简化命令 `git push` 了。
-
-
-
-Push 所有分支到远端：</pre></td></tr></table>
+<pre class="chroma"># 单个文件：
+$ git reset HEAD 文件名
+$ git checkout -- 文件名
+# 多个文件：
+$ git reset HEAD
+$ git checkout .</pre></td></tr></table>
 </div>
 </div>
-<p>$ git push &ndash;all</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">有多个远程主机时，比如 Hexo、Hugo 博客可能同时会部署到 GitHub 和 Coding，也会起不同的远程主机名，这时 `-u` 参数可以指定一个默认主机，不带参数时就默认 push 到这个远程主机。
+<p>如果 <code>commit</code> 进版本库了，那就用 <code>reset</code> 进行版本回退。</p>
 
+<h5 id="reset-1">Reset</h5>
 
+<p>reset 分为三种模式：</p>
 
-# GitHub 相关章节
+<ul>
+<li><code>--soft</code></li>
+<li><code>--mixed</code> 默认</li>
+<li><code>--hard</code></li>
+</ul>
 
-GUI：主要是 GitHub Desktop 的介绍，我个人日常操作更喜欢用命令行，但是 GUI 在查看历史进度和 Diff 时更方便快捷。
+<p>它们的主要区别在于作用覆盖的区域（工作区、暂存区、版本库）不一样，在敲完命令后可以用 diff 的三种比较模式去验证。</p>
 
-GitHub：GitHub 的相关介绍
-
-Forking：GitHub 的 Fork 功能相关介绍。
-
-Pull Requests：GitHub 的 Pull Requests 功能相关介绍。
-
-
-
-# Reset
-
-[见下面章节](#撤销修改、版本回退)
-
-
-
-
-
-# 撤销修改、版本回退
-
-必须理解的概念：
-
-三个区：工作区、暂存区、版本库，或三棵树：Working Directory、Index、HEAD。
-
-→ 改动代码，工作区改动
-
-→ add，将改动登记到暂存区
-
-→ commit，将暂存区提交到版本库，HEAD 指向当前分支的最后一次提交
-
-→ ...
-
-→ 又一次 commit，将暂存区提交到版本库，HEAD 依然指向当前分支的最后一次提交
-
-&gt; HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做 **你的上一次提交** 的快照。
-
-
-
-##### 撤销修改
-
-当你对修改不太满意，想恢复初始状态：</pre></td></tr></table>
-</div>
-</div>
-<h1 id="单个文件撤销">单个文件撤销</h1>
-
-<p>$ git checkout &ndash; 文件名</p>
-
-<h1 id="所有文件撤销">所有文件撤销</h1>
-
-<p>$ git checkout .</p>
+<p>以一个例子来讲，这是目前的状况。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">如果 `add` 进暂存区了，先撤销暂存区，再撤销工作区：</pre></td></tr></table>
-</div>
-</div>
-<h1 id="单个文件">单个文件：</h1>
-
-<p>$ git reset HEAD 文件名
-$ git checkout &ndash; 文件名</p>
-
-<h1 id="多个文件">多个文件：</h1>
-
-<p>$ git reset HEAD
-$ git checkout .</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">如果 `commit` 进版本库了，那就用 `reset` 进行版本回退。
-
-
-
-##### Reset
-
-reset 分为三种模式：
-
-- `--soft` 
-- `--mixed` 默认
-- `--hard`
-
-它们的主要区别在于作用覆盖的区域（工作区、暂存区、版本库）不一样，在敲完命令后可以用 diff 的三种比较模式去验证。
-
-
-
-以一个例子来讲，这是目前的状况。</pre></td></tr></table>
-</div>
-</div>
-<p>$ git log &ndash;oneline
+<pre class="chroma">$ git log --oneline
 4a9dabc (HEAD -&gt; master) 3
 e285589 2
-116eee9 1</p>
+116eee9 1</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git reset --soft e285589</pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>工作区：无变化</li>
+<li>暂存区：无变化</li>
+<li>版本库：HEAD 指向此版本</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"></pre></td>
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"></pre></td></tr></table>
+<pre class="chroma">$ git reset e285589
+$ git reset --mixed e285589 # 同上</pre></td></tr></table>
 </div>
 </div>
-<p>$ git reset &ndash;soft e285589</p>
+<ul>
+<li>工作区：无变化</li>
+<li>暂存区：变成此版本</li>
+<li>版本库：HEAD 指向此版本</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git reset --hard e285589</pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>工作区：变成此版本</li>
+<li>暂存区：变成此版本</li>
+<li>版本库：HEAD 指向此版本</li>
+</ul>
+
+<h1 id="压缩提交">压缩提交</h1>
+
+<p>例子：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">- 工作区：无变化
-- 暂存区：无变化
-- 版本库：HEAD 指向此版本</pre></td></tr></table>
-</div>
-</div>
-<p>$ git reset e285589
-$ git reset &ndash;mixed e285589 # 同上</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">- 工作区：无变化
-- 暂存区：变成此版本
-- 版本库：HEAD 指向此版本</pre></td></tr></table>
-</div>
-</div>
-<p>$ git reset &ndash;hard e285589</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">- 工作区：变成此版本
-- 暂存区：变成此版本
-- 版本库：HEAD 指向此版本
-
-
-
-
-
-# 压缩提交
-
-例子：</pre></td></tr></table>
-</div>
-</div>
-<p>$ git log &ndash;oneline
+<pre class="chroma">$ git log --oneline
 900db85 (HEAD -&gt; master) 修复刚才修复刚才修复错误导致的错误导致的错误
 656915e 修复刚才修复错误导致的错误
 2d7e668 修复错误
@@ -1652,42 +1445,48 @@ $ git reset &ndash;mixed e285589 # 同上</p>
 ed32739 4
 6a15af1 3
 e285589 2
-116eee9 1</p>
+116eee9 1</pre></td></tr></table>
+</div>
+</div>
+<p>我认为最后三次这种 commit message 应该合并成一个。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">我认为最后三次这种 commit message 应该合并成一个。</pre></td></tr></table>
+<pre class="chroma">$ git reset --soft 57335f5</pre></td></tr></table>
 </div>
 </div>
-<p>$ git reset &ndash;soft 57335f5</p>
+<p>HEAD 指向了&rdquo;版本5&rdquo;，但是工作区和暂存区都是目前的状态，直接 commit 即可。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">HEAD 指向了&#34;版本5&#34;，但是工作区和暂存区都是目前的状态，直接 commit 即可。</pre></td></tr></table>
+<pre class="chroma">$ git commit -m &#34;fixed a big bug&#34;</pre></td></tr></table>
 </div>
 </div>
-<p>$ git commit -m &ldquo;fixed a big bug&rdquo;</p>
+<p>再 log 查看：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">再 log 查看：</pre></td></tr></table>
-</div>
-</div>
-<p>$ git log &ndash;oneline
+<pre class="chroma">$ git log --oneline
 5827469 (HEAD -&gt; master) fixed a big bug
 57335f5 5
 ed32739 4
 6a15af1 3
 e285589 2
-116eee9 1
-```</p>
-
+116eee9 1</pre></td></tr></table>
+</div>
+</div>
 <h1 id="rebase-变基">Rebase (变基)</h1>
 
     </div>
