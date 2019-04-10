@@ -463,8 +463,7 @@ $ git config --global user.email xxx@example.com</pre></td></tr></table>
 <h4 id="github-上创建仓库-可遵循-github-的提示">Github 上创建仓库，可遵循 Github 的提示：</h4>
 
 <ul>
-<li>create a new repository on the command line：<br />
-<br /></li>
+<li>create a new repository on the command line：</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -485,8 +484,7 @@ git push -u origin master</pre></td></tr></table>
 </div>
 </div>
 <ul>
-<li>push an existing repository from the command line<br />
-<br /></li>
+<li>push an existing repository from the command line</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -726,9 +724,8 @@ $ git diff --word-diff</pre></td></tr></table>
 <p>该命令完成两件事：</p>
 
 <ol>
-<li>删除文件<br /></li>
-<li>将删除文件这个操作&rdquo;登记&rdquo;到暂存区<br />
-<br /></li>
+<li>删除文件</li>
+<li>将删除文件这个操作&rdquo;登记&rdquo;到暂存区</li>
 </ol>
 
 <p>如果你在本次变更中只进行了此次操作，可以直接 <code>commit</code>，不用再 <code>add</code>  登记了。</p>
@@ -746,10 +743,9 @@ $ git diff --word-diff</pre></td></tr></table>
 <p><code>git add -A</code>  = <code>git add -u</code> + <code>git add .</code></p>
 
 <ul>
-<li><code>git add .</code>       将文件的修改、新建，登记到暂存区<br /></li>
-<li><code>git add -u</code>     将文件的修改、删除，登记到暂存区<br /></li>
-<li><code>git add -A</code>     将文件的修改、新建、删除，登记到暂存区<br />
-<br /></li>
+<li><code>git add .</code>       将文件的修改、新建，登记到暂存区</li>
+<li><code>git add -u</code>     将文件的修改、删除，登记到暂存区</li>
+<li><code>git add -A</code>     将文件的修改、新建、删除，登记到暂存区</li>
 </ul>
 
 <p>macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论中看到，<strong>2.0 版本后 <code>git add .</code> 已经和 <code>git add -A</code> 效果相同</strong>。(<a href="https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048">https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048</a>)</p>
@@ -769,10 +765,9 @@ $ git diff --word-diff</pre></td></tr></table>
 <p>需配合 <code>.gitignore</code> 文件使用。</p>
 
 <ol>
-<li>创建 <code>.gitignore</code> 文件，写入一行内容：<code>.idea/</code> 即可。<br /></li>
-<li><code>$ git rm -r --cached .idea/</code> （-r 是递归目录，如果只是单个文件可取消这个参数）<br /></li>
-<li>add 与 commit 完成本次修改<br />
-<br /></li>
+<li>创建 <code>.gitignore</code> 文件，写入一行内容：<code>.idea/</code> 即可。</li>
+<li><code>$ git rm -r --cached .idea/</code> （-r 是递归目录，如果只是单个文件可取消这个参数）</li>
+<li>add 与 commit 完成本次修改</li>
 </ol>
 
 <p>以后即使 <code>.idea/</code> 目录里面发生了文件的增删改，git 也不会理会。</p>
@@ -806,12 +801,9 @@ $ git diff --word-diff</pre></td></tr></table>
 <p>用<a href="https://zh.wikipedia.org/zh-hans/%E5%BF%92%E4%BF%AE%E6%96%AF%E4%B9%8B%E8%88%B9">忒修斯悖论</a>来比喻代码修改：</p>
 
 <ul>
-<li>某些 CVS：当移动文件后，它认为只是一个完全不同的东西，无法追踪文件的移动过程。<br /></li>
-<li>某些企业版 CVS：每个文件都有标识，有个数据库来记录，可以轻易的追踪文件的移动。<br /></li>
-<li>Git：当一个文件至少有 50% 相似度时，这是同一个文件，小于 50% 时，这是一个新文件。<br />
-<br />
-<br />
-<br /></li>
+<li>某些 CVS：当移动文件后，它认为只是一个完全不同的东西，无法追踪文件的移动过程。</li>
+<li>某些企业版 CVS：每个文件都有标识，有个数据库来记录，可以轻易的追踪文件的移动。</li>
+<li>Git：当一个文件至少有 50% 相似度时，这是同一个文件，小于 50% 时，这是一个新文件。</li>
 </ul>
 
 <p>在移动并修改文件后 commit，Git 会反馈出一个百分比：</p>
@@ -1115,11 +1107,10 @@ HEAD 目前位于 12563de 本次的commit message</pre></td></tr></table>
 <h4 id="fast-forward">Fast-forward</h4>
 
 <ol>
-<li>假设当前只有 master 分支<br /></li>
-<li>创建 dev 分支<br /></li>
-<li>进行了一次或 N 次的修改，但是 master 分支根本没人动<br /></li>
-<li>切换到 master 分支，合并 dev 分支<br />
-<br /></li>
+<li>假设当前只有 master 分支</li>
+<li>创建 dev 分支</li>
+<li>进行了一次或 N 次的修改，但是 master 分支根本没人动</li>
+<li>切换到 master 分支，合并 dev 分支</li>
 </ol>
 
 <p>即便会导致冲突的地方，也会被 dev 分支的内容覆盖。</p>
@@ -1383,10 +1374,9 @@ $ git checkout .</pre></td></tr></table>
 <p>reset 分为三种模式：</p>
 
 <ul>
-<li><code>--soft</code><br /></li>
-<li><code>--mixed</code> 默认<br /></li>
-<li><code>--hard</code><br />
-<br /></li>
+<li><code>--soft</code></li>
+<li><code>--mixed</code> 默认</li>
+<li><code>--hard</code></li>
 </ul>
 
 <p>它们的主要区别在于作用覆盖的区域（工作区、暂存区、版本库）不一样，在敲完命令后可以用 diff 的三种比较模式去验证。</p>
@@ -1414,12 +1404,9 @@ e285589 2
 </div>
 </div>
 <ul>
-<li>工作区：无变化<br /></li>
-<li>暂存区：无变化<br /></li>
-<li>版本库：HEAD 指向此版本<br />
-<br />
-<br />
-<br /></li>
+<li>工作区：无变化</li>
+<li>暂存区：无变化</li>
+<li>版本库：HEAD 指向此版本</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1432,12 +1419,9 @@ $ git reset --mixed e285589 # 同上</pre></td></tr></table>
 </div>
 </div>
 <ul>
-<li>工作区：无变化<br /></li>
-<li>暂存区：变成此版本<br /></li>
-<li>版本库：HEAD 指向此版本<br />
-<br />
-<br />
-<br /></li>
+<li>工作区：无变化</li>
+<li>暂存区：变成此版本</li>
+<li>版本库：HEAD 指向此版本</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1448,14 +1432,9 @@ $ git reset --mixed e285589 # 同上</pre></td></tr></table>
 </div>
 </div>
 <ul>
-<li>工作区：变成此版本<br /></li>
-<li>暂存区：变成此版本<br /></li>
-<li>版本库：HEAD 指向此版本<br />
-<br />
-<br />
-<br />
-<br />
-<br /></li>
+<li>工作区：变成此版本</li>
+<li>暂存区：变成此版本</li>
+<li>版本库：HEAD 指向此版本</li>
 </ul>
 
 <h1 id="压缩提交">压缩提交</h1>

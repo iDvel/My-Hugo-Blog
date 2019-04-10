@@ -81,8 +81,7 @@ $ git config --global user.email xxx@example.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&g
 &lt;h4 id=&#34;github-上创建仓库-可遵循-github-的提示&#34;&gt;Github 上创建仓库，可遵循 Github 的提示：&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;create a new repository on the command line：&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;create a new repository on the command line：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -103,8 +102,7 @@ git push -u origin master&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;push an existing repository from the command line&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;push an existing repository from the command line&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -344,9 +342,8 @@ $ git diff --word-diff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;该命令完成两件事：&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;删除文件&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;将删除文件这个操作&amp;rdquo;登记&amp;rdquo;到暂存区&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;删除文件&lt;/li&gt;
+&lt;li&gt;将删除文件这个操作&amp;rdquo;登记&amp;rdquo;到暂存区&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;如果你在本次变更中只进行了此次操作，可以直接 &lt;code&gt;commit&lt;/code&gt;，不用再 &lt;code&gt;add&lt;/code&gt;  登记了。&lt;/p&gt;
@@ -364,10 +361,9 @@ $ git diff --word-diff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;&lt;code&gt;git add -A&lt;/code&gt;  = &lt;code&gt;git add -u&lt;/code&gt; + &lt;code&gt;git add .&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt;       将文件的修改、新建，登记到暂存区&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git add -u&lt;/code&gt;     将文件的修改、删除，登记到暂存区&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git add -A&lt;/code&gt;     将文件的修改、新建、删除，登记到暂存区&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt;       将文件的修改、新建，登记到暂存区&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add -u&lt;/code&gt;     将文件的修改、删除，登记到暂存区&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add -A&lt;/code&gt;     将文件的修改、新建、删除，登记到暂存区&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论中看到，&lt;strong&gt;2.0 版本后 &lt;code&gt;git add .&lt;/code&gt; 已经和 &lt;code&gt;git add -A&lt;/code&gt; 效果相同&lt;/strong&gt;。(&lt;a href=&#34;https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048&#34;&gt;https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048&lt;/a&gt;)&lt;/p&gt;
@@ -387,10 +383,9 @@ $ git diff --word-diff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;需配合 &lt;code&gt;.gitignore&lt;/code&gt; 文件使用。&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;创建 &lt;code&gt;.gitignore&lt;/code&gt; 文件，写入一行内容：&lt;code&gt;.idea/&lt;/code&gt; 即可。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$ git rm -r --cached .idea/&lt;/code&gt; （-r 是递归目录，如果只是单个文件可取消这个参数）&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;add 与 commit 完成本次修改&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;创建 &lt;code&gt;.gitignore&lt;/code&gt; 文件，写入一行内容：&lt;code&gt;.idea/&lt;/code&gt; 即可。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git rm -r --cached .idea/&lt;/code&gt; （-r 是递归目录，如果只是单个文件可取消这个参数）&lt;/li&gt;
+&lt;li&gt;add 与 commit 完成本次修改&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;以后即使 &lt;code&gt;.idea/&lt;/code&gt; 目录里面发生了文件的增删改，git 也不会理会。&lt;/p&gt;
@@ -424,12 +419,9 @@ $ git diff --word-diff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;用&lt;a href=&#34;https://zh.wikipedia.org/zh-hans/%E5%BF%92%E4%BF%AE%E6%96%AF%E4%B9%8B%E8%88%B9&#34;&gt;忒修斯悖论&lt;/a&gt;来比喻代码修改：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;某些 CVS：当移动文件后，它认为只是一个完全不同的东西，无法追踪文件的移动过程。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;某些企业版 CVS：每个文件都有标识，有个数据库来记录，可以轻易的追踪文件的移动。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Git：当一个文件至少有 50% 相似度时，这是同一个文件，小于 50% 时，这是一个新文件。&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;某些 CVS：当移动文件后，它认为只是一个完全不同的东西，无法追踪文件的移动过程。&lt;/li&gt;
+&lt;li&gt;某些企业版 CVS：每个文件都有标识，有个数据库来记录，可以轻易的追踪文件的移动。&lt;/li&gt;
+&lt;li&gt;Git：当一个文件至少有 50% 相似度时，这是同一个文件，小于 50% 时，这是一个新文件。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;在移动并修改文件后 commit，Git 会反馈出一个百分比：&lt;/p&gt;
@@ -733,11 +725,10 @@ HEAD 目前位于 12563de 本次的commit message&lt;/pre&gt;&lt;/td&gt;&lt;/tr&
 &lt;h4 id=&#34;fast-forward&#34;&gt;Fast-forward&lt;/h4&gt;
 
 &lt;ol&gt;
-&lt;li&gt;假设当前只有 master 分支&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;创建 dev 分支&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;进行了一次或 N 次的修改，但是 master 分支根本没人动&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;切换到 master 分支，合并 dev 分支&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;假设当前只有 master 分支&lt;/li&gt;
+&lt;li&gt;创建 dev 分支&lt;/li&gt;
+&lt;li&gt;进行了一次或 N 次的修改，但是 master 分支根本没人动&lt;/li&gt;
+&lt;li&gt;切换到 master 分支，合并 dev 分支&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;即便会导致冲突的地方，也会被 dev 分支的内容覆盖。&lt;/p&gt;
@@ -1001,10 +992,9 @@ $ git checkout .&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;reset 分为三种模式：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;--soft&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--mixed&lt;/code&gt; 默认&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--hard&lt;/code&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--soft&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--mixed&lt;/code&gt; 默认&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--hard&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;它们的主要区别在于作用覆盖的区域（工作区、暂存区、版本库）不一样，在敲完命令后可以用 diff 的三种比较模式去验证。&lt;/p&gt;
@@ -1032,12 +1022,9 @@ e285589 2
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;工作区：无变化&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;暂存区：无变化&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;版本库：HEAD 指向此版本&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;工作区：无变化&lt;/li&gt;
+&lt;li&gt;暂存区：无变化&lt;/li&gt;
+&lt;li&gt;版本库：HEAD 指向此版本&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1050,12 +1037,9 @@ $ git reset --mixed e285589 # 同上&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;工作区：无变化&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;暂存区：变成此版本&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;版本库：HEAD 指向此版本&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;工作区：无变化&lt;/li&gt;
+&lt;li&gt;暂存区：变成此版本&lt;/li&gt;
+&lt;li&gt;版本库：HEAD 指向此版本&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1066,14 +1050,9 @@ $ git reset --mixed e285589 # 同上&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;工作区：变成此版本&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;暂存区：变成此版本&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;版本库：HEAD 指向此版本&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;工作区：变成此版本&lt;/li&gt;
+&lt;li&gt;暂存区：变成此版本&lt;/li&gt;
+&lt;li&gt;版本库：HEAD 指向此版本&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&#34;压缩提交&#34;&gt;压缩提交&lt;/h1&gt;
@@ -1194,19 +1173,16 @@ e285589 2
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;宫：每个 3x3 的小九宫格为一宫&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;行：&amp;hellip;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;列：…&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;数独规则：玩家需要根据 9×9 盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、列、宫内的数字均含 1-9，不重复。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;不可解：高级数独如「▻数独」的大师局，HoDoKu 的 Extreme 难度，到后期是无法准确推演出下一个数字的，只能试错&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;测试：&lt;br /&gt;
+&lt;li&gt;宫：每个 3x3 的小九宫格为一宫&lt;/li&gt;
+&lt;li&gt;行：&amp;hellip;&lt;/li&gt;
+&lt;li&gt;列：…&lt;/li&gt;
+&lt;li&gt;数独规则：玩家需要根据 9×9 盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、列、宫内的数字均含 1-9，不重复。&lt;/li&gt;
+&lt;li&gt;不可解：高级数独如「▻数独」的大师局，HoDoKu 的 Extreme 难度，到后期是无法准确推演出下一个数字的，只能试错&lt;/li&gt;
+&lt;li&gt;测试：
 
 &lt;ul&gt;
-&lt;li&gt;手机端用的 App Store 中的「▻数独 来自 Finger Arts」大师局进行游玩&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;PC 端用的 &lt;a href=&#34;http://hodoku.sourceforge.net/en/index.php&#34;&gt;HoDoKu&lt;/a&gt;，方便来测试思路&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;手机端用的 App Store 中的「▻数独 来自 Finger Arts」大师局进行游玩&lt;/li&gt;
+&lt;li&gt;PC 端用的 &lt;a href=&#34;http://hodoku.sourceforge.net/en/index.php&#34;&gt;HoDoKu&lt;/a&gt;，方便来测试思路&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1219,16 +1195,13 @@ e285589 2
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-&lt;li&gt;循环：找到几种 100% 能确定数字的方法，循环这些方法&lt;br /&gt;
+&lt;li&gt;循环：找到几种 100% 能确定数字的方法，循环这些方法
 
 &lt;ul&gt;
-&lt;li&gt;排除法&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;扫看法&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;排除法&lt;/li&gt;
+&lt;li&gt;扫看法&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;递归：在高级数独达到不可解状态时，用递归进行试错。可以直接用这个方法求出所有解，但如果发展的分支太多，会大大增加十到百倍的运行时间，所以先用循环中的方法先解出容易解的&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;递归：在高级数独达到不可解状态时，用递归进行试错。可以直接用这个方法求出所有解，但如果发展的分支太多，会大大增加十到百倍的运行时间，所以先用循环中的方法先解出容易解的&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;思路：&lt;/p&gt;
@@ -1280,21 +1253,18 @@ e285589 2
 &lt;p&gt;递归思路：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;找到一个只有两种候选数字的格子，填入第一种&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;循环扫看法候补法 进行新一轮的操作… … 循环停滞后检测合法性&lt;br /&gt;
+&lt;li&gt;找到一个只有两种候选数字的格子，填入第一种&lt;/li&gt;
+&lt;li&gt;循环扫看法候补法 进行新一轮的操作… … 循环停滞后检测合法性
 
 &lt;ul&gt;
-&lt;li&gt;不合法：返回上一层，填入另一个数字&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;合法：继续循环，循环不出新数字后再递归&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;不合法：返回上一层，填入另一个数字&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;合法：继续循环，循环不出新数字后再递归&lt;br /&gt;
+&lt;li&gt;不合法：返回上一层，填入另一个数字&lt;/li&gt;
+&lt;li&gt;合法：继续循环，循环不出新数字后再递归&lt;/li&gt;
+&lt;li&gt;不合法：返回上一层，填入另一个数字&lt;/li&gt;
+&lt;li&gt;合法：继续循环，循环不出新数字后再递归
 
 &lt;ul&gt;
-&lt;li&gt;最后一次不合法：返回上一层，填入另一个数字&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;最后一次合法：完成&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;最后一次不合法：返回上一层，填入另一个数字&lt;/li&gt;
+&lt;li&gt;最后一次合法：完成&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1595,10 +1565,9 @@ e285589 2
 &lt;p&gt;数独难度大致可分为 3 种：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;简单，每个格子都能准确推演，运行时间 10ms 左右&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;高级，中后期只需试错几次，运行时间 30ms 左右&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;变态，前期几乎每次都要试错，运行时间 3000ms 左右&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;简单，每个格子都能准确推演，运行时间 10ms 左右&lt;/li&gt;
+&lt;li&gt;高级，中后期只需试错几次，运行时间 30ms 左右&lt;/li&gt;
+&lt;li&gt;变态，前期几乎每次都要试错，运行时间 3000ms 左右&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2320,24 +2289,20 @@ $ flask run&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;第一部分：1~7 章&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;flask&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Jinja2（模板引擎）&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;flask-bootstrap（集成 BootStrap）&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;flask-moment（将 moment.js 集成到 Jinja2 模板）&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;flask-wtf（Web表单）&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;flask-sqlachemy（数据库管理）&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;flask-migrate（数据库迁移）&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;flask-mail（电子邮件）&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;flask&lt;/li&gt;
+&lt;li&gt;Jinja2（模板引擎）&lt;/li&gt;
+&lt;li&gt;flask-bootstrap（集成 BootStrap）&lt;/li&gt;
+&lt;li&gt;flask-moment（将 moment.js 集成到 Jinja2 模板）&lt;/li&gt;
+&lt;li&gt;flask-wtf（Web表单）&lt;/li&gt;
+&lt;li&gt;flask-sqlachemy（数据库管理）&lt;/li&gt;
+&lt;li&gt;flask-migrate（数据库迁移）&lt;/li&gt;
+&lt;li&gt;flask-mail（电子邮件）&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;第二部分：8~14 章&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Flask-Login (用户身份验证)&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Flask-Login (用户身份验证)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;番茄计数：（按章节）&lt;/p&gt;
@@ -2597,12 +2562,11 @@ def p(c):
 &lt;h1 id=&#34;游戏进程&#34;&gt;游戏进程&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;入场&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;接待&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;诊断&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;治疗&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;离场&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;入场&lt;/li&gt;
+&lt;li&gt;接待&lt;/li&gt;
+&lt;li&gt;诊断&lt;/li&gt;
+&lt;li&gt;治疗&lt;/li&gt;
+&lt;li&gt;离场&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;中途可能包含「愤怒离开」「治疗效果不佳」「死亡」。&lt;/p&gt;
@@ -2820,11 +2784,8 @@ def p(c):
 &lt;p&gt;加粗项「病房」「精神病」「DNA」都是既可以诊断又可以治疗的。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;培训室：一个就够，至少弄 50 个 4% 加成的书柜，增加培训效率。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;研究：一个都不要，之前地图的研究是通用的。（你在这关如果有新研究，回老地图研发也是可以的）&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;培训室：一个就够，至少弄 50 个 4% 加成的书柜，增加培训效率。&lt;/li&gt;
+&lt;li&gt;研究：一个都不要，之前地图的研究是通用的。（你在这关如果有新研究，回老地图研发也是可以的）&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;房间等级，5 级封顶，豪华房间对员工有加成，￥300 的奖章是最高性价比。&lt;/p&gt;
@@ -2836,18 +2797,16 @@ def p(c):
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-&lt;li&gt;温度&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;卫生&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;温度&lt;/li&gt;
+&lt;li&gt;卫生&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;上面两个洗手液和暖气/空调可以简单解决。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;吃&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;喝&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;玩&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;吃&lt;/li&gt;
+&lt;li&gt;喝&lt;/li&gt;
+&lt;li&gt;玩&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;售货机解决吃喝。&lt;/p&gt;
@@ -2857,8 +2816,7 @@ def p(c):
 &lt;p&gt;咖啡厅可以同时解决「吃」和「喝」，并赐予一个开心 Buff。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;厕所&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;厕所&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;如果你建了一些吃喝建筑，但没有厕所。。。&lt;/p&gt;
@@ -2872,11 +2830,10 @@ def p(c):
 &lt;p&gt;因为后期全科技能很高，一个往返基本能就诊断 100%。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;勤杂工：留一个升级，剩下全维护。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;客服：无脑接待&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;护士：全部治疗，不要诊断，无需任何管理操作，自动轮换。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;医生：全部治疗，不要诊断，无需任何管理操作，自动轮换。&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;勤杂工：留一个升级，剩下全维护。&lt;/li&gt;
+&lt;li&gt;客服：无脑接待&lt;/li&gt;
+&lt;li&gt;护士：全部治疗，不要诊断，无需任何管理操作，自动轮换。&lt;/li&gt;
+&lt;li&gt;医生：全部治疗，不要诊断，无需任何管理操作，自动轮换。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;这么玩主要还是因为放弃了很多诊断室，治疗技能是为了保障治愈率。&lt;/p&gt;
@@ -2886,15 +2843,13 @@ def p(c):
 &lt;h1 id=&#34;核心战略&#34;&gt;核心战略&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;让员工开心，Buff 加成，咖啡厅 + 休息室 + 厕所 + 5级全科科室。（咖啡厅与厕所设置成只允许员工使用）&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;让员工开心，Buff 加成，咖啡厅 + 休息室 + 厕所 + 5级全科科室。（咖啡厅与厕所设置成只允许员工使用）&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;科室里不放咖啡机和零食，让员工休息时去咖啡厅吃喝。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;让病人迅速滚蛋，不要让他吃、喝、玩乐、拉撒，150天内要么把他治好，要么把他治死。&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;让病人迅速滚蛋，不要让他吃、喝、玩乐、拉撒，150天内要么把他治好，要么把他治死。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;这是一个塔防游戏。&lt;/p&gt;
@@ -2966,8 +2921,7 @@ def p(c):
 &lt;p&gt;&lt;strong&gt;差评。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;没有「房间模板」或「复制房间」这个功能。（关键点，有这个功能就是好评）&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;没有「房间模板」或「复制房间」这个功能。（关键点，有这个功能就是好评）&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;前期造全科就够烦的了。&lt;/p&gt;
@@ -2995,9 +2949,8 @@ def p(c):
 &lt;p&gt;如果你仔细看一会病房，包括骨科，护士们的治疗效率真是太低了急死人，各种不知所谓乱走动。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;各种 BUG，据说病房 BUG 已经修复，这个 BUG 是真tm烦。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;逼死强迫症！&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;各种 BUG，据说病房 BUG 已经修复，这个 BUG 是真tm烦。&lt;/li&gt;
+&lt;li&gt;逼死强迫症！&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;最后一关了，45 星全部到手了，玩家要真真正正的开始创造大医院了，不能复制房间我都忍了。&lt;/p&gt;
@@ -3005,8 +2958,7 @@ def p(c):
 &lt;p&gt;结果最后一关居然是不对称的。。。最外围有两处和别的长得不一样，偏小还少了个门。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;管理方式弱智&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;管理方式弱智&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;玩过 Rimworld 后很难接受这种糟糕的管理方式了，尤其是最后一关铺大医院的时候，我需要统计全科的员工人数、精神和DNA的员工人数，病房专属的员工人数等等来方便我招聘，你只能一页一页的翻。&lt;/p&gt;
@@ -3048,8 +3000,7 @@ def p(c):
 &lt;p&gt;如书名，看目录能看出来，第 12 章后开始是各种小项目，甚至还有 Django 的小入门教程。&lt;/p&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://book.douban.com/subject/26675127/&#34;&gt;《Python 语言及其应用》（Introducing Python）&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://book.douban.com/subject/26675127/&#34;&gt;《Python 语言及其应用》（Introducing Python）&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;最终还是选择这本书入门。&lt;/p&gt;
@@ -3061,8 +3012,7 @@ def p(c):
 &lt;p&gt;学习时长：69 个番茄&lt;/p&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://pythoncaff.com/docs/tutorial/3.7.0&#34;&gt;Python 官方文档：入门教程&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://pythoncaff.com/docs/tutorial/3.7.0&#34;&gt;Python 官方文档：入门教程&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;PythonCaff 社区，基于 3.7 的最新翻译版，官方的入门教程，过一遍准没错。&lt;/p&gt;
@@ -3074,8 +3024,7 @@ def p(c):
 &lt;p&gt;学习时长：19 个番茄&lt;/p&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://www.liaoxuefeng.com/&#34;&gt;廖雪峰 Python 教程&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://www.liaoxuefeng.com/&#34;&gt;廖雪峰 Python 教程&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;我觉得阅读完一门基础书籍后再看廖老师的教程比较合适，廖老师的教程精简干练，适合查漏补缺。&lt;/p&gt;
@@ -3085,15 +3034,13 @@ def p(c):
 &lt;p&gt;又重新过了一遍，最后的实战没看，感觉没有承前启后看的非常费解，准备直接看看其他 web 的书籍了。&lt;/p&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://book.douban.com/subject/27028517/&#34;&gt;《流畅的 Python》（Fluent Python）&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://book.douban.com/subject/27028517/&#34;&gt;《流畅的 Python》（Fluent Python）&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;待看&amp;hellip;&lt;/p&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://book.douban.com/subject/26381341/&#34;&gt;《Python Cookbook》&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://book.douban.com/subject/26381341/&#34;&gt;《Python Cookbook》&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;待看&amp;hellip;&lt;/p&gt;
@@ -3115,10 +3062,9 @@ def p(c):
 &lt;p&gt;需求是这样的：&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;我的博客是 dvel.me，已经部署在 Coding Pages 或 Github Pages 上，域名解析用的是 &lt;strong&gt;CNAME&lt;/strong&gt; 记录。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;我希望我的域名邮箱是后缀是 @dvel.me，域名解析用的是 &lt;strong&gt;MX&lt;/strong&gt; 记录。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;冲突了。。。&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;我的博客是 dvel.me，已经部署在 Coding Pages 或 Github Pages 上，域名解析用的是 &lt;strong&gt;CNAME&lt;/strong&gt; 记录。&lt;/li&gt;
+&lt;li&gt;我希望我的域名邮箱是后缀是 @dvel.me，域名解析用的是 &lt;strong&gt;MX&lt;/strong&gt; 记录。&lt;/li&gt;
+&lt;li&gt;冲突了。。。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -3309,7 +3255,7 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;h1 id=&#34;参考-感谢&#34;&gt;参考 &amp;amp; 感谢&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.olowolo.com/post/hugo-quick-start/&#34;&gt;Hugo 从入门到会用&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.olowolo.com/post/hugo-quick-start/&#34;&gt;Hugo 从入门到会用&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       
@@ -3447,12 +3393,7 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;h1 id=&#34;参考-感谢&#34;&gt;参考 &amp;amp; 感谢&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f&#34;&gt;超簡單！十分鐘打造漂亮又好用的 zsh command line 環境&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f&#34;&gt;超簡單！十分鐘打造漂亮又好用的 zsh command line 環境&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;后来发现在 iTerm 中进入 Python 的虚拟环境时，不显示当前虚拟环境的名称。&lt;/p&gt;
@@ -3487,30 +3428,24 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;p&gt;新 MBP（2018 15寸） 对比我的老款 MBP（2014 mid 15寸）&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;信仰灯几年前就开始不亮了。。。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;bar 上的 esc 键可能需要太长时间来适应，居然还不在最左边！&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;蝶式键盘的键程极短，基本已经适应&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;方向键的 ↑ ↓ 感觉比老款增大了误触几率&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;默认分辨率稍高（1680 x 1050），老版为（1440 x 900）&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;原彩显示，体验极佳！&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;触摸板过大，但做了很好的防误触处理&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;指纹识别，not bad&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;USB-C * 4 。。。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;发烫，通病，4 年了还是老味道&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;独显性能提升（毕竟 4 年了，老 Mac 玩影子战术低档还卡，新 Mac 高档流畅）&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;信仰灯几年前就开始不亮了。。。&lt;/li&gt;
+&lt;li&gt;bar 上的 esc 键可能需要太长时间来适应，居然还不在最左边！&lt;/li&gt;
+&lt;li&gt;蝶式键盘的键程极短，基本已经适应&lt;/li&gt;
+&lt;li&gt;方向键的 ↑ ↓ 感觉比老款增大了误触几率&lt;/li&gt;
+&lt;li&gt;默认分辨率稍高（1680 x 1050），老版为（1440 x 900）&lt;/li&gt;
+&lt;li&gt;原彩显示，体验极佳！&lt;/li&gt;
+&lt;li&gt;触摸板过大，但做了很好的防误触处理&lt;/li&gt;
+&lt;li&gt;指纹识别，not bad&lt;/li&gt;
+&lt;li&gt;USB-C * 4 。。。&lt;/li&gt;
+&lt;li&gt;发烫，通病，4 年了还是老味道&lt;/li&gt;
+&lt;li&gt;独显性能提升（毕竟 4 年了，老 Mac 玩影子战术低档还卡，新 Mac 高档流畅）&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&#34;配件&#34;&gt;配件&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Apple USB-C 转 USB 转换器&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;戴尔 DA300&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Apple USB-C 转 USB 转换器&lt;/li&gt;
+&lt;li&gt;戴尔 DA300&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&#34;偏好设置&#34;&gt;偏好设置&lt;/h1&gt;
@@ -3519,37 +3454,34 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;li&gt;&lt;p&gt;系统所有偏好设置&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;通用：关闭文稿时要求保存更改&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Dock：将窗口最小化为应用程序图标，连按最小化&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;吮吸效果：&lt;code&gt;defaults write com.apple.dock mineffect suck; Killall Dock&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;添加空白格：&lt;code&gt;defaults write com.apple.dock persistent-apps -array-add &#39;{&amp;quot;tile-type&amp;quot;=&amp;quot;spacer-tile&amp;quot;;}&#39;; Killall Dock&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;堆栈区网格高亮：&lt;code&gt;defaults write com.apple.dock mouse-over-hilite-stack -bool TRUE;killall Dock&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;调度中心：关闭仪表盘，设置触发角（右下角显示桌面）&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;触摸板：辅助点按、轻点、滚动方向&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Siri：关闭&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;辅助功能 - 鼠标与触控板 - 触控板选项：启动拖移(三指拖移)&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;通用：关闭文稿时要求保存更改&lt;/li&gt;
+&lt;li&gt;Dock：将窗口最小化为应用程序图标，连按最小化&lt;/li&gt;
+&lt;li&gt;吮吸效果：&lt;code&gt;defaults write com.apple.dock mineffect suck; Killall Dock&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;添加空白格：&lt;code&gt;defaults write com.apple.dock persistent-apps -array-add &#39;{&amp;quot;tile-type&amp;quot;=&amp;quot;spacer-tile&amp;quot;;}&#39;; Killall Dock&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;堆栈区网格高亮：&lt;code&gt;defaults write com.apple.dock mouse-over-hilite-stack -bool TRUE;killall Dock&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;调度中心：关闭仪表盘，设置触发角（右下角显示桌面）&lt;/li&gt;
+&lt;li&gt;触摸板：辅助点按、轻点、滚动方向&lt;/li&gt;
+&lt;li&gt;Siri：关闭&lt;/li&gt;
+&lt;li&gt;辅助功能 - 鼠标与触控板 - 触控板选项：启动拖移(三指拖移)&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Finder 偏好设置&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;边栏调整&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;显示所有文件扩展名&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;显示 - 显示各种栏&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;标题栏显示完整路径：&lt;code&gt;defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES;killall Finder&lt;/code&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;边栏调整&lt;/li&gt;
+&lt;li&gt;显示所有文件扩展名&lt;/li&gt;
+&lt;li&gt;显示 - 显示各种栏&lt;/li&gt;
+&lt;li&gt;标题栏显示完整路径：&lt;code&gt;defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES;killall Finder&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;部分快捷键重设（极具个人风格）&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;双击 command：Alfred&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;command + 空格：切换输入法&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;option + 空格：Alfred - File search - Navigation&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;control + 空格：spotlight&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;shift + 空格：iTerm&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;双击 command：Alfred&lt;/li&gt;
+&lt;li&gt;command + 空格：切换输入法&lt;/li&gt;
+&lt;li&gt;option + 空格：Alfred - File search - Navigation&lt;/li&gt;
+&lt;li&gt;control + 空格：spotlight&lt;/li&gt;
+&lt;li&gt;shift + 空格：iTerm&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;禁用大部分 iCloud 同步&lt;/p&gt;&lt;/li&gt;
@@ -3562,14 +3494,13 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-&lt;li&gt;输入法&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Firefox / Chrome&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Surge&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Dropbox&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Alfred&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;1Password&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Spark&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;输入法&lt;/li&gt;
+&lt;li&gt;Firefox / Chrome&lt;/li&gt;
+&lt;li&gt;Surge&lt;/li&gt;
+&lt;li&gt;Dropbox&lt;/li&gt;
+&lt;li&gt;Alfred&lt;/li&gt;
+&lt;li&gt;1Password&lt;/li&gt;
+&lt;li&gt;Spark&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;至此，基本上只差功能性App了，大部分的使用习惯都找了回来&lt;/p&gt;
@@ -3581,18 +3512,17 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;p&gt;特别注意个别 App 的反激活与同步。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;1Password ，妈的 7 不带老用户玩了，需订阅或再次买断&lt;br /&gt;
+&lt;li&gt;1Password ，妈的 7 不带老用户玩了，需订阅或再次买断
 
 &lt;ul&gt;
-&lt;li&gt;之前买断的可以从 MAS 购买记录里重新下载&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;之前买断的可以从 MAS 购买记录里重新下载&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Fantastical 2 根本没有反激活。。。&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;NTFS 需要在官网反激活一下，看到 Licences 有点变化&lt;br /&gt;
+&lt;li&gt;Fantastical 2 根本没有反激活。。。&lt;/li&gt;
+&lt;li&gt;NTFS 需要在官网反激活一下，看到 Licences 有点变化
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Microsoft NTFS for Mac by Paragon Software&lt;/strong&gt; 新版可用的&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Paragon NTFS For Mac 14 (Multilingual)&lt;/strong&gt; 好像是曾经的叫法，已不可用，下载14也无法打开&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Microsoft NTFS for Mac by Paragon Software&lt;/strong&gt; 新版可用的&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Paragon NTFS For Mac 14 (Multilingual)&lt;/strong&gt; 好像是曾经的叫法，已不可用，下载14也无法打开&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -3603,14 +3533,11 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;p&gt;一步一步折腾，真希望iTerm能集成一切且同步&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;iTerm&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;zsh&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;oh-my-zsh&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;powerlevel9k&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;zsh-syntax-highlighting&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;iTerm&lt;/li&gt;
+&lt;li&gt;zsh&lt;/li&gt;
+&lt;li&gt;oh-my-zsh&lt;/li&gt;
+&lt;li&gt;powerlevel9k&lt;/li&gt;
+&lt;li&gt;zsh-syntax-highlighting&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&#34;完事了-洗洗睡了&#34;&gt;完事了，洗洗睡了&lt;/h1&gt;
@@ -3700,22 +3627,19 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;h1 id=&#34;大致操作流程&#34;&gt;大致操作流程&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;查征信&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;查征信&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;实际上需要用户首先签署征信查询授权书并上传面签照，但大部分金融都是后补或代签的。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;风控&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;风控&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;各有不同。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;签署合同&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;签署合同&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;简单只需两三张合同，复杂的多至 30 份左右并需要拍照、视频。&lt;/p&gt;
@@ -3729,10 +3653,7 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;p&gt;各金融要的都不一样，大部分都是：发票、绿本、保单。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;结清后办理解押&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;结清后办理解押&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&#34;车务&#34;&gt;车务&lt;/h1&gt;
@@ -3804,21 +3725,18 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;h1 id=&#34;首先是-icloud-的应用范围&#34;&gt;首先是 iCloud 的应用范围：&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;iCloud Drive&lt;/strong&gt; [建议保留]&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;照片&lt;/strong&gt; [Google Photo]&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;邮件&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;通讯录&lt;/strong&gt; [google]&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;日历&lt;/strong&gt; [google]&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;提醒事项&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Safari&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;备忘录&lt;/strong&gt; [google]&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Siri&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;钥匙串&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;回到我的Mac&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;查找我的Mac&lt;/strong&gt; [建议保留]&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;iCloud Drive&lt;/strong&gt; [建议保留]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;照片&lt;/strong&gt; [Google Photo]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;邮件&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通讯录&lt;/strong&gt; [google]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;日历&lt;/strong&gt; [google]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;提醒事项&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Safari&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;备忘录&lt;/strong&gt; [google]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Siri&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;钥匙串&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;回到我的Mac&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;查找我的Mac&lt;/strong&gt; [建议保留]&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;iCloud Drive&lt;/strong&gt; 建议保留，众多App有很多无关紧要的备份文件都得以保留，另外诸如surge或其它App和Mac之间配合的，走iCloud存储会更方便一点。&lt;/p&gt;
@@ -3892,19 +3810,16 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;h1 id=&#34;提前准备&#34;&gt;提前准备&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;公司网站域名&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;请公司提供邮箱（公司的域名邮箱，即网站的域名后缀）&lt;br /&gt;
+&lt;li&gt;公司网站域名&lt;/li&gt;
+&lt;li&gt;请公司提供邮箱（公司的域名邮箱，即网站的域名后缀）
 
 &lt;ul&gt;
-&lt;li&gt;尴尬的是我们公司没有企业域名邮箱，于是我试了试 &lt;code&gt;公司名称拼音@sina.com&lt;/code&gt;，总之顺利申请下来了。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;尴尬的是我们公司没有企业域名邮箱，于是我试了试 &lt;code&gt;公司名称拼音@sina.com&lt;/code&gt;，总之顺利申请下来了。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;del&gt;请公司提供 VISA + 银联，或 万事达 + 银联 的双标信用卡（VISA单标卡目前不可用）&lt;/del&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;准备一个公司高层领导的姓名、性别、职位、电话&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;准备一个公司备用联系人的姓名、电话、邮箱&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;公司的一些细节（在下面）&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;请公司提供 VISA + 银联，或 万事达 + 银联 的双标信用卡（VISA单标卡目前不可用）&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;准备一个公司高层领导的姓名、性别、职位、电话&lt;/li&gt;
+&lt;li&gt;准备一个公司备用联系人的姓名、电话、邮箱&lt;/li&gt;
+&lt;li&gt;公司的一些细节（在下面）&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&#34;注册-apple-id&#34;&gt;注册 Apple ID&lt;/h1&gt;
@@ -3920,12 +3835,11 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;p&gt;2017年4月19日&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/programs/cn/&#34;&gt;https://developer.apple.com/programs/cn/&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;按流程操作&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;选择类型时，选择 &lt;strong&gt;Company / Organization&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;会弹出一个警告，很多文字，在 &lt;code&gt;A D-U-N-S Number&lt;/code&gt; 这栏有一个 &lt;code&gt;Check now &amp;gt;&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;开始查询是否已经有邓白氏编码，如果没有直接按填写的信息进行注册了&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/programs/cn/&#34;&gt;https://developer.apple.com/programs/cn/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;按流程操作&lt;/li&gt;
+&lt;li&gt;选择类型时，选择 &lt;strong&gt;Company / Organization&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;会弹出一个警告，很多文字，在 &lt;code&gt;A D-U-N-S Number&lt;/code&gt; 这栏有一个 &lt;code&gt;Check now &amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;开始查询是否已经有邓白氏编码，如果没有直接按填写的信息进行注册了&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;注意全部使用英文，要公司的英文名、英文地址之类的。&lt;/p&gt;
@@ -4402,8 +4316,8 @@ end&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;h1 id=&#34;参考-感谢&#34;&gt;参考 &amp;amp; 感谢&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.jianshu.com/p/82d0ba43f8c3&#34;&gt;iOS开发 - CocoaPods安装和使用教程&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.jianshu.com/p/689368568cf7&#34;&gt;CocoaPods相关问题总结&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jianshu.com/p/82d0ba43f8c3&#34;&gt;iOS开发 - CocoaPods安装和使用教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jianshu.com/p/689368568cf7&#34;&gt;CocoaPods相关问题总结&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       
@@ -4551,11 +4465,10 @@ $ gitbook build --gitbook=2.6.7 // 生成对应版本的，本地无此版本会
 &lt;p&gt;总之就是搭配Markdown的神器啦。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;支持拖动上传&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;自动生成Markdown语法，插图方便&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;支持众多图床，基本主流的都支持啦&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;最神奇的出现啦：&lt;a href=&#34;https://toolinbox.net/iPic/iPicUploader_Typora.html&#34;&gt;Typora集成了iPic的上传服务&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;支持拖动上传&lt;/li&gt;
+&lt;li&gt;自动生成Markdown语法，插图方便&lt;/li&gt;
+&lt;li&gt;支持众多图床，基本主流的都支持啦&lt;/li&gt;
+&lt;li&gt;最神奇的出现啦：&lt;a href=&#34;https://toolinbox.net/iPic/iPicUploader_Typora.html&#34;&gt;Typora集成了iPic的上传服务&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;具体的看这里吧：&lt;a href=&#34;https://toolinbox.net/iPic/&#34;&gt; 图床神器 iPic &lt;/a&gt;&lt;/p&gt;
@@ -5045,10 +4958,10 @@ ssh -vvT git@123.123.123.123   // 你的VPS的IP地址
 &lt;h1 id=&#34;参考-感谢&#34;&gt;参考&amp;amp;感谢&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo官网&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://tiktoking.github.io/2016/01/26/hexo/#u521B_u5EFA_u7F51_u7AD9_u76EE_u5F55&#34;&gt;在VPS上搭建hexo博客，利用git更新 - WikiLibrary&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://buzhidao.me/2016/02/01/%E5%9C%A8VPS%E4%B8%8A%E9%85%8D%E7%BD%AEhexo%E5%8D%9A%E5%AE%A2/&#34;&gt;在VPS上配置hexo博客 - Springwon&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://huifeng.me/2015/08/16/deploy-hexo-to-vps/&#34;&gt;Deploy Hexo sites to VPS - 回风.Me&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tiktoking.github.io/2016/01/26/hexo/#u521B_u5EFA_u7F51_u7AD9_u76EE_u5F55&#34;&gt;在VPS上搭建hexo博客，利用git更新 - WikiLibrary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://buzhidao.me/2016/02/01/%E5%9C%A8VPS%E4%B8%8A%E9%85%8D%E7%BD%AEhexo%E5%8D%9A%E5%AE%A2/&#34;&gt;在VPS上配置hexo博客 - Springwon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://huifeng.me/2015/08/16/deploy-hexo-to-vps/&#34;&gt;Deploy Hexo sites to VPS - 回风.Me&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       
