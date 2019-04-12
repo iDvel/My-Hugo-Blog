@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-04-07T03:33:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-07T03:33:15&#43;08:00" />
-<meta itemprop="wordCount" content="5855">
+<meta itemprop="wordCount" content="6076">
 
 
 
@@ -392,6 +392,7 @@
 </ul></li>
 </ul></li>
 <li><a href="#压缩提交">压缩提交</a></li>
+<li><a href="#tag">Tag</a></li>
 <li><a href="#rebase-变基">Rebase (变基)</a></li>
 </ul>
 </nav>
@@ -1085,8 +1086,6 @@ HEAD 目前位于 12563de 本次的commit message</pre></td></tr></table>
 <pre class="chroma">$ git checkout 分支名</pre></td></tr></table>
 </div>
 </div>
-<p>狗书《Flask Web 开发》作者配合使用 Tag 功能做了一个相当方便的时光穿梭机，比如第一章第一部分代码使用 1a 作为标签，第二章第三部分代码使用 2c 作为标签，读者只需执行 <code>git checkout 2c</code> 即可查看此次代码。</p>
-
 <h4 id="discarding-edits-撤销修改">Discarding edits (撤销修改)</h4>
 
 <p><a href="#撤销修改与版本回退">见下面章节</a></p>
@@ -1503,7 +1502,83 @@ e285589 2
 116eee9 1</pre></td></tr></table>
 </div>
 </div>
+<h1 id="tag">Tag</h1>
+
+<p>比起混乱的 commit id，标签可以更方便的标记出重要的版本。</p>
+
+<p>狗书《Flask Web 开发》作者配合使用 Tag 功能做了一个相当方便的时光穿梭机，比如第一章第一部分代码使用 1a 作为标签，第二章第三部分代码使用 2c 作为标签，读者只需执行 <code>git checkout 2c</code> 即可查看此次代码。</p>
+
+<p><br/></p>
+
+<p>查看所有标签：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git tag</pre></td></tr></table>
+</div>
+</div>
+<p><br/></p>
+
+<p>打标签：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 给最新的 commit 打标签：
+$ git tag 标签内容
+
+# 给指定 commit ID 打标签，如：
+$ git tag 标签内容 116eee9
+
+# 创建带有说明的标签，用-a指定标签名，-m指定说明文字，可用`git show 标签内容`查看：
+$ git tag -a v0.1 -m &#34;version 0.1 released&#34; 1094adb</pre></td></tr></table>
+</div>
+</div>
+<p><br/></p>
+
+<p>删除标签：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git tag -d 标签内容</pre></td></tr></table>
+</div>
+</div>
+<p><br/></p>
+
+<p>默认 push 时不推送标签，推送标签命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 推送单个标签
+$ git push 标签内容
+
+# 推送所有标签
+$ git push --tags</pre></td></tr></table>
+</div>
+</div>
 <h1 id="rebase-变基">Rebase (变基)</h1>
+
+<p><a href="https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase">https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase</a></p>
+
+<p>推荐看一些文章后用 <a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a> 这个教程试一试。</p>
 
     </div>
 

@@ -703,8 +703,6 @@ HEAD 目前位于 12563de 本次的commit message&lt;/pre&gt;&lt;/td&gt;&lt;/tr&
 &lt;pre class=&#34;chroma&#34;&gt;$ git checkout 分支名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;狗书《Flask Web 开发》作者配合使用 Tag 功能做了一个相当方便的时光穿梭机，比如第一章第一部分代码使用 1a 作为标签，第二章第三部分代码使用 2c 作为标签，读者只需执行 &lt;code&gt;git checkout 2c&lt;/code&gt; 即可查看此次代码。&lt;/p&gt;
-
 &lt;h4 id=&#34;discarding-edits-撤销修改&#34;&gt;Discarding edits (撤销修改)&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;#撤销修改与版本回退&#34;&gt;见下面章节&lt;/a&gt;&lt;/p&gt;
@@ -1121,7 +1119,83 @@ e285589 2
 116eee9 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;h1 id=&#34;tag&#34;&gt;Tag&lt;/h1&gt;
+
+&lt;p&gt;比起混乱的 commit id，标签可以更方便的标记出重要的版本。&lt;/p&gt;
+
+&lt;p&gt;狗书《Flask Web 开发》作者配合使用 Tag 功能做了一个相当方便的时光穿梭机，比如第一章第一部分代码使用 1a 作为标签，第二章第三部分代码使用 2c 作为标签，读者只需执行 &lt;code&gt;git checkout 2c&lt;/code&gt; 即可查看此次代码。&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;查看所有标签：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git tag&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;打标签：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;# 给最新的 commit 打标签：
+$ git tag 标签内容
+
+# 给指定 commit ID 打标签，如：
+$ git tag 标签内容 116eee9
+
+# 创建带有说明的标签，用-a指定标签名，-m指定说明文字，可用`git show 标签内容`查看：
+$ git tag -a v0.1 -m &amp;#34;version 0.1 released&amp;#34; 1094adb&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;删除标签：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ git tag -d 标签内容&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;默认 push 时不推送标签，推送标签命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;# 推送单个标签
+$ git push 标签内容
+
+# 推送所有标签
+$ git push --tags&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;h1 id=&#34;rebase-变基&#34;&gt;Rebase (变基)&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase&#34;&gt;https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;推荐看一些文章后用 &lt;a href=&#34;https://learngitbranching.js.org/&#34;&gt;https://learngitbranching.js.org/&lt;/a&gt; 这个教程试一试。&lt;/p&gt;
 </description>
       
     </item>
