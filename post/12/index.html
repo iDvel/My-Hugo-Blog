@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Dvel" />
-  <meta name="description" content="刚折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh 安装 zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &amp;#34;echo $(which zsh) &amp;gt;&amp;gt; /etc/shells&amp;#34; 设置默认 shell" />
+  <meta name="description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &amp;#34;echo $(which zsh) &amp;gt;&amp;gt; /etc/shells&amp;#34; 设置默认 shell： 1 $ chsh" />
 
   <meta name="keywords" content="Dvel" />
 
@@ -58,26 +58,26 @@
 
 
 <meta property="og:title" content="为 Mac 打造 zsh command line 环境" />
-<meta property="og:description" content="刚折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh 安装 zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &#34;echo $(which zsh) &gt;&gt; /etc/shells&#34; 设置默认 shell" />
+<meta property="og:description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &#34;echo $(which zsh) &gt;&gt; /etc/shells&#34; 设置默认 shell： 1 $ chsh" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Dvel.xyz/post/12/" />
 <meta property="article:published_time" content="2018-07-30T02:49:46&#43;08:00"/>
 <meta property="article:modified_time" content="2018-07-30T02:49:46&#43;08:00"/>
 
 <meta itemprop="name" content="为 Mac 打造 zsh command line 环境">
-<meta itemprop="description" content="刚折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh 安装 zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &#34;echo $(which zsh) &gt;&gt; /etc/shells&#34; 设置默认 shell">
+<meta itemprop="description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &#34;echo $(which zsh) &gt;&gt; /etc/shells&#34; 设置默认 shell： 1 $ chsh">
 
 
 <meta itemprop="datePublished" content="2018-07-30T02:49:46&#43;08:00" />
 <meta itemprop="dateModified" content="2018-07-30T02:49:46&#43;08:00" />
-<meta itemprop="wordCount" content="371">
+<meta itemprop="wordCount" content="454">
 
 
 
 <meta itemprop="keywords" content="Mac,Zsh,Terminal,Shell," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="为 Mac 打造 zsh command line 环境"/>
-<meta name="twitter:description" content="刚折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh 安装 zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &#34;echo $(which zsh) &gt;&gt; /etc/shells&#34; 设置默认 shell"/>
+<meta name="twitter:description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &#34;echo $(which zsh) &gt;&gt; /etc/shells&#34; 设置默认 shell： 1 $ chsh"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -259,15 +259,16 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#iterm-2">iTerm 2</a></li>
-<li><a href="#zsh">zsh</a>
+<li>
 <ul>
-<li><a href="#安装-zsh">安装 zsh：</a></li>
-<li><a href="#安装-oh-my-zsh-https-github-com-robbyrussell-oh-my-zsh">安装 <a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a>：</a></li>
-<li><a href="#安装-zsh-主题-powerlevel9k-https-github-com-bhilburn-powerlevel9k">安装 zsh 主题 <a href="https://github.com/bhilburn/powerlevel9k">powerlevel9k</a>：</a></li>
-<li><a href="#安装-zsh-高亮插件">安装 zsh 高亮插件</a></li>
-</ul></li>
+<li><a href="#iterm-2">iTerm 2</a></li>
+<li><a href="#zsh">zsh：</a></li>
+<li><a href="#oh-my-zsh-https-github-com-robbyrussell-oh-my-zsh"><a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a>：</a></li>
+<li><a href="#zsh-主题-powerlevel9k-https-github-com-bhilburn-powerlevel9k">zsh 主题 <a href="https://github.com/bhilburn/powerlevel9k">powerlevel9k</a>：</a></li>
+<li><a href="#zsh-插件">zsh 插件</a></li>
+<li><a href="#一些配置">一些配置</a></li>
 <li><a href="#参考-感谢">参考 &amp; 感谢</a></li>
+</ul></li>
 </ul>
 </nav>
   </div>
@@ -278,22 +279,20 @@
       
 
 <blockquote>
-<p>刚折腾完，做个备忘</p>
+<p>折腾完，做个备忘</p>
 </blockquote>
 
 <p>样图：</p>
 
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*JR3-ExMjs20SbXwUmjI44g.png" alt="" /></p>
 
-<h1 id="iterm-2">iTerm 2</h1>
+<h2 id="iterm-2">iTerm 2</h2>
 
 <p>配置一番。</p>
 
 <p>主题：<a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Night</a></p>
 
-<h1 id="zsh">zsh</h1>
-
-<h2 id="安装-zsh">安装 zsh：</h2>
+<h2 id="zsh">zsh：</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -331,7 +330,7 @@
 </div>
 <p>OK.</p>
 
-<h2 id="安装-oh-my-zsh-https-github-com-robbyrussell-oh-my-zsh">安装 <a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a>：</h2>
+<h2 id="oh-my-zsh-https-github-com-robbyrussell-oh-my-zsh"><a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a>：</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -342,7 +341,7 @@
 </div>
 <p>安装后出现目录 <code>~/.oh-my-zsh/</code> 及配置文件 <code>~/.zshrc</code>。</p>
 
-<h2 id="安装-zsh-主题-powerlevel9k-https-github-com-bhilburn-powerlevel9k">安装 zsh 主题 <a href="https://github.com/bhilburn/powerlevel9k">powerlevel9k</a>：</h2>
+<h2 id="zsh-主题-powerlevel9k-https-github-com-bhilburn-powerlevel9k">zsh 主题 <a href="https://github.com/bhilburn/powerlevel9k">powerlevel9k</a>：</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -375,45 +374,65 @@
 </div>
 <p>在 iTerm 2 中更换字体。</p>
 
-<h2 id="安装-zsh-高亮插件">安装 zsh 高亮插件</h2>
-
-<p>安装 <a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a>：</p>
+<h2 id="zsh-插件">zsh 插件</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ brew install zsh-syntax-highlighting</pre></td></tr></table>
+<pre class="chroma">$ brew install zsh-syntax-highlighting # 高亮
+$ brew install zsh-autosuggestions # 根据历史输入的补全建议</pre></td></tr></table>
 </div>
 </div>
-<p>在 <code>~/.zshrc</code> 中加入以下语句：</p>
+<p>遵循提示，在 <code>~/.zshrc</code> 中加入以下语句：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</pre></td></tr></table>
+<pre class="chroma">source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh</pre></td></tr></table>
 </div>
 </div>
-<p>重启，OK。</p>
+<p><code>$ source ~/.zshrc</code> 使之生效。（试了并不成功，非得重启 iTerm 才行）</p>
 
-<h1 id="参考-感谢">参考 &amp; 感谢</h1>
+<h2 id="一些配置">一些配置</h2>
+
+<p>编辑 <code>~/.zshrc</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 开启插件，一行写一个
+plugins=(
+    git
+    z
+    )
+
+# 解决 Python 虚拟环境没有提示：
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
+# 左侧主机名，默认是`%n@%m` 用户名@电脑名，可以改成自己喜欢的。
+POWERLEVEL9K_CONTEXT_TEMPLATE=&#34;&#34;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="参考-感谢">参考 &amp; 感谢</h2>
 
 <ul>
 <li><a href="https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f">超簡單！十分鐘打造漂亮又好用的 zsh command line 環境</a></li>
 </ul>
 
-<p>后来发现在 iTerm 中进入 Python 的虚拟环境时，不显示当前虚拟环境的名称。</p>
-
-<p>在 <code>~/.zshrc</code> 中添加此句可解决：(等号左右不能含有空格)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)</pre></td></tr></table>
-</div>
-</div>
     </div>
 
     

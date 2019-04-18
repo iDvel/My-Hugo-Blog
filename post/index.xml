@@ -35,7 +35,7 @@
       <pubDate>Fri, 22 Feb 2019 06:21:12 +0800</pubDate>
       
       <guid>https://Dvel.xyz/post/18/</guid>
-      <description>粗略的记录了一些大纲、重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 如何安装和设置 Flask 框架 venv 在 Python 3 中由标准库 venv 创</description>
+      <description>#### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 Flask 哲学 Flask 自开发伊始就被设计为可扩展</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@
       <pubDate>Mon, 30 Jul 2018 02:49:46 +0800</pubDate>
       
       <guid>https://Dvel.xyz/post/12/</guid>
-      <description>刚折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh 安装 zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &amp;#34;echo $(which zsh) &amp;gt;&amp;gt; /etc/shells&amp;#34; 设置默认 shell</description>
+      <description>折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &amp;#34;echo $(which zsh) &amp;gt;&amp;gt; /etc/shells&amp;#34; 设置默认 shell： 1 $ chsh</description>
     </item>
     
     <item>
