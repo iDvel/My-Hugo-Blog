@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Dvel" />
-  <meta name="description" content="#### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 Flask 哲学 Flask 自开发伊始就被设计为可扩展" />
+  <meta name="description" content="《Flask Web 开发》 #### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 Flask 哲学 Flask 自开发" />
 
   <meta name="keywords" content="Dvel" />
 
@@ -58,26 +58,26 @@
 
 
 <meta property="og:title" content="《Flask Web 开发》笔记" />
-<meta property="og:description" content="#### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 Flask 哲学 Flask 自开发伊始就被设计为可扩展" />
+<meta property="og:description" content="《Flask Web 开发》 #### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 Flask 哲学 Flask 自开发" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Dvel.xyz/post/18/" />
 <meta property="article:published_time" content="2019-02-22T06:21:12&#43;08:00"/>
 <meta property="article:modified_time" content="2019-02-22T06:21:12&#43;08:00"/>
 
 <meta itemprop="name" content="《Flask Web 开发》笔记">
-<meta itemprop="description" content="#### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 Flask 哲学 Flask 自开发伊始就被设计为可扩展">
+<meta itemprop="description" content="《Flask Web 开发》 #### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 Flask 哲学 Flask 自开发">
 
 
 <meta itemprop="datePublished" content="2019-02-22T06:21:12&#43;08:00" />
 <meta itemprop="dateModified" content="2019-02-22T06:21:12&#43;08:00" />
-<meta itemprop="wordCount" content="3172">
+<meta itemprop="wordCount" content="3393">
 
 
 
 <meta itemprop="keywords" content="Python,Flask," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="《Flask Web 开发》笔记"/>
-<meta name="twitter:description" content="#### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 Flask 哲学 Flask 自开发伊始就被设计为可扩展"/>
+<meta name="twitter:description" content="《Flask Web 开发》 #### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 Flask 哲学 Flask 自开发"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -323,6 +323,8 @@
     
     <div class="post-content">
       
+
+<p>《Flask Web 开发》</p>
 
 <blockquote>
 <p>#### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。</p>
@@ -672,7 +674,7 @@ $ flask run</code></pre></td></tr></table>
 
 <p>Flask 视图函数还可以返回一个响应对象——<code>make_response()</code>。</p>
 
-<p>重定向，由于使用频繁，Flask 提供了 <code>redirect()</code> 辅助函数。</p>
+<p>重定向，由于使用频繁，Flask 提供了 <code>redirect()</code> 辅助函数。</p>
 
 <p><br/></p>
 
@@ -692,7 +694,7 @@ $ flask run</code></pre></td></tr></table>
 
 <p>支持结构控制、宏（类似函数）。</p>
 
-<p>支持模板继承：<code>{% extends &quot;bootstrap/base.html&quot; %}</code> 及 <code>{{ super() }}</code>。</p>
+<p>支持模板继承：<code>{% extends &quot;bootstrap/base.html&quot; %}</code> 及 <code>{{ super() }}</code>。</p>
 
 <h3 id="初始化扩展">初始化扩展</h3>
 <div class="highlight"><div class="chroma">
@@ -1039,6 +1041,84 @@ users = db.relationship(&#39;User&#39;, backref=&#39;role&#39;, lazy=&#39;dynami
 
 <h2 id="第-6-章-电子邮件">第 6 章 电子邮件</h2>
 
+<p>使用 Flask-Mail 提供电子邮件支持，Python 的 <code>smtplib</code> 库不支持 OAuth2 验证方法，需要设置 Google 账户的「允许不够安全的应用的访问权限」。</p>
+
+<p>配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">app.config[&#39;MAIL_SERVER&#39;] = &#39;smtp.gmail.com&#39;
+app.config[&#39;MAIL_PORT&#39;] = 587
+app.config[&#39;MAIL_USE_TLS&#39;] = True
+app.config[&#39;MAIL_USERNAME&#39;] = os.environ.get(&#39;MAIL_USERNAME&#39;)
+app.config[&#39;MAIL_PASSWORD&#39;] = os.environ.get(&#39;MAIL_PASSWORD&#39;)
+app.config[&#39;FLASKY_MAIL_SUBJECT_PREFIX&#39;] = &#39;[前缀]&#39;
+app.config[&#39;FLASKY_MAIL_SENDER&#39;] = &#39;Flasky Admin &lt;xxx@gmail.com&gt;&#39;
+app.config[&#39;FLASKY_ADMIN&#39;] = os.environ.get(&#39;FLASKY_ADMIN&#39;)</pre></td></tr></table>
+</div>
+</div>
+<p>将敏感信息写入环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ export MAIL_USERNAME=xxx@gmail.com       
+$ export MAIL_PASSWORD=xxxxxxxx               
+$ export FLASKY_ADMIN=xxx@gmail.com # 接收邮件的管理员</pre></td></tr></table>
+</div>
+</div>
+<p>集成邮件发送功能：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask_mail</span> <span class="kn">import</span> <span class="n">Mail</span><span class="p">,</span> <span class="n">Message</span>
+<span class="n">mail</span> <span class="o">=</span> <span class="n">Mail</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">send_email</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;FLASKY_MAIL_SUBJECT_PREFIX&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">subject</span><span class="p">,</span>
+                  <span class="n">sender</span><span class="o">=</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;FLASKY_MAIL_SENDER&#39;</span><span class="p">],</span>
+                  <span class="n">recipients</span><span class="o">=</span><span class="p">[</span><span class="n">to</span><span class="p">])</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="n">render_template</span><span class="p">(</span><span class="n">template</span> <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">html</span> <span class="o">=</span> <span class="n">render_template</span><span class="p">(</span><span class="n">template</span> <span class="o">+</span> <span class="s1">&#39;.html&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">mail</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>编写视图函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># ...</span>
+<span class="k">if</span> <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;FLASKY_ADMIN&#39;</span><span class="p">]:</span>
+    <span class="n">send_email</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;FLASKY_ADMIN&#39;</span><span class="p">],</span> <span class="s1">&#39;New User&#39;</span><span class="p">,</span> <span class="s1">&#39;mail/new_user&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">)</span>
+<span class="c1"># ...</span></code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="第-7-章-大型应用的结构">第 7 章 大型应用的结构</h2>
 
 <blockquote>
@@ -1074,7 +1154,7 @@ users = db.relationship(&#39;User&#39;, backref=&#39;role&#39;, lazy=&#39;dynami
 │   ├── /email.py
 │   ├── /models.py
 │   ├── /static/
-│   └── /templates/
+│   ├── /templates/
 │   ├── /main/
 │      ├── /__init__.py
 │      ├── /errors.py	

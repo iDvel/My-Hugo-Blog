@@ -1693,6 +1693,8 @@ $ git push --tags&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
       
         <description>
 
+&lt;p&gt;《Flask Web 开发》&lt;/p&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;#### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2041,7 +2043,7 @@ $ flask run&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;Flask 视图函数还可以返回一个响应对象——&lt;code&gt;make_response()&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;重定向，由于使用频繁，Flask 提供了 &lt;code&gt;redirect()&lt;/code&gt; 辅助函数。&lt;/p&gt;
+&lt;p&gt;重定向，由于使用频繁，Flask 提供了 &lt;code&gt;redirect()&lt;/code&gt; 辅助函数。&lt;/p&gt;
 
 &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
 
@@ -2061,7 +2063,7 @@ $ flask run&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;支持结构控制、宏（类似函数）。&lt;/p&gt;
 
-&lt;p&gt;支持模板继承：&lt;code&gt;{% extends &amp;quot;bootstrap/base.html&amp;quot; %}&lt;/code&gt; 及 &lt;code&gt;{{ super() }}&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;支持模板继承：&lt;code&gt;{% extends &amp;quot;bootstrap/base.html&amp;quot; %}&lt;/code&gt; 及 &lt;code&gt;{{ super() }}&lt;/code&gt;。&lt;/p&gt;
 
 &lt;h3 id=&#34;初始化扩展&#34;&gt;初始化扩展&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2408,6 +2410,84 @@ users = db.relationship(&amp;#39;User&amp;#39;, backref=&amp;#39;role&amp;#39;, 
 
 &lt;h2 id=&#34;第-6-章-电子邮件&#34;&gt;第 6 章 电子邮件&lt;/h2&gt;
 
+&lt;p&gt;使用 Flask-Mail 提供电子邮件支持，Python 的 &lt;code&gt;smtplib&lt;/code&gt; 库不支持 OAuth2 验证方法，需要设置 Google 账户的「允许不够安全的应用的访问权限」。&lt;/p&gt;
+
+&lt;p&gt;配置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;app.config[&amp;#39;MAIL_SERVER&amp;#39;] = &amp;#39;smtp.gmail.com&amp;#39;
+app.config[&amp;#39;MAIL_PORT&amp;#39;] = 587
+app.config[&amp;#39;MAIL_USE_TLS&amp;#39;] = True
+app.config[&amp;#39;MAIL_USERNAME&amp;#39;] = os.environ.get(&amp;#39;MAIL_USERNAME&amp;#39;)
+app.config[&amp;#39;MAIL_PASSWORD&amp;#39;] = os.environ.get(&amp;#39;MAIL_PASSWORD&amp;#39;)
+app.config[&amp;#39;FLASKY_MAIL_SUBJECT_PREFIX&amp;#39;] = &amp;#39;[前缀]&amp;#39;
+app.config[&amp;#39;FLASKY_MAIL_SENDER&amp;#39;] = &amp;#39;Flasky Admin &amp;lt;xxx@gmail.com&amp;gt;&amp;#39;
+app.config[&amp;#39;FLASKY_ADMIN&amp;#39;] = os.environ.get(&amp;#39;FLASKY_ADMIN&amp;#39;)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;将敏感信息写入环境变量：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;$ export MAIL_USERNAME=xxx@gmail.com       
+$ export MAIL_PASSWORD=xxxxxxxx               
+$ export FLASKY_ADMIN=xxx@gmail.com # 接收邮件的管理员&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;集成邮件发送功能：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask_mail&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Mail&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Message&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;mail&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Mail&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;send_email&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;to&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;subject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;kwargs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Message&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;FLASKY_MAIL_SUBJECT_PREFIX&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;subject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+                  &lt;span class=&#34;n&#34;&gt;sender&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;FLASKY_MAIL_SENDER&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+                  &lt;span class=&#34;n&#34;&gt;recipients&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;to&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;body&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;render_template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;template&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;.txt&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;kwargs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;render_template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;template&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;.html&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;kwargs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;mail&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;send&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;编写视图函数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ...&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;FLASKY_ADMIN&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;send_email&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;FLASKY_ADMIN&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;New User&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;mail/new_user&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# ...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;h2 id=&#34;第-7-章-大型应用的结构&#34;&gt;第 7 章 大型应用的结构&lt;/h2&gt;
 
 &lt;blockquote&gt;
@@ -2443,7 +2523,7 @@ users = db.relationship(&amp;#39;User&amp;#39;, backref=&amp;#39;role&amp;#39;, 
 │   ├── /email.py
 │   ├── /models.py
 │   ├── /static/
-│   └── /templates/
+│   ├── /templates/
 │   ├── /main/
 │      ├── /__init__.py
 │      ├── /errors.py	
@@ -3219,9 +3299,13 @@ def p(c):
       
       <guid>https://Dvel.xyz/post/15/</guid>
       
-        <description>&lt;blockquote&gt;
-&lt;p&gt;只是为了设定计划与监督自己，记录下自己的学习路径。&lt;/p&gt;
+        <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;简单记录下自己的学习路径。&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;h1 id=&#34;入门&#34;&gt;入门&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://book.douban.com/subject/30237842/&#34;&gt;《笨办法学Python 3》（Learn python the hard way）&lt;/a&gt;&lt;/p&gt;
 
@@ -3245,19 +3329,17 @@ def p(c):
 
 &lt;p&gt;第 8 章开始涉及的门类较多，基本上都属于程序员必备技能，都是点到为止，看起来也不困难，可以增加知识面。&lt;/p&gt;
 
-&lt;p&gt;学习时长：69 个番茄&lt;/p&gt;
+&lt;p&gt;学习时长：69 个番茄 （1 番茄 = 25+5 分钟）&lt;/p&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://pythoncaff.com/docs/tutorial/3.7.0&#34;&gt;Python 官方文档：入门教程&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://docs.python.org/zh-cn/3/tutorial/index.html&#34;&gt;Python 官方文档：入门教程&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;PythonCaff 社区，基于 3.7 的最新翻译版，官方的入门教程，过一遍准没错。&lt;/p&gt;
-
-&lt;p&gt;感觉第 8、9 章的翻译有点生涩难懂。&lt;/p&gt;
+&lt;p&gt;官方的入门教程，汉化也全了，过一遍准没错。&lt;/p&gt;
 
 &lt;p&gt;稍微有点收获吧，比如上本书没有讲清楚 Python 中各种 &lt;code&gt;import&lt;/code&gt; 语句的不同效果。&lt;/p&gt;
 
-&lt;p&gt;学习时长：19 个番茄&lt;/p&gt;
+&lt;p&gt;学习时长：19 个番茄（1 番茄 = 25+5 分钟）&lt;/p&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://www.liaoxuefeng.com/&#34;&gt;廖雪峰 Python 教程&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
@@ -3265,9 +3347,13 @@ def p(c):
 
 &lt;p&gt;我觉得阅读完一门基础书籍后再看廖老师的教程比较合适，廖老师的教程精简干练，适合查漏补缺。&lt;/p&gt;
 
-&lt;p&gt;学习时长：50个番茄&lt;/p&gt;
+&lt;p&gt;学习时长：50个番茄（1 番茄 = 25+5 分钟）&lt;/p&gt;
 
 &lt;p&gt;又重新过了一遍，最后的实战没看，感觉没有承前启后看的非常费解，准备直接看看其他 web 的书籍了。&lt;/p&gt;
+
+&lt;h1 id=&#34;web&#34;&gt;Web&lt;/h1&gt;
+
+&lt;h1 id=&#34;进阶&#34;&gt;进阶&lt;/h1&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://book.douban.com/subject/27028517/&#34;&gt;《流畅的 Python》（Fluent Python）&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
@@ -3800,7 +3886,7 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/t
     </item>
     
     <item>
-      <title>汽车金融行业离职总结</title>
+      <title>汽车金融乱象</title>
       <link>https://Dvel.xyz/post/10/</link>
       <pubDate>Thu, 19 Jul 2018 11:20:43 +0000</pubDate>
       
@@ -3809,14 +3895,14 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/t
         <description>
 
 &lt;blockquote&gt;
-&lt;p&gt;接触了汽车行业约有一年，期间也接触了几个大公司的整套运行体系，最近离开了这个行业，不写给任何人看，只当是做一个简单总结。&lt;/p&gt;
+&lt;p&gt;接触了汽车行业约一年多，期间也接触了几个大公司的整套运行体系，最近有点厌烦了这个工作，不写给任何人看，只当是做一个简单总结。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&#34;汽车贷款大致分类&#34;&gt;汽车贷款大致分类&lt;/h1&gt;
 
 &lt;h2 id=&#34;厂家免息&#34;&gt;厂家免息&lt;/h2&gt;
 
-&lt;p&gt;限额：各大厂家的免息金额约在八万以内或首付五成以上。&lt;/p&gt;
+&lt;p&gt;限额严重：各大厂家的免息金额约在八万以内或首付五成以上。&lt;/p&gt;
 
 &lt;p&gt;风控严：信用及资质评审较为严格。&lt;/p&gt;
 
@@ -3868,15 +3954,17 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/t
 
 &lt;p&gt;几乎每家的产品都有各自的特点。&lt;/p&gt;
 
-&lt;p&gt;要么年限长，要么征信松，要么流程简便，要么不看查询次数，要么可以单签，要么可以融保险购置税等等。&lt;/p&gt;
+&lt;p&gt;要么年限长，要么征信松，要么流程简便，要么不看查询次数，要么可以单签（大部分已婚人士的合同需夫妻双方共同签署），要么可以融保险购置税（说白了就是首付低了），要么可以先行垫款等等。&lt;/p&gt;
+
+&lt;p&gt;对目标人群可以分类，对车辆类型也可以分类，比如货车、运营车辆、半挂这种也有特有的金融产品。&lt;/p&gt;
 
 &lt;h1 id=&#34;合作模式&#34;&gt;合作模式&lt;/h1&gt;
 
-&lt;p&gt;贷款机构与车商达成合作。&lt;/p&gt;
+&lt;p&gt;贷款机构通过直接接触或下级代理的方式与车商达成合作。&lt;/p&gt;
 
-&lt;p&gt;一个车商往往有高至 10 几种的合作。&lt;/p&gt;
+&lt;p&gt;一般就是上门推销或互相介绍。&lt;/p&gt;
 
-&lt;p&gt;车商会挑选利润最大或最方便的产品带给客户。&lt;/p&gt;
+&lt;p&gt;一个聪明的汽贸店往往有高至 10-30 多种的金融选择，常用的不会超过七八种。&lt;/p&gt;
 
 &lt;h1 id=&#34;大致操作流程&#34;&gt;大致操作流程&lt;/h1&gt;
 
@@ -3884,13 +3972,13 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/t
 &lt;li&gt;查征信&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;实际上需要用户首先签署征信查询授权书并上传面签照，但大部分金融都是后补或代签的。&lt;/p&gt;
+&lt;p&gt;实际合规的操作是用户首先签署征信查询授权书，但大部分金融都是直接获取客户的身份证正反面即可查询，授权书都是后补或代签的。&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;风控&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;各有不同。&lt;/p&gt;
+&lt;p&gt;方式各有不同，一般为电话风控和家访。&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;签署合同&lt;/li&gt;
@@ -3899,26 +3987,32 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/t
 &lt;p&gt;简单只需两三张合同，复杂的多至 30 份左右并需要拍照、视频。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;上牌 / 抵押&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;抵押相关证件&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;上牌 / 抵押&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;各金融要的都不一样，大部分都是：发票、绿本、保单。&lt;/p&gt;
+&lt;p&gt;这里的抵押是指绿本（机动车登记证书）在车管所进行抵押认证，也就是在绿本上打上一行字：已抵押至XX银行或机构。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;抵押相关证件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这里的抵押是指各机构要额外获取客户的一些手续作为保险，要的都不一样，大部分都是：发票、绿本、保单。&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;结清后办理解押&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;客户解押时如遇到已经倒闭的小机构，或者人为失误原因找不回材料，那麻烦就多了去了。&lt;/p&gt;
+
 &lt;h1 id=&#34;车务&#34;&gt;车务&lt;/h1&gt;
 
 &lt;p&gt;车务主要就是上牌、抵押。&lt;/p&gt;
 
-&lt;p&gt;在客户完成上牌后得到绿本（机动车登记证书），按国家要求如果车辆抵押到金融或银行，应当去车管所办理抵押登记手续——也就是在绿本上打上一行字：已抵押到XXX。&lt;/p&gt;
+&lt;p&gt;在客户完成上牌后得到绿本，按国家要求如果车辆抵押到金融或银行，应当去车管所办理抵押登记手续。&lt;/p&gt;
 
 &lt;p&gt;车务是车商或贷款机构的重要线索，而且车务本身的要价区间很大，在各地区都有自己熟悉的联系人可以省去很大的成本。&lt;/p&gt;
 
-&lt;p&gt;比如实际上 200 元的代办成本，贷款方可能管车商要500，车商管客户要 1000。&lt;/p&gt;
+&lt;p&gt;比如实际上 200 元的代办成本（包含跑腿费+代办人需要发出去的红包），贷款方可能管车商要500，车商管客户要 1000。&lt;/p&gt;
 
 &lt;p&gt;另一个事情，就是“人车不去”四个字。&lt;/p&gt;
 
@@ -3954,7 +4048,9 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/t
 
 &lt;h1 id=&#34;车商的利润&#34;&gt;车商的利润&lt;/h1&gt;
 
-&lt;p&gt;只谈贷款方面的利润：&lt;/p&gt;
+&lt;p&gt;汽车销售员的利润，以前主要是车价溢价及相关服务费用，4S 店包含强加装饰，目前另一个主要的利润就是贷款。&lt;/p&gt;
+
+&lt;p&gt;贷款方面的利润：&lt;/p&gt;
 
 &lt;p&gt;各大贷款机构对车商皆有返点，比如返还车商贷款额的 1~3 个点，或定额返现。&lt;/p&gt;
 
@@ -3962,7 +4058,23 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/t
 
 &lt;p&gt;一旦客户选择分期购车，车商基本都会收取一些贷款服务费，实际上并没有服务什么。&lt;/p&gt;
 
-&lt;p&gt;大部分贷款机构都会要求安装 GPS，而车商拿到的 GPS 成本接近为 0，销售给客户时约在 500~1500。&lt;/p&gt;
+&lt;p&gt;大部分贷款机构都会要求安装 GPS，而车商拿到的 GPS 成本接近为 0（GPS 一般是贷款机构作为风控手段附赠的）销售给客户时约在 500~1500，成本为 200-300，正常销售的这种小型、电池支持两年以上的 GPS 在市面上也不会超过 500。&lt;/p&gt;
+
+&lt;h1 id=&#34;作为客户&#34;&gt;作为客户&lt;/h1&gt;
+
+&lt;p&gt;其实做了这个行业才发现，太多人根本不在乎征信状况，以前真的不知道这么多人的征信都如此之差。&lt;/p&gt;
+
+&lt;p&gt;而且由于国内信用卡市场并不算特别普及，白户（没有任何征信记录）在贷款人群比例中也很高，尤其是首次购车的客户。&lt;/p&gt;
+
+&lt;p&gt;目前贷款 App 众多，但其实上征信的不算多，热门的比如支付宝借呗，有的上了征信，有的则没有显示。但大多数逾期不还的，最后也是会上征信。&lt;/p&gt;
+
+&lt;p&gt;一般来说选择贷款就是因为手头钱不多，可选的产品并不多，车商肯定不会推荐你选择最省钱的。&lt;/p&gt;
+
+&lt;p&gt;经济不景气的时候，贷款行业是最景气的，主要还是避免不熟知的、刚成立几年的贷款机构，省的后期解押出问题。&lt;/p&gt;
+
+&lt;p&gt;可以的话，多付些首付走厂家金融或银行系的比较安全。&lt;/p&gt;
+
+&lt;p&gt;在购车方面，汽贸店同样是从 4S 店提车，汽贸店可以提裸车，不会强加装饰与保险，但这是对于熟人朋友来说方便，如果你有个不会宰你的朋友在汽贸店，是个不错的选择。普通人应该尽量选择 4S 店而不是二级经销商。&lt;/p&gt;
 </description>
       
     </item>
