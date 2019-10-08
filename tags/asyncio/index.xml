@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Asyncio on Dvel&#39;s Blog</title>
+    <title>asyncio on Dvel&#39;s Blog</title>
     <link>https://Dvel.xyz/tags/asyncio/</link>
-    <description>Recent content in Asyncio on Dvel&#39;s Blog</description>
+    <description>Recent content in asyncio on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Thu, 03 Jan 2019 09:09:32 +0800</lastBuildDate>

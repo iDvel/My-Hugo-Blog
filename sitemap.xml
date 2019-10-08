@@ -1,10 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <?xml-stylesheet type="text/xsl" href="https://Dvel.xyz/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://Dvel.xyz/</loc>
+    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/git/</loc>
+    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/20/</loc>
     <lastmod>2019-04-07T03:33:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/post/</loc>
+    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/</loc>
+    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/python/</loc>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,6 +51,27 @@
   </url>
   
   <url>
+    <loc>https://Dvel.xyz/tags/sudoku/</loc>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/%E6%95%B0%E7%8B%AC/</loc>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/flask/</loc>
+    <lastmod>2019-02-22T06:21:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/18/</loc>
     <lastmod>2019-02-22T06:21:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -24,8 +79,29 @@
   </url>
   
   <url>
+    <loc>https://Dvel.xyz/tags/asyncio/</loc>
+    <lastmod>2019-01-03T09:09:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/coroutine/</loc>
+    <lastmod>2019-01-03T09:09:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/17/</loc>
     <lastmod>2019-01-03T09:09:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/game/</loc>
+    <lastmod>2018-09-09T05:53:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -45,6 +121,41 @@
   </url>
   
   <url>
+    <loc>https://Dvel.xyz/tags/blog/</loc>
+    <lastmod>2018-08-01T23:23:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/cname/</loc>
+    <lastmod>2018-08-01T23:23:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/dns/</loc>
+    <lastmod>2018-08-01T23:23:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/g-suite/</loc>
+    <lastmod>2018-08-01T23:23:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/mx/</loc>
+    <lastmod>2018-08-01T23:23:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/14/</loc>
     <lastmod>2018-08-01T23:23:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -52,8 +163,43 @@
   </url>
   
   <url>
+    <loc>https://Dvel.xyz/tags/hugo/</loc>
+    <lastmod>2018-07-31T19:08:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/13/</loc>
     <lastmod>2018-07-31T19:08:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/mac/</loc>
+    <lastmod>2018-07-30T02:49:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/shell/</loc>
+    <lastmod>2018-07-30T02:49:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/terminal/</loc>
+    <lastmod>2018-07-30T02:49:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/zsh/</loc>
+    <lastmod>2018-07-30T02:49:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -73,8 +219,29 @@
   </url>
   
   <url>
+    <loc>https://Dvel.xyz/tags/%E6%B1%BD%E8%BD%A6/</loc>
+    <lastmod>2018-07-19T11:20:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/10/</loc>
     <lastmod>2018-07-19T11:20:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/%E9%87%91%E8%9E%8D/</loc>
+    <lastmod>2018-07-19T11:20:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/google-photos/</loc>
+    <lastmod>2018-07-30T12:51:36+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -87,8 +254,43 @@
   </url>
   
   <url>
+    <loc>https://Dvel.xyz/tags/imazing/</loc>
+    <lastmod>2018-07-30T12:51:36+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/ios/</loc>
+    <lastmod>2018-07-30T12:51:36+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/%E6%97%85%E6%B8%B8/</loc>
+    <lastmod>2017-07-31T04:32:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/%E7%A7%A6%E7%9A%87%E5%B2%9B/</loc>
+    <lastmod>2017-07-31T04:32:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/8/</loc>
     <lastmod>2017-07-31T04:32:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/apple-id/</loc>
+    <lastmod>2017-05-11T12:17:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -101,8 +303,22 @@
   </url>
   
   <url>
+    <loc>https://Dvel.xyz/tags/scrollview/</loc>
+    <lastmod>2017-04-25T13:12:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/6/</loc>
     <lastmod>2017-04-25T13:12:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/cocoapods/</loc>
+    <lastmod>2017-04-24T13:19:34+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -122,6 +338,13 @@
   </url>
   
   <url>
+    <loc>https://Dvel.xyz/tags/gitbook/</loc>
+    <lastmod>2017-02-23T22:23:27+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/2/</loc>
     <lastmod>2017-02-23T22:23:27+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -129,7 +352,28 @@
   </url>
   
   <url>
+    <loc>https://Dvel.xyz/tags/hexo/</loc>
+    <lastmod>2017-01-18T17:11:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/ipic/</loc>
+    <lastmod>2016-11-28T02:17:30+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/1/</loc>
+    <lastmod>2016-11-28T02:17:30+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2016-11-28T02:17:30+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -157,254 +401,9 @@
   </url>
   
   <url>
-    <loc>https://Dvel.xyz/tags/apple-id/</loc>
-    <lastmod>2017-05-11T12:17:17+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/asyncio/</loc>
-    <lastmod>2019-01-03T09:09:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/blog/</loc>
-    <lastmod>2018-08-01T23:23:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://Dvel.xyz/categories/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/cname/</loc>
-    <lastmod>2018-08-01T23:23:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/cocoapods/</loc>
-    <lastmod>2017-04-24T13:19:34+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/coroutine/</loc>
-    <lastmod>2019-01-03T09:09:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/dns/</loc>
-    <lastmod>2018-08-01T23:23:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/</loc>
-    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/flask/</loc>
-    <lastmod>2019-02-22T06:21:12+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/g-suite/</loc>
-    <lastmod>2018-08-01T23:23:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/game/</loc>
-    <lastmod>2018-09-09T05:53:17+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/git/</loc>
-    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/gitbook/</loc>
-    <lastmod>2017-02-23T22:23:27+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/google-photos/</loc>
-    <lastmod>2018-07-30T12:51:36+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/hexo/</loc>
-    <lastmod>2016-11-28T02:17:30+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/hugo/</loc>
-    <lastmod>2018-07-31T19:08:55+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/imazing/</loc>
-    <lastmod>2018-07-30T12:51:36+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/ios/</loc>
-    <lastmod>2018-07-30T12:51:36+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/ipic/</loc>
-    <lastmod>2016-11-28T02:17:30+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/mac/</loc>
-    <lastmod>2018-07-30T02:49:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/mx/</loc>
-    <lastmod>2018-08-01T23:23:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/post/</loc>
-    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/python/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/scrollview/</loc>
-    <lastmod>2017-04-25T13:12:11+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/shell/</loc>
-    <lastmod>2018-07-30T02:49:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/sudoku/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/</loc>
-    <lastmod>2017-05-11T12:17:17+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/terminal/</loc>
-    <lastmod>2018-07-30T02:49:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/zsh/</loc>
-    <lastmod>2018-07-30T02:49:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2016-11-28T02:17:30+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/%E6%95%B0%E7%8B%AC/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/%E6%97%85%E6%B8%B8/</loc>
-    <lastmod>2017-07-31T04:32:56+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/%E6%B1%BD%E8%BD%A6/</loc>
-    <lastmod>2018-07-19T11:20:43+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/%E7%A7%A6%E7%9A%87%E5%B2%9B/</loc>
-    <lastmod>2017-07-31T04:32:56+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/%E9%87%91%E8%9E%8D/</loc>
-    <lastmod>2018-07-19T11:20:43+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

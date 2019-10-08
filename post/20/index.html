@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Dvel" />
-  <meta name="description" content="虽然用了很久的 Git 了，但基本上只是 init、log、add、commit、push、pull。。。 前面是按照 Github 官方教程，由牛客网翻译的视频 的顺" />
+  <meta name="description" content="虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。 整体是按照 Github 官方教程，由牛客网翻译的视频 的" />
 
   <meta name="keywords" content="Dvel" />
 
@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.57.2" />
 
 
 <link rel="canonical" href="https://Dvel.xyz/post/20/" />
@@ -58,26 +58,25 @@
 
 
 <meta property="og:title" content="Git 自总结" />
-<meta property="og:description" content="虽然用了很久的 Git 了，但基本上只是 init、log、add、commit、push、pull。。。 前面是按照 Github 官方教程，由牛客网翻译的视频 的顺" />
+<meta property="og:description" content="虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。 整体是按照 Github 官方教程，由牛客网翻译的视频 的" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Dvel.xyz/post/20/" />
-<meta property="article:published_time" content="2019-04-07T03:33:15&#43;08:00"/>
-<meta property="article:modified_time" content="2019-04-07T03:33:15&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-04-07T03:33:15+08:00" />
+<meta property="article:modified_time" content="2019-04-07T03:33:15+08:00" />
 <meta itemprop="name" content="Git 自总结">
-<meta itemprop="description" content="虽然用了很久的 Git 了，但基本上只是 init、log、add、commit、push、pull。。。 前面是按照 Github 官方教程，由牛客网翻译的视频 的顺">
+<meta itemprop="description" content="虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。 整体是按照 Github 官方教程，由牛客网翻译的视频 的">
 
 
 <meta itemprop="datePublished" content="2019-04-07T03:33:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-07T03:33:15&#43;08:00" />
-<meta itemprop="wordCount" content="6076">
+<meta itemprop="wordCount" content="6737">
 
 
 
 <meta itemprop="keywords" content="Git," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git 自总结"/>
-<meta name="twitter:description" content="虽然用了很久的 Git 了，但基本上只是 init、log、add、commit、push、pull。。。 前面是按照 Github 官方教程，由牛客网翻译的视频 的顺"/>
+<meta name="twitter:description" content="虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。 整体是按照 Github 官方教程，由牛客网翻译的视频 的"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -282,6 +281,18 @@
 </ul></li>
 </ul></li>
 </ul></li>
+<li><a href="#status">status</a></li>
+<li><a href="#add">Add</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#add-将改动登记到暂存区">Add：将改动登记到暂存区：</a></li>
+<li><a href="#关于-git-add">关于 <code>git add .</code></a></li>
+</ul></li>
+</ul></li>
+</ul></li>
 <li><a href="#commit">Commit</a></li>
 <li><a href="#工作区-暂存区-仓库区">工作区、暂存区、仓库区</a></li>
 <li><a href="#diff">Diff</a>
@@ -303,7 +314,6 @@
 <li>
 <ul>
 <li><a href="#git-rm"><code>$ git rm</code></a></li>
-<li><a href="#git-add"><code>$ git add .</code></a></li>
 <li><a href="#git-rm-cached"><code>$ git rm --cached</code></a></li>
 </ul></li>
 </ul></li>
@@ -361,6 +371,7 @@
 <li><a href="#解决冲突">解决冲突</a></li>
 <li><a href="#abort"><code>--abort</code></a></li>
 <li><a href="#suqash"><code>--suqash</code></a></li>
+<li><a href="#no-ff"><code>--no-ff</code></a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -404,9 +415,11 @@
       
 
 <blockquote>
-<p>虽然用了很久的 Git 了，但基本上只是 init、log、add、commit、push、pull。。。</p>
+<p>虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。</p>
 
-<p>前面是按照 <a href="https://www.nowcoder.com/courses/2">Github 官方教程，由牛客网翻译的视频</a> 的顺序，在各个部分都自行总结和补充了一些内容。</p>
+<p>整体是按照 <a href="https://www.nowcoder.com/courses/2">Github 官方教程，由牛客网翻译的视频</a> 的顺序排下来的。</p>
+
+<p>内容上外加网上的各种博文总结和补充了一些。</p>
 </blockquote>
 
 <h1 id="setup">Setup</h1>
@@ -435,11 +448,13 @@ $ git config --global user.email xxx@example.com</pre></td></tr></table>
 
 <h4 id="配置文件">配置文件：</h4>
 
-<p>在 <code>~/.gitconfig</code> 中我们同样可以修改和查看上述配置，或修改 Git 全局忽略的位置信息等。</p>
+<p>在 <code>~/.gitconfig</code> 中同样可以修改和查看上述配置，或修改 Git 全局忽略的位置信息等。</p>
 
 <h4 id="ssh">SSH</h4>
 
-<p>配合 SSH Key 来使用 Git 可以免去输入密码的环节。</p>
+<p>配合 SSH Key 在 Github 中可以免去输入密码的环节。</p>
+
+<p>生成密钥：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -464,8 +479,7 @@ $ git config --global user.email xxx@example.com</pre></td></tr></table>
 <h4 id="github-上创建仓库-可遵循-github-的提示">Github 上创建仓库，可遵循 Github 的提示：</h4>
 
 <ul>
-<li>create a new repository on the command line：</li>
-</ul>
+<li><p>create a new repository on the command line：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -483,10 +497,9 @@ git commit -m &#34;first commit&#34;
 git remote add origin https://github.com/xxx/test.git
 git push -u origin master</pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>push an existing repository from the command line</li>
-</ul>
+</div></li>
+
+<li><p>push an existing repository from the command line</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -496,50 +509,141 @@ git push -u origin master</pre></td></tr></table>
 <pre class="chroma">git remote add origin https://github.com/xxx/test.git
 git push -u origin master</pre></td></tr></table>
 </div>
-</div>
-<h1 id="commit">Commit</h1>
+</div></li>
+</ul>
 
-<p>Add: 将改动内容登记到暂存区：</p>
+<p><br/></p>
+
+<h1 id="status">status</h1>
+
+<p>查看状态：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git add 文件</pre></td></tr></table>
+<pre class="chroma">$ git status</pre></td></tr></table>
 </div>
 </div>
-<p>commit: 将暂存区提交到版本库：</p>
+<p>可以查看目前所有文件的状态，改动文件较多时推荐使用更简洁易读的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git status -s</pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><code>??</code> 新文件，未跟踪</li>
+<li><code>A</code> 新文件，已跟踪</li>
+<li><code>M</code> 修改</li>
+<li><code>D</code> 删除</li>
+</ul>
+
+<p>接下来是 Git 的提交三部曲：</p>
+
+<ul>
+<li>新建或修改文件</li>
+<li>加入到暂存区</li>
+<li>提交到仓库</li>
+</ul>
+
+<p><br/></p>
+
+<h1 id="add">Add</h1>
+
+<h4 id="add-将改动登记到暂存区">Add：将改动登记到暂存区：</h4>
+
+<p>单一文件的新建、修改、删除：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git add filename</pre></td></tr></table>
+</div>
+</div>
+<p>也可以一次性 add 所有变更：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git add .</pre></td></tr></table>
+</div>
+</div>
+<p>在简单操作中，add 被理解为把文件添加到暂存区没太大问题，但实际是它暂存的是修改而不是文件。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git commit -m &#34;message...&#34;
-$ git commit # 如果不使用 -m 参数填写提交信息，git 会打开一个文本编辑器让你输入</pre></td></tr></table>
+<pre class="chroma">$ echo aaa &gt; file
+$ git add file
+$ echo bbb &gt;&gt; file
+$ git commit -m &#34;bug fix&#34;</pre></td></tr></table>
 </div>
 </div>
+<p>上例中，只有 <code>aaa</code> 这一行的修改被暂存，所以版本库中只有 <code>aaa</code>，现在使用 <code>diff</code> 命令仍然可以看到 <code>bbb</code> 并没有被提交。</p>
+
+<h4 id="关于-git-add">关于 <code>git add .</code></h4>
+
+<p>在谷歌前几页几乎所有的博客中都强调了这一点：</p>
+
+<p><code>git add -A</code>  = <code>git add -u</code> + <code>git add .</code> （错误的，见下文）</p>
+
+<ul>
+<li><code>git add .</code>       将文件的修改、<strong>新建</strong>，登记到暂存区（错误的，见下文）</li>
+<li><code>git add -u</code>     将文件的修改、<strong>删除</strong>，登记到暂存区</li>
+<li><code>git add -A</code>     将文件的修改、新建、删除，登记到暂存区</li>
+</ul>
+
+<p>macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论中看到，<strong>2.0 版本后 <code>git add .</code> 已经和 <code>git add -A</code> 效果相同</strong>。(<a href="https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048">https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048</a>)</p>
+
+<p>所以在大部分情况，只需要记住 <code>git add .</code> 这一个命令就足够了。</p>
+
+<p><br/></p>
+
+<h1 id="commit">Commit</h1>
+
+<p>commit: 将暂存区提交到版本库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git commit -m &#34;message...&#34;</pre></td></tr></table>
+</div>
+</div>
+<p>如果不使用 -m 参数填写提交信息，git 会打开一个文本编辑器让你输入</p>
+
+<p><br/></p>
+
 <h1 id="工作区-暂存区-仓库区">工作区、暂存区、仓库区</h1>
 
 <blockquote>
-<p>要了解三种 diff 模式，要先大概了解一下这些内容</p>
+<p>diff 在 GUI 中观察更为舒适，但下一章 diff 的三种比较模式可以让新手深入了解三大区的变更状态。</p>
 </blockquote>
 
 <p><strong>工作区（Workspace）</strong></p>
 
-<p>即你的项目目录，不包括 <code>.git</code>。</p>
+<p>即你肉眼可见的项目目录。</p>
 
 <p><strong>暂存区（Index/Stage）</strong></p>
 
-<p>一般存放在 &ldquo;.git目录下&rdquo; 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。它保存了下次将提交的文件列表信息。</p>
+<p>一般存放在 &ldquo;.git目录下&rdquo; 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。它保存了下次将提交的文件列表信息，Git 对暂存区在命名和命令上有多个名字，包括Index，Stage，Cache。</p>
 
 <p><strong>本地仓库（Repository）</strong></p>
 
-<p>版本库即 <code>.git</code> 这个隐藏目录，暂存区也被包含在其中。</p>
+<p>版本库即 <code>.git</code> 这个隐藏目录，真正存储各版本代码库的地方。</p>
 
 <p><strong>远程仓库（Remote）</strong></p>
 
-<p>协作开发时或个人备份用，存储在 GitHub 等同类型网站或自建 git 的远端仓库，可用于多方共同开发。</p>
+<p>协作开发时或个人备份用，存储在 GitHub 等平台或自建 git 的远端仓库，可用于多方共同开发。</p>
 
 <p><img src="http://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt="" /></p>
 
@@ -569,6 +673,8 @@ $ git commit # 如果不使用 -m 参数填写提交信息，git 会打开一个
 </div>
 </div>
 <p>比较对象：工作区 与 暂存区(此时暂存区的内容是上一次提交的内容)</p>
+
+<p>使用情景：日常命令，看看这次改动了什么。</p>
 
 <p><br/></p>
 <div class="highlight"><div class="chroma">
@@ -714,6 +820,10 @@ $ git diff --word-diff</pre></td></tr></table>
 <h1 id="remove">Remove</h1>
 
 <h4 id="git-rm"><code>$ git rm</code></h4>
+
+<blockquote>
+<p>可以不用学习的命令，增删改都可以用 add。</p>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -736,22 +846,6 @@ $ git diff --word-diff</pre></td></tr></table>
 <p>则只完成了第一步的内容，仍然可以通过 <code>git rm xxx</code> 命令将删除文件这个改动登记到暂存区。</p>
 
 <p><br/></p>
-
-<h4 id="git-add"><code>$ git add .</code></h4>
-
-<p>在谷歌前几页几乎所有的博客中都强调了这一点：</p>
-
-<p><code>git add -A</code>  = <code>git add -u</code> + <code>git add .</code></p>
-
-<ul>
-<li><code>git add .</code>       将文件的修改、新建，登记到暂存区</li>
-<li><code>git add -u</code>     将文件的修改、删除，登记到暂存区</li>
-<li><code>git add -A</code>     将文件的修改、新建、删除，登记到暂存区</li>
-</ul>
-
-<p>macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论中看到，<strong>2.0 版本后 <code>git add .</code> 已经和 <code>git add -A</code> 效果相同</strong>。(<a href="https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048">https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048</a>)</p>
-
-<p>所以大家只需记得更新你的 git，并只记住 <code>git add .</code> 这一个命令就足够了。</p>
 
 <p><br/></p>
 
@@ -886,7 +980,7 @@ $ git diff --word-diff</pre></td></tr></table>
 .DS_Store
 
 # 忽略目录，以 / 结尾
-# foo/ 会忽略 foo 目录及此目录下所有内容，但不忽略同名的 foo 文件。
+# foo/ 会忽略 foo 目录及此目录下所有内容（但不忽略同名的 foo 文件）
 foo/
 
 # 支持通配符 *，忽略所有以 .log 结尾的文件
@@ -998,7 +1092,7 @@ foo/**/bar.txt</pre></td></tr></table>
 <pre class="chroma">$ git branch -d 分支名</pre></td></tr></table>
 </div>
 </div>
-<p>如果当前分支没有被完全合并，Git 会抛出一个 warning，提示你需要将 <code>-d</code> 改成 <code>-D</code>。</p>
+<p>如果分支没有完全合并，Git 会抛出一个 error，提示你需要将 <code>-d</code> 改成 <code>-D</code>。</p>
 
 <h4 id="切换分支">切换分支</h4>
 <div class="highlight"><div class="chroma">
@@ -1107,7 +1201,7 @@ HEAD 目前位于 12563de 本次的commit message</pre></td></tr></table>
 
 <ol>
 <li>假设当前只有 master 分支</li>
-<li>创建 dev 分支</li>
+<li>创建并切换到 dev 分支</li>
 <li>进行了一次或 N 次的修改，但是 master 分支根本没人动</li>
 <li>切换到 master 分支，合并 dev 分支</li>
 </ol>
@@ -1115,6 +1209,8 @@ HEAD 目前位于 12563de 本次的commit message</pre></td></tr></table>
 <p>即便会导致冲突的地方，也会被 dev 分支的内容覆盖。</p>
 
 <p>这就是 Fast-forward （快进）合并模式，关键点在于 master 分支无人推进。</p>
+
+<p>缺点：历史记录是一条冗长的直线，删除分支后会丢失分支信息。</p>
 
 <h4 id="解决冲突">解决冲突</h4>
 
@@ -1169,21 +1265,27 @@ $ git merge --abort</pre></td></tr></table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git merge dev</pre></td></tr></table>
+<pre class="chroma">$ git merge --squash dev
+$ git commit -m &#34;提交信息&#34;</pre></td></tr></table>
 </div>
 </div>
-<p>这个命令是正常的合并，会将 dev 分支的所有 commit 都纳入版本控制，log 查看时会阅读到 dev 分支的 commit 记录。</p>
+<p>与直接合并结果相同，但是不提交、不移动 <code>HEAD</code>，因此需要一条额外的 <code>commit</code> 命令。（不太明白这个命令有什么好处，和网上很多人说的不太一样，合并完成后仍然能 log 出 dev 分支的提交记录）</p>
+
+<h4 id="no-ff"><code>--no-ff</code></h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git merge --squash dev</pre></td></tr></table>
+<pre class="chroma">$ git merge --no-ff dev -m &#34;提交信息&#34;</pre></td></tr></table>
 </div>
 </div>
-<p>如果你在 dev 分支上的 commit message 都写成流水账了，为了 log 记录不那么丑陋，为了只保留简单的 release 信息，使用 <code>--squash</code> 参数进行合并，可以丢弃 dev 分支上的 commit 记录。</p>
+<p>常用的命令，禁用 Fast-forward 模式，这样在删除分支后也会保留分支信息。我觉得这个命令记录的提交内容比较全面且容易理解。</p>
+
+<p>缺点：每次合并时多了一次提交记录。</p>
 
 <h1 id="network">Network</h1>
 
@@ -1230,6 +1332,14 @@ $ git branch -r
 # 所有远端的分支前都加上了远端名称，例如 origin/master、origin/dev</pre></td></tr></table>
 </div>
 </div>
+<blockquote>
+<p>终于知道 origin 到底是什么意思了。</p>
+
+<p>其实没什么意思，就是约定俗成的，如果你只有一个远端，比如这份代码只放在 Github 上，或只放在 码云 或 Coding 上，那就把远端起名叫 origin，这样大家看到了都懂。</p>
+
+<p>如果你这份代码在本地修改后，既要 push 到 Github，又要 push 到其它某平台，那两个远端名称就可以自己定制。</p>
+</blockquote>
+
 <h4 id="fetch-pull-push">Fetch, Pull, Push</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1373,12 +1483,12 @@ $ git checkout .</pre></td></tr></table>
 <p>reset 分为三种模式：</p>
 
 <ul>
-<li><code>--soft</code></li>
-<li><code>--mixed</code> 默认</li>
-<li><code>--hard</code></li>
+<li><code>--soft</code>  保持本地所有改动（工作区、暂存区不变）</li>
+<li><code>--mixed</code> 默认，保持工作副本但重置索引（工作区不变）</li>
+<li><code>--hard</code> 丢弃所有改动</li>
 </ul>
 
-<p>它们的主要区别在于作用覆盖的区域（工作区、暂存区、版本库）不一样，在敲完命令后可以用 diff 的三种比较模式去验证。</p>
+<p>它们的主要区别在于作用覆盖的区域（工作区、暂存区）不一样，HEAD 的指向是必变的，在敲完命令后可以用 diff 的三种比较模式去验证。</p>
 
 <p>以一个例子来讲，这是目前的状况。</p>
 <div class="highlight"><div class="chroma">
@@ -1405,8 +1515,8 @@ e285589 2
 <ul>
 <li>工作区：无变化</li>
 <li>暂存区：无变化</li>
-<li>版本库：HEAD 指向此版本</li>
-</ul>
+
+<li><p>版本库：HEAD 指向此版本</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -1416,12 +1526,13 @@ e285589 2
 <pre class="chroma">$ git reset e285589
 $ git reset --mixed e285589 # 同上</pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>工作区：无变化</li>
-<li>暂存区：变成此版本</li>
-<li>版本库：HEAD 指向此版本</li>
-</ul>
+</div></li>
+
+<li><p>工作区：无变化</p></li>
+
+<li><p>暂存区：变成此版本</p></li>
+
+<li><p>版本库：HEAD 指向此版本</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -1429,11 +1540,13 @@ $ git reset --mixed e285589 # 同上</pre></td></tr></table>
 <td class="lntd">
 <pre class="chroma">$ git reset --hard e285589</pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>工作区：变成此版本</li>
-<li>暂存区：变成此版本</li>
-<li>版本库：HEAD 指向此版本</li>
+</div></li>
+
+<li><p>工作区：变成此版本</p></li>
+
+<li><p>暂存区：变成此版本</p></li>
+
+<li><p>版本库：HEAD 指向此版本</p></li>
 </ul>
 
 <h1 id="压缩提交">压缩提交</h1>
@@ -1578,7 +1691,7 @@ $ git push --tags</pre></td></tr></table>
 
 <p><a href="https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase">https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase</a></p>
 
-<p>推荐看一些文章后用 <a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a> 这个教程试一试。</p>
+<p>推荐看一些文章后用 <a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a> 这个教程试一试。</p>
 
     </div>
 
