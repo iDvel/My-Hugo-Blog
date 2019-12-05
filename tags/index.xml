@@ -6,19 +6,10 @@
     <description>Recent content in Tags on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 06 Dec 2019 00:29:28 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Apr 2019 03:33:15 +0800</lastBuildDate>
     
 	<atom:link href="https://Dvel.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>go</title>
-      <link>https://Dvel.xyz/tags/go/</link>
-      <pubDate>Fri, 06 Dec 2019 00:29:28 +0800</pubDate>
-      
-      <guid>https://Dvel.xyz/tags/go/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Git</title>
@@ -53,15 +44,6 @@
       <pubDate>Mon, 25 Feb 2019 14:07:58 +0800</pubDate>
       
       <guid>https://Dvel.xyz/tags/%E6%95%B0%E7%8B%AC/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Flask</title>
-      <link>https://Dvel.xyz/tags/flask/</link>
-      <pubDate>Fri, 22 Feb 2019 06:21:12 +0800</pubDate>
-      
-      <guid>https://Dvel.xyz/tags/flask/</guid>
       <description></description>
     </item>
     
@@ -188,6 +170,24 @@
       <pubDate>Thu, 19 Jul 2018 11:20:43 +0000</pubDate>
       
       <guid>https://Dvel.xyz/tags/%E6%B1%BD%E8%BD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>金融</title>
+      <link>https://Dvel.xyz/tags/%E9%87%91%E8%9E%8D/</link>
+      <pubDate>Thu, 19 Jul 2018 11:20:43 +0000</pubDate>
+      
+      <guid>https://Dvel.xyz/tags/%E9%87%91%E8%9E%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Photos</title>
+      <link>https://Dvel.xyz/tags/google-photos/</link>
+      <pubDate>Tue, 30 Jan 2018 06:40:15 +0000</pubDate>
+      
+      <guid>https://Dvel.xyz/tags/google-photos/</guid>
       <description></description>
     </item>
     

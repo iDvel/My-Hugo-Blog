@@ -21,30 +21,12 @@
     </item>
     
     <item>
-      <title>《Flask Web 开发》笔记</title>
-      <link>https://Dvel.xyz/post/18/</link>
-      <pubDate>Fri, 22 Feb 2019 06:21:12 +0800</pubDate>
-      
-      <guid>https://Dvel.xyz/post/18/</guid>
-      <description>《Flask Web 开发》 #### 粗略的记录了一些大纲、每小节重点、难点、可能会遗忘、懒得记忆、方便查阅的东西，配合目录查阅。 第 1 章 - 安装 Flask 哲学 Flask 自开发</description>
-    </item>
-    
-    <item>
       <title>Python 异步 IO 笔记</title>
       <link>https://Dvel.xyz/post/17/</link>
       <pubDate>Thu, 03 Jan 2019 09:09:32 +0800</pubDate>
       
       <guid>https://Dvel.xyz/post/17/</guid>
       <description>协程初探 协程 - 廖雪峰 Python 教程 多进程与多线程均由操作系统调度，不过协程由程序员在协程的代码里显式调度。 协程没有线程切换的开销，和多线程比，线程数</description>
-    </item>
-    
-    <item>
-      <title>Python 学习计划</title>
-      <link>https://Dvel.xyz/post/15/</link>
-      <pubDate>Mon, 27 Aug 2018 22:11:29 +0800</pubDate>
-      
-      <guid>https://Dvel.xyz/post/15/</guid>
-      <description>简单记录下自己的学习路径。 入门 《笨办法学Python 3》（Learn python the hard way） 读了几章发现学习模式过于基础，比较适合第一次编程的纯新手。</description>
     </item>
     
   </channel>
