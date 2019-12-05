@@ -69,7 +69,7 @@
 
 <meta itemprop="datePublished" content="2019-02-22T06:21:12&#43;08:00" />
 <meta itemprop="dateModified" content="2019-02-22T06:21:12&#43;08:00" />
-<meta itemprop="wordCount" content="3395">
+<meta itemprop="wordCount" content="3464">
 
 
 
@@ -271,6 +271,7 @@
 <li><a href="#路由和视图函数">路由和视图函数</a></li>
 <li><a href="#一个完整的应用">一个完整的应用</a></li>
 <li><a href="#web-开发服务器">Web 开发服务器</a></li>
+<li><a href="#动态路由">动态路由</a></li>
 <li><a href="#调试模式">调试模式</a></li>
 <li><a href="#命令行选项">命令行选项</a></li>
 <li><a href="#请求-响应循环">请求-响应循环</a>
@@ -374,6 +375,10 @@
 <pre class="chroma">$ deactivate</pre></td></tr></table>
 </div>
 </div>
+<p>另一种使用虚拟环境的方法：</p>
+
+<p>在终端中执行 <code>$ venv/bin/python</code> 直接激活虚拟环境中的交互模式，退出时直接按下 ctrl + D。</p>
+
 <p><br/></p>
 
 <h2 id="第-2-章-应用的基本结构">第 2 章 - 应用的基本结构</h2>
@@ -449,7 +454,29 @@
 <h3 id="web-开发服务器">Web 开发服务器</h3>
 
 <p>Flask 自带 Web 开发服务器，通过 <code>flask run</code> 命令启动。这个命令在 <code>FLASK_APP</code> 环境变量指定的 Python 脚本中寻找应用实例。</p>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ export FLASK_APP=hello.py
+$ flask run</pre></td></tr></table>
+</div>
+</div>
+<h3 id="动态路由">动态路由</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/user/&lt;name&gt;&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">user</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="s1">&#39;&lt;h1&gt;Hello, {name}!&lt;/h1&gt;&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
 <h3 id="调试模式">调试模式</h3>
 
 <p>Flask 应用可以在<strong>调试模式</strong>中运行，在调试模式下，开发服务器会默认加载<strong>重载器</strong>和<strong>调试器</strong>。</p>
@@ -813,6 +840,8 @@ $ flask run</code></pre></td></tr></table>
 <h3 id="post-redirect-get-模式">Post / Redirect / Get 模式</h3>
 
 <p>Post / Redirect / Get 简称 PRG，是一种用来防止表单重复提交数据的一种 Web 设计模式。</p>
+
+<p>​</p>
 
 <h3 id="闪现消息">闪现消息</h3>
 

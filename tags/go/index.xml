@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on Dvel&#39;s Blog</title>
+    <link>https://Dvel.xyz/tags/go/</link>
+    <description>Recent content in go on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Fri, 06 Dec 2019 00:29:28 +0800</lastBuildDate>
+    
+	<atom:link href="https://Dvel.xyz/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Golang 学习路线&#43;学习资源</title>
+      <link>https://Dvel.xyz/post/golang-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Fri, 06 Dec 2019 00:29:28 +0800</pubDate>
+      
+      <guid>https://Dvel.xyz/post/golang-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</guid>
+      <description>Go 读了几章《Go 语言圣经》，感觉不是读《C 语言圣经》时的感觉，因为它有点厚，且有很多翻译错误，甚至有些译文不是英文水平的问题，而是中文水平的</description>
+    </item>
+    
+    <item>
+      <title>Golang 入门杂记</title>
+      <link>https://Dvel.xyz/post/21/</link>
+      <pubDate>Tue, 05 Nov 2019 22:19:25 +0800</pubDate>
+      
+      <guid>https://Dvel.xyz/post/21/</guid>
+      <description>Go 的一些特色 天生的优秀并发，Go 的当家特色 有指针但没有指针运算，一般用作引用传递 公私声明使用大小写约定 基本类型未赋值的变量声明都有一个明确的</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,7 +3,42 @@
   
   <url>
     <loc>https://Dvel.xyz/</loc>
-    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
+    <lastmod>2019-12-06T00:29:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/go/</loc>
+    <lastmod>2019-12-06T00:29:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/post/golang-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</loc>
+    <lastmod>2019-12-06T00:29:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/post/</loc>
+    <lastmod>2019-12-06T00:29:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/</loc>
+    <lastmod>2019-12-06T00:29:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/post/21/</loc>
+    <lastmod>2019-11-05T22:19:25+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,20 +52,6 @@
   
   <url>
     <loc>https://Dvel.xyz/post/20/</loc>
-    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/post/</loc>
-    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/tags/</loc>
     <lastmod>2019-04-07T03:33:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
