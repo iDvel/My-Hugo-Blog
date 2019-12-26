@@ -6,19 +6,10 @@
     <description>Recent content in Hexo on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 28 Nov 2016 02:17:30 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Nov 2016 00:48:36 +0000</lastBuildDate>
     
 	<atom:link href="https://Dvel.xyz/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>为Hexo博客弄一个图床，再搭配一个神器</title>
-      <link>https://Dvel.xyz/post/1/</link>
-      <pubDate>Mon, 28 Nov 2016 02:17:30 +0000</pubDate>
-      
-      <guid>https://Dvel.xyz/post/1/</guid>
-      <description>图床的优点：一次上传，到处使用。 Markdown 编辑器、自己的博客、论坛、Quiver 这类的笔记本里，看图都是简单明了的。 图床 七牛、又拍、阿里云 新浪、im</description>
-    </item>
     
     <item>
       <title>你好, Hexo！</title>
