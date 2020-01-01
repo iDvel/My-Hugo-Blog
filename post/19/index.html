@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
 
 
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
 <link rel="canonical" href="https://Dvel.xyz/post/19/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-03-01T00:00:00+00:00" />
 <meta itemprop="name" content="Python 数独">
 <meta itemprop="description" content="这么多年来，排队、无聊、打发时间的手机游戏就是 2048 和 数独了。 Python 初级水平，我回顾了一下代码，基本上看完任何一本入门书籍都看得懂。 数独 1 2 3 4 5 6">
-
-
 <meta itemprop="datePublished" content="2019-02-25T14:07:58&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-01T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="3008">
 
 
 
-<meta itemprop="keywords" content="Python,Sudoku,数独," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Python,Sudoku,数独," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python 数独"/>
 <meta name="twitter:description" content="这么多年来，排队、无聊、打发时间的手机游戏就是 2048 和 数独了。 Python 初级水平，我回顾了一下代码，基本上看完任何一本入门书籍都看得懂。 数独 1 2 3 4 5 6"/>
 
@@ -257,57 +254,33 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#数独">数独</a></li>
-<li><a href="#思考-再思考">思考 &amp; 再思考</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-直接描绘出所有的潜在数字-候选数字-candidates">1. 直接描绘出所有的潜在数字/候选数字（candidates）：</a></li>
-<li><a href="#每次填充数字-删除同宫-行-列的潜在数字">*. 每次填充数字，删除同宫、行、列的潜在数字</a></li>
-<li><a href="#2-排除法">2. 排除法</a></li>
-<li><a href="#3-扫看法">3. 扫看法</a></li>
-<li><a href="#4-剔除潜在数字">*4. 剔除潜在数字</a></li>
-<li><a href="#5-循环">5. 循环</a></li>
-<li><a href="#6-试错-天下密码-没有暴力破解不出来的">6. 试错，天下密码，没有暴力破解不出来的</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#使用">使用</a></li>
-<li><a href="#代码思路">代码思路</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#数独二维数组样式">数独二维数组样式：</a></li>
-<li><a href="#填充候选数字">填充候选数字：</a></li>
-<li><a href="#排除法">排除法</a></li>
-<li><a href="#扫看法">扫看法</a></li>
-<li><a href="#递归">递归</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#总结">总结</a></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>这么多年来，排队、无聊、打发时间的手机游戏就是 2048 和 数独了。</p>
-
+      <p>这么多年来，排队、无聊、打发时间的手机游戏就是 2048 和 数独了。</p>
 <p>Python 初级水平，我回顾了一下代码，基本上看完任何一本入门书籍都看得懂。</p>
-
-<h1 id="数独">数独</h1>
+<h1 id="heading">数独</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -320,9 +293,9 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">+-------+-------+-------+
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">+-------+-------+-------+
 | 4 2 · | · 5 · | 3 · 1 |
 | 8 · 5 | 9 · · | · 4 · |
 | · · · | · · · | 6 · · |
@@ -334,110 +307,83 @@
 | · · 2 | · · · | · · · |
 | · 9 · | · · 7 | 1 · 3 |
 | 7 · 6 | · 8 · | · 2 9 |
-+-------+-------+-------+</pre></td></tr></table>
++-------+-------+-------+
+</code></pre></td></tr></table>
 </div>
-</div>
-<ul>
+</div><ul>
 <li>宫：每个 3x3 的小九宫格为一宫</li>
 <li>行：&hellip;</li>
 <li>列：…</li>
 <li>数独规则：玩家需要根据 9×9 盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、列、宫内的数字均含 1-9，不重复。</li>
 <li>不可解：高级数独如「▻数独」的大师局，HoDoKu 的 Extreme 难度，到后期是无法准确推演出下一个数字的，只能试错</li>
 <li>测试：
-
 <ul>
 <li>手机端用的 App Store 中的「▻数独 来自 Finger Arts」大师局进行游玩</li>
 <li>PC 端用的 <a href="http://hodoku.sourceforge.net/en/index.php">HoDoKu</a>，方便来测试思路</li>
-</ul></li>
 </ul>
-
-<h1 id="思考-再思考">思考 &amp; 再思考</h1>
-
+</li>
+</ul>
+<h1 id="--">思考 &amp; 再思考</h1>
 <blockquote>
 <p>躺床上就一直在思考怎么把人类解数独的思路代入到代码里。。。</p>
-
 <p>（排除法、扫看法，我自己按习惯命名的）</p>
 </blockquote>
-
 <ul>
 <li>循环：找到几种 100% 能确定数字的方法，循环这些方法
-
 <ul>
 <li>排除法</li>
 <li>扫看法</li>
-</ul></li>
+</ul>
+</li>
 <li>递归：在高级数独达到不可解状态时，用递归进行试错。可以直接用这个方法求出所有解，但如果发展的分支太多，会大大增加十到百倍的运行时间，所以先用循环中的方法先解出容易解的</li>
 </ul>
-
 <p>思路：</p>
-
-<h4 id="1-直接描绘出所有的潜在数字-候选数字-candidates">1. 直接描绘出所有的潜在数字/候选数字（candidates）：</h4>
-
-<p><img src="https://i.v2ex.co/X5ZR76t9.png" alt="数独" /></p>
-
-<h4 id="每次填充数字-删除同宫-行-列的潜在数字">*. 每次填充数字，删除同宫、行、列的潜在数字</h4>
-
+<h4 id="1-candidates">1. 直接描绘出所有的潜在数字/候选数字（candidates）：</h4>
+<p><img src="https://i.v2ex.co/X5ZR76t9.png" alt="数独"></p>
+<h4 id="-">*. 每次填充数字，删除同宫、行、列的潜在数字</h4>
 <p>数独规则：同一个宫、行、列有且仅有一种数字，所以确定正确数字后，删除同宫、行、列的潜在数字，以供后面的方法进行准确寻找。</p>
-
-<h4 id="2-排除法">2. 排除法</h4>
-
-<p><img src="https://i.v2ex.co/QaA2J7PO.png" alt="数独" /></p>
-
+<h4 id="2-">2. 排除法</h4>
+<p><img src="https://i.v2ex.co/QaA2J7PO.png" alt="数独"></p>
 <p>第 3 行、第 6 列的格子，在其宫、行、列中已经有了「12345789」8 种数字，所以它必定是缺失的 6。</p>
-
 <p>同样，6 一确定，第 3 行 仅剩一个 9，所以必定是 9。</p>
-
-<p><strong><em>代码思路</em></strong>：这个格子只有一个候选数字，就是它了！</p>
-
-<h4 id="3-扫看法">3. 扫看法</h4>
-
+<p><em><strong>代码思路</strong></em>：这个格子只有一个候选数字，就是它了！</p>
+<h4 id="3-">3. 扫看法</h4>
 <p>按人类逻辑可以很快用扫看法推算出下一个数字，用代码来实现这种思路感觉很麻烦，但是现在已经漏出一些端倪了。</p>
-
-<p><img src="https://i.v2ex.co/0Om2mxSe.png" alt="数独" /></p>
-
-<p><strong><em>代码思路</em></strong>：候选数字在当前宫唯一，则此格为此数。</p>
-
-<h4 id="4-剔除潜在数字">*4. 剔除潜在数字</h4>
-
+<p><img src="https://i.v2ex.co/0Om2mxSe.png" alt="数独"></p>
+<p><em><strong>代码思路</strong></em>：候选数字在当前宫唯一，则此格为此数。</p>
+<h4 id="4-">*4. 剔除潜在数字</h4>
 <p>当宫内某一批候选数字形成一行或以列，则其他宫的此行此列的候选数字需要被剔除。</p>
-
-<p><img src="https://i.v2ex.co/E4fkIwRx.png" alt="数独" /></p>
-
-<p><strong><em>代码思路</em></strong>：遍历宫中个数 &lt;= 3 的候选数字，如果它们在同一行、列，则删除其他宫中同一行、列的候选数字</p>
-
+<p><img src="https://i.v2ex.co/E4fkIwRx.png" alt="数独"></p>
+<p><em><strong>代码思路</strong></em>：遍历宫中个数 &lt;= 3 的候选数字，如果它们在同一行、列，则删除其他宫中同一行、列的候选数字</p>
 <p>转换成代码太麻烦了。。。跳过这一步吧，而且经过我的测试，高级数独补上这一步也是不可解状态</p>
-
-<h4 id="5-循环">5. 循环</h4>
-
+<h4 id="5-">5. 循环</h4>
 <p>循环第 2 和第 3 步，我发现初级数独已经能全解了，高级数独还不行。</p>
-
-<h4 id="6-试错-天下密码-没有暴力破解不出来的">6. 试错，天下密码，没有暴力破解不出来的</h4>
-
+<h4 id="6-">6. 试错，天下密码，没有暴力破解不出来的</h4>
 <p>—— 如果有，那就无限延长破解时间。</p>
-
 <p>递归思路：</p>
-
 <ul>
 <li>找到一个只有两种候选数字的格子，填入第一种</li>
 <li>循环扫看法候补法 进行新一轮的操作… … 循环停滞后检测合法性
-
 <ul>
 <li>不合法：返回上一层，填入另一个数字</li>
-<li>合法：继续循环，循环不出新数字后再递归</li>
+<li>合法：继续循环，循环不出新数字后再递归
+<ul>
 <li>不合法：返回上一层，填入另一个数字</li>
 <li>合法：继续循环，循环不出新数字后再递归
-
 <ul>
 <li>最后一次不合法：返回上一层，填入另一个数字</li>
 <li>最后一次合法：完成</li>
-</ul></li>
-</ul></li>
 </ul>
-
-<h1 id="使用">使用</h1>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="heading-1">使用</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -460,13 +406,13 @@
 请输入第 <span class="m">6</span> 行的内容：9 <span class="m">6</span>    <span class="m">7</span> 
 请输入第 <span class="m">7</span> 行的内容：  <span class="m">34</span>  <span class="m">5</span>  
 请输入第 <span class="m">8</span> 行的内容：     <span class="m">3</span> <span class="m">96</span>
-请输入第 <span class="m">9</span> 行的内容：17   <span class="m">62</span>  </code></pre></td></tr></table>
+请输入第 <span class="m">9</span> 行的内容：17   <span class="m">62</span>  
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>。。。</p>
+</div><p>。。。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -496,9 +442,9 @@
 </span><span class="lnt">28
 </span><span class="lnt">29
 </span><span class="lnt">30
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">*** 循环结束 共计填入过 87 次 ***                                       
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">*** 循环结束 共计填入过 87 次 ***                                       
 +-------+-------+-------+
 | · 6 · | 3 · · | · · 1 |
 | 9 · · | · · 6 | 7 · · |
@@ -527,17 +473,15 @@
 | 3 7 6 | 1 5 8 | 2 4 9 |
 +-------+-------+-------+
 数独已全解
-共计用时 31.01515769958496 毫秒</pre></td></tr></table>
+共计用时 31.01515769958496 毫秒
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="代码思路">代码思路</h1>
-
+</div><h1 id="heading-2">代码思路</h1>
 <p>代码：<a href="https://github.com/iDvel/sudoku">https://github.com/iDvel/sudoku</a></p>
-
-<h4 id="数独二维数组样式">数独二维数组样式：</h4>
+<h4 id="heading-3">数独二维数组样式：</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -550,9 +494,9 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">[[{}, {}, {}, {}, {}, {}, {}, {}, {}],
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[[{}, {}, {}, {}, {}, {}, {}, {}, {}],
  [{}, {}, {}, {}, {}, {}, {}, {}, {}],
  [{}, {}, {}, {}, {}, {}, {}, {}, {}],
  [{}, {}, {}, {}, {}, {}, {}, {}, {}],
@@ -564,15 +508,14 @@
 # 字典：
 # num: 初始数字及后期已算出确定的数字，str
 # can: candidates，候选数字，如果已确定数字则显示为[1]这种格式，方便调试，str
-# box: 所在宫 row: 所在行 col: 所在列，int</pre></td></tr></table>
+# box: 所在宫 row: 所在行 col: 所在列，int
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>让格子变成字典，方便寻找和调试。</p>
-
-<h4 id="填充候选数字">填充候选数字：</h4>
+</div><p>让格子变成字典，方便寻找和调试。</p>
+<h4 id="heading-4">填充候选数字：</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -588,26 +531,26 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">fill_candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="s2">&#34;&#34;&#34;填充所有候选数字&#34;&#34;&#34;</span>
-    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
-            <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span>
-            <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="s1">&#39;·&#39;</span><span class="p">:</span>
-                <span class="n">s</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="n">u</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_list_of</span><span class="p">(</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;box&#39;</span><span class="p">])])</span>
-                <span class="n">s</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="n">u</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="p">[</span><span class="n">row</span><span class="p">]])</span>
-                <span class="n">s</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="n">u</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_list_of</span><span class="p">(</span><span class="s1">&#39;col&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">])])</span>
-                <span class="n">s</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;·&#39;</span><span class="p">)</span>
-                <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">}</span> <span class="o">-</span> <span class="n">s</span>
-                <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;can&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)))</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">&#39;can&#39;</span><span class="p">,</span> <span class="s1">&#39;候选数字填写完毕&#39;</span><span class="p">)</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">fill_candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
+    <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2">填充所有候选数字</span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">unit</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">num</span><span class="s1">&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">·</span><span class="s1">&#39;</span><span class="p">:</span>
+                <span class="n">s</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="p">[</span><span class="n">u</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">num</span><span class="s1">&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_list_of</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">box</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">box</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span><span class="p">]</span><span class="p">)</span>
+                <span class="n">s</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="p">[</span><span class="n">u</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">num</span><span class="s1">&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="p">]</span><span class="p">)</span>
+                <span class="n">s</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="p">[</span><span class="n">u</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">num</span><span class="s1">&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_list_of</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">col</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">col</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span><span class="p">]</span><span class="p">)</span>
+                <span class="n">s</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">·</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">2</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">3</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">4</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">5</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">6</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">7</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">8</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">9</span><span class="s1">&#39;</span><span class="p">}</span> <span class="o">-</span> <span class="n">s</span>
+                <span class="n">unit</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">can</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">can</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">候选数字填写完毕</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>这么搞主要是调试的时候方便我观察。</p>
+</div><p>这么搞主要是调试的时候方便我观察。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -621,9 +564,9 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">*** 候选数字填写完毕 ***
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">*** 候选数字填写完毕 ***
 +----------------------------+----------------------------+----------------------------+
 |    278      [6]     2578   |    [3]    245789    2459   |    459      589      [1]   |
 |    [9]     1258      258   |    14      12458     [6]   |    [7]      358      45    |
@@ -636,13 +579,13 @@
 |    267      [4]     2567   |   1679     15679     159   |    [8]     1569      [3]   |
 |    68       589      [1]   |    [2]     34569     459   |    59       569      [7]   |
 |    [3]     2579     2567   |   1679     15679     [8]   |   1259      [4]     2569   |
-+----------------------------+----------------------------+----------------------------+</pre></td></tr></table>
++----------------------------+----------------------------+----------------------------+
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="排除法">排除法</h4>
+</div><h4 id="heading-5">排除法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -656,24 +599,24 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">method_paichu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="s2">&#34;&#34;&#34;排除：当前格只有一个候选数字，则此格为此数&#34;&#34;&#34;</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">method_paichu</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
+    <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2">排除：当前格只有一个候选数字，则此格为此数</span><span class="s2">&#34;&#34;&#34;</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
-            <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unit</span><span class="p">[</span><span class="s1">&#39;can&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">fill_number</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;can&#39;</span><span class="p">])</span>
-                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">fill_count</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">method_count</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">&#39;can&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;第 {} 次排除完毕，本次填充了 {} 个数字&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">method_count</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span></code></pre></td></tr></table>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">l</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unit</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">can</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fill_number</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">unit</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">can</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+                <span class="n">count</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fill_count</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">method_count</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">can</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">第 {} 次排除完毕，本次填充了 {} 个数字</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">method_count</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="扫看法">扫看法</h4>
+</div><h4 id="heading-6">扫看法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -697,46 +640,42 @@
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">method_saokan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="s2">&#34;&#34;&#34;扫看：候选数字在当前宫唯一，则此格为此数&#34;&#34;&#34;</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">method_saokan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
+    <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2">扫看：候选数字在当前宫唯一，则此格为此数</span><span class="s2">&#34;&#34;&#34;</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">box</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_list_of</span><span class="p">(</span><span class="s1">&#39;boxes&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">box</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_list_of</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">boxes</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">:</span>
         <span class="c1"># 先得到只出现一次的数字</span>
-        <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">unit</span> <span class="ow">in</span> <span class="n">box</span><span class="p">:</span>
-            <span class="k">if</span> <span class="s1">&#39;[&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;can&#39;</span><span class="p">]:</span>
-                <span class="n">l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">unit</span><span class="p">[</span><span class="s1">&#39;can&#39;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">[</span><span class="s1">&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unit</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">can</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">:</span>
+                <span class="n">l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">unit</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">can</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
         <span class="c1"># 存入列表，因为每个宫可能有不止一个</span>
-        <span class="n">only_one_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">Counter</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">only_one_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">Counter</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 
         <span class="k">for</span> <span class="n">unit</span> <span class="ow">in</span> <span class="n">box</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">the_one</span> <span class="ow">in</span> <span class="n">only_one_list</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">the_one</span> <span class="ow">in</span> <span class="n">unit</span><span class="p">[</span><span class="s1">&#39;can&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">the_one</span> <span class="ow">in</span> <span class="n">unit</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">can</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">:</span>
                     <span class="c1"># 填入数字，删除同行同列的相同候选数字</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">fill_number</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">the_one</span><span class="p">)</span>
-                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">fill_count</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">count</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">fill_count</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
 
-    <span class="bp">self</span><span class="o">.</span><span class="n">method_count</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">&#39;can&#39;</span><span class="p">,</span> <span class="s1">&#39;第 {} 次扫看完毕，本次填充了 {} 个数字&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">method_count</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span></code></pre></td></tr></table>
+    <span class="bp">self</span><span class="o">.</span><span class="n">method_count</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">can</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">第 {} 次扫看完毕，本次填充了 {} 个数字</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">method_count</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="递归">递归</h4>
-
+</div><h4 id="heading-7">递归</h4>
 <p>写了个半吊子递归，等以后再优化一下吧。</p>
-
-<h1 id="总结">总结</h1>
-
+<h1 id="heading-8">总结</h1>
 <p>数独难度大致可分为 3 种：</p>
-
 <ul>
 <li>简单，每个格子都能准确推演，运行时间 10ms 左右</li>
 <li>高级，中后期只需试错几次，运行时间 30ms 左右</li>
-
-<li><p>变态，前期几乎每次都要试错，运行时间 3000ms 左右</p>
+<li>变态，前期几乎每次都要试错，运行时间 3000ms 左右</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -750,9 +689,9 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">变态版数独：
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">变态版数独：
 +-------+-------+-------+
 | 8 · · | · · · | · · · |
 | · · 3 | 6 · · | · · · |
@@ -765,13 +704,10 @@
 | · · 1 | · · · | · 6 8 |
 | · · 8 | 5 · · | · 1 · |
 | · 9 · | · · · | 4 · · |
-+-------+-------+-------+</pre></td></tr></table>
++-------+-------+-------+
+</code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-
-<p>写完了发现挺乱的，去搜索了一下，数独其实用深度优先搜索算法最合适，我写了一大堆有的没的，运行时间还比人家慢了 10 倍。。。主要是耗时在递归上了。</p>
-
+</div><p>写完了发现挺乱的，去搜索了一下，数独其实用深度优先搜索算法最合适，我写了一大堆有的没的，运行时间还比人家慢了 10 倍。。。主要是耗时在递归上了。</p>
 <p>深度优先版运行变态版数独的时间大约在 300ms，等我学了相关算法再来优化吧。。。</p>
 
     </div>
@@ -942,7 +878,7 @@
     &copy;
     
       2016 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

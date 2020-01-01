@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
 
 
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
 <link rel="canonical" href="https://Dvel.xyz/post/20/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-04-07T03:33:15+08:00" />
 <meta itemprop="name" content="Git 自总结">
 <meta itemprop="description" content="虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。 整体是按照 Github 官方教程，由牛客网翻译的视频 的">
-
-
 <meta itemprop="datePublished" content="2019-04-07T03:33:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-07T03:33:15&#43;08:00" />
-<meta itemprop="wordCount" content="6737">
+<meta itemprop="wordCount" content="6946">
 
 
 
-<meta itemprop="keywords" content="Git," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Git," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git 自总结"/>
 <meta name="twitter:description" content="虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。 整体是按照 Github 官方教程，由牛客网翻译的视频 的"/>
 
@@ -257,694 +254,542 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#setup">Setup</a></li>
-<li><a href="#config">Config</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#配置文件">配置文件：</a></li>
-<li><a href="#ssh">SSH</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#init">Init</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#创建本地仓库">创建本地仓库：</a></li>
-<li><a href="#github-上创建仓库-可遵循-github-的提示">Github 上创建仓库，可遵循 Github 的提示：</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#status">status</a></li>
-<li><a href="#add">Add</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#add-将改动登记到暂存区">Add：将改动登记到暂存区：</a></li>
-<li><a href="#关于-git-add">关于 <code>git add .</code></a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#commit">Commit</a></li>
-<li><a href="#工作区-暂存区-仓库区">工作区、暂存区、仓库区</a></li>
-<li><a href="#diff">Diff</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#三种比较模式">三种比较模式</a></li>
-<li><a href="#diff-修饰命令">diff 修饰命令</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#log">Log</a></li>
-<li><a href="#remove">Remove</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#git-rm"><code>$ git rm</code></a></li>
-<li><a href="#git-rm-cached"><code>$ git rm --cached</code></a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#move">Move</a></li>
-<li><a href="#ship-of-theseus-忒修斯之船">Ship of Theseus (忒修斯之船)</a></li>
-<li><a href="#ignore">Ignore</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#gitignore-书写规则">.gitignore 书写规则</a></li>
-<li><a href="#全局忽略">全局忽略</a></li>
-<li><a href="#查看当前已被忽略的所有内容">查看当前已被忽略的所有内容</a></li>
-<li><a href="#强制-add-被-gitignore-忽略的文件">强制 add 被 gitignore 忽略的文件</a></li>
-<li><a href="#检测-gitignore-规则">检测 gitignore 规则</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#branch">Branch</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#查看分支">查看分支</a></li>
-<li><a href="#创建分支">创建分支</a></li>
-<li><a href="#删除分支">删除分支</a></li>
-<li><a href="#切换分支">切换分支</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#checkout">Checkout</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#切换分支-1">切换分支</a></li>
-<li><a href="#创建并切换分支">创建并切换分支</a></li>
-<li><a href="#detached-head-头指针分离">Detached head (头指针分离)</a></li>
-<li><a href="#discarding-edits-撤销修改">Discarding edits (撤销修改)</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#merge">Merge</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#合并分支">合并分支</a></li>
-<li><a href="#fast-forward">Fast-forward</a></li>
-<li><a href="#解决冲突">解决冲突</a></li>
-<li><a href="#abort"><code>--abort</code></a></li>
-<li><a href="#suqash"><code>--suqash</code></a></li>
-<li><a href="#no-ff"><code>--no-ff</code></a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#network">Network</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#remotes">Remotes</a></li>
-<li><a href="#fetch-pull-push">Fetch, Pull, Push</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#github-相关章节">GitHub 相关章节</a></li>
-<li><a href="#reset">Reset</a></li>
-<li><a href="#撤销修改与版本回退">撤销修改与版本回退</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#撤销修改">撤销修改</a></li>
-<li><a href="#reset-1">Reset</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#压缩提交">压缩提交</a></li>
-<li><a href="#tag">Tag</a></li>
-<li><a href="#rebase-变基">Rebase (变基)</a></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-utf-8-">命令行显示 utf-8 字符</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<blockquote>
+      <blockquote>
 <p>虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。</p>
-
 <p>整体是按照 <a href="https://www.nowcoder.com/courses/2">Github 官方教程，由牛客网翻译的视频</a> 的顺序排下来的。</p>
-
 <p>内容上外加网上的各种博文总结和补充了一些。</p>
 </blockquote>
-
 <h1 id="setup">Setup</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ brew install git</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ brew install git
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="config">Config</h1>
-
+</div><h1 id="config">Config</h1>
 <p>Git 希望知道每次提交的作者信息，来说明是谁进行的本次提交，这会随着版本迭代永久纳入历史记录中。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git config --global user.name &#34;my name&#34;
-$ git config --global user.email xxx@example.com</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git config --global user.name &#34;my name&#34;
+$ git config --global user.email xxx@example.com
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>user.email 最好与 github 中的邮件地址相同，否则 push 后在 github 上并不会准确显示出是自己。</p>
-
-<h4 id="配置文件">配置文件：</h4>
-
+</div><p>user.email 最好与 github 中的邮件地址相同，否则 push 后在 github 上并不会准确显示出是自己。</p>
+<h4 id="heading">配置文件：</h4>
 <p>在 <code>~/.gitconfig</code> 中同样可以修改和查看上述配置，或修改 Git 全局忽略的位置信息等。</p>
-
 <h4 id="ssh">SSH</h4>
-
 <p>配合 SSH Key 在 Github 中可以免去输入密码的环节。</p>
-
 <p>生成密钥：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ ssh-keygen -t rsa -C &#34;youremail@example.com&#34;</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ ssh-keygen -t rsa -C &#34;youremail@example.com&#34;
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>在 <code>~/.ssh/id_rsa.pub</code> 中取得公钥并上传 GitHub。</p>
-
+</div><p>在 <code>~/.ssh/id_rsa.pub</code> 中取得公钥并上传 GitHub。</p>
 <h1 id="init">Init</h1>
-
-<h4 id="创建本地仓库">创建本地仓库：</h4>
+<h4 id="heading-1">创建本地仓库：</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git init</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git init
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="github-上创建仓库-可遵循-github-的提示">Github 上创建仓库，可遵循 Github 的提示：</h4>
-
+</div><h4 id="github--github-">Github 上创建仓库，可遵循 Github 的提示：</h4>
 <ul>
-<li><p>create a new repository on the command line：</p>
+<li>create a new repository on the command line：</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">echo &#34;# test&#34; &gt;&gt; README.md
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#34;# test&#34; &gt;&gt; README.md
 git init
 git add README.md
 git commit -m &#34;first commit&#34;
 git remote add origin https://github.com/xxx/test.git
-git push -u origin master</pre></td></tr></table>
+git push -u origin master
+</code></pre></td></tr></table>
 </div>
-</div></li>
-
-<li><p>push an existing repository from the command line</p>
+</div><ul>
+<li>push an existing repository from the command line</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">git remote add origin https://github.com/xxx/test.git
-git push -u origin master</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git remote add origin https://github.com/xxx/test.git
+git push -u origin master
+</code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-
-<p><br/></p>
-
+</div><!-- raw HTML omitted -->
 <h1 id="status">status</h1>
-
 <p>查看状态：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git status</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git status
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>可以查看目前所有文件的状态，改动文件较多时推荐使用更简洁易读的：</p>
+</div><p>可以查看目前所有文件的状态，改动文件较多时推荐使用更简洁易读的：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git status -s</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git status -s
+</code></pre></td></tr></table>
 </div>
-</div>
-<ul>
+</div><ul>
 <li><code>??</code> 新文件，未跟踪</li>
 <li><code>A</code> 新文件，已跟踪</li>
 <li><code>M</code> 修改</li>
 <li><code>D</code> 删除</li>
 </ul>
-
 <p>接下来是 Git 的提交三部曲：</p>
-
 <ul>
 <li>新建或修改文件</li>
 <li>加入到暂存区</li>
 <li>提交到仓库</li>
 </ul>
-
-<p><br/></p>
-
+<!-- raw HTML omitted -->
 <h1 id="add">Add</h1>
-
-<h4 id="add-将改动登记到暂存区">Add：将改动登记到暂存区：</h4>
-
+<h4 id="add-1">Add：将改动登记到暂存区：</h4>
 <p>单一文件的新建、修改、删除：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git add filename</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git add filename
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>也可以一次性 add 所有变更：</p>
+</div><p>也可以一次性 add 所有变更：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git add .</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git add .
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>在简单操作中，add 被理解为把文件添加到暂存区没太大问题，但实际是它暂存的是修改而不是文件。</p>
+</div><p>在简单操作中，add 被理解为把文件添加到暂存区没太大问题，但实际是它暂存的是修改而不是文件。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ echo aaa &gt; file
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ echo aaa &gt; file
 $ git add file
 $ echo bbb &gt;&gt; file
-$ git commit -m &#34;bug fix&#34;</pre></td></tr></table>
+$ git commit -m &#34;bug fix&#34;
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>上例中，只有 <code>aaa</code> 这一行的修改被暂存，所以版本库中只有 <code>aaa</code>，现在使用 <code>diff</code> 命令仍然可以看到 <code>bbb</code> 并没有被提交。</p>
-
-<h4 id="关于-git-add">关于 <code>git add .</code></h4>
-
+</div><p>上例中，只有 <code>aaa</code> 这一行的修改被暂存，所以版本库中只有 <code>aaa</code>，现在使用 <code>diff</code> 命令仍然可以看到 <code>bbb</code> 并没有被提交。</p>
+<h4 id="-git-add-">关于 <code>git add .</code></h4>
 <p>在谷歌前几页几乎所有的博客中都强调了这一点：</p>
-
 <p><code>git add -A</code>  = <code>git add -u</code> + <code>git add .</code> （错误的，见下文）</p>
-
 <ul>
 <li><code>git add .</code>       将文件的修改、<strong>新建</strong>，登记到暂存区（错误的，见下文）</li>
 <li><code>git add -u</code>     将文件的修改、<strong>删除</strong>，登记到暂存区</li>
 <li><code>git add -A</code>     将文件的修改、新建、删除，登记到暂存区</li>
 </ul>
-
 <p>macOS 自带的 git 默认都是 2.20 版本了，在 stackoverflow 中的评论中看到，<strong>2.0 版本后 <code>git add .</code> 已经和 <code>git add -A</code> 效果相同</strong>。(<a href="https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048">https://stackoverflow.com/questions/15011311/whats-the-difference-between-git-add-u-and-git-add-a/27854048</a>)</p>
-
 <p>所以在大部分情况，只需要记住 <code>git add .</code> 这一个命令就足够了。</p>
-
-<p><br/></p>
-
+<!-- raw HTML omitted -->
 <h1 id="commit">Commit</h1>
-
 <p>commit: 将暂存区提交到版本库：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git commit -m &#34;message...&#34;</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git commit -m &#34;message...&#34;
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>如果不使用 -m 参数填写提交信息，git 会打开一个文本编辑器让你输入</p>
-
-<p><br/></p>
-
-<h1 id="工作区-暂存区-仓库区">工作区、暂存区、仓库区</h1>
-
+</div><p>如果不使用 -m 参数填写提交信息，git 会打开一个文本编辑器让你输入</p>
+<!-- raw HTML omitted -->
+<h1 id="heading-2">工作区、暂存区、仓库区</h1>
 <blockquote>
 <p>diff 在 GUI 中观察更为舒适，但下一章 diff 的三种比较模式可以让新手深入了解三大区的变更状态。</p>
 </blockquote>
-
 <p><strong>工作区（Workspace）</strong></p>
-
 <p>即你肉眼可见的项目目录。</p>
-
 <p><strong>暂存区（Index/Stage）</strong></p>
-
 <p>一般存放在 &ldquo;.git目录下&rdquo; 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。它保存了下次将提交的文件列表信息，Git 对暂存区在命名和命令上有多个名字，包括Index，Stage，Cache。</p>
-
 <p><strong>本地仓库（Repository）</strong></p>
-
 <p>版本库即 <code>.git</code> 这个隐藏目录，真正存储各版本代码库的地方。</p>
-
 <p><strong>远程仓库（Remote）</strong></p>
-
 <p>协作开发时或个人备份用，存储在 GitHub 等平台或自建 git 的远端仓库，可用于多方共同开发。</p>
-
-<p><img src="http://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt="" /></p>
-
-<p><img src="http://www.yiibai.com/uploads/images/201707/1207/683090701_88630.jpg" alt="" /></p>
-
+<p><img src="http://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt=""></p>
+<p><img src="http://www.yiibai.com/uploads/images/201707/1207/683090701_88630.jpg" alt=""></p>
 <p>日常操作与几大区的关系：</p>
-
 <p>-&gt; 修改代码、新建文件等操作，工作区发生改动</p>
-
-<p>-&gt; add：将改动内容&rdquo;登记&rdquo;到暂存区</p>
-
+<p>-&gt; add：将改动内容&quot;登记&quot;到暂存区</p>
 <p>-&gt; commit：将暂存区的所有内容提交到本地仓库。</p>
-
 <p>只有 commit 了，我们的代码才真正的进入到 git 仓库了。</p>
-
 <p>-&gt; push: 将本地仓库推送到远程仓库</p>
-
 <h1 id="diff">Diff</h1>
-
-<h4 id="三种比较模式">三种比较模式</h4>
+<h4 id="heading-3">三种比较模式</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git diff</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git diff
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>比较对象：工作区 与 暂存区(此时暂存区的内容是上一次提交的内容)</p>
-
+</div><p>比较对象：工作区 与 暂存区(此时暂存区的内容是上一次提交的内容)</p>
 <p>使用情景：日常命令，看看这次改动了什么。</p>
-
-<p><br/></p>
+<!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git diff --staged
-$ git diff --cached # 效果同上</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git diff --staged
+$ git diff --cached # 效果同上
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>比较对象：暂存区 与 版本库(上一次提交的内容)</p>
-
+</div><p>比较对象：暂存区 与 版本库(上一次提交的内容)</p>
 <p>使用情景： <code>add</code> 所有改动后，<code>git diff</code> 将不会显示任何东西了，在 <code>commit</code> 之前，仍可以使用 <code>--staged</code> 进行对比。</p>
-
-<p><br/></p>
+<!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git diff HEAD</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git diff HEAD
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>比较对象：工作区 与 版本库(上一次提交的内容)</p>
-
+</div><p>比较对象：工作区 与 版本库(上一次提交的内容)</p>
 <p>使用情景：比如 <code>add</code> 后，又对这个文件进行了修改，在再次 <code>add</code> 之前，想看看在上一次提交之前都做了哪些改动。</p>
-
-<p><br/></p>
-
+<!-- raw HTML omitted -->
 <p>经过自己动手测试，通过 Diff 章节应该能基本掌握工作区、暂存区、版本库之间的关系了。</p>
-
-<h4 id="diff-修饰命令">diff 修饰命令</h4>
-
+<h4 id="diff-">diff 修饰命令</h4>
 <p>diff 默认是按行显示区别的，这两个命令会获得一种对长行小改动而言更易读的报告：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git diff --color-words
-$ git diff --word-diff</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git diff --color-words
+$ git diff --word-diff
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><br/></p>
-
+</div><!-- raw HTML omitted -->
 <p>不输出代码改动，仅仅告诉你哪些文件遭遇了改动：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git diff --stat</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git diff --stat
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="log">Log</h1>
-
+</div><h1 id="log">Log</h1>
 <p>了解仓库的提交历史：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git log</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git log
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>关于 40 位的 16 进制字符：(Git 保证完整性)</p>
-
+</div><p>关于 40 位的 16 进制字符：(Git 保证完整性)</p>
 <blockquote>
 <p>Git 中所有数据在存储前都计算校验和，然后以校验和来引用。 这意味着不可能在 Git 不知情时更改任何文件内容或目录内容。 这个功能建构在 Git 底层，是构成 Git 哲学不可或缺的部分。 若你在传送过程中丢失信息或损坏文件，Git 就能发现。</p>
-
 <p>Git 用以计算校验和的机制叫做 SHA-1 散列（hash，哈希）。 这是一个由 40 个十六进制字符（0-9 和 a-f）组成的字符串，基于 Git 中文件的内容或目录结构计算出来。 SHA-1 哈希看起来是这样：</p>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">24b9da6552252987aa493b52f8696cd6d3b00373</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">24b9da6552252987aa493b52f8696cd6d3b00373
+</code></pre></td></tr></table>
 </div>
-</div>
+</div><blockquote>
 <p>Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值。 实际上，Git 数据库中保存的信息都是以文件内容的哈希值来索引，而不是文件名。</p>
 </blockquote>
-
-<p><br/></p>
+<!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git log --oneline</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git log --oneline
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>每行一个简短的概要：标识符+提交信息</p>
-
-<p><br/></p>
+</div><p>每行一个简短的概要：标识符+提交信息</p>
+<!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git log --patch</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git log --patch
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>在原始 log 显示内容的基础上，增加每次提交的代码改动情况。</p>
-
-<p><br/></p>
+</div><p>在原始 log 显示内容的基础上，增加每次提交的代码改动情况。</p>
+<!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git log --stat</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git log --stat
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>在原始 log 显示内容的基础上，增加每次提交的代码改动情况。(不输出代码改动，仅仅告诉你哪些文件遭遇了改动，类似 diff 中的 <code>--stat</code> 效果)</p>
-
-<p><br/></p>
+</div><p>在原始 log 显示内容的基础上，增加每次提交的代码改动情况。(不输出代码改动，仅仅告诉你哪些文件遭遇了改动，类似 diff 中的 <code>--stat</code> 效果)</p>
+<!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git log -- directory/filename.ext</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git log -- directory/filename.ext
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>后接 <code>--</code> 再接文件名，可以查看仅针对此文件的 log 记录。</p>
-
-<p><br/></p>
-
+</div><p>后接 <code>--</code> 再接文件名，可以查看仅针对此文件的 log 记录。</p>
+<!-- raw HTML omitted -->
 <p>常用组合命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git log --graph --all --decorate --oneline</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git log --graph --all --decorate --oneline
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>支持分支、标签的查看，快速了解整个项目的发展历程。</p>
-
+</div><p>支持分支、标签的查看，快速了解整个项目的发展历程。</p>
 <h1 id="remove">Remove</h1>
-
-<h4 id="git-rm"><code>$ git rm</code></h4>
-
+<h4 id="-git-rm"><code>$ git rm</code></h4>
 <blockquote>
 <p>可以不用学习的命令，增删改都可以用 add。</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git rm xxx</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git rm xxx
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>该命令完成两件事：</p>
-
+</div><p>该命令完成两件事：</p>
 <ol>
 <li>删除文件</li>
-<li>将删除文件这个操作&rdquo;登记&rdquo;到暂存区</li>
+<li>将删除文件这个操作'&lsquo;登记'&lsquo;到暂存区</li>
 </ol>
-
 <p>如果你在本次变更中只进行了此次操作，可以直接 <code>commit</code>，不用再 <code>add</code>  登记了。</p>
-
 <p>如果你通过终端执行了 <code>rm</code> 操作 / 在编辑器或 IDE 中执行了删除操作 / 在电脑上直接删除文件：</p>
-
 <p>则只完成了第一步的内容，仍然可以通过 <code>git rm xxx</code> 命令将删除文件这个改动登记到暂存区。</p>
-
-<p><br/></p>
-
-<p><br/></p>
-
-<h4 id="git-rm-cached"><code>$ git rm --cached</code></h4>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="-git-rm---cached"><code>$ git rm --cached</code></h4>
 <p>这个命令将删除一个文件，但并不是从系统中真正的删除。只是告诉 git 请不要再跟踪这个文件，这个文件将仍然保留在我的工作区中。</p>
-
 <p>情景说明：当我使用 JetBrains 全家桶时，项目下面会有一个 <code>.idea/</code> 的目录，里面也许会包含一些个人信息或无用信息，这个目录已经被纳入 git 管理了。</p>
-
 <p>目的：并不在本地删除 <code>.idea/</code> 目录及其中文件，只是取消被 git 追踪。</p>
-
 <p>需配合 <code>.gitignore</code> 文件使用。</p>
-
 <ol>
 <li>创建 <code>.gitignore</code> 文件，写入一行内容：<code>.idea/</code> 即可。</li>
 <li><code>$ git rm -r --cached .idea/</code> （-r 是递归目录，如果只是单个文件可取消这个参数）</li>
 <li>add 与 commit 完成本次修改</li>
 </ol>
-
 <p>以后即使 <code>.idea/</code> 目录里面发生了文件的增删改，git 也不会理会。</p>
-
 <h1 id="move">Move</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git mv file.ext xxx/file.ext</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git mv file.ext xxx/file.ext
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>与 <code>rm</code> 类似，同时完成移动与 add。</p>
-
+</div><p>与 <code>rm</code> 类似，同时完成移动与 add。</p>
 <p>基本很少用到，一般都用系统自带的文件管理器或 IDE、编辑器来移动文件，然后 <code>add</code> 即可。</p>
-
-<p><br/></p>
+<!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git log --stat -M --follow directory/file.ext</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git log --stat -M --follow directory/file.ext
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>加上 <code>-M —follow</code> 参数，可以 log 出文件的移动。</p>
-
-<h1 id="ship-of-theseus-忒修斯之船">Ship of Theseus (忒修斯之船)</h1>
-
+</div><p>加上 <code>-M —follow</code> 参数，可以 log 出文件的移动。</p>
+<h1 id="ship-of-theseus-">Ship of Theseus (忒修斯之船)</h1>
 <p>用<a href="https://zh.wikipedia.org/zh-hans/%E5%BF%92%E4%BF%AE%E6%96%AF%E4%B9%8B%E8%88%B9">忒修斯悖论</a>来比喻代码修改：</p>
-
 <ul>
 <li>某些 CVS：当移动文件后，它认为只是一个完全不同的东西，无法追踪文件的移动过程。</li>
 <li>某些企业版 CVS：每个文件都有标识，有个数据库来记录，可以轻易的追踪文件的移动。</li>
 <li>Git：当一个文件至少有 50% 相似度时，这是同一个文件，小于 50% 时，这是一个新文件。</li>
 </ul>
-
 <p>在移动并修改文件后 commit，Git 会反馈出一个百分比：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">[master 48f02f2] 本次提交信息
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[master 48f02f2] 本次提交信息
  1 file changed, 0 insertions(+), 0 deletions(-)
- rename xxx =&gt; xxx/xxx (100%)</pre></td></tr></table>
+ rename xxx =&gt; xxx/xxx (100%)
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>100% 即代表是纯移动，未做修改。</p>
-
+</div><p>100% 即代表是纯移动，未做修改。</p>
 <p>默认为 50%，低于这个阈值时，Git 会直接显示创建与删除：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">[master 9a28f41] 本次提交信息
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[master 9a28f41] 本次提交信息
  2 files changed, 3 insertions(+), 1 deletion(-)
  create mode 100644 xxx
- delete mode 100644 xxx/xxx</pre></td></tr></table>
+ delete mode 100644 xxx/xxx
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>50% 这个默认数值是可以修改的，视频只是简单打了个示例代码并未详细说明，我觉得这是个几乎永远不会用到的功能。</p>
-
+</div><p>50% 这个默认数值是可以修改的，视频只是简单打了个示例代码并未详细说明，我觉得这是个几乎永远不会用到的功能。</p>
 <h1 id="ignore">Ignore</h1>
-
 <p>创建 <code>.gitignore</code> 文件并写入规则，来使 Git 去忽略哪些你不想纳入版本控制的文件与文件夹。</p>
-
 <p>在被 gitignore 之前已经被 Git 追踪的文件不受 gitignore 规则的影响。</p>
-
 <p>比如 Python 生成的 <code>__pycache__</code> 文件夹，JB 全家桶的 <code>.idea</code> 文件夹，macOS 的 <code>.DS_Store</code> 文件，都属于无用文件。或者存储了数据库密码的配置文件，是绝对不能纳入版本控制的。</p>
-
-<h4 id="gitignore-书写规则">.gitignore 书写规则</h4>
+<h4 id="gitignore-">.gitignore 书写规则</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -969,9 +814,9 @@ $ git diff --word-diff</pre></td></tr></table>
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"># 注释行以 # 开头
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 注释行以 # 开头
 # 文件名中有 # 怎么办 -&gt; 加一个反斜杠转义
 # 文件名中有 ! 怎么办 -&gt; 加一个反斜杠转义
 # 文件名最后有空格怎么办 -&gt; 加一个反斜杠转义
@@ -995,153 +840,141 @@ foo/
 **/foo
 
 # 递归忽略所有 foo 目录及其子目录下的 bar.txt 文件
-foo/**/bar.txt</pre></td></tr></table>
+foo/**/bar.txt
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="全局忽略">全局忽略</h4>
-
+</div><h4 id="heading-4">全局忽略</h4>
 <p>在 <code>~/.gitconfig</code> 中查看全局忽略文件的配置（默认即可）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">...
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">...
 [core]
 	excludesfile = /Users/xxx/.gitignore_global
-...</pre></td></tr></table>
+...
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>编辑 <code>~/.gitignore_global</code> 文件，规则相同。</p>
-
+</div><p>编辑 <code>~/.gitignore_global</code> 文件，规则相同。</p>
 <p>在 macOS 中安装完 Git，默认的 <code>.gitignore_global</code> 应该是这样的：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">*~
-.DS_Store</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">*~
+.DS_Store
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>忽略了所有以 <code>~</code> 结尾的文件，忽略了所有 <code>.DS_Store</code> 文件。</p>
-
+</div><p>忽略了所有以 <code>~</code> 结尾的文件，忽略了所有 <code>.DS_Store</code> 文件。</p>
 <p>全局忽略适用于那些无论使用任何语言或 IDE 都需要忽略的文件，但是此文件只对自己有效，如果想让忽略规则对协作开发的所有成员有效，需要在项目目录正常建立 <code>.gitignore</code> 文件并纳入版本控制。</p>
-
-<h4 id="查看当前已被忽略的所有内容">查看当前已被忽略的所有内容</h4>
+<h4 id="heading-5">查看当前已被忽略的所有内容</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git ls-files --others --ignored --exclude-standard</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git ls-files --others --ignored --exclude-standard
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="强制-add-被-gitignore-忽略的文件">强制 add 被 gitignore 忽略的文件</h4>
+</div><h4 id="-add--gitignore-">强制 add 被 gitignore 忽略的文件</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git add -f filename</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git add -f filename
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="检测-gitignore-规则">检测 gitignore 规则</h4>
-
+</div><h4 id="-gitignore-">检测 gitignore 规则</h4>
 <p>在日常 <code>git add .</code> 时发现某一文件并不想忽略，但是已经被忽略了，检测命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git check-ignore -v filename</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git check-ignore -v filename
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="branch">Branch</h1>
-
-<h4 id="查看分支">查看分支</h4>
+</div><h1 id="branch">Branch</h1>
+<h4 id="heading-6">查看分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git branch</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git branch
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>显示分支一览表，当前所在分支前面有 * 表示。</p>
-
-<h4 id="创建分支">创建分支</h4>
+</div><p>显示分支一览表，当前所在分支前面有 * 表示。</p>
+<h4 id="heading-7">创建分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git branch 新分支名</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git branch 新分支名
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="删除分支">删除分支</h4>
+</div><h4 id="heading-8">删除分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git branch -d 分支名</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git branch -d 分支名
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>如果分支没有完全合并，Git 会抛出一个 error，提示你需要将 <code>-d</code> 改成 <code>-D</code>。</p>
-
-<h4 id="切换分支">切换分支</h4>
+</div><p>如果分支没有完全合并，Git 会抛出一个 error，提示你需要将 <code>-d</code> 改成 <code>-D</code>。</p>
+<h4 id="heading-9">切换分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git checkout 分支名</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git checkout 分支名
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="checkout">Checkout</h1>
-
-<h4 id="切换分支-1">切换分支</h4>
+</div><h1 id="checkout">Checkout</h1>
+<h4 id="heading-10">切换分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git checkout 分支名</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git checkout 分支名
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="创建并切换分支">创建并切换分支</h4>
+</div><h4 id="heading-11">创建并切换分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git checkout -b 分支名</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git checkout -b 分支名
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>相当于同时执行了 <code>git branch 分支名</code> 和 <code>git checkout 分支名</code>。</p>
-
-<h4 id="detached-head-头指针分离">Detached head (头指针分离)</h4>
-
+</div><p>相当于同时执行了 <code>git branch 分支名</code> 和 <code>git checkout 分支名</code>。</p>
+<h4 id="detached-head-">Detached head (头指针分离)</h4>
 <p>先通过 log 查找到某一时刻的 commit 16 进制标识码。</p>
-
 <p>这个命令会让你的工作区会改变为这次提交时的状态：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git checkout 12563de6382baaaaf78c58085b4b9abbe5b26608</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git checkout 12563de6382baaaaf78c58085b4b9abbe5b26608
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>Git 会提示：</p>
+</div><p>Git 会提示：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1152,9 +985,9 @@ foo/**/bar.txt</pre></td></tr></table>
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">注意：正在检出 &#39;12563de6382baaaaf78c58085b4b9abbe5b26608&#39;。
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">注意：正在检出 &#39;12563de6382baaaaf78c58085b4b9abbe5b26608&#39;。
 
 您正处于分离头指针状态。您可以查看、做试验性的修改及提交，并且您可以通过另外
 的检出分支操作丢弃在这个状态下所做的任何提交。
@@ -1164,135 +997,117 @@ foo/**/bar.txt</pre></td></tr></table>
 
   git checkout -b &lt;新分支名&gt;
 
-HEAD 目前位于 12563de 本次的commit message</pre></td></tr></table>
+HEAD 目前位于 12563de 本次的commit message
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>这时 checkout 命令相当于一个时光穿梭机，你可以检出任意一次提交时的状态。</p>
-
+</div><p>这时 checkout 命令相当于一个时光穿梭机，你可以检出任意一次提交时的状态。</p>
 <p>注意这不是版本回退。如果你强行修改 + add + commit，Git 会自动帮你创建一个分支。</p>
-
 <p>退出时光穿梭机：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git checkout 分支名</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git checkout 分支名
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="discarding-edits-撤销修改">Discarding edits (撤销修改)</h4>
-
-<p><a href="#撤销修改与版本回退">见下面章节</a></p>
-
+</div><h4 id="discarding-edits-">Discarding edits (撤销修改)</h4>
+<p><a href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9%E4%B8%8E%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80">见下面章节</a></p>
 <h1 id="merge">Merge</h1>
-
-<h4 id="合并分支">合并分支</h4>
+<h4 id="heading-12">合并分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git merge dev</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git merge dev
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>将 dev 分支合并到当前分支，dev 分支会仍然存在。</p>
-
+</div><p>将 dev 分支合并到当前分支，dev 分支会仍然存在。</p>
 <h4 id="fast-forward">Fast-forward</h4>
-
 <ol>
 <li>假设当前只有 master 分支</li>
 <li>创建并切换到 dev 分支</li>
 <li>进行了一次或 N 次的修改，但是 master 分支根本没人动</li>
 <li>切换到 master 分支，合并 dev 分支</li>
 </ol>
-
 <p>即便会导致冲突的地方，也会被 dev 分支的内容覆盖。</p>
-
 <p>这就是 Fast-forward （快进）合并模式，关键点在于 master 分支无人推进。</p>
-
 <p>缺点：历史记录是一条冗长的直线，删除分支后会丢失分支信息。</p>
-
-<h4 id="解决冲突">解决冲突</h4>
-
+<h4 id="heading-13">解决冲突</h4>
 <p>当 master 和 dev 两条分支都并行推进的时候，在 master 分支合并 dev 分支时，如果同一行都被修改了，就会产生冲突。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">自动合并 xxx
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">自动合并 xxx
 冲突（内容）：合并冲突于 xxx
-自动合并失败，修正冲突然后提交修正的结果。</pre></td></tr></table>
+自动合并失败，修正冲突然后提交修正的结果。
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>冲突以  <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>  <code>=======</code>  <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 隔开，分别展示两个分支的不同内容。</p>
+</div><p>冲突以  <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>  <code>=======</code>  <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 隔开，分别展示两个分支的不同内容。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 master!!!
 =======
 dev!!!
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</pre></td></tr></table>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>取其一或将这一整体变成你想要的内容即可。</p>
-
-<h4 id="abort"><code>--abort</code></h4>
+</div><p>取其一或将这一整体变成你想要的内容即可。</p>
+<h4 id="--abort"><code>--abort</code></h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git merge dev
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git merge dev
 ... (发现冲突)
-$ git merge --abort</pre></td></tr></table>
+$ git merge --abort
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><code>--abort</code> 选项会尝试恢复到你运行合并前的状态，相当于你没有进行本次合并。</p>
-
-<h4 id="suqash"><code>--suqash</code></h4>
+</div><p><code>--abort</code> 选项会尝试恢复到你运行合并前的状态，相当于你没有进行本次合并。</p>
+<h4 id="--suqash"><code>--suqash</code></h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git merge --squash dev
-$ git commit -m &#34;提交信息&#34;</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git merge --squash dev
+$ git commit -m &#34;提交信息&#34;
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>与直接合并结果相同，但是不提交、不移动 <code>HEAD</code>，因此需要一条额外的 <code>commit</code> 命令。（不太明白这个命令有什么好处，和网上很多人说的不太一样，合并完成后仍然能 log 出 dev 分支的提交记录）</p>
-
-<h4 id="no-ff"><code>--no-ff</code></h4>
+</div><p>与直接合并结果相同，但是不提交、不移动 <code>HEAD</code>，因此需要一条额外的 <code>commit</code> 命令。（不太明白这个命令有什么好处，和网上很多人说的不太一样，合并完成后仍然能 log 出 dev 分支的提交记录）</p>
+<h4 id="--no-ff"><code>--no-ff</code></h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git merge --no-ff dev -m &#34;提交信息&#34;</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git merge --no-ff dev -m &#34;提交信息&#34;
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>常用的命令，禁用 Fast-forward 模式，这样在删除分支后也会保留分支信息。我觉得这个命令记录的提交内容比较全面且容易理解。</p>
-
+</div><p>常用的命令，禁用 Fast-forward 模式，这样在删除分支后也会保留分支信息。我觉得这个命令记录的提交内容比较全面且容易理解。</p>
 <p>缺点：每次合并时多了一次提交记录。</p>
-
 <h1 id="network">Network</h1>
-
 <h4 id="remotes">Remotes</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1310,9 +1125,9 @@ $ git commit -m &#34;提交信息&#34;</pre></td></tr></table>
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git remote add 远端名称 远端地址
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git remote add 远端名称 远端地址
 # 例如：
 $ git remote add origin https://github.com/aaa/bbb
 
@@ -1329,232 +1144,201 @@ $ git remote -v
 
 # 查看所有远端分支名
 $ git branch -r
-# 所有远端的分支前都加上了远端名称，例如 origin/master、origin/dev</pre></td></tr></table>
+# 所有远端的分支前都加上了远端名称，例如 origin/master、origin/dev
+</code></pre></td></tr></table>
 </div>
-</div>
-<blockquote>
+</div><blockquote>
 <p>终于知道 origin 到底是什么意思了。</p>
-
 <p>其实没什么意思，就是约定俗成的，如果你只有一个远端，比如这份代码只放在 Github 上，或只放在 码云 或 Coding 上，那就把远端起名叫 origin，这样大家看到了都懂。</p>
-
 <p>如果你这份代码在本地修改后，既要 push 到 Github，又要 push 到其它某平台，那两个远端名称就可以自己定制。</p>
 </blockquote>
-
 <h4 id="fetch-pull-push">Fetch, Pull, Push</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git fetch origin master # 先拉取更新，fetch 不会更改本地工作区内容
-$ git merge origin/master master # 将远程内容与本地内容合并</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git fetch origin master # 先拉取更新，fetch 不会更改本地工作区内容
+$ git merge origin/master master # 将远程内容与本地内容合并
+</code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git pull origin master # 拉取并合并</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git pull origin master # 拉取并合并
+</code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git push origin master # 将本地内容推送到远程仓库</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git push origin master # 将本地内容推送到远程仓库
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>只有单个远程主机时，一般都命名为 origin。</p>
-
+</div><p>只有单个远程主机时，一般都命名为 origin。</p>
 <p>在任何分支第一次 push 时，Git 会提示：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">fatal: 当前分支 xxx 没有对应的上游分支。
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">fatal: 当前分支 xxx 没有对应的上游分支。
 为推送当前分支并建立与远程上游的跟踪，使用
 
-    git push --set-upstream origin xxx</pre></td></tr></table>
+    git push --set-upstream origin xxx
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>你可以输入这个命令让本地分支与远程分支建立连接。</p>
-
+</div><p>你可以输入这个命令让本地分支与远程分支建立连接。</p>
 <p>也可以在每个分支的第一次 push 时使用 <code>-u</code> 参数：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git push -u origin xxx</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git push -u origin xxx
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>以后就可以使用简化命令 <code>git push</code> 了。</p>
-
+</div><p>以后就可以使用简化命令 <code>git push</code> 了。</p>
 <p>Push 所有分支到远端：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git push --all</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git push --all
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>有多个远程主机时，比如 Hexo、Hugo 博客可能同时会部署到 GitHub 和 Coding，也会起不同的远程主机名，这时 <code>-u</code> 参数可以指定一个默认主机，不带参数时就默认 push 到这个远程主机。</p>
-
-<h1 id="github-相关章节">GitHub 相关章节</h1>
-
+</div><p>有多个远程主机时，比如 Hexo、Hugo 博客可能同时会部署到 GitHub 和 Coding，也会起不同的远程主机名，这时 <code>-u</code> 参数可以指定一个默认主机，不带参数时就默认 push 到这个远程主机。</p>
+<h1 id="github-">GitHub 相关章节</h1>
 <p>GUI：主要是 GitHub Desktop 的介绍，我个人日常操作更喜欢用命令行，但是 GUI 在查看历史进度和 Diff 时更方便快捷。</p>
-
 <p>GitHub：GitHub 的相关介绍</p>
-
 <p>Forking：GitHub 的 Fork 功能相关介绍。</p>
-
 <p>Pull Requests：GitHub 的 Pull Requests 功能相关介绍。</p>
-
 <h1 id="reset">Reset</h1>
-
-<p><a href="#撤销修改与版本回退">见下面章节</a></p>
-
-<h1 id="撤销修改与版本回退">撤销修改与版本回退</h1>
-
+<p><a href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9%E4%B8%8E%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80">见下面章节</a></p>
+<h1 id="heading-14">撤销修改与版本回退</h1>
 <p>必须理解的概念：</p>
-
 <p>三个区：工作区、暂存区、版本库，或三棵树：Working Directory、Index、HEAD。</p>
-
 <p>→ 改动代码，工作区改动</p>
-
 <p>→ add，将改动登记到暂存区</p>
-
 <p>→ commit，将暂存区提交到版本库，HEAD 指向当前分支的最后一次提交</p>
-
 <p>→ &hellip;</p>
-
 <p>→ 又一次 commit，将暂存区提交到版本库，HEAD 依然指向当前分支的最后一次提交</p>
-
 <blockquote>
 <p>HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做 <strong>你的上一次提交</strong> 的快照。</p>
 </blockquote>
-
-<h5 id="撤销修改">撤销修改</h5>
-
+<h5 id="heading-15">撤销修改</h5>
 <p>当你对修改不太满意，想恢复初始状态：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"># 单个文件撤销
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 单个文件撤销
 $ git checkout -- 文件名
 # 所有文件撤销
-$ git checkout . </pre></td></tr></table>
+$ git checkout . 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>如果 <code>add</code> 进暂存区了，先撤销暂存区，再撤销工作区：</p>
+</div><p>如果 <code>add</code> 进暂存区了，先撤销暂存区，再撤销工作区：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"># 单个文件：
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 单个文件：
 $ git reset HEAD 文件名
 $ git checkout -- 文件名
 # 多个文件：
 $ git reset HEAD
-$ git checkout .</pre></td></tr></table>
+$ git checkout .
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>如果 <code>commit</code> 进版本库了，那就用 <code>reset</code> 进行版本回退。</p>
-
+</div><p>如果 <code>commit</code> 进版本库了，那就用 <code>reset</code> 进行版本回退。</p>
 <h5 id="reset-1">Reset</h5>
-
 <p>reset 分为三种模式：</p>
-
 <ul>
 <li><code>--soft</code>  保持本地所有改动（工作区、暂存区不变）</li>
 <li><code>--mixed</code> 默认，保持工作副本但重置索引（工作区不变）</li>
 <li><code>--hard</code> 丢弃所有改动</li>
 </ul>
-
 <p>它们的主要区别在于作用覆盖的区域（工作区、暂存区）不一样，HEAD 的指向是必变的，在敲完命令后可以用 diff 的三种比较模式去验证。</p>
-
 <p>以一个例子来讲，这是目前的状况。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git log --oneline
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git log --oneline
 4a9dabc (HEAD -&gt; master) 3
 e285589 2
-116eee9 1</pre></td></tr></table>
+116eee9 1
+</code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git reset --soft e285589</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git reset --soft e285589
+</code></pre></td></tr></table>
 </div>
-</div>
-<ul>
+</div><ul>
 <li>工作区：无变化</li>
 <li>暂存区：无变化</li>
-
-<li><p>版本库：HEAD 指向此版本</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ git reset e285589
-$ git reset --mixed e285589 # 同上</pre></td></tr></table>
-</div>
-</div></li>
-
-<li><p>工作区：无变化</p></li>
-
-<li><p>暂存区：变成此版本</p></li>
-
-<li><p>版本库：HEAD 指向此版本</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ git reset --hard e285589</pre></td></tr></table>
-</div>
-</div></li>
-
-<li><p>工作区：变成此版本</p></li>
-
-<li><p>暂存区：变成此版本</p></li>
-
-<li><p>版本库：HEAD 指向此版本</p></li>
+<li>版本库：HEAD 指向此版本</li>
 </ul>
-
-<h1 id="压缩提交">压缩提交</h1>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git reset e285589
+$ git reset --mixed e285589 # 同上
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>工作区：无变化</li>
+<li>暂存区：变成此版本</li>
+<li>版本库：HEAD 指向此版本</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git reset --hard e285589
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>工作区：变成此版本</li>
+<li>暂存区：变成此版本</li>
+<li>版本库：HEAD 指向此版本</li>
+</ul>
+<h1 id="heading-16">压缩提交</h1>
 <p>例子：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1563,9 +1347,9 @@ $ git reset --mixed e285589 # 同上</pre></td></tr></table>
 </span><span class="lnt">7
 </span><span class="lnt">8
 </span><span class="lnt">9
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git log --oneline
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git log --oneline
 900db85 (HEAD -&gt; master) 修复刚才修复刚才修复错误导致的错误导致的错误
 656915e 修复刚才修复错误导致的错误
 2d7e668 修复错误
@@ -1573,71 +1357,66 @@ $ git reset --mixed e285589 # 同上</pre></td></tr></table>
 ed32739 4
 6a15af1 3
 e285589 2
-116eee9 1</pre></td></tr></table>
+116eee9 1
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>我认为最后三次这种 commit message 应该合并成一个。</p>
+</div><p>我认为最后三次这种 commit message 应该合并成一个。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git reset --soft 57335f5</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git reset --soft 57335f5
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>HEAD 指向了&rdquo;版本5&rdquo;，但是工作区和暂存区都是目前的状态，直接 commit 即可。</p>
+</div><p>HEAD 指向了&quot;版本5&rdquo;，但是工作区和暂存区都是目前的状态，直接 commit 即可。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git commit -m &#34;fixed a big bug&#34;</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git commit -m &#34;fixed a big bug&#34;
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>再 log 查看：</p>
+</div><p>再 log 查看：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git log --oneline
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git log --oneline
 5827469 (HEAD -&gt; master) fixed a big bug
 57335f5 5
 ed32739 4
 6a15af1 3
 e285589 2
-116eee9 1</pre></td></tr></table>
+116eee9 1
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="tag">Tag</h1>
-
+</div><h1 id="tag">Tag</h1>
 <p>比起混乱的 commit id，标签可以更方便的标记出重要的版本。</p>
-
 <p>狗书《Flask Web 开发》作者配合使用 Tag 功能做了一个相当方便的时光穿梭机，比如第一章第一部分代码使用 1a 作为标签，第二章第三部分代码使用 2c 作为标签，读者只需执行 <code>git checkout 2c</code> 即可查看此次代码。</p>
-
-<p><br/></p>
-
+<!-- raw HTML omitted -->
 <p>查看所有标签：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git tag</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git tag
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><br/></p>
-
+</div><!-- raw HTML omitted -->
 <p>打标签：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1645,53 +1424,71 @@ e285589 2
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"># 给最新的 commit 打标签：
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 给最新的 commit 打标签：
 $ git tag 标签内容
 
 # 给指定 commit ID 打标签，如：
 $ git tag 标签内容 116eee9
 
 # 创建带有说明的标签，用-a指定标签名，-m指定说明文字，可用`git show 标签内容`查看：
-$ git tag -a v0.1 -m &#34;version 0.1 released&#34; 1094adb</pre></td></tr></table>
+$ git tag -a v0.1 -m &#34;version 0.1 released&#34; 1094adb
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><br/></p>
-
+</div><!-- raw HTML omitted -->
 <p>删除标签：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ git tag -d 标签内容</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git tag -d 标签内容
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><br/></p>
-
+</div><!-- raw HTML omitted -->
 <p>默认 push 时不推送标签，推送标签命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"># 推送单个标签
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 推送单个标签
 $ git push 标签内容
 
 # 推送所有标签
-$ git push --tags</pre></td></tr></table>
+$ git push --tags
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="rebase-变基">Rebase (变基)</h1>
-
+</div><h1 id="rebase-">Rebase (变基)</h1>
 <p><a href="https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase">https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase</a></p>
-
 <p>推荐看一些文章后用 <a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a> 这个教程试一试。</p>
+<h1 id="heading-17">补充</h1>
+<h3 id="-utf-8-">命令行显示 utf-8 字符</h3>
+<p>在 <code>git status</code> 等命令下使 Git 使用 utf-8 编码显示中文等字符，而不是<code>\123\123\123\123</code> 这样的格式。</p>
+<p>参考：https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git config core.quotepath off
+</code></pre></td></tr></table>
+</div>
+</div><p>全局：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git config --global core.quotepath off
+</code></pre></td></tr></table>
+</div>
+</div><p>还原：<code>off</code> 改成 <code>on</code>。</p>
 
     </div>
 
@@ -1846,7 +1643,7 @@ $ git push --tags</pre></td></tr></table>
     &copy;
     
       2016 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">
