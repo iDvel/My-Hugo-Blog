@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
 
 
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <link rel="canonical" href="https://Dvel.xyz/post/12/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &#34;echo $(which zsh) &gt;&gt; /etc/shells&#34; 设置默认 shell： 1 $ chsh">
 <meta itemprop="datePublished" content="2018-07-30T02:49:46&#43;08:00" />
 <meta itemprop="dateModified" content="2018-07-30T02:49:46&#43;08:00" />
-<meta itemprop="wordCount" content="548">
+<meta itemprop="wordCount" content="635">
 
 
 
@@ -267,11 +267,12 @@
   <ul>
     <li><a href="#iterm-2">iTerm 2</a></li>
     <li><a href="#zsh">zsh：</a></li>
-    <li><a href="#oh-my-zshhttpsgithubcomrobbyrusselloh-my-zsh">oh-my-zsh：</a></li>
-    <li><a href="#zsh--powerlevel9khttpsgithubcombhilburnpowerlevel9k">zsh 主题 powerlevel9k：</a></li>
-    <li><a href="#zsh-">zsh 插件</a></li>
-    <li><a href="#heading">一些配置</a></li>
-    <li><a href="#--">参考 & 感谢</a></li>
+    <li><a href="#oh-my-zshhttpsgithubcomrobbyrusselloh-my-zsh"><a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a>：</a></li>
+    <li><a href="#zsh-主题-powerlevel9khttpsgithubcombhilburnpowerlevel9k">zsh 主题 <a href="https://github.com/bhilburn/powerlevel9k">powerlevel9k</a>：</a></li>
+    <li><a href="#zsh-插件">zsh 插件</a></li>
+    <li><a href="#一些配置">一些配置</a></li>
+    <li><a href="#一些终端代理方法包括-https-和-ssh比如-git">一些终端代理方法：包括 http(s) 和 ssh（比如 git）。</a></li>
+    <li><a href="#参考--感谢">参考 &amp; 感谢</a></li>
   </ul>
 </nav>
   </div>
@@ -334,7 +335,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>安装后出现目录 <code>~/.oh-my-zsh/</code> 及配置文件 <code>~/.zshrc</code>。</p>
-<h2 id="zsh--powerlevel9khttpsgithubcombhilburnpowerlevel9k">zsh 主题 <a href="https://github.com/bhilburn/powerlevel9k">powerlevel9k</a>：</h2>
+<h2 id="zsh-主题-powerlevel9khttpsgithubcombhilburnpowerlevel9k">zsh 主题 <a href="https://github.com/bhilburn/powerlevel9k">powerlevel9k</a>：</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -364,10 +365,12 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>在 iTerm 2 中更换字体。</p>
-<h2 id="zsh-">zsh 插件</h2>
+<h2 id="zsh-插件">zsh 插件</h2>
 <p><code>/Users/user/.oh-my-zsh/plugins</code> 是官方自带插件，可自行激活。</p>
 <p><code> /Users/user/.oh-my-zsh/custom/plugins</code> 是第三方插件，等同于 <code>$ZSH_CUSTOM/plugins</code>，可以用 git 将一些插件 clone 到这个地方。</p>
-<p>但是用 brew 管理的话，就是更新很方便，使用下面的方法进行安装和启用。</p>
+<p>另一种安装第三方插件的方法：brew。</p>
+<p>用 brew 管理的话，就是更新很方便。插件少建议用 brew；插件多建议用 git clone，写个脚本可以一次性统一更新。</p>
+<p>使用下面的方法进行安装和启用。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -390,7 +393,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 </code></pre></td></tr></table>
 </div>
 </div><p><code>$ source ~/.zshrc</code> 使之生效。（试了并不成功，非得重启 iTerm 才行）</p>
-<h2 id="heading">一些配置</h2>
+<h2 id="一些配置">一些配置</h2>
 <p>编辑 <code>~/.zshrc</code>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -412,13 +415,19 @@ plugins=(
     z
     )
 
-# 解决 Python 虚拟环境没有提示：
+# 解决 powerlevel9k 主题下的 Python 虚拟环境没有提示：
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
 # 左侧主机名，默认是`%n@%m` 用户名@电脑名，可以改成自己喜欢的。
 POWERLEVEL9K_CONTEXT_TEMPLATE=&#34;&#34;
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="--">参考 &amp; 感谢</h2>
+</div><h2 id="一些终端代理方法包括-https-和-ssh比如-git">一些终端代理方法：包括 http(s) 和 ssh（比如 git）。</h2>
+<ul>
+<li><a href="https://my.oschina.net/TomShine/blog/879961">https://my.oschina.net/TomShine/blog/879961</a></li>
+<li><a href="https://www.xbug.me/post/2018-12-03-Terminal-use-proxy.html">https://www.xbug.me/post/2018-12-03-Terminal-use-proxy.html</a></li>
+<li><a href="https://stackoverflow.com/questions/19161960/connect-with-ssh-through-a-proxy">https://stackoverflow.com/questions/19161960/connect-with-ssh-through-a-proxy</a></li>
+</ul>
+<h2 id="参考--感谢">参考 &amp; 感谢</h2>
 <ul>
 <li><a href="https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f">超簡單！十分鐘打造漂亮又好用的 zsh command line 環境</a></li>
 </ul>

@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
 
 
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <link rel="canonical" href="https://Dvel.xyz/post/6/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -272,7 +272,7 @@
       <p>昨天耽误了一阵子在 scrollView 的布局上，记录一下。</p>
 <p>如果可以提前确定 <code>scrollView</code> 的 <code>contentSize</code>，就简单多了，但这种情况很少。</p>
 <p>一般还是按照 <code>subViews</code> 自适应的比较合适，这样就需要一个 <code>containerView</code> 来撑起 <code>scrollView</code> 的 <code>contentSize</code>。</p>
-<h1 id="heading">简单的代码示例：</h1>
+<h1 id="简单的代码示例">简单的代码示例：</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -320,19 +320,19 @@
 </span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-objective-c" data-lang="objective-c"><span class="n">UIScrollView</span> <span class="o">*</span><span class="n">scrollView</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIScrollVie</span> <span class="n">new</span><span class="p">]</span><span class="p">;</span>
-<span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">scrollView</span><span class="p">]</span><span class="p">;</span>
+<pre class="chroma"><code class="language-objective-c" data-lang="objective-c"><span class="n">UIScrollView</span> <span class="o">*</span><span class="n">scrollView</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIScrollVie</span> <span class="n">new</span><span class="p">];</span>
+<span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">scrollView</span><span class="p">];</span>
                             
-<span class="n">UIView</span> <span class="o">*</span><span class="n">containerView</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIView</span> <span class="n">new</span><span class="p">]</span><span class="p">;</span>
-<span class="p">[</span><span class="n">scrollView</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">containerView</span><span class="p">]</span><span class="p">;</span>
+<span class="n">UIView</span> <span class="o">*</span><span class="n">containerView</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIView</span> <span class="n">new</span><span class="p">];</span>
+<span class="p">[</span><span class="n">scrollView</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">containerView</span><span class="p">];</span>
                             
-<span class="n">UIView</span> <span class="o">*</span><span class="n">v1</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIView</span> <span class="n">new</span><span class="p">]</span><span class="p">;</span>
-<span class="n">v1</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">redColor</span><span class="p">]</span><span class="p">;</span>
-<span class="p">[</span><span class="n">containerView</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">v1</span><span class="p">]</span><span class="p">;</span>
+<span class="n">UIView</span> <span class="o">*</span><span class="n">v1</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIView</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">v1</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">redColor</span><span class="p">];</span>
+<span class="p">[</span><span class="n">containerView</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">v1</span><span class="p">];</span>
                             
-<span class="n">UIView</span> <span class="o">*</span><span class="n">v2</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIView</span> <span class="n">new</span><span class="p">]</span><span class="p">;</span>
-<span class="n">v2</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blueColor</span><span class="p">]</span><span class="p">;</span>
-<span class="p">[</span><span class="n">containerView</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">v2</span><span class="p">]</span><span class="p">;</span>
+<span class="n">UIView</span> <span class="o">*</span><span class="n">v2</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIView</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">v2</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">blueColor</span><span class="p">];</span>
+<span class="p">[</span><span class="n">containerView</span> <span class="nl">addSubview</span><span class="p">:</span><span class="n">v2</span><span class="p">];</span>
                 
 <span class="cm">/*
 </span><span class="cm">如上，我想让v1、v2纵向排列，让scrollView可以上下滚动。
@@ -340,29 +340,29 @@
 
 <span class="c1">// scrollView正常进行约束
 </span><span class="c1"></span><span class="p">[</span><span class="n">scrollView</span> <span class="nl">mas_makeConstraints</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">MASConstraintMaker</span> <span class="o">*</span><span class="n">make</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">make</span><span class="p">.</span><span class="n">edges</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">)</span><span class="p">;</span>
-<span class="p">}</span><span class="p">]</span><span class="p">;</span>
+    <span class="n">make</span><span class="p">.</span><span class="n">edges</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">);</span>
+<span class="p">}];</span>
                       
 <span class="c1">// 容器视图
 </span><span class="c1"></span><span class="p">[</span><span class="n">containerView</span> <span class="nl">mas_makeConstraints</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">MASConstraintMaker</span> <span class="o">*</span><span class="n">make</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">make</span><span class="p">.</span><span class="n">edges</span><span class="p">.</span><span class="n">width</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">scrollView</span><span class="p">)</span><span class="p">;</span> <span class="c1">// 试了发现这里好像必须要约束一下width
-</span><span class="c1"></span><span class="p">}</span><span class="p">]</span><span class="p">;</span>
+    <span class="n">make</span><span class="p">.</span><span class="n">edges</span><span class="p">.</span><span class="n">width</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">scrollView</span><span class="p">);</span> <span class="c1">// 试了发现这里好像必须要约束一下width
+</span><span class="c1"></span><span class="p">}];</span>
                       
 <span class="c1">// v1、v2都放在容器里
 </span><span class="c1"></span><span class="p">[</span><span class="n">v1</span> <span class="nl">mas_makeConstraints</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">MASConstraintMaker</span> <span class="o">*</span><span class="n">make</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">make</span><span class="p">.</span><span class="n">top</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">right</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">containerView</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">make</span><span class="p">.</span><span class="n">height</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="mi">@400</span><span class="p">)</span><span class="p">;</span>
-<span class="p">}</span><span class="p">]</span><span class="p">;</span>
+    <span class="n">make</span><span class="p">.</span><span class="n">top</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">right</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">containerView</span><span class="p">);</span>
+    <span class="n">make</span><span class="p">.</span><span class="n">height</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="mi">@400</span><span class="p">);</span>
+<span class="p">}];</span>
 <span class="p">[</span><span class="n">v2</span> <span class="nl">mas_makeConstraints</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">MASConstraintMaker</span> <span class="o">*</span><span class="n">make</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">make</span><span class="p">.</span><span class="n">top</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">v1</span><span class="p">.</span><span class="n">mas_bottom</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">make</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">right</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">make</span><span class="p">.</span><span class="n">height</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="mi">@400</span><span class="p">)</span><span class="p">;</span>
-<span class="p">}</span><span class="p">]</span><span class="p">;</span>
+    <span class="n">make</span><span class="p">.</span><span class="n">top</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">v1</span><span class="p">.</span><span class="n">mas_bottom</span><span class="p">);</span>
+    <span class="n">make</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">right</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">v1</span><span class="p">);</span>
+    <span class="n">make</span><span class="p">.</span><span class="n">height</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="mi">@400</span><span class="p">);</span>
+<span class="p">}];</span>
 
 <span class="c1">// 这里需要补刀，来撑起contentSize
 </span><span class="c1"></span><span class="p">[</span><span class="n">containerView</span> <span class="nl">mas_makeConstraints</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">MASConstraintMaker</span> <span class="o">*</span><span class="n">make</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">make</span><span class="p">.</span><span class="n">bottom</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span><span class="p">;</span>
-<span class="p">}</span><span class="p">]</span><span class="p">;</span>
+    <span class="n">make</span><span class="p">.</span><span class="n">bottom</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">v2</span><span class="p">);</span>
+<span class="p">}];</span>
 </code></pre></td></tr></table>
 </div>
 </div>

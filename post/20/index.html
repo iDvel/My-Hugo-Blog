@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
 
 
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <link rel="canonical" href="https://Dvel.xyz/post/20/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。 整体是按照 Github 官方教程，由牛客网翻译的视频 的">
 <meta itemprop="datePublished" content="2019-04-07T03:33:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-07T03:33:15&#43;08:00" />
-<meta itemprop="wordCount" content="6965">
+<meta itemprop="wordCount" content="7066">
 
 
 
@@ -355,7 +355,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#-utf-8-">命令行显示 utf-8 字符</a></li>
+        <li><a href="#命令行显示-utf-8-字符">命令行显示 utf-8 字符</a></li>
+        <li><a href="#bisect">bisect</a></li>
       </ul>
     </li>
   </ul>
@@ -392,7 +393,7 @@ $ git config --global user.email xxx@example.com
 </code></pre></td></tr></table>
 </div>
 </div><p>user.email 最好与 github 中的邮件地址相同，否则 push 后在 github 上并不会准确显示出是自己。</p>
-<h4 id="heading">配置文件：</h4>
+<h4 id="配置文件">配置文件：</h4>
 <p>在 <code>~/.gitconfig</code> 中同样可以修改和查看上述配置，或修改 Git 全局忽略的位置信息等。</p>
 <h4 id="ssh">SSH</h4>
 <p>配合 SSH Key 在 Github 中可以免去输入密码的环节。</p>
@@ -407,7 +408,7 @@ $ git config --global user.email xxx@example.com
 </div>
 </div><p>在 <code>~/.ssh/id_rsa.pub</code> 中取得公钥并上传 GitHub。</p>
 <h1 id="init">Init</h1>
-<h4 id="heading-1">创建本地仓库：</h4>
+<h4 id="创建本地仓库">创建本地仓库：</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -416,7 +417,7 @@ $ git config --global user.email xxx@example.com
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git init
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="github--github-">Github 上创建仓库，可遵循 Github 的提示：</h4>
+</div><h4 id="github-上创建仓库可遵循-github-的提示">Github 上创建仓库，可遵循 Github 的提示：</h4>
 <ul>
 <li>create a new repository on the command line：</li>
 </ul>
@@ -485,7 +486,7 @@ git push -u origin master
 </ul>
 <!-- raw HTML omitted -->
 <h1 id="add">Add</h1>
-<h4 id="add-1">Add：将改动登记到暂存区：</h4>
+<h4 id="add将改动登记到暂存区">Add：将改动登记到暂存区：</h4>
 <p>单一文件的新建、修改、删除：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -520,7 +521,7 @@ $ git commit -m &#34;bug fix&#34;
 </code></pre></td></tr></table>
 </div>
 </div><p>上例中，只有 <code>aaa</code> 这一行的修改被暂存，所以版本库中只有 <code>aaa</code>，现在使用 <code>diff</code> 命令仍然可以看到 <code>bbb</code> 并没有被提交。</p>
-<h4 id="-git-add-">关于 <code>git add .</code></h4>
+<h4 id="关于-git-add-">关于 <code>git add .</code></h4>
 <p>在谷歌前几页几乎所有的博客中都强调了这一点：</p>
 <p><code>git add -A</code>  = <code>git add -u</code> + <code>git add .</code> （错误的，见下文）</p>
 <ul>
@@ -543,7 +544,7 @@ $ git commit -m &#34;bug fix&#34;
 </div>
 </div><p>如果不使用 -m 参数填写提交信息，git 会打开一个文本编辑器让你输入</p>
 <!-- raw HTML omitted -->
-<h1 id="heading-2">工作区、暂存区、仓库区</h1>
+<h1 id="工作区暂存区仓库区">工作区、暂存区、仓库区</h1>
 <blockquote>
 <p>diff 在 GUI 中观察更为舒适，但下一章 diff 的三种比较模式可以让新手深入了解三大区的变更状态。</p>
 </blockquote>
@@ -564,7 +565,7 @@ $ git commit -m &#34;bug fix&#34;
 <p>只有 commit 了，我们的代码才真正的进入到 git 仓库了。</p>
 <p>-&gt; push: 将本地仓库推送到远程仓库</p>
 <h1 id="diff">Diff</h1>
-<h4 id="heading-3">三种比较模式</h4>
+<h4 id="三种比较模式">三种比较模式</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -601,7 +602,7 @@ $ git diff --cached # 效果同上
 <p>使用情景：比如 <code>add</code> 后，又对这个文件进行了修改，在再次 <code>add</code> 之前，想看看在上一次提交之前都做了哪些改动。</p>
 <!-- raw HTML omitted -->
 <p>经过自己动手测试，通过 Diff 章节应该能基本掌握工作区、暂存区、版本库之间的关系了。</p>
-<h4 id="diff-">diff 修饰命令</h4>
+<h4 id="diff-修饰命令">diff 修饰命令</h4>
 <p>diff 默认是按行显示区别的，这两个命令会获得一种对长行小改动而言更易读的报告：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -703,7 +704,7 @@ $ git diff --word-diff
 <h1 id="remove">Remove</h1>
 <h4 id="-git-rm"><code>$ git rm</code></h4>
 <blockquote>
-<p>可以不用学习的命令，增删改都可以用 add。</p>
+<p>可以不用学习的命令，增删改都可以用 add 命令登记。</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -745,6 +746,7 @@ $ git diff --word-diff
 </div>
 </div><p>与 <code>rm</code> 类似，同时完成移动与 add。</p>
 <p>基本很少用到，一般都用系统自带的文件管理器或 IDE、编辑器来移动文件，然后 <code>add</code> 即可。</p>
+<p>建议使用情景：在同一次提交前，既修改了超过 50% 的代码，又想修改文件名。（参考忒修斯之船）</p>
 <!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -755,7 +757,7 @@ $ git diff --word-diff
 </code></pre></td></tr></table>
 </div>
 </div><p>加上 <code>-M —follow</code> 参数，可以 log 出文件的移动。</p>
-<h1 id="ship-of-theseus-">Ship of Theseus (忒修斯之船)</h1>
+<h1 id="ship-of-theseus-忒修斯之船">Ship of Theseus (忒修斯之船)</h1>
 <p>用<a href="https://zh.wikipedia.org/zh-hans/%E5%BF%92%E4%BF%AE%E6%96%AF%E4%B9%8B%E8%88%B9">忒修斯悖论</a>来比喻代码修改：</p>
 <ul>
 <li>某些 CVS：当移动文件后，它认为只是一个完全不同的东西，无法追踪文件的移动过程。</li>
@@ -791,12 +793,12 @@ $ git diff --word-diff
  delete mode 100644 xxx/xxx
 </code></pre></td></tr></table>
 </div>
-</div><p>50% 这个默认数值是可以修改的，视频只是简单打了个示例代码并未详细说明，我觉得这是个几乎永远不会用到的功能。</p>
+</div><p>50% 这个默认数值是可以修改的，视频只是简单打了个示例代码并未详细说明，我觉得这可能是个几乎永远不会用到的功能。</p>
 <h1 id="ignore">Ignore</h1>
 <p>创建 <code>.gitignore</code> 文件并写入规则，来使 Git 去忽略哪些你不想纳入版本控制的文件与文件夹。</p>
 <p>在被 gitignore 之前已经被 Git 追踪的文件不受 gitignore 规则的影响。</p>
 <p>比如 Python 生成的 <code>__pycache__</code> 文件夹，JB 全家桶的 <code>.idea</code> 文件夹，macOS 的 <code>.DS_Store</code> 文件，都属于无用文件。或者存储了数据库密码的配置文件，是绝对不能纳入版本控制的。</p>
-<h4 id="gitignore-">.gitignore 书写规则</h4>
+<h4 id="gitignore-书写规则">.gitignore 书写规则</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -861,7 +863,7 @@ bar/*
 foo/**/bar.txt
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="heading-4">全局忽略</h4>
+</div><h4 id="全局忽略">全局忽略</h4>
 <p>在 <code>~/.gitconfig</code> 中查看全局忽略文件的配置（默认即可）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -891,7 +893,7 @@ foo/**/bar.txt
 </div>
 </div><p>忽略了所有以 <code>~</code> 结尾的文件，忽略了所有 <code>.DS_Store</code> 文件。</p>
 <p>全局忽略适用于那些无论使用任何语言或 IDE 都需要忽略的文件，但是此文件只对自己有效，如果想让忽略规则对协作开发的所有成员有效，需要在项目目录正常建立 <code>.gitignore</code> 文件并纳入版本控制。</p>
-<h4 id="heading-5">查看当前已被忽略的所有内容</h4>
+<h4 id="查看当前已被忽略的所有内容">查看当前已被忽略的所有内容</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -900,7 +902,7 @@ foo/**/bar.txt
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git ls-files --others --ignored --exclude-standard
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="-add--gitignore-">强制 add 被 gitignore 忽略的文件</h4>
+</div><h4 id="强制-add-被-gitignore-忽略的文件">强制 add 被 gitignore 忽略的文件</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -909,7 +911,7 @@ foo/**/bar.txt
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git add -f filename
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="-gitignore-">检测 gitignore 规则</h4>
+</div><h4 id="检测-gitignore-规则">检测 gitignore 规则</h4>
 <p>在日常 <code>git add .</code> 时发现某一文件并不想忽略，但是已经被忽略了，检测命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -920,7 +922,7 @@ foo/**/bar.txt
 </code></pre></td></tr></table>
 </div>
 </div><h1 id="branch">Branch</h1>
-<h4 id="heading-6">查看分支</h4>
+<h4 id="查看分支">查看分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -930,7 +932,7 @@ foo/**/bar.txt
 </code></pre></td></tr></table>
 </div>
 </div><p>显示分支一览表，当前所在分支前面有 * 表示。</p>
-<h4 id="heading-7">创建分支</h4>
+<h4 id="创建分支">创建分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -939,7 +941,7 @@ foo/**/bar.txt
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git branch 新分支名
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="heading-8">删除分支</h4>
+</div><h4 id="删除分支">删除分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -949,7 +951,7 @@ foo/**/bar.txt
 </code></pre></td></tr></table>
 </div>
 </div><p>如果分支没有完全合并，Git 会抛出一个 error，提示你需要将 <code>-d</code> 改成 <code>-D</code>。</p>
-<h4 id="heading-9">切换分支</h4>
+<h4 id="切换分支">切换分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -959,7 +961,7 @@ foo/**/bar.txt
 </code></pre></td></tr></table>
 </div>
 </div><h1 id="checkout">Checkout</h1>
-<h4 id="heading-10">切换分支</h4>
+<h4 id="切换分支-1">切换分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -968,7 +970,7 @@ foo/**/bar.txt
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git checkout 分支名
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="heading-11">创建并切换分支</h4>
+</div><h4 id="创建并切换分支">创建并切换分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -978,7 +980,7 @@ foo/**/bar.txt
 </code></pre></td></tr></table>
 </div>
 </div><p>相当于同时执行了 <code>git branch 分支名</code> 和 <code>git checkout 分支名</code>。</p>
-<h4 id="detached-head-">Detached head (头指针分离)</h4>
+<h4 id="detached-head-头指针分离">Detached head (头指针分离)</h4>
 <p>先通过 log 查找到某一时刻的 commit 16 进制标识码。</p>
 <p>这个命令会让你的工作区会改变为这次提交时的状态：</p>
 <div class="highlight"><div class="chroma">
@@ -1029,10 +1031,10 @@ HEAD 目前位于 12563de 本次的commit message
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git checkout 分支名
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="discarding-edits-">Discarding edits (撤销修改)</h4>
+</div><h4 id="discarding-edits-撤销修改">Discarding edits (撤销修改)</h4>
 <p><a href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9%E4%B8%8E%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80">见下面章节</a></p>
 <h1 id="merge">Merge</h1>
-<h4 id="heading-12">合并分支</h4>
+<h4 id="合并分支">合并分支</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -1052,7 +1054,7 @@ HEAD 目前位于 12563de 本次的commit message
 <p>即便会导致冲突的地方，也会被 dev 分支的内容覆盖。</p>
 <p>这就是 Fast-forward （快进）合并模式，关键点在于 master 分支无人推进。</p>
 <p>缺点：历史记录是一条冗长的直线，删除分支后会丢失分支信息。</p>
-<h4 id="heading-13">解决冲突</h4>
+<h4 id="解决冲突">解决冲突</h4>
 <p>当 master 和 dev 两条分支都并行推进的时候，在 master 分支合并 dev 分支时，如果同一行都被修改了，就会产生冲突。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1234,14 +1236,14 @@ $ git merge origin/master master # 将远程内容与本地内容合并
 </code></pre></td></tr></table>
 </div>
 </div><p>有多个远程主机时，比如 Hexo、Hugo 博客可能同时会部署到 GitHub 和 Coding，也会起不同的远程主机名，这时 <code>-u</code> 参数可以指定一个默认主机，不带参数时就默认 push 到这个远程主机。</p>
-<h1 id="github-">GitHub 相关章节</h1>
+<h1 id="github-相关章节">GitHub 相关章节</h1>
 <p>GUI：主要是 GitHub Desktop 的介绍，我个人日常操作更喜欢用命令行，但是 GUI 在查看历史进度和 Diff 时更方便快捷。</p>
 <p>GitHub：GitHub 的相关介绍</p>
 <p>Forking：GitHub 的 Fork 功能相关介绍。</p>
 <p>Pull Requests：GitHub 的 Pull Requests 功能相关介绍。</p>
 <h1 id="reset">Reset</h1>
 <p><a href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9%E4%B8%8E%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80">见下面章节</a></p>
-<h1 id="heading-14">撤销修改与版本回退</h1>
+<h1 id="撤销修改与版本回退">撤销修改与版本回退</h1>
 <p>必须理解的概念：</p>
 <p>三个区：工作区、暂存区、版本库，或三棵树：Working Directory、Index、HEAD。</p>
 <p>→ 改动代码，工作区改动</p>
@@ -1252,7 +1254,7 @@ $ git merge origin/master master # 将远程内容与本地内容合并
 <blockquote>
 <p>HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做 <strong>你的上一次提交</strong> 的快照。</p>
 </blockquote>
-<h5 id="heading-15">撤销修改</h5>
+<h5 id="撤销修改">撤销修改</h5>
 <p>当你对修改不太满意，想恢复初始状态：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1352,7 +1354,7 @@ $ git reset --mixed e285589 # 同上
 <li>暂存区：变成此版本</li>
 <li>版本库：HEAD 指向此版本</li>
 </ul>
-<h1 id="heading-16">压缩提交</h1>
+<h1 id="压缩提交">压缩提交</h1>
 <p>例子：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1482,11 +1484,11 @@ $ git push 标签内容
 $ git push --tags
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="rebase-">Rebase (变基)</h1>
+</div><h1 id="rebase-变基">Rebase (变基)</h1>
 <p><a href="https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase">https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase</a></p>
 <p>推荐看一些文章后用 <a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a> 这个教程试一试。</p>
-<h1 id="heading-17">补充</h1>
-<h3 id="-utf-8-">命令行显示 utf-8 字符</h3>
+<h1 id="补充">补充</h1>
+<h3 id="命令行显示-utf-8-字符">命令行显示 utf-8 字符</h3>
 <p>在 <code>git status</code> 等命令下使 Git 使用 utf-8 编码显示中文等字符，而不是<code>\123\123\123\123</code> 这样的格式。</p>
 <p>参考：https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window</p>
 <div class="highlight"><div class="chroma">
@@ -1507,6 +1509,9 @@ $ git push --tags
 </code></pre></td></tr></table>
 </div>
 </div><p>还原：<code>off</code> 改成 <code>on</code>。</p>
+<h3 id="bisect">bisect</h3>
+<p>看到一个 <code>git bisect</code> 命令挺好玩的，用类似二分法去快速定位是哪次提交引起了当前的错误：</p>
+<p><a href="http://www.ruanyifeng.com/blog/2018/12/git-bisect.html">git bisect 命令教程 - 阮一峰的网络日志</a></p>
 
     </div>
 

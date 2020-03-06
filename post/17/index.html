@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
 
 
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <link rel="canonical" href="https://Dvel.xyz/post/17/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -269,7 +269,7 @@
 
     
     <div class="post-content">
-      <h1 id="heading">协程初探</h1>
+      <h1 id="协程初探">协程初探</h1>
 <p><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432090171191d05dae6e129940518d1d6cf6eeaaa969000">协程 - 廖雪峰 Python 教程</a></p>
 <p>多进程与多线程均由操作系统调度，不过协程由程序员在协程的代码里显式调度。</p>
 <p>协程没有线程切换的开销，和多线程比，线程数量越多，协程的性能优势就越明显。</p>
@@ -338,31 +338,31 @@ def p(c):
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 子生成器</span>
-<span class="k">def</span> <span class="nf">average_gen</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">average_gen</span><span class="p">():</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">average</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
         <span class="n">new_num</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">average</span>
-        <span class="n">count</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
-        <span class="n">total</span> <span class="o">+</span><span class="o">=</span> <span class="n">new_num</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">new_num</span>
         <span class="n">average</span> <span class="o">=</span> <span class="n">total</span><span class="o">/</span><span class="n">count</span>
 
 <span class="c1"># 委托生成器</span>
-<span class="k">def</span> <span class="nf">proxy_gen</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">proxy_gen</span><span class="p">():</span>
     <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="kn">from</span> <span class="nn">average_gen</span><span class="p">(</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="kn">from</span> <span class="nn">average_gen</span><span class="p">()</span>
 
 <span class="c1"># 调用方</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="n">calc_average</span> <span class="o">=</span> <span class="n">proxy_gen</span><span class="p">(</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">calc_average</span> <span class="o">=</span> <span class="n">proxy_gen</span><span class="p">()</span>
     <span class="nb">next</span><span class="p">(</span><span class="n">calc_average</span><span class="p">)</span>            <span class="c1"># 预激下生成器</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">calc_average</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="p">)</span>  <span class="c1"># 打印：10.0</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">calc_average</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="p">)</span>  <span class="c1"># 打印：15.0</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">calc_average</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="p">)</span>  <span class="c1"># 打印：20.0</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">calc_average</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># 打印：10.0</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">calc_average</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>  <span class="c1"># 打印：15.0</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">calc_average</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>  <span class="c1"># 打印：20.0</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">__main__</span><span class="s1">&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">(</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><code>asyncio  </code>是 Python 3.4 版本引入的标准库，直接内置了对异步 IO 的支持。</p>
@@ -403,20 +403,20 @@ def p(c):
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">asyncio</span>
 
 <span class="nd">@asyncio.coroutine</span>
-<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">foo start</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;foo start&#39;</span><span class="p">)</span>
     <span class="k">yield</span> <span class="kn">from</span> <span class="nn">asyncio.sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">foo end</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;foo end&#39;</span><span class="p">)</span>
 
 <span class="nd">@asyncio.coroutine</span>
-<span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">bar start</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;bar start&#39;</span><span class="p">)</span>
     <span class="k">yield</span> <span class="kn">from</span> <span class="nn">asyncio.sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">bar end</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;bar end&#39;</span><span class="p">)</span>
 
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">(</span><span class="p">)</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="p">[</span><span class="n">foo</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">bar</span><span class="p">(</span><span class="p">)</span><span class="p">]</span><span class="p">)</span><span class="p">)</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="p">)</span>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">([</span><span class="n">foo</span><span class="p">(),</span> <span class="n">bar</span><span class="p">()]))</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="c1"># 输出结果</span>
 <span class="c1"># bar start</span>
@@ -452,19 +452,19 @@ def p(c):
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">asyncio</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">foo start</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;foo start&#39;</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">foo end</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;foo end&#39;</span><span class="p">)</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">bar start</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;bar start&#39;</span><span class="p">)</span>
     <span class="n">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">bar end</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;bar end&#39;</span><span class="p">)</span>
 
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">(</span><span class="p">)</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="p">[</span><span class="n">foo</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">bar</span><span class="p">(</span><span class="p">)</span><span class="p">]</span><span class="p">)</span><span class="p">)</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="p">)</span>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">([</span><span class="n">foo</span><span class="p">(),</span> <span class="n">bar</span><span class="p">()]))</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>另推荐一篇好文章：<a href="http://bigsec.com/bigsec-news/wechat-20171130-Python">谈谈Python协程技术的演进</a></p>

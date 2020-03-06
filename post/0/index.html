@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
 
 
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <link rel="canonical" href="https://Dvel.xyz/post/0/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -265,24 +265,24 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading-1">本地搭建</a>
+    <li><a href="#本地搭建">本地搭建</a>
       <ul>
-        <li><a href="#-nodejs">安装 node.js</a></li>
-        <li><a href="#-hexo">安装 Hexo</a></li>
-        <li><a href="#ssh-">ssh 秘钥</a></li>
+        <li><a href="#安装-nodejs">安装 node.js</a></li>
+        <li><a href="#安装-hexo">安装 Hexo</a></li>
+        <li><a href="#ssh-秘钥">ssh 秘钥</a></li>
       </ul>
     </li>
-    <li><a href="#vps-">VPS 端搭建</a>
+    <li><a href="#vps-端搭建">VPS 端搭建</a>
       <ul>
-        <li><a href="#centos">更新与安装（centOS）</a></li>
-        <li><a href="#-git--ssh-">创建 git 用户及设置 ssh 免密码登陆</a></li>
-        <li><a href="#-vps-git-">回到 VPS，创建 git 仓库:</a></li>
-        <li><a href="#-git-">创建网站目录并赋予 git 对网站目录的所有权</a></li>
-        <li><a href="#-git-hooks">配置 git hooks</a></li>
-        <li><a href="#-nginx">配置 Nginx</a></li>
+        <li><a href="#更新与安装centos">更新与安装（centOS）</a></li>
+        <li><a href="#创建-git-用户及设置-ssh-免密码登陆">创建 git 用户及设置 ssh 免密码登陆</a></li>
+        <li><a href="#回到-vps创建-git-仓库">回到 VPS，创建 git 仓库:</a></li>
+        <li><a href="#创建网站目录并赋予-git-对网站目录的所有权">创建网站目录并赋予 git 对网站目录的所有权</a></li>
+        <li><a href="#配置-git-hooks">配置 git hooks</a></li>
+        <li><a href="#配置-nginx">配置 Nginx</a></li>
       </ul>
     </li>
-    <li><a href="#heading-2">本机的最后配置</a></li>
+    <li><a href="#本机的最后配置">本机的最后配置</a></li>
   </ul>
 </nav>
   </div>
@@ -293,9 +293,9 @@
       <p>因为之前的 WordPress 博客域名被墙，加上 Hexo 正好满足于简单的书写要求，所以更换为 Hexo。</p>
 <p>主要还是记录了自己的搭建过程，因为对 Linux 不太熟悉，以备忘为主。</p>
 <p>后面换到了Coding Pages 上搭建，主要是简单方便省心，自带了 https，速度也凑合。</p>
-<h1 id="heading">方法一：</h1>
-<h2 id="heading-1">本地搭建</h2>
-<h3 id="-nodejs">安装 node.js</h3>
+<h1 id="方法一">方法一：</h1>
+<h2 id="本地搭建">本地搭建</h2>
+<h3 id="安装-nodejs">安装 node.js</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -304,7 +304,7 @@
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ brew install node
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="-hexo">安装 Hexo</h3>
+</div><h3 id="安装-hexo">安装 Hexo</h3>
 <p>先cd进入创建好的hexo目录：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -323,7 +323,7 @@ $ hexo serve
 </code></pre></td></tr></table>
 </div>
 </div><p>打开http://localhost:4000如果看到hexo的初始页面证明安装成功。</p>
-<h3 id="ssh-">ssh 秘钥</h3>
+<h3 id="ssh-秘钥">ssh 秘钥</h3>
 <p>一路回车生成公钥和私钥：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -343,8 +343,8 @@ $ hexo serve
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ brew install ssh-copy-id
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="vps-">VPS 端搭建</h2>
-<h3 id="centos">更新与安装（centOS）</h3>
+</div><h2 id="vps-端搭建">VPS 端搭建</h2>
+<h3 id="更新与安装centos">更新与安装（centOS）</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -357,7 +357,7 @@ $ yum install nginx -y
 $ yum install git-core
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="-git--ssh-">创建 git 用户及设置 ssh 免密码登陆</h3>
+</div><h3 id="创建-git-用户及设置-ssh-免密码登陆">创建 git 用户及设置 ssh 免密码登陆</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -408,7 +408,7 @@ git     ALL=(ALL)     ALL (这行是添加的)
 </code></pre></td></tr></table>
 </div>
 </div><p>测试一下，如果 <code>$ ssh git@VPS的IP地址</code> ,能够免密码登录的话，则表示成功。</p>
-<h3 id="-vps-git-">回到 VPS，创建 git 仓库:</h3>
+<h3 id="回到-vps创建-git-仓库">回到 VPS，创建 git 仓库:</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -423,7 +423,7 @@ $ mkdir hexo.git &amp;&amp; cd hexo.git
 $ git init --bare
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="-git-">创建网站目录并赋予 git 对网站目录的所有权</h3>
+</div><h3 id="创建网站目录并赋予-git-对网站目录的所有权">创建网站目录并赋予 git 对网站目录的所有权</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -438,7 +438,7 @@ $ mkdir hexo
 $ chown git:git -R /var/www/hexo
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="-git-hooks">配置 git hooks</h3>
+</div><h3 id="配置-git-hooks">配置 git hooks</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -483,7 +483,7 @@ cp -rf <span class="si">${</span><span class="nv">TMP_GIT_CLONE</span><span clas
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ chmod +x post-receive
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="-nginx">配置 Nginx</h3>
+</div><h3 id="配置-nginx">配置 Nginx</h3>
 <p>启动 nginX:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -570,7 +570,7 @@ systemctl list-units --type=service // 查看所有已启动的服务
 </code></pre></td></tr></table>
 </div>
 </div><p>然后重启nginx，此时刷新网页应该显示的是403。</p>
-<h2 id="heading-2">本机的最后配置</h2>
+<h2 id="本机的最后配置">本机的最后配置</h2>
 <p>位于 <code>hexo</code> 文件夹下，<code>_config.yml </code>,修改 <code>deploy</code> 选项，例如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -620,11 +620,11 @@ systemctl list-units --type=service // 查看所有已启动的服务
 <p><code>$ hexo deploy</code>是部署，我们这里选择了Git，Hexo还支持其他部署形式。</p>
 <p>所以每次写完文章，执行这两个命令后，就对网站完成了更新。</p>
 <p>简化操作就是：<code>$ hexo g &amp;&amp; hexo d</code> ，再简化就是<code>$ hexo d -g</code>，效果一样。</p>
-<h1 id="heading-3">方法二，利用一键安装包</h1>
+<h1 id="方法二利用一键安装包">方法二，利用一键安装包</h1>
 <p>因为不太熟悉 Linux，所以我选择了一键安装包，多站点管理方便些。</p>
 <p>我用的这个 -&gt; <a href="https://oneinstack.com/">OneinStack官网</a></p>
 <p>步骤和上面差不多，但是很多路径要改一下，也可以很简单的搭建出Hexo。</p>
-<h1 id="coding-pages">方法三，Coding Pages</h1>
+<h1 id="方法三coding-pages">方法三，Coding Pages</h1>
 <ol>
 <li>
 <p>coding 中创建项目</p>
@@ -645,7 +645,7 @@ systemctl list-units --type=service // 查看所有已启动的服务
 </ol>
 <p>这个相对简单一些，Coding Pages 服务目前提供 100M 空间的支持，一般来说没有写文章的话，生成的 <code>public</code> 文件夹大约小于5M。</p>
 <p>100M 基本够写很多年的博客，至于图片应该另寻图床，不要放到 coding 上，否则空间很快用完。</p>
-<h1 id="heading-4">编写文章、更新博客</h1>
+<h1 id="编写文章更新博客">编写文章、更新博客</h1>
 <p>使用一款 MarkDown 编辑器写文章 ，写完后将文件以 *.md 的格式保存在本地 <code>[网站目录]\source_posts</code> 中。</p>
 <p>Markdown 编辑器，强烈安利 Typora。</p>
 <p>每篇 Blog 都有固定的参数必须填写，参数如下，注意每个参数的 : 后都有一个空格。</p>
@@ -683,7 +683,7 @@ tags: tag
 </div>
 </div><p>或者使用 <code>$ hexo new</code> 命令，具体官网有详细说明。</p>
 <p>编写完后，只需要在hexo文件夹下执行 <code>hexo g &amp;&amp; hexo d</code>，博客即可更新。</p>
-<h1 id="heading-5">遇到的坑</h1>
+<h1 id="遇到的坑">遇到的坑</h1>
 <p>设置了 ssh 免密码登陆后，依然需要密码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -724,7 +724,7 @@ ssh -vvT git@123.123.123.123   // 你的VPS的IP地址
 </div><p>如果过程中重新初始化过 VPS 的磁盘，ssh 连接 VPS 的时候可能会提示 <code>Host key verification failed.</code> 。<br>
 运行此命令即可：<code>$ ssh-keygen -R 123.123.123.123</code>，将 123.123.123.123 改成你的 VPS 的 IP。<br>
 或者简单粗暴直接删除 <code>known_hosts</code> 文件。</p>
-<h1 id="heading-6">参考&amp;感谢</h1>
+<h1 id="参考感谢">参考&amp;感谢</h1>
 <ul>
 <li><a href="https://hexo.io/">Hexo官网</a></li>
 <li><a href="http://tiktoking.github.io/2016/01/26/hexo/#u521B_u5EFA_u7F51_u7AD9_u76EE_u5F55">在VPS上搭建hexo博客，利用git更新 - WikiLibrary</a></li>

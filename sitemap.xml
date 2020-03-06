@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://Dvel.xyz/</loc>
-    <lastmod>2019-04-07T03:33:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://Dvel.xyz/tags/git/</loc>
     <lastmod>2019-04-07T03:33:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -325,6 +318,13 @@
   
   <url>
     <loc>https://Dvel.xyz/about/</loc>
+    <lastmod>1992-08-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/</loc>
     <lastmod>1992-08-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
