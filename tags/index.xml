@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 07 Apr 2019 03:33:15 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://Dvel.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SQL</title>
+      <link>https://Dvel.xyz/tags/sql/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://Dvel.xyz/tags/sql/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Git</title>
@@ -179,15 +188,6 @@
       <pubDate>Thu, 19 Jul 2018 11:20:43 +0000</pubDate>
       
       <guid>https://Dvel.xyz/tags/%E9%87%91%E8%9E%8D/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>旅游</title>
-      <link>https://Dvel.xyz/tags/%E6%97%85%E6%B8%B8/</link>
-      <pubDate>Mon, 31 Jul 2017 04:32:56 +0000</pubDate>
-      
-      <guid>https://Dvel.xyz/tags/%E6%97%85%E6%B8%B8/</guid>
       <description></description>
     </item>
     

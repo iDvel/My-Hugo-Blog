@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 07 Apr 2019 03:33:15 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://Dvel.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>《SQL 必知必会》笔记</title>
+      <link>https://Dvel.xyz/post/21/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://Dvel.xyz/post/21/</guid>
+      <description>《SQL 必知必会》 第 4 版 豆瓣：https://book.douban.com/subject/24250054/ SQL 文件下载地址：https:</description>
+    </item>
     
     <item>
       <title>Git 自总结</title>
@@ -26,7 +35,7 @@
       <pubDate>Mon, 25 Feb 2019 14:07:58 +0800</pubDate>
       
       <guid>https://Dvel.xyz/post/19/</guid>
-      <description>这么多年来，排队、无聊、打发时间的手机游戏就是 2048 和 数独了。 Python 初级水平，我回顾了一下代码，基本上看完任何一本入门书籍都看得懂。 数独 1 2 3 4 5 6</description>
+      <description>这么多年来，排队、无聊、打发时间的手机游戏就是 2048 和 数独了。 既然还没有学会深度优先算法，不如先以人类解数度的方式，用代码来实现。 我回顾了一下代</description>
     </item>
     
     <item>

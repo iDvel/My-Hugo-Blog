@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>《SQL 必知必会》笔记 - Dvel&#39;s Blog</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Dvel" />
+  <meta name="description" content="《SQL 必知必会》 第 4 版 豆瓣：https://book.douban.com/subject/24250054/ SQL 文件下载地址：https:" />
+
+  <meta name="keywords" content="Dvel" />
+
+
+<meta name="baidu-site-verification" content="SuLNTY16ns" />
+<meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
+
+
+<meta name="generator" content="Hugo 0.65.3" />
+
+
+<link rel="canonical" href="https://Dvel.xyz/post/21/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="《SQL 必知必会》笔记" />
+<meta property="og:description" content="《SQL 必知必会》 第 4 版 豆瓣：https://book.douban.com/subject/24250054/ SQL 文件下载地址：https:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Dvel.xyz/post/21/" />
+<meta property="article:published_time" content="2020-01-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-29T00:00:00+00:00" />
+<meta itemprop="name" content="《SQL 必知必会》笔记">
+<meta itemprop="description" content="《SQL 必知必会》 第 4 版 豆瓣：https://book.douban.com/subject/24250054/ SQL 文件下载地址：https:">
+<meta itemprop="datePublished" content="2020-01-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-01-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="7845">
+
+
+
+<meta itemprop="keywords" content="SQL," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="《SQL 必知必会》笔记"/>
+<meta name="twitter:description" content="《SQL 必知必会》 第 4 版 豆瓣：https://book.douban.com/subject/24250054/ SQL 文件下载地址：https:"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Dvel's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://Dvel.xyz/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://Dvel.xyz/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://Dvel.xyz/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://Dvel.xyz/friends/">Friends</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://Dvel.xyz/about/">About</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Dvel's Blog
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://Dvel.xyz/">Home</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://Dvel.xyz/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://Dvel.xyz/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://Dvel.xyz/friends/">Friends</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://Dvel.xyz/about/">About</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">《SQL 必知必会》笔记</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-01-29" class="post-time">
+          2020-01-29
+        </time>
+        
+        
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数据库">数据库</a></li>
+    <li><a href="#表">表</a></li>
+    <li><a href="#列">列</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#查询语句-select">查询语句 <code>SELECT</code></a></li>
+    <li><a href="#注释">注释</a></li>
+    <li><a href="#结果集去重-distinct">结果集去重 <code>DISTINCT</code></a></li>
+    <li><a href="#限制结果-limit">限制结果 <code>LIMIT</code></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#排序数据-order-by">排序数据 <code>ORDER BY</code></a></li>
+    <li><a href="#按多个列排序">按多个列排序</a></li>
+    <li><a href="#降序排列">降序排列</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#where"><code>WHERE</code></a></li>
+    <li><a href="#操作符">操作符</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#and-or"><code>AND</code> <code>OR</code></a></li>
+    <li><a href="#in"><code>IN</code></a></li>
+    <li><a href="#not"><code>NOT</code></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#like"><code>LIKE</code></a></li>
+    <li><a href="#-通配符"><code>%</code> 通配符</a></li>
+    <li><a href="#_-通配符"><code>_</code> 通配符</a></li>
+    <li><a href="#注意">注意</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#拼接字段">拼接字段</a></li>
+    <li><a href="#as-别名"><code>AS</code> 别名</a></li>
+    <li><a href="#计算字段">计算字段</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#函数">函数</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#聚集函数">聚集函数</a>
+      <ul>
+        <li><a href="#avg--平均值"><code>AVG()</code>  平均值</a></li>
+        <li><a href="#count-计数"><code>COUNT()</code> 计数</a></li>
+        <li><a href="#max-最大值"><code>MAX()</code> 最大值</a></li>
+        <li><a href="#min-最小值"><code>MIN()</code> 最小值</a></li>
+        <li><a href="#sum-求和"><code>SUM()</code> 求和</a></li>
+      </ul>
+    </li>
+    <li><a href="#聚集不同值">聚集不同值</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#group-by-分组"><code>GROUP BY</code> 分组</a></li>
+    <li><a href="#having-过滤分组"><code>HAVING</code> 过滤分组</a>
+      <ul>
+        <li><a href="#where-与-having-的差别"><code>WHERE</code> 与 <code>HAVING</code> 的差别：</a></li>
+      </ul>
+    </li>
+    <li><a href="#order-by-分组和排序"><code>ORDER BY</code> 分组和排序</a></li>
+    <li><a href="#select-子句书写顺序"><code>SELECT</code> 子句书写顺序</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#利用子查询进行过滤">利用子查询进行过滤</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#作为计算字段使用子查询">作为计算字段使用子查询</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#连接">连接</a></li>
+    <li><a href="#内连接inner-join">内连接（inner join）</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#使用表别名">使用表别名</a></li>
+    <li><a href="#自连接self-join">自连接（self-join）</a></li>
+    <li><a href="#自然连接natural-join">自然连接（natural join）</a></li>
+    <li><a href="#外连接outer-join">外连接（outer join）</a></li>
+    <li><a href="#全外连接full-outer-join">全外连接（full outer join）</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#组合查询-union">组合查询（ <code>UNION</code>）</a></li>
+    <li><a href="#创建组合查询">创建组合查询</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#union-规则">UNION 规则</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#数据插入">数据插入</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#从一个表复制到另一个表">从一个表复制到另一个表</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#更新数据update">更新数据（<code>UPDATE</code>）</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#删除数据delete">删除数据（<code>DELETE</code>）</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#创建和操纵表">创建和操纵表</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#为什么使用视图">为什么使用视图</a></li>
+    <li><a href="#视图的规则和限制">视图的规则和限制</a></li>
+    <li><a href="#使用视图">使用视图</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#约束">约束</a></li>
+    <li><a href="#索引">索引</a></li>
+    <li><a href="#触发器">触发器</a></li>
+    <li><a href="#数据库安全">数据库安全</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h1 id="sql-必知必会">《SQL 必知必会》</h1>
+<p>第 4 版</p>
+<p>豆瓣：https://book.douban.com/subject/24250054/</p>
+<p>SQL 文件下载地址：https://forta.com/books/0672336073/</p>
+<h1 id="1---了解-sql">1 - 了解 SQL</h1>
+<h2 id="数据库">数据库</h2>
+<p>保存有组织的数据的容器（通常是一个文件或多个文件）。</p>
+<p>数据库软件应称为数据库管理系统（DBMS）.</p>
+<h2 id="表">表</h2>
+<p>某种特定类型数据的结构化清单。</p>
+<h2 id="列">列</h2>
+<p>表中的一个子段。所有表都是由一个或多个列组成的。</p>
+<h4 id="主键">主键：</h4>
+<p>表中的任何列都可以作为主键，只要它满足以下条件：</p>
+<ul>
+<li>任意两行都不具备有相同的主键值；</li>
+<li>每一行都必须具有一个主键值（主键列不允许 NULL 值）；</li>
+<li>主键列中的值不允许修改或更新；</li>
+<li>主键值不能重用（如果某行从表中删除，它的主键不能赋给以后的新行）。</li>
+</ul>
+<h1 id="2---检索数据">2 - 检索数据</h1>
+<h2 id="查询语句-select">查询语句 <code>SELECT</code></h2>
+<p>检索一个或多个列。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span> <span class="k">FROM</span> <span class="err">表名</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="err">表名</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="注释">注释</h2>
+<p>在大多数数据库软件中，支持 <code>#</code> <code>--</code> <code>/**/</code> 等单行和多行注释。</p>
+<h2 id="结果集去重-distinct">结果集去重 <code>DISTINCT</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="err">列名</span> 
+<span class="k">FROM</span> <span class="err">表名</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>DISTINCT</code> 关键字限制所有的列，如果后接多列，除非两列内容完全相同，否则都会被纳入结果集。</p>
+<h2 id="限制结果-limit">限制结果 <code>LIMIT</code></h2>
+<p>大多用于分页显示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1">-- 从第 0 行开始，显示 5 个。第一页：
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="err">表名</span> <span class="k">LIMIT</span> <span class="mi">5</span> <span class="n">OFFSET</span> <span class="mi">0</span><span class="p">;</span>
+<span class="c1">-- 从第 5 行开始，现实 5 个。第二页：
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="err">表名</span> <span class="k">LIMIT</span> <span class="mi">5</span> <span class="n">OFFSET</span> <span class="mi">5</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>MySQL、MariaDB、SQLite 简化语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 从 n 起，取 m 行。 n 可省略，默认为 0。
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="err">列</span><span class="mi">1</span><span class="p">,</span> <span class="err">列</span><span class="mi">2</span> <span class="k">FROM</span> <span class="err">表</span> <span class="k">LIMIT</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span> 
+
+<span class="c1">-- 示例：
+</span><span class="c1">-- 第一页：
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="err">表名</span> <span class="k">LIMIT</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">;</span>
+<span class="c1">-- 第二页：
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="err">表名</span> <span class="k">LIMIT</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">;</span>
+<span class="c1">-- 第三页
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="err">表名</span> <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="3---排序检索数据">3 - 排序检索数据</h1>
+<p><code>ASC</code> 默认，升序，全称 ascending。</p>
+<p><code>DESC</code> 降序，全称 descending。</p>
+<h2 id="排序数据-order-by">排序数据 <code>ORDER BY</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span> 
+<span class="k">FROM</span> <span class="err">表名</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="err">列名</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>ORDER BY</code> 子句中用非检索的列排序也是合法的。</p>
+<h2 id="按多个列排序">按多个列排序</h2>
+<p>写在前面的优先级高。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span> 
+<span class="k">FROM</span> <span class="err">表名</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="err">列名</span><span class="mi">1</span><span class="p">,</span> <span class="err">列名</span><span class="mi">2</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>按列位置排序，可以使用列名的书写位置，不推荐：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span><span class="mi">1</span><span class="p">,</span> <span class="err">列名</span><span class="mi">2</span><span class="p">,</span> <span class="err">列名</span><span class="mi">3</span>
+<span class="k">FROM</span> <span class="err">表名</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="降序排列">降序排列</h2>
+<p><code>ORDER BY</code> 默认为升序排列。（从上至下，越来越大（0→100，a→z））</p>
+<p><code>DESC</code> 只对前面那一列生效，如果想多列使用降序排序，必须对每一列指定 <code>DESC</code> 关键字。</p>
+<p>示例：（prod_price 列降序排序，prod_name 仍按升序排序）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">prod_price</span><span class="p">,</span> <span class="n">prod_name</span>
+<span class="k">FROM</span> <span class="n">Products</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">prod_price</span> <span class="k">DESC</span><span class="p">,</span> <span class="n">prod_name</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="4---过滤数据">4 - 过滤数据</h1>
+<h2 id="where"><code>WHERE</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span>
+<span class="k">FROM</span> <span class="err">表名</span>
+<span class="k">WHERE</span> <span class="err">条件</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="操作符">操作符</h2>
+<p>常见操作符：&lt; &gt; = &lt;= &gt;= != 。。。</p>
+<p><code>BTEWEEN</code>  操作符，左闭右闭。</p>
+<p><code>IS NULL</code></p>
+<h1 id="5---高级数据过滤">5 - 高级数据过滤</h1>
+<h2 id="and-or"><code>AND</code> <code>OR</code></h2>
+<p><code>AND</code> 优先级大于 <code>OR</code>。</p>
+<p>使用小括号，不依赖优先级顺序，可以消除歧义。</p>
+<h2 id="in"><code>IN</code></h2>
+<p>指定范围，集合中的每个条件都可以进行匹配。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="err">表名</span>
+<span class="k">WHERE</span> <span class="n">xxx_id</span> <span class="k">IN</span> <span class="p">(</span><span class="n">no1</span><span class="p">,</span> <span class="n">no2</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>加强版的 <code>OR</code>，使逻辑更清晰。</p>
+<h2 id="not"><code>NOT</code></h2>
+<p>否定紧跟的条件。</p>
+<h1 id="6---用通配符进行过滤">6 - 用通配符进行过滤</h1>
+<h2 id="like"><code>LIKE</code></h2>
+<p><code>LIKE</code> 指示 DBMS 后跟的搜索模式利用通配符而不是简单的相等匹配进行比较。</p>
+<h2 id="-通配符"><code>%</code> 通配符</h2>
+<p><code>%</code> 能匹配 0 个、1 个或多个字符。</p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Products</span> <span class="k">WHERE</span> <span class="n">prod_name</span> <span class="k">LIKE</span> <span class="s2">&#34;fish%&#34;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="_-通配符"><code>_</code> 通配符</h2>
+<p><code>_</code> 总是刚好匹配一个字符，不能多也不能少。</p>
+<p>示例：（与 <code>%</code> 的区别与对比）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">prod_name</span> <span class="k">FROM</span> <span class="n">Products</span> <span class="k">WHERE</span> <span class="n">prod_name</span> <span class="k">LIKE</span> <span class="s2">&#34;% inch teddy bear&#34;</span><span class="p">;</span>
+<span class="c1">-- 8 inch teddy bear
+</span><span class="c1">-- 12 inch teddy bear
+</span><span class="c1">-- 18 inch teddy bear
+</span><span class="c1"></span>
+<span class="k">SELECT</span> <span class="n">prod_name</span> <span class="k">FROM</span> <span class="n">Products</span> <span class="k">WHERE</span> <span class="n">prod_name</span> <span class="k">LIKE</span> <span class="s2">&#34;__ inch teddy bear&#34;</span><span class="p">;</span> <span class="c1">-- 两个下划线
+</span><span class="c1">-- 12 inch teddy bear
+</span><span class="c1">-- 18 inch teddy bear
+</span><span class="c1"></span>
+<span class="k">SELECT</span> <span class="n">prod_name</span> <span class="k">FROM</span> <span class="n">Products</span> <span class="k">WHERE</span> <span class="n">prod_name</span> <span class="k">LIKE</span> <span class="s2">&#34;_ inch teddy bear&#34;</span><span class="p">;</span> <span class="c1">-- 一个下划线
+</span><span class="c1">-- 8 inch teddy bear
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="注意">注意</h2>
+<ul>
+<li>不要过度使用通配符。如果其他操作符能达到相同的目的，应该使用其他操作符。</li>
+<li>在确实需要使用通配符时，也尽量不要把它们用在搜索模式的开始处，搜索起来是最慢的。</li>
+<li>仔细注意通配符的位置。如果放错地方，可能不会返回想要的数据。</li>
+</ul>
+<h1 id="7---创建计算字段">7 - 创建计算字段</h1>
+<h2 id="拼接字段">拼接字段</h2>
+<p>MySQL 和 MariaSQL 使用 <code>CONCAT()</code> 函数拼接字符串；</p>
+<p>使用 <code>TRIM()</code>、<code>LTRIM()</code>、<code>RTRIM</code> 去掉字符串两边、左、右的空格。</p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span>
+	<span class="nf">CONCAT</span><span class="p">(</span>
+		<span class="nf">TRIM</span><span class="p">(</span> <span class="n">vend_name</span> <span class="p">),</span>
+		<span class="s1">&#39;\t\t(&#39;</span><span class="p">,</span>
+		<span class="nf">TRIM</span><span class="p">(</span> <span class="n">vend_country</span> <span class="p">),</span>
+		<span class="s1">&#39;)&#39;</span> 
+	<span class="p">)</span> 
+<span class="k">FROM</span>
+	<span class="n">Vendors</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="as-别名"><code>AS</code> 别名</h2>
+<h2 id="计算字段">计算字段</h2>
+<p>对检索出的数据进行算术计算：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">item_price</span><span class="p">,</span> <span class="n">quantity</span><span class="o">*</span><span class="n">item_price</span> <span class="k">AS</span> <span class="n">expanded_price</span>
+<span class="k">FROM</span> <span class="n">OrderItems</span> 
+<span class="k">WHERE</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">20008</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="8---使用函数处理数据">8 - 使用函数处理数据</h1>
+<h2 id="函数">函数</h2>
+<ul>
+<li>文本处理函数</li>
+<li>日期和时间处理函数</li>
+<li>数值处理函数</li>
+</ul>
+<p>需要参考相应 DBMS 文档。</p>
+<h1 id="9---汇总数据">9 - 汇总数据</h1>
+<h2 id="聚集函数">聚集函数</h2>
+<p>对某些行运行的函数，计算并返回一个值。</p>
+<h3 id="avg--平均值"><code>AVG()</code>  平均值</h3>
+<p>只适用于单列，忽略值为 <code>NULL</code> 的行。</p>
+<h3 id="count-计数"><code>COUNT()</code> 计数</h3>
+<p><code>COUNT(*)</code> 对表中行的数目进行计算，不管表列中是否包含 <code>NULL</code> 值。</p>
+<p><code>COUNT(列名)</code> 会忽略值为 <code>NULL</code> 的行。</p>
+<h3 id="max-最大值"><code>MAX()</code> 最大值</h3>
+<h3 id="min-最小值"><code>MIN()</code> 最小值</h3>
+<h3 id="sum-求和"><code>SUM()</code> 求和</h3>
+<h2 id="聚集不同值">聚集不同值</h2>
+<p>对以上 5 个聚集函数都可以使用如下参数：</p>
+<ul>
+<li><code>ALL</code> 默认，对所有行执行计算。</li>
+<li><code>DISTINCT</code> 只包含不同的值。（不能用于 <code>COUNT(*)</code>，只能用于列名。）</li>
+</ul>
+<p>例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="nf">AVG</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">salary</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">employee</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>会忽略工资相同的员工工资，来计算平均值。</p>
+<h1 id="10---分组数据">10 - 分组数据</h1>
+<h2 id="group-by-分组"><code>GROUP BY</code> 分组</h2>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">vend_id</span><span class="p">,</span> <span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">num_prods</span>
+<span class="k">FROM</span> <span class="n">Products</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">vend_id</span><span class="p">;</span>
+
+<span class="c1">-- vend_id	num_prods
+</span><span class="c1">-- BRS01	3
+</span><span class="c1">-- DLL01	4
+</span><span class="c1">-- FNG01	2
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>GROUP BY</code> 子句可以包含任意数目的列，因而可以对分组进行嵌套，更细致地进行数据分组。
+<ul>
+<li>如果嵌套了分组，数据将在最后指定的分组上进行汇总。</li>
+</ul>
+</li>
+<li><code>GROUP BY</code> 子句中列出的每一列都必须是检索列或有效的表达式（但不能是聚集函数）。</li>
+<li>除聚集计算语句外，<code>SELECT</code> 语句中的每一列都必须在 <code>GROUP BY</code> 子句中给出。</li>
+<li>如果分组列中包含 <code>NULL</code> 值的行，则 <code>NULL</code> 将作为一个分组返回。如果列中有多行 <code>NULL</code> 只，它们将分为一组。</li>
+</ul>
+<h2 id="having-过滤分组"><code>HAVING</code> 过滤分组</h2>
+<p>示例：（列出具有 2 个以上产品且其价格大于等于 4 的供应商）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">vend_id</span><span class="p">,</span> <span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">Products</span>
+<span class="k">WHERE</span> <span class="n">prod_price</span> <span class="o">&gt;=</span> <span class="mi">4</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">vend_id</span>
+<span class="k">HAVING</span> <span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="c1">-- vend_id	COUNT(*)
+</span><span class="c1">-- BRS01	3
+</span><span class="c1">-- FNG01	2
+</span></code></pre></td></tr></table>
+</div>
+</div><p><code>HAVING</code> 支持所有 <code>WHERE</code> 的操作符。</p>
+<p>紧接 <code>GROUP BY</code>，不能单独存在。</p>
+<p>聚合函数只能与具体数据做条件判断，不能与字段做条件判断。（可用表连接实现）</p>
+<h3 id="where-与-having-的差别"><code>WHERE</code> 与 <code>HAVING</code> 的差别：</h3>
+<p><code>WHERE</code> 不能使用聚合函数，<code>HAVING</code> 可以在分组后使用聚合函数。</p>
+<p><code>WHERE</code> 在数据分组前进行过滤，<code>HAVING</code> 在数据分组后进行过滤。</p>
+<p>所以 <code>WHERE</code> 排除的行不包括在分组中，这可能会改变计算值，从而影响 <code>HAVING</code> 子句中基于这些值过滤掉的分组。</p>
+<h2 id="order-by-分组和排序"><code>ORDER BY</code> 分组和排序</h2>
+<p>一般在使用 <code>GROUP BY</code> 子句时，应该也给出 <code>ORDER BY</code> 子句。这时保证数据正确排序的唯一方法。千万不要尽依赖 <code>GROUP BY</code> 排序数据。</p>
+<h2 id="select-子句书写顺序"><code>SELECT</code> 子句书写顺序</h2>
+<table>
+<thead>
+<tr>
+<th>子句</th>
+<th>说明</th>
+<th>是否必须使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SELECT</code></td>
+<td>要返回的列或表达式</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>FROM</code></td>
+<td>从中检索数据的表</td>
+<td>仅在从表选择数据时使用</td>
+</tr>
+<tr>
+<td><code>WHERE</code></td>
+<td>行级过滤</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>GROUP BY</code></td>
+<td>组级过滤</td>
+<td>仅在按组计算聚集时使用</td>
+</tr>
+<tr>
+<td><code>HAVING</code></td>
+<td>组级过滤</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>ORDER BY</code></td>
+<td>输出排序顺序</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h1 id="11---使用子查询">11 - 使用子查询</h1>
+<h2 id="利用子查询进行过滤">利用子查询进行过滤</h2>
+<p><strong>作为子查询的 <code>SELECT</code> 语句只能查询单个列。</strong></p>
+<p>示例，列出订购物品 RGAN01 的所有顾客：</p>
+<h4 id="1检索包含物品-rgan01-的所有订单的编号">1：检索包含物品 RGAN01 的所有订单的编号</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">order_num</span>
+<span class="k">FROM</span> <span class="n">OrderIterms</span>
+<span class="k">WHERE</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="s1">&#39;RGAN01&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2检索具有前一步骤列出的订单编号的所有顾客的-id">2：检索具有前一步骤列出的订单编号的所有顾客的 ID</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">cust_id</span>
+<span class="k">FROM</span> <span class="n">Orders</span>
+<span class="k">WHERE</span> <span class="n">order_num</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">order_num</span>
+                    <span class="k">FROM</span> <span class="n">OrderIterms</span>
+                    <span class="k">WHERE</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="s1">&#39;RGAN01&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3检索前一步骤返回的所有顾客-id-的顾客信息">3：检索前一步骤返回的所有顾客 ID 的顾客信息</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span>
+<span class="k">FROM</span> <span class="n">Customers</span>
+<span class="k">WHERE</span> <span class="n">cust_id</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">cust_id</span>
+                  <span class="k">FROM</span> <span class="n">Orders</span>
+                  <span class="k">WHERE</span> <span class="n">order_num</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">order_num</span>
+                                      <span class="k">FROM</span> <span class="n">OrderIterms</span>
+                                      <span class="k">WHERE</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="s1">&#39;RGAN01&#39;</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>内连接写法：（第 12 课）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1">-- 列出订购物品 RGAN01 的所有顾客：
+</span><span class="c1"></span><span class="k">SELECT</span>
+	<span class="n">cust_name</span><span class="p">,</span>
+	<span class="n">cust_contact</span> 
+<span class="k">FROM</span>
+	<span class="n">OrderItems</span><span class="p">,</span>
+	<span class="n">Orders</span><span class="p">,</span>
+	<span class="n">Customers</span> 
+<span class="k">WHERE</span>
+	<span class="n">OrderItems</span><span class="p">.</span><span class="n">prod_id</span> <span class="o">=</span> <span class="s1">&#39;RGAN01&#39;</span> 
+	<span class="k">AND</span> <span class="n">OrderItems</span><span class="p">.</span><span class="n">order_num</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span> 
+	<span class="k">AND</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="作为计算字段使用子查询">作为计算字段使用子查询</h2>
+<p>示例，现实 <code>Customers</code> 表中每个顾客的订单总数：</p>
+<h4 id="1从-customers-表中检索顾客列表">1：从 <code>Customers</code> 表中检索顾客列表；</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">orders</span>
+<span class="k">FROM</span> <span class="n">Orders</span>
+<span class="k">WHERE</span> <span class="n">cust_id</span> <span class="o">=</span> <span class="s1">&#39;1000000001&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2对于检索出的每个顾客统计其在-orders-表中的订单数目">2：对于检索出的每个顾客，统计其在 <code>Orders</code> 表中的订单数目</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> 
+       <span class="n">cust_state</span><span class="p">,</span>
+	   <span class="p">(</span><span class="k">SELECT</span> <span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+		<span class="k">FROM</span> <span class="n">Orders</span>
+		<span class="k">WHERE</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">)</span> <span class="k">AS</span> <span class="n">orders</span>
+<span class="k">FROM</span> <span class="n">Customers</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">cust_name</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="12---连接表">12 - 连接表</h1>
+<h2 id="连接">连接</h2>
+<p>为什么使用连接？</p>
+<p>如果数据存储在多个表中，怎么用一条 <code>SELECT</code> 语句就检索出数据呢？</p>
+<p>答案是使用连接。</p>
+<h2 id="内连接inner-join">内连接（inner join）</h2>
+<p>内连接，又称等值连接（equijoin），它基于两个表之间的相等测试。</p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">vend_name</span><span class="p">,</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span>
+<span class="k">FROM</span> <span class="n">Vendors</span><span class="p">,</span> <span class="n">Products</span>
+<span class="k">WHERE</span> <span class="n">Vendors</span><span class="p">.</span><span class="n">vend_id</span> <span class="o">=</span> <span class="n">Products</span><span class="p">.</span><span class="n">vend_id</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="mysql-中的多种写法">MySQL 中的多种写法：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="p">...</span> <span class="k">FROM</span> <span class="err">表</span><span class="mi">1</span><span class="p">,</span> <span class="err">表</span><span class="mi">2</span> <span class="k">WHERE</span> <span class="err">连接条件</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="p">...</span> <span class="k">FROM</span> <span class="err">表</span><span class="mi">1</span> <span class="p">[</span><span class="k">INNER</span><span class="p">]</span> <span class="k">JOIN</span> <span class="err">表</span><span class="mi">2</span> <span class="k">ON</span> <span class="err">连接条件</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="p">...</span> <span class="k">FROM</span> <span class="err">表</span><span class="mi">1</span> <span class="p">[</span><span class="k">INNER</span><span class="p">]</span> <span class="k">JOIN</span> <span class="err">表</span><span class="mi">2</span> <span class="k">WHERE</span> <span class="err">连接条件</span><span class="p">;</span> <span class="err">（在使用外连接时，使用</span> <span class="k">WHERE</span> <span class="err">会出问题）</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="笛卡尔积叉连接cross-join">笛卡尔积：（叉连接）（cross join）</h4>
+<p>没有连接条件的表关系返回的结果为笛卡尔积，检索出的行数将是第一个表中的行数乘以第二个表中的行数。</p>
+<h4 id="连接多个表">连接多个表</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1">-- 显示订单 20007 中的物品。
+</span><span class="c1"></span><span class="k">SELECT</span>
+	<span class="n">prod_name</span><span class="p">,</span>
+	<span class="n">vend_name</span><span class="p">,</span>
+	<span class="n">prod_price</span><span class="p">,</span>
+	<span class="n">quantity</span> 
+<span class="k">FROM</span>
+	<span class="n">OrderItems</span><span class="p">,</span>
+	<span class="n">Products</span><span class="p">,</span>
+	<span class="n">Vendors</span> 
+<span class="k">WHERE</span>
+	<span class="n">order_num</span> <span class="o">=</span> <span class="mi">20007</span> 
+	<span class="k">AND</span> <span class="n">OrderItems</span><span class="p">.</span><span class="n">prod_id</span> <span class="o">=</span> <span class="n">Products</span><span class="p">.</span><span class="n">prod_id</span> 
+	<span class="k">AND</span> <span class="n">Products</span><span class="p">.</span><span class="n">vend_id</span> <span class="o">=</span> <span class="n">Vendors</span><span class="p">.</span><span class="n">vend_id</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1">-- 列出订购物品 RGAN01 的所有顾客：
+</span><span class="c1"></span><span class="k">SELECT</span>
+	<span class="n">cust_name</span><span class="p">,</span>
+	<span class="n">cust_contact</span> 
+<span class="k">FROM</span>
+	<span class="n">OrderItems</span><span class="p">,</span>
+	<span class="n">Orders</span><span class="p">,</span>
+	<span class="n">Customers</span> 
+<span class="k">WHERE</span>
+	<span class="n">OrderItems</span><span class="p">.</span><span class="n">prod_id</span> <span class="o">=</span> <span class="s1">&#39;RGAN01&#39;</span> 
+	<span class="k">AND</span> <span class="n">OrderItems</span><span class="p">.</span><span class="n">order_num</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span> 
+	<span class="k">AND</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="13---创建高级连接">13 - 创建高级连接</h1>
+<h2 id="使用表别名">使用表别名</h2>
+<p>除了之前的给列起别名，也可以在 <code>FROM</code> 子句中给表起别名，以供在 <code>SELECT</code>、<code>WHERE</code> 子句中使用。</p>
+<p>可以缩短 SQL 语句。允许在一条 <code>SELECT</code> 语句中方便多次使用相同的表。</p>
+<h2 id="自连接self-join">自连接（self-join）</h2>
+<p>内连接的一种，连接的是同一个表。</p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1">-- 给 Jim Jones 同一公司的所有顾客发送一封信件。
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="n">c1</span><span class="p">.</span><span class="n">cust_name</span><span class="p">,</span> <span class="n">c1</span><span class="p">.</span><span class="n">cust_contact</span><span class="p">,</span> <span class="n">c1</span><span class="p">.</span><span class="n">cust_email</span>
+<span class="k">FROM</span> <span class="n">Customers</span> <span class="k">AS</span> <span class="n">c1</span><span class="p">,</span> <span class="n">Customers</span> <span class="k">AS</span> <span class="n">c2</span>
+<span class="k">WHERE</span> <span class="n">c2</span><span class="p">.</span><span class="n">cust_contact</span> <span class="o">=</span> <span class="s1">&#39;Jim Jones&#39;</span>
+<span class="k">AND</span> <span class="n">c1</span><span class="p">.</span><span class="n">cust_name</span> <span class="o">=</span> <span class="n">c2</span><span class="p">.</span><span class="n">cust_name</span><span class="p">;</span>
+<span class="c1">-- cust_name	cust_contact		cust_email
+</span><span class="c1">-- Fun4All		Jim Jones			jjones@fun4all.com
+</span><span class="c1">-- Fun4All		Denise L. Stephens	dstephens@fun4all.com
+</span></code></pre></td></tr></table>
+</div>
+</div><p>自连接比子查询性能更好。</p>
+<h2 id="自然连接natural-join">自然连接（natural join）</h2>
+<p>自然连接排除多次出现，使每一列只返回一次。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Customers</span> <span class="k">NATURAL</span> <span class="k">JOIN</span> <span class="n">Orders</span><span class="p">;</span>
+<span class="c1">-- 两个表中都有 cust_id 列，但只返回了一个。
+</span></code></pre></td></tr></table>
+</div>
+</div><p>*感觉没什么用啊。。。除非真的要查询这么多字段。</p>
+<h2 id="外连接outer-join">外连接（outer join）</h2>
+<ul>
+<li>内连接只返回符合条件的记录，外连接还返回不符合条件的记录。</li>
+<li>左外连接即保留左表的所有记录，与右表连接；</li>
+<li>右外连接即保留右表的所有记录，与左表连接。</li>
+<li>左外连接（left outer join）与右外连接（right outer join）可以互相转换。（SQLite 即便不支持右外连接，也可以用左外连接代替）</li>
+</ul>
+<p>内外连接的区别，示例：（查询每个顾客的订单计数，外连接可以查询出尚未下过订单的顾客）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1">-- 内连接，只查询出条件关联的行
+</span><span class="c1">-- 查询不到顾客 1000000002，因为他没有下过订单
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">,</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span>
+<span class="k">FROM</span> <span class="n">Customers</span> <span class="k">JOIN</span> <span class="n">Orders</span>
+<span class="k">ON</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+<span class="c1">-- cust_id		order_num
+</span><span class="c1">-- 1000000001	20005
+</span><span class="c1">-- 1000000001	20009
+</span><span class="c1">-- 1000000003	20006
+</span><span class="c1">-- 1000000004	20007
+</span><span class="c1">-- 1000000005	20008
+</span><span class="c1"></span>
+<span class="c1">-- 外连接，保留顾客表中所有顾客的记录，去外连接订单表
+</span><span class="c1">-- 可以查询到 1000000002
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">,</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span>
+<span class="k">FROM</span> <span class="n">Customers</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">Orders</span>
+<span class="k">ON</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+<span class="c1">-- cust_id		order_num
+</span><span class="c1">-- 1000000001	20005
+</span><span class="c1">-- 1000000001	20009
+</span><span class="c1">-- 1000000002	(NULL)
+</span><span class="c1">-- 1000000003	20006
+</span><span class="c1">-- 1000000004	20007
+</span><span class="c1">-- 1000000005	20008
+</span><span class="c1"></span>
+<span class="c1">-- 完善：外连接+分组计数
+</span><span class="c1">-- 带聚集函数的连接
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">,</span> <span class="nf">COUNT</span><span class="p">(</span><span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">Customers</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">Orders</span>
+<span class="k">ON</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+<span class="c1">-- cust_id		COUNT(Orders.order_num)
+</span><span class="c1">-- 1000000001	2
+</span><span class="c1">-- 1000000002	0
+</span><span class="c1">-- 1000000003	1
+</span><span class="c1">-- 1000000004	1
+</span><span class="c1">-- 1000000005	1
+</span></code></pre></td></tr></table>
+</div>
+</div><p>其他外连接示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1">-- 列出所有产品以及订购数量，包括没有人订购的产品
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="n">Products</span><span class="p">.</span><span class="n">prod_id</span><span class="p">,</span> <span class="nf">SUM</span><span class="p">(</span><span class="nf">IFNULL</span><span class="p">(</span><span class="n">OrderItems</span><span class="p">.</span><span class="n">quantity</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="k">FROM</span> <span class="n">Products</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">OrderItems</span>
+<span class="k">ON</span> <span class="n">Products</span><span class="p">.</span><span class="n">prod_id</span> <span class="o">=</span> <span class="n">OrderItems</span><span class="p">.</span><span class="n">prod_id</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Products</span><span class="p">.</span><span class="n">prod_id</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="全外连接full-outer-join">全外连接（full outer join）</h2>
+<p>MySQL、MariaSQL、SQLite、Access、Open Office Base 不支持全外连接。</p>
+<p>全外连接检索两个表中的所有行并关联那些可以关联的行。</p>
+<h1 id="14---组合查询">14 - 组合查询</h1>
+<h2 id="组合查询-union">组合查询（ <code>UNION</code>）</h2>
+<p>SQL 允许执行多个查询（多条 <code>SELECT</code> 语句），并将结果作为一个查询结果返回。</p>
+<p>主要有两种情况需要使用组合查询：</p>
+<ul>
+<li>在一个查询中从不同的表返回结果数据；</li>
+<li>对一个表执行多个查询，按一个查询返回数据。</li>
+</ul>
+<p>提示：多数情况下，组合相同表的两个查询，通过具有多个 <code>WHERE</code> 子句的 <code>SELECT</code> 语句都可以作为一个组合查询。</p>
+<h2 id="创建组合查询">创建组合查询</h2>
+<p>示例：（需要 Illinois、Indiana、Michigan 等美国几个州的所有顾客的报表，还想包括不管位于哪个州的所有的 Fun4All）</p>
+<p>单条语句 1：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_email</span>
+<span class="k">FROM</span> <span class="n">Customers</span>
+<span class="k">WHERE</span> <span class="n">cust_state</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;IL&#39;</span><span class="p">,</span> <span class="s1">&#39;IN&#39;</span><span class="p">,</span> <span class="s1">&#39;MI&#39;</span><span class="p">);</span>
+<span class="c1">-- cust_name		cust_contact	cust_email
+</span><span class="c1">-- Village Toys		John Smith		sales@villagetoys.com
+</span><span class="c1">-- Fun4All			Jim Jones		jjones@fun4all.com
+</span><span class="c1">-- The Toy Store	Kim Howard		(NULL)
+</span></code></pre></td></tr></table>
+</div>
+</div><p>单条语句 2：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_email</span>
+<span class="k">FROM</span> <span class="n">Customers</span>
+<span class="k">WHERE</span> <span class="n">cust_name</span> <span class="o">=</span> <span class="s1">&#39;Fun4All&#39;</span><span class="p">;</span>
+<span class="c1">-- cust_name	cust_contact		cust_email
+</span><span class="c1">-- Fun4All		Jim Jones			jjones@fun4all.com
+</span><span class="c1">-- Fun4All		Denise L. Stephens	dstephens@fun4all.com
+</span></code></pre></td></tr></table>
+</div>
+</div><p><code>UNION</code> 组合：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_email</span>
+<span class="k">FROM</span> <span class="n">Customers</span>
+<span class="k">WHERE</span> <span class="n">cust_state</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;IL&#39;</span><span class="p">,</span> <span class="s1">&#39;IN&#39;</span><span class="p">,</span> <span class="s1">&#39;MI&#39;</span><span class="p">)</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_email</span>
+<span class="k">FROM</span> <span class="n">Customers</span>
+<span class="k">WHERE</span> <span class="n">cust_name</span> <span class="o">=</span> <span class="s1">&#39;Fun4All&#39;</span><span class="p">;</span>
+<span class="c1">-- cust_name		cust_contact			cust_email
+</span><span class="c1">-- Village Toys		John Smith				sales@villagetoys.com
+</span><span class="c1">-- Fun4All			Jim Jones				jjones@fun4all.com
+</span><span class="c1">-- The Toy Store	Kim Howard				(NULL)
+</span><span class="c1">-- Fun4All			Denise 	L. Stephens		dstephens@fun4all.com
+</span></code></pre></td></tr></table>
+</div>
+</div><p>使用 <code>WHERE</code>，效果相同：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_email</span>
+<span class="k">FROM</span> <span class="n">Customers</span>
+<span class="k">WHERE</span> <span class="n">cust_state</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;IL&#39;</span><span class="p">,</span> <span class="s1">&#39;IN&#39;</span><span class="p">,</span> <span class="s1">&#39;MI&#39;</span><span class="p">)</span>
+<span class="k">OR</span> <span class="n">cust_name</span> <span class="o">=</span> <span class="s1">&#39;Fun4All&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="包含或取消重复的行">包含或取消重复的行：</h4>
+<p>上面例子中，<code>Fun4All		Jim Jones			jjones@fun4all.com</code> 这一行在两个 <code>SELECT</code> 语句中均被查询出，但 <code>UNION</code> 取消了重复的行。</p>
+<p><code>UNION ALL</code> 可以让每个条件的匹配行全部出现。</p>
+<h4 id="排序">排序：</h4>
+<p>使用 <code>UNION</code> 组合查询时，只能使用一条 <code>ORDER BY</code> 子句进行排序，它必须位于最后一条 <code>SELECT</code> 语句之后。</p>
+<h2 id="union-规则">UNION 规则</h2>
+<ul>
+<li>
+<p><code>UNION</code> 必须由两条或两条以上的 <code>SELECT</code> 语句组成，语句之间用关键字 <code>UNION</code> 分割。</p>
+</li>
+<li>
+<p><code>UNION</code> 中的每个查询必须包含<strong>相同数量</strong>的列、表达式或聚集函数。</p>
+</li>
+<li>
+<p>列数据类型必须兼容：类型不必完全相同但必须兼容（如不同长度的字符串）</p>
+</li>
+</ul>
+<h1 id="15---插入数据">15 - 插入数据</h1>
+<h2 id="数据插入">数据插入</h2>
+<p><code>INTERT</code> 语句：用来将行插入（或添加）到数据库表，插入有几种方式：</p>
+<ul>
+<li>插入完整的行；</li>
+<li>插入行的一部分；</li>
+<li>插入某些查询的结果。</li>
+</ul>
+<h4 id="插入完整的行mysql-中可以省略-into">插入完整的行：（MySQL 中可以省略 <code>INTO</code>）</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Customers</span>
+<span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;1000000006&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;Toy Land&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;123 Any Street&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;New York&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;NY&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;11111&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;USA&#39;</span><span class="p">,</span>
+		<span class="no">NULL</span><span class="p">,</span>
+		<span class="no">NULL</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这种插入方法必须完整的按顺序提供列名所对应的数据。</p>
+<p>由于较为依赖于表中列的定义次序，在表结构变动后会变得不安全或更改更麻烦。</p>
+<h4 id="更安全的方法-or-插入部分字段">更安全的方法 or 插入部分字段：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">Customers</span><span class="p">(</span><span class="n">cust_id</span><span class="p">,</span>
+					  <span class="n">cust_name</span><span class="p">,</span>
+					  <span class="n">cust_address</span><span class="p">,</span>
+					  <span class="n">cust_city</span><span class="p">,</span>
+					  <span class="n">cust_state</span><span class="p">,</span>
+					  <span class="n">cust_zip</span><span class="p">,</span>
+					  <span class="n">cust_country</span><span class="p">,</span>
+					  <span class="n">cust_contact</span><span class="p">,</span>
+					  <span class="n">cust_email</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;1000000006&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;Toy Land&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;123 Any Street&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;New York&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;NY&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;11111&#39;</span><span class="p">,</span>
+		<span class="s1">&#39;USA&#39;</span><span class="p">,</span>
+		<span class="no">NULL</span><span class="p">,</span>
+		<span class="no">NULL</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样 DBMS 将用 <code>VALUES</code> 列表中的值按次序一一对应填入列表中的对应项。</p>
+<p>也可以省略部分字段，只要这些省略的字段允许 <code>NULL</code> 值或提供默认值。</p>
+<h4 id="一次插入多行数据">一次插入多行数据</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 单条数据
+</span><span class="c1"></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="err">表名</span><span class="p">[(</span><span class="err">字段</span><span class="mi">1</span><span class="p">,</span> <span class="err">字段</span><span class="mi">2</span><span class="p">...)]</span> <span class="k">VALUES</span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span> <span class="err">值</span><span class="mi">2</span><span class="p">...);</span>
+<span class="c1"># 多条数据
+</span><span class="c1"></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="err">表名</span><span class="p">[(</span><span class="err">字段</span><span class="mi">1</span><span class="p">,</span> <span class="err">字段</span><span class="mi">2</span><span class="p">...)]</span> <span class="k">VALUES</span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span> <span class="err">值</span><span class="mi">2</span><span class="p">...),</span> <span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span> <span class="err">值</span><span class="mi">2</span><span class="p">...)</span> <span class="p">...;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="插入检索出的数据">插入检索出的数据</h4>
+<p><code>INSERT SELECT</code> 语句可以插入检索出的行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">Customers</span><span class="p">(</span><span class="n">cust_id</span><span class="p">,</span>
+					  <span class="n">cust_name</span><span class="p">,</span>
+					  <span class="n">cust_address</span><span class="p">,</span>
+					  <span class="n">cust_city</span><span class="p">,</span>
+					  <span class="n">cust_state</span><span class="p">,</span>
+					  <span class="n">cust_zip</span><span class="p">,</span>
+					  <span class="n">cust_country</span><span class="p">,</span>
+					  <span class="n">cust_contact</span><span class="p">,</span>
+					  <span class="n">cust_email</span><span class="p">)</span>
+<span class="k">SELECT</span> <span class="n">cust_id</span><span class="p">,</span>
+	   <span class="n">cust_name</span><span class="p">,</span>
+	   <span class="n">cust_address</span><span class="p">,</span>
+	   <span class="n">cust_city</span><span class="p">,</span>
+	   <span class="n">cust_state</span><span class="p">,</span>
+	   <span class="n">cust_zip</span><span class="p">,</span>
+	   <span class="n">cust_country</span><span class="p">,</span>
+	   <span class="n">cust_contact</span><span class="p">,</span>
+	   <span class="n">cust_email</span>
+<span class="k">FROM</span> <span class="n">CustNew</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>插入行数取决于 <code>SELECT</code> 语句查询出多少行。</p>
+<p>DBMS 不在乎 <code>SELECT</code> 返回的列名，会将查询出的字段按 <code>INSERT</code> 语句给出的次序一一对应。</p>
+<h2 id="从一个表复制到另一个表">从一个表复制到另一个表</h2>
+<p>SQL 语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">INTO</span> <span class="n">CustCopy</span>
+<span class="k">FROM</span> <span class="n">Customers</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>MySQL、MariaDB、SQLite、Oracle、PostgreSQL 语法：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">CustCopy</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Customers</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>message:</p>
+<p>There is no primary key here. Update will only use exact matching of the old values of the columns here. Thus, it may update more than one record.</p>
+</blockquote>
+<p>*MySQL 在复制时没有复制主键约束。</p>
+<h1 id="16---更新和删除数据">16 - 更新和删除数据</h1>
+<p><strong>在更新和删除数据时，如果不指定 <code>WHERE</code> 条件，将会更新或删除所有行。</strong></p>
+<h2 id="更新数据update">更新数据（<code>UPDATE</code>）</h2>
+<p>基本的 <code>UPDATE</code> 语句由三部分组成：</p>
+<ul>
+<li>要更新的表；</li>
+<li>列名和它们的新值；</li>
+<li>确定要更新哪些行的过滤条件。</li>
+</ul>
+<h4 id="更新一列">更新一列：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">UPDATE</span> <span class="n">Customers</span>
+<span class="kt">SET</span> <span class="n">cust_email</span> <span class="o">=</span> <span class="s1">&#39;kim@thetoystore.com&#39;</span>
+<span class="k">WHERE</span> <span class="n">cust_id</span> <span class="o">=</span> <span class="s1">&#39;1000000005&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="更新多列">更新多列：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">UPDATE</span> <span class="n">Customers</span>
+<span class="kt">SET</span> <span class="n">cust_contact</span> <span class="o">=</span> <span class="s1">&#39;Sam Roberts&#39;</span><span class="p">,</span>
+	<span class="n">cust_email</span> <span class="o">=</span> <span class="s1">&#39;sam@toyland.com&#39;</span>
+<span class="k">WHERE</span> <span class="n">cust_id</span> <span class="o">=</span> <span class="s1">&#39;1000000006&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="在-update-语句中进行表连接">在 <code>UPDATE</code> 语句中进行表连接</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 把ALLEN调往RESEARCH部门,职务调整为ANALYST
+</span><span class="c1"></span><span class="k">UPDATE</span> <span class="n">t_emp</span> <span class="n">e</span> 
+<span class="k">JOIN</span> <span class="n">t_dept</span> <span class="n">d</span> <span class="k">ON</span> <span class="n">e</span><span class="p">.</span><span class="n">ename</span> <span class="o">=</span> <span class="s1">&#39;ALLEN&#39;</span> <span class="k">AND</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span> <span class="o">=</span> <span class="s1">&#39;RESEARCH&#39;</span>
+<span class="kt">SET</span> <span class="n">e</span><span class="p">.</span><span class="n">deptno</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="n">deptno</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="n">job</span> <span class="o">=</span> <span class="s1">&#39;ANALYST&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;北京&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="支持内连接另一个结果集">支持内连接另一个结果集：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 把底薪低于公司平均底薪的员工,底薪增加150元
+</span><span class="c1"></span><span class="k">UPDATE</span> <span class="n">t_emp</span> <span class="n">e</span>
+<span class="k">JOIN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="nf">AVG</span><span class="p">(</span><span class="n">sal</span><span class="p">)</span> <span class="k">AS</span> <span class="n">avg</span> <span class="k">FROM</span> <span class="n">t_emp</span><span class="p">)</span> <span class="n">e2</span> <span class="k">ON</span> <span class="n">e</span><span class="p">.</span><span class="n">sal</span> <span class="o">&lt;</span> <span class="n">e2</span><span class="p">.</span><span class="n">avg</span>
+<span class="kt">SET</span> <span class="n">sal</span> <span class="o">=</span> <span class="n">sal</span> <span class="o">+</span> <span class="mi">150</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>同样支持外连接。</p>
+<h2 id="删除数据delete">删除数据（<code>DELETE</code>）</h2>
+<p>关于删除所有的行：</p>
+<p>不指定 <code>WHERE</code> 条件时，<code>DELETE</code> 将会删除所有的行，但如果你明确要这么做，使用 <code>TRUNCATE TABLE</code> 可以更快的删除整个表的数据（因为不记录数据的变动（没有事务））。</p>
+<p>删除行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Customers</span>
+<span class="k">WHERE</span> <span class="n">cust_id</span> <span class="o">=</span> <span class="s1">&#39;1000000006&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>同样支持表连接：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">DELETE</span> <span class="err">表</span><span class="mi">1</span><span class="p">,</span> <span class="p">...</span>
+<span class="k">FROM</span> <span class="err">表</span><span class="mi">1</span> <span class="k">JOIN</span> <span class="err">表</span><span class="mi">2</span> <span class="k">ON</span> <span class="err">条件</span>
+<span class="p">[</span><span class="k">WHERE</span> <span class="err">条件</span> <span class="p">...];</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以一次性删除多个表的内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 删除SALES部门和该部门的全部员工记录
+</span><span class="c1"></span><span class="k">DELETE</span> <span class="n">e</span><span class="p">,</span><span class="n">d</span>
+<span class="k">FROM</span> <span class="n">t_emp</span> <span class="n">e</span> <span class="k">JOIN</span> <span class="n">t_dept</span> <span class="n">d</span> <span class="k">ON</span> <span class="n">e</span><span class="p">.</span><span class="n">deptno</span><span class="o">=</span><span class="n">d</span><span class="p">.</span><span class="n">deptno</span>
+<span class="k">WHERE</span> <span class="n">d</span><span class="p">.</span><span class="n">dname</span><span class="o">=</span><span class="s2">&#34;SALES&#34;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>同样支持外连接。</p>
+<h1 id="17---创建和操纵表">17 - 创建和操纵表</h1>
+<h2 id="创建和操纵表">创建和操纵表</h2>
+<h5 id="创建表">创建表：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="err">表名</span> <span class="p">(</span>
+    <span class="err">列名</span><span class="mi">1</span> <span class="err">数据类型</span> <span class="p">[</span><span class="err">约束</span><span class="p">]</span> <span class="p">[</span><span class="n">COMMENT</span><span class="p">],</span>
+    <span class="err">列名</span><span class="mi">2</span> <span class="err">数据类型</span> <span class="p">[</span><span class="err">约束</span><span class="p">]</span> <span class="p">[</span><span class="n">COMMENT</span><span class="p">],</span>
+    <span class="p">...;</span>
+<span class="p">)[</span><span class="n">COMMENT</span> <span class="o">=</span> <span class="err">注释</span><span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="删除表">删除表：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 删除
+</span><span class="c1"></span><span class="k">DROP</span> <span class="k">TABLE</span> <span class="err">表名</span><span class="p">;</span>
+<span class="c1"># 清空
+</span><span class="c1"></span><span class="n">TRUNCATE</span> <span class="k">TABLE</span> <span class="err">表名</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="添加列">添加列：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="err">表名</span>
+<span class="k">ADD</span> <span class="err">列名</span> <span class="err">数据类型</span> <span class="p">[</span><span class="err">约束</span><span class="p">]</span> <span class="p">[</span><span class="n">COMMENT</span><span class="p">],</span>
+<span class="k">ADD</span> <span class="err">列名</span> <span class="err">数据类型</span> <span class="p">[</span><span class="err">约束</span><span class="p">]</span> <span class="p">[</span><span class="n">COMMENT</span><span class="p">],</span>
+<span class="p">...;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="修改列类型">修改列类型：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">ALTER</span> <span class="k">TABLE</span>	<span class="err">表名</span>
+<span class="n">MODIFY</span> <span class="err">列名</span> <span class="err">数据类型</span> <span class="p">[</span><span class="err">约束</span><span class="p">]</span> <span class="p">[</span><span class="n">COMMENT</span><span class="p">],</span>
+<span class="n">MODIFY</span> <span class="err">列名</span> <span class="err">数据类型</span> <span class="p">[</span><span class="err">约束</span><span class="p">]</span> <span class="p">[</span><span class="n">COMMENT</span><span class="p">],</span>
+<span class="p">...;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="修改列名">修改列名：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="err">表名</span>
+<span class="k">CHANGE</span> <span class="err">列名</span> <span class="err">新列名</span> <span class="err">数据类型</span> <span class="p">[</span><span class="err">约束</span><span class="p">]</span> <span class="p">[</span><span class="n">COMMENT</span><span class="p">],</span>
+<span class="k">CHANGE</span> <span class="err">列名</span> <span class="err">新列名</span> <span class="err">数据类型</span> <span class="p">[</span><span class="err">约束</span><span class="p">]</span> <span class="p">[</span><span class="n">COMMENT</span><span class="p">],</span>
+<span class="p">...;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="删除列">删除列</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="err">表名</span>
+<span class="k">DROP</span> <span class="err">列</span><span class="mi">1</span><span class="p">,</span>
+<span class="k">DROP</span> <span class="err">列</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">...;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="18---使用视图">18 - 使用视图</h1>
+<p>视图提供了一种封装 <code>SELECT</code> 语句的层次，可用来简化数据处理，重新格式化或保护基础数据。</p>
+<h2 id="为什么使用视图">为什么使用视图</h2>
+<ul>
+<li>重用 SQL 语句；</li>
+<li>简化复杂的 SQL 操作。在编写查询后，可以方便的重用它而不必知道其基本查询细节。</li>
+<li>使用表的一部分而不是整个表；</li>
+<li>保护数据。可以授予用户访问表的特定部分的权限，而不是整个表的访问权限。</li>
+<li>更改数据格式和表示。视图可以返回与底层表的表示和格式不同的数据。</li>
+</ul>
+<p><strong>视图仅仅是用来查看存储在别处数据的一种设施。视图本身不包含数据，因此返回的数据是从其他表中检索出来的。在添加或更改这些表中的数据时，视图将返回改变过的数据。</strong></p>
+<p>性能问题：每次使用视图时，都必须处理查询执行时需要的所有检索。检索过于复杂，性能可能会下降的很厉害。</p>
+<h2 id="视图的规则和限制">视图的规则和限制</h2>
+<ul>
+<li>视图必须唯一命名（视图与表也不能重名）；</li>
+<li>视图不能索引，也不能有关联的触发器或默认值。</li>
+<li>。。。</li>
+</ul>
+<h2 id="使用视图">使用视图</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1">-- 创建视图
+</span><span class="c1"></span><span class="k">CREATE</span> <span class="n">VIEW</span> <span class="err">视图名</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="p">...;</span>
+
+<span class="c1">-- 删除视图
+</span><span class="c1"></span><span class="k">DROP</span> <span class="n">VIEW</span> <span class="err">视图名</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>视图重命名：覆盖或更新视图，必须先删除它，然后再重新创建。</p>
+<p>示例：（利用视图简化复杂的连接）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1">-- 查询已订购任意产品的所有顾客的列表
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">prod_id</span>
+<span class="k">FROM</span> <span class="n">Customers</span><span class="p">,</span> <span class="n">Orders</span><span class="p">,</span> <span class="n">OrderItems</span>
+<span class="k">WHERE</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span>
+<span class="k">AND</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span> <span class="o">=</span> <span class="n">OrderItems</span><span class="p">.</span><span class="n">order_num</span><span class="p">;</span>
+
+<span class="c1">-- 为上面的 SQL 语句创建视图
+</span><span class="c1"></span><span class="k">CREATE</span> <span class="n">VIEW</span> <span class="n">ProductCustomers</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">prod_id</span>
+<span class="k">FROM</span> <span class="n">Customers</span><span class="p">,</span> <span class="n">Orders</span><span class="p">,</span> <span class="n">OrderItems</span>
+<span class="k">WHERE</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span>
+<span class="k">AND</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span> <span class="o">=</span> <span class="n">OrderItems</span><span class="p">.</span><span class="n">order_num</span><span class="p">;</span>
+
+<span class="c1">-- 使用视图
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">ProductCustomers</span><span class="p">;</span>
+
+<span class="c1">-- 删除视图
+</span><span class="c1"></span><span class="k">DROP</span> <span class="n">VIEW</span> <span class="n">ProductCustomers</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>从视图检索数据时如果使用了一条 <code>WHERE</code> 语句，则两组句子（一组在视图中，另一组是传递给视图的）将自动组合。</p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1">-- 用 ProductCustomers 视图查询订购了 RGAN01 的顾客
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">ProductCustomers</span>
+<span class="k">WHERE</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="s1">&#39;RGAN01&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="19---使用存储过程">19 - 使用存储过程</h1>
+<blockquote>
+<p>一组可编程的函数，是为了完成特定功能的 SQL 语句集，经编译创建并保存在数据库中，用户可通过指定存储过程的名字并给定参数（需要时）来调用执行。</p>
+<p>优点(为什么要用存储过程？)：</p>
+<ol>
+<li>将重复性很高的一些操作，封装到一个存储过程中，简化了对这些SQL的调用</li>
+<li>批量处理：SQL+循环，减少流量，也就是“跑批”</li>
+<li>统一接口，确保数据的安全</li>
+</ol>
+<p>相对于 Oracle 数据库来说，MySQL的存储过程相对功能较弱，使用较少。</p>
+</blockquote>
+<p>—— <a href="https://www.cnblogs.com/geaozhang/p/6797357.html">MySQL存储过程的创建及调用</a></p>
+<h1 id="20---管理事务处理">20 - 管理事务处理</h1>
+<p>使用事务处理（transaction processing），通过确保成批的 SQL 操作要么完全执行，要么完全不执行，来维护数据库的完整性。</p>
+<p>事务处理用来管理 <code>INSERT</code>、<code>UPDATE</code> 和 <code>DELETE</code> 语句。不能回退 <code>SELECT</code> 语句（回退 <code>SELECT</code> 语句也没有必要）。</p>
+<p>也不能回退 <code>CREATE</code> 或 <code>DROP</code> 操作。事务处理中可以使用这些语句，但进行回退时，这些操作也不撤销。</p>
+<p>具体语法应参考相应的 DBMS 文档。</p>
+<h1 id="21---使用游标">21 - 使用游标</h1>
+<p>有时需要在检索出来的行中前进或后退一行或多行，这就是游标的用途所在。</p>
+<p>游标（cursor）是一个存储在 DBMS 服务器上的数据库查询，它不是一条 <code>SELECT</code> 语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据。</p>
+<p>具体语法应参考相应的 DBMS 文档。</p>
+<h1 id="22---高级-sql-特性">22 - 高级 SQL 特性</h1>
+<h2 id="约束">约束</h2>
+<p>管理如何插入或处理数据库数据的规则。</p>
+<ul>
+<li>主键（<code>PRIMARY KEY</code>）</li>
+<li>外键（<code>REFERENCES</code>）</li>
+<li>唯一约束（<code>UNIQUE</code>）</li>
+<li>检查约束（<code>CHECK</code>）</li>
+</ul>
+<h2 id="索引">索引</h2>
+<p>索引用来排序数据以加快搜索和排序操作的速度。</p>
+<p>可以在一个或多个列上定义索引，使 DBMS 保存其内容的一个排过序的列表。</p>
+<ul>
+<li>索引改善检索操作的性能，但降低了数据插入、修改、删除的性能。在执行这些操作时，DBMS 必须动态地更新索引。</li>
+<li>索引数据可能要占用大量的存储空间。</li>
+<li>并非所有数据都适合做索引。取值不多的数据（如省）不如具有更多可能值的数据（如姓、名）能通过索引得到更大的提升。</li>
+<li>索引用于数据过滤和数据排序。如果你经常以某种特定的顺序排序数据，则该数据可能适合做索引。</li>
+<li>可能在索引中定义多个列（如州+城市）。这样索引仅在以州+城市的顺序排序时有用。如果想按城市排序，则这种索引没有用处。</li>
+</ul>
+<h2 id="触发器">触发器</h2>
+<p>触发器是特殊的存储过程，它在特定的数据库活动发生时自动执行。</p>
+<p>触发器可以与特定表上的 <code>INSERT</code>、<code>UPDATE</code>、<code>DELETE</code> 操作（或组合）相关联。</p>
+<p>与存储过程不一样（存储过程只是简单的存储 SQL 语句），触发器与单个的表相关联。（例如：与 Orders 表上的 <code>INSERT</code> 操作相关联的触发器只在 Orders 表中插入行时执行。类似的，Customers 表上的 <code>INSERT</code> 和 <code>UPDATE</code> 操作的触发器只在表上出现这些操作时执行。）</p>
+<p>触发器内的代码具有一下数据库的访问权：</p>
+<ul>
+<li><code>INSERT</code> 操作中的所有新数据；</li>
+<li><code>UPDATE</code> 操作中的所有新数据和旧数据；</li>
+<li><code>DELETE</code> 操作中删除的数据。</li>
+</ul>
+<p>根据所使用的 DBMS 不同，触发器可在特定操作执行之前或之后执行。</p>
+<p>触发器的常见用途：</p>
+<ul>
+<li>保证数据一致。（如：在 <code>INSERT</code> 或 <code>UPDATE</code> 操作中将所有州名转换为大写）</li>
+<li>基于某个表的变动在其他表上执行活动。（如：每当更新或删除一行时将审计跟踪记录写入某个日志表）</li>
+<li>进行额外的验证并根据需要回退数据。（如：保证某个顾客的可用资金不超限定，如果已经超出，则阻塞插入）</li>
+<li>计算计算列的值或更新时间戳。</li>
+</ul>
+<p>不同 DBMS 的触发器创建于法差异很大。</p>
+<h2 id="数据库安全">数据库安全</h2>
+<p>一般来说，需要保护的操作有：</p>
+<ul>
+<li>对数据库管理功能的访问（创建表、更改或删除已存在的表等）；</li>
+<li>对特定数据库或表的访问；</li>
+<li>访问的类型（制度、对特定列的访问等）；</li>
+<li>仅通过视图或存储过程对表进行访问；</li>
+<li>创建多层次的安全措施，从而允许多种基于登录的访问和控制；</li>
+<li>闲置管理用户账号的能力。</li>
+</ul>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Dvel</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2020-01-29
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/reward/wechat-reward-image.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/reward/alipay-reward-image.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://Dvel.xyz/tags/sql/">SQL</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/20/">
+            <span class="next-text nav-default">Git 自总结</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:me@dvel.me" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/iDvel" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.douban.com/people/dvel/" rel="me noopener" class="iconfont"
+      title="douban"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M926.917973 37.80608C959.65184 37.80608 986.19392 64.34816 986.19392 97.082027L986.19392 926.917973C986.19392 959.65184 959.65184 986.19392 926.917973 986.19392L97.082027 986.19392C64.34816 986.19392 37.80608 959.65184 37.80608 926.917973L37.80608 97.082027C37.80608 64.34816 64.34816 37.80608 97.082027 37.80608zM176.653653 176.19968 176.653653 252.678827 825.658027 252.678827 825.658027 176.19968zM217.719467 316.146347 217.719467 628.08064 273.524053 628.08064 341.292373 770.39616 157.259093 770.39616 157.259093 845.417813 842.949973 845.417813 842.949973 770.39616 654.226773 770.39616 722.899627 628.08064 783.67744 628.08064 783.67744 316.146347zM684.885333 392.891733 684.885333 553.987413 312.576 553.987413 312.576 392.891733zM570.770773 770.39616 426.653013 770.39616 359.621973 628.08064 639.443627 628.08064z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://Dvel.xyz/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2016 -
+    2020
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Dvel
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      UV/PV：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+
+  
+
+  <br>
+
+  <span>
+    <a class="theme-link" href="http://www.beian.miit.gov.cn">冀ICP备19003122号-1</a>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?c8cbfc925ff8dea82fe6ead2ddc2e925";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
