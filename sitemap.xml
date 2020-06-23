@@ -2,21 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://Dvel.xyz/post/</loc>
-    <lastmod>2020-01-29T00:00:00+00:00</lastmod>
+    <loc>https://Dvel.xyz/tags/brew/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://Dvel.xyz/tags/sql/</loc>
-    <lastmod>2020-01-29T00:00:00+00:00</lastmod>
+    <loc>https://Dvel.xyz/post/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/pyenv/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://Dvel.xyz/tags/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/post/22/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Dvel.xyz/tags/sql/</loc>
     <lastmod>2020-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

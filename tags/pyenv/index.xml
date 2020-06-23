@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pyenv on Dvel&#39;s Blog</title>
+    <link>https://Dvel.xyz/tags/pyenv/</link>
+    <description>Recent content in pyenv on Dvel&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Fri, 31 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://Dvel.xyz/tags/pyenv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决 pyenv 导致的 brew warning</title>
+      <link>https://Dvel.xyz/post/22/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://Dvel.xyz/post/22/</guid>
+      <description>brew doctor 的错误提示： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 Please note that these warnings are just used to help the Homebrew maintainers with debugging if you file an issue. If everything you use Homebrew for is working fine: please don&amp;#39;t worry or file an issue; just ignore this. Thanks! Warning: &amp;#34;config&amp;#34; scripts exist outside</description>
+    </item>
+    
+  </channel>
+</rss>
