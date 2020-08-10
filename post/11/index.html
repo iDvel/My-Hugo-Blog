@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
 
 
-<meta name="generator" content="Hugo 0.65.3" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 
 <link rel="canonical" href="https://Dvel.xyz/post/11/" />
@@ -67,13 +67,14 @@
 <meta property="article:modified_time" content="2018-07-27T17:35:04+00:00" />
 <meta itemprop="name" content="新 Mac 新装修">
 <meta itemprop="description" content="新 MBP 到手后，我就预感要折腾好一阵子，因为之前把系统整的太凌乱，决定不使用 Time Machine，从头开始对 MBP 新装新居。 记录一下，为了以后再次更换设">
-<meta itemprop="datePublished" content="2018-07-27T17:35:04&#43;00:00" />
-<meta itemprop="dateModified" content="2018-07-27T17:35:04&#43;00:00" />
-<meta itemprop="wordCount" content="828">
+<meta itemprop="datePublished" content="2018-07-27T17:35:04+00:00" />
+<meta itemprop="dateModified" content="2018-07-27T17:35:04+00:00" />
+<meta itemprop="wordCount" content="915">
 
 
 
-<meta itemprop="keywords" content="Mac," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Mac," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="新 Mac 新装修"/>
 <meta name="twitter:description" content="新 MBP 到手后，我就预感要折腾好一阵子，因为之前把系统整的太凌乱，决定不使用 Time Machine，从头开始对 MBP 新装新居。 记录一下，为了以后再次更换设"/>
 
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-175057482-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -272,24 +284,8 @@
       <blockquote>
 <p>新 MBP 到手后，我就预感要折腾好一阵子，因为之前把系统整的太凌乱，决定不使用 Time Machine，从头开始对 MBP 新装新居。</p>
 <p>记录一下，为了以后再次更换设备时参考。</p>
+<p>再次记录一下。。。因为苹果莫名其妙的 BUG 导致新电脑无法从时光机器中恢复，只好重头折腾。</p>
 </blockquote>
-<h1 id="上手体验">上手体验</h1>
-<p>新 MBP（2018 15寸） 对比我的老款 MBP（2014 mid 15寸）</p>
-<p>优点：</p>
-<ul>
-<li>原彩</li>
-<li>touch ID</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>bar 上的 esc 键居然还不在最左边！</li>
-<li>方向键设计负分，为了好看放弃T型，降低实用性。</li>
-</ul>
-<h1 id="配件">配件</h1>
-<ul>
-<li>Apple USB-C 转 USB 转换器</li>
-<li>戴尔 DA300</li>
-</ul>
 <h1 id="偏好设置">偏好设置</h1>
 <ul>
 <li>
@@ -303,10 +299,10 @@
 <li>堆栈区网格高亮：<code>defaults write com.apple.dock mouse-over-hilite-stack -bool TRUE;killall Dock</code></li>
 </ul>
 </li>
-<li>调度中心：关闭仪表盘，设置触发角（右下角显示桌面）</li>
-<li>触摸板：辅助点按、轻点、滚动方向</li>
+<li>调度中心：关闭仪表盘（新版已经没有了），设置触发角（右下角显示桌面）</li>
+<li>触摸板：滚动方向</li>
 <li>Siri：关闭</li>
-<li>辅助功能 - 鼠标与触控板 - 触控板选项：启动拖移(三指拖移)</li>
+<li>辅助功能 - 指针控制（或鼠标与触控板） - 触控板选项：启动拖移(三指拖移)</li>
 </ul>
 </li>
 <li>
@@ -333,30 +329,53 @@
 </li>
 </ul>
 <h1 id="先安装能快速还原使用习惯的app">先安装能快速还原使用习惯的App</h1>
-<blockquote>
-<p>提前挂好 Xcode，下载慢</p>
-</blockquote>
 <ul>
-<li>输入法</li>
-<li>Firefox / Chrome</li>
-<li>Surge</li>
-<li>Dropbox</li>
-<li>Alfred</li>
-<li>1Password</li>
-<li>Spark</li>
-</ul>
-<p>至此，基本上只差功能性App了，大部分的使用习惯都找了回来</p>
-<h1 id="app库">App库</h1>
-<p>开始一个一个的下载App，这时才发现还是 Time Machine 好啊。</p>
-<p>作为提醒，提前导出了老电脑的应用列表。</p>
-<p>特别注意个别 App 的反激活与同步。</p>
+<li>
+<p>提前挂好 Xcode 的下载，这个比较大</p>
+</li>
+<li>
+<p>输入法</p>
 <ul>
-<li>1Password ，妈的 7 不带老用户玩了，需订阅或再次买断
-<ul>
-<li>之前买断的可以从 MAS 购买记录里重新下载</li>
+<li>落格输入法：先弄好 iCloud，再弄输入法，偏好设置直接恢复，再从手动的备份里恢复用户词库。</li>
 </ul>
 </li>
-<li>Fantastical 2 根本没有反激活。。。</li>
+<li>
+<p>Firefox / Chrome</p>
+<ul>
+<li>一般是自动同步，除了油猴脚本，但这个插件里面可以手动备份，下次注意。。。</li>
+</ul>
+</li>
+<li>
+<p>Surge</p>
+</li>
+<li>
+<p>Dropbox</p>
+</li>
+<li>
+<p>Alfred</p>
+</li>
+<li>
+<p>1Password</p>
+</li>
+<li>
+<p>Spark</p>
+</li>
+</ul>
+<p>如果没有用时间机器恢复，也可以从未加密的备份盘中找回备份的文件，直接复制粘贴。</p>
+<p>至此，基本上只差功能性App了，大部分的使用习惯都找了回来。</p>
+<p>需要保存到 Dropbox 的一些 App 设置：</p>
+<ul>
+<li>1Password 的密码库，Dropbox</li>
+<li>落格输入法，将用户目录迁移到 Dropbox，将用户词库备份</li>
+<li>Alfred 设置</li>
+<li>JB 家的设置文件</li>
+<li>代码碎片</li>
+<li>IINA 的快捷键设置</li>
+</ul>
+<h1 id="app库">App库</h1>
+<p>开始一个一个的下载App，这时才发现还是 Time Machine 好啊。</p>
+<p>也需要注意个别 App 的反激活与同步。</p>
+<ul>
 <li>NTFS 需要在官网反激活一下，看到 Licences 有点变化（好像被微软收购了）
 <ul>
 <li><strong>Microsoft NTFS for Mac by Paragon Software</strong> 新版可用的</li>
@@ -366,9 +385,10 @@
 </ul>
 <p>参考老Mac导出的App列表，由于数量庞大几乎大部分时间都花在App的下载与设置上了。</p>
 <h1 id="配置-command-line">配置 command line</h1>
-<p>一步一步重新折腾</p>
+<p>一步一步重新折腾。</p>
 <ul>
 <li>iTerm</li>
+<li>homebrew</li>
 <li>zsh</li>
 <li>oh-my-zsh</li>
 <li>powerlevel9k</li>

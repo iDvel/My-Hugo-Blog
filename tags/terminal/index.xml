@@ -17,7 +17,7 @@
       <pubDate>Mon, 30 Jul 2018 02:49:46 +0800</pubDate>
       
       <guid>https://Dvel.xyz/post/12/</guid>
-      <description>折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &amp;#34;echo $(which zsh) &amp;gt;&amp;gt; /etc/shells&amp;#34; 设置默认 shell： 1 $ chsh</description>
+      <description>折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night - Tomorrow Night Eighties zsh： 1 2 3 4 5 6 7 8 9 10 11 12 $ brew install zsh ############# 安装完成后还会提示将 ncurses 加入到 PATH</description>
     </item>
     
   </channel>

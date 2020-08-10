@@ -6,7 +6,7 @@
     <description>Recent content on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 26 Aug 1992 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jan 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://Dvel.xyz/index.xml" rel="self" type="application/rss+xml" />
     
@@ -2102,6 +2102,15 @@ foo/**/bar.txt
 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果没有配置，可以复制粘贴上面的，或者：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ git config --global core.excludesfile ~/.gitignore_global
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;编辑 &lt;code&gt;~/.gitignore_global&lt;/code&gt; 文件，规则相同。&lt;/p&gt;
 &lt;p&gt;在 macOS 中安装完 Git，默认的 &lt;code&gt;.gitignore_global&lt;/code&gt; 应该是这样的：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -3939,14 +3948,36 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;p&gt;&lt;img src=&#34;http://ih.dvel.xyz/201807304hC1ln.png&#34; alt=&#34;zsh&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;iterm-2&#34;&gt;iTerm 2&lt;/h2&gt;
 &lt;p&gt;配置一番。&lt;/p&gt;
-&lt;p&gt;主题：&lt;a href=&#34;https://github.com/chriskempson/tomorrow-theme&#34;&gt;Tomorrow Night&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;主题：&lt;a href=&#34;https://github.com/chriskempson/tomorrow-theme&#34;&gt;Tomorrow Night&lt;/a&gt; - Tomorrow Night Eighties&lt;/p&gt;
 &lt;h2 id=&#34;zsh&#34;&gt;zsh：&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ brew install zsh
+############# 安装完成后还会提示将 ncurses 加入到 PATH 中 ##############
+ncurses is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+
+If you need to have ncurses first in your PATH run:
+  echo &amp;#39;export PATH=&amp;#34;/usr/local/opt/ncurses/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.zshrc
+
+For compilers to find ncurses you may need to set:
+  export LDFLAGS=&amp;#34;-L/usr/local/opt/ncurses/lib&amp;#34;
+  export CPPFLAGS=&amp;#34;-I/usr/local/opt/ncurses/include&amp;#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;将 &lt;code&gt;/usr/local/bin/zsh&lt;/code&gt; 加入到 &lt;code&gt;/etc/shells&lt;/code&gt; 中：&lt;/p&gt;
@@ -4097,24 +4128,8 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;
         <description>&lt;blockquote&gt;
 &lt;p&gt;新 MBP 到手后，我就预感要折腾好一阵子，因为之前把系统整的太凌乱，决定不使用 Time Machine，从头开始对 MBP 新装新居。&lt;/p&gt;
 &lt;p&gt;记录一下，为了以后再次更换设备时参考。&lt;/p&gt;
+&lt;p&gt;再次记录一下。。。因为苹果莫名其妙的 BUG 导致新电脑无法从时光机器中恢复，只好重头折腾。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;上手体验&#34;&gt;上手体验&lt;/h1&gt;
-&lt;p&gt;新 MBP（2018 15寸） 对比我的老款 MBP（2014 mid 15寸）&lt;/p&gt;
-&lt;p&gt;优点：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;原彩&lt;/li&gt;
-&lt;li&gt;touch ID&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;缺点：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;bar 上的 esc 键居然还不在最左边！&lt;/li&gt;
-&lt;li&gt;方向键设计负分，为了好看放弃T型，降低实用性。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;配件&#34;&gt;配件&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Apple USB-C 转 USB 转换器&lt;/li&gt;
-&lt;li&gt;戴尔 DA300&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h1 id=&#34;偏好设置&#34;&gt;偏好设置&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -4128,10 +4143,10 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;
 &lt;li&gt;堆栈区网格高亮：&lt;code&gt;defaults write com.apple.dock mouse-over-hilite-stack -bool TRUE;killall Dock&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;调度中心：关闭仪表盘，设置触发角（右下角显示桌面）&lt;/li&gt;
-&lt;li&gt;触摸板：辅助点按、轻点、滚动方向&lt;/li&gt;
+&lt;li&gt;调度中心：关闭仪表盘（新版已经没有了），设置触发角（右下角显示桌面）&lt;/li&gt;
+&lt;li&gt;触摸板：滚动方向&lt;/li&gt;
 &lt;li&gt;Siri：关闭&lt;/li&gt;
-&lt;li&gt;辅助功能 - 鼠标与触控板 - 触控板选项：启动拖移(三指拖移)&lt;/li&gt;
+&lt;li&gt;辅助功能 - 指针控制（或鼠标与触控板） - 触控板选项：启动拖移(三指拖移)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -4158,30 +4173,53 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;先安装能快速还原使用习惯的app&#34;&gt;先安装能快速还原使用习惯的App&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;提前挂好 Xcode，下载慢&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;输入法&lt;/li&gt;
-&lt;li&gt;Firefox / Chrome&lt;/li&gt;
-&lt;li&gt;Surge&lt;/li&gt;
-&lt;li&gt;Dropbox&lt;/li&gt;
-&lt;li&gt;Alfred&lt;/li&gt;
-&lt;li&gt;1Password&lt;/li&gt;
-&lt;li&gt;Spark&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;至此，基本上只差功能性App了，大部分的使用习惯都找了回来&lt;/p&gt;
-&lt;h1 id=&#34;app库&#34;&gt;App库&lt;/h1&gt;
-&lt;p&gt;开始一个一个的下载App，这时才发现还是 Time Machine 好啊。&lt;/p&gt;
-&lt;p&gt;作为提醒，提前导出了老电脑的应用列表。&lt;/p&gt;
-&lt;p&gt;特别注意个别 App 的反激活与同步。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;提前挂好 Xcode 的下载，这个比较大&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入法&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;1Password ，妈的 7 不带老用户玩了，需订阅或再次买断
-&lt;ul&gt;
-&lt;li&gt;之前买断的可以从 MAS 购买记录里重新下载&lt;/li&gt;
+&lt;li&gt;落格输入法：先弄好 iCloud，再弄输入法，偏好设置直接恢复，再从手动的备份里恢复用户词库。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Fantastical 2 根本没有反激活。。。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Firefox / Chrome&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一般是自动同步，除了油猴脚本，但这个插件里面可以手动备份，下次注意。。。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Surge&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dropbox&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Alfred&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;1Password&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spark&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果没有用时间机器恢复，也可以从未加密的备份盘中找回备份的文件，直接复制粘贴。&lt;/p&gt;
+&lt;p&gt;至此，基本上只差功能性App了，大部分的使用习惯都找了回来。&lt;/p&gt;
+&lt;p&gt;需要保存到 Dropbox 的一些 App 设置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1Password 的密码库，Dropbox&lt;/li&gt;
+&lt;li&gt;落格输入法，将用户目录迁移到 Dropbox，将用户词库备份&lt;/li&gt;
+&lt;li&gt;Alfred 设置&lt;/li&gt;
+&lt;li&gt;JB 家的设置文件&lt;/li&gt;
+&lt;li&gt;代码碎片&lt;/li&gt;
+&lt;li&gt;IINA 的快捷键设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;app库&#34;&gt;App库&lt;/h1&gt;
+&lt;p&gt;开始一个一个的下载App，这时才发现还是 Time Machine 好啊。&lt;/p&gt;
+&lt;p&gt;也需要注意个别 App 的反激活与同步。&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;NTFS 需要在官网反激活一下，看到 Licences 有点变化（好像被微软收购了）
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Microsoft NTFS for Mac by Paragon Software&lt;/strong&gt; 新版可用的&lt;/li&gt;
@@ -4191,9 +4229,10 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=&amp;#34;&amp;#34;
 &lt;/ul&gt;
 &lt;p&gt;参考老Mac导出的App列表，由于数量庞大几乎大部分时间都花在App的下载与设置上了。&lt;/p&gt;
 &lt;h1 id=&#34;配置-command-line&#34;&gt;配置 command line&lt;/h1&gt;
-&lt;p&gt;一步一步重新折腾&lt;/p&gt;
+&lt;p&gt;一步一步重新折腾。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;iTerm&lt;/li&gt;
+&lt;li&gt;homebrew&lt;/li&gt;
 &lt;li&gt;zsh&lt;/li&gt;
 &lt;li&gt;oh-my-zsh&lt;/li&gt;
 &lt;li&gt;powerlevel9k&lt;/li&gt;

@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Dvel" />
-  <meta name="description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &amp;#34;echo $(which zsh) &amp;gt;&amp;gt; /etc/shells&amp;#34; 设置默认 shell： 1 $ chsh" />
+  <meta name="description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night - Tomorrow Night Eighties zsh： 1 2 3 4 5 6 7 8 9 10 11 12 $ brew install zsh ############# 安装完成后还会提示将 ncurses 加入到 PATH" />
 
   <meta name="keywords" content="Dvel" />
 
@@ -32,7 +32,7 @@
 <meta name="google-site-verification" content="TBsJFrrOXdnvNzVNaVSdgDOfCpOes1ZRRqCXbDsyC7c" />
 
 
-<meta name="generator" content="Hugo 0.65.3" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 
 <link rel="canonical" href="https://Dvel.xyz/post/12/" />
@@ -60,22 +60,23 @@
 
 
 <meta property="og:title" content="为 Mac 打造 zsh command line 环境" />
-<meta property="og:description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &#34;echo $(which zsh) &gt;&gt; /etc/shells&#34; 设置默认 shell： 1 $ chsh" />
+<meta property="og:description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night - Tomorrow Night Eighties zsh： 1 2 3 4 5 6 7 8 9 10 11 12 $ brew install zsh ############# 安装完成后还会提示将 ncurses 加入到 PATH" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Dvel.xyz/post/12/" />
 <meta property="article:published_time" content="2018-07-30T02:49:46+08:00" />
 <meta property="article:modified_time" content="2018-07-30T02:49:46+08:00" />
 <meta itemprop="name" content="为 Mac 打造 zsh command line 环境">
-<meta itemprop="description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &#34;echo $(which zsh) &gt;&gt; /etc/shells&#34; 设置默认 shell： 1 $ chsh">
-<meta itemprop="datePublished" content="2018-07-30T02:49:46&#43;08:00" />
-<meta itemprop="dateModified" content="2018-07-30T02:49:46&#43;08:00" />
-<meta itemprop="wordCount" content="635">
+<meta itemprop="description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night - Tomorrow Night Eighties zsh： 1 2 3 4 5 6 7 8 9 10 11 12 $ brew install zsh ############# 安装完成后还会提示将 ncurses 加入到 PATH">
+<meta itemprop="datePublished" content="2018-07-30T02:49:46+08:00" />
+<meta itemprop="dateModified" content="2018-07-30T02:49:46+08:00" />
+<meta itemprop="wordCount" content="727">
 
 
 
-<meta itemprop="keywords" content="Mac,Zsh,Terminal,Shell," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Mac,Zsh,Terminal,Shell," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="为 Mac 打造 zsh command line 环境"/>
-<meta name="twitter:description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night zsh： 1 $ brew install zsh 将 /usr/local/bin/zsh 加入到 /etc/shells 中： 1 $ sudo sh -c &#34;echo $(which zsh) &gt;&gt; /etc/shells&#34; 设置默认 shell： 1 $ chsh"/>
+<meta name="twitter:description" content="折腾完，做个备忘 样图： iTerm 2 配置一番。 主题：Tomorrow Night - Tomorrow Night Eighties zsh： 1 2 3 4 5 6 7 8 9 10 11 12 $ brew install zsh ############# 安装完成后还会提示将 ncurses 加入到 PATH"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-175057482-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -287,14 +299,36 @@
 <p><img src="http://ih.dvel.xyz/201807304hC1ln.png" alt="zsh"></p>
 <h2 id="iterm-2">iTerm 2</h2>
 <p>配置一番。</p>
-<p>主题：<a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Night</a></p>
+<p>主题：<a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Night</a> - Tomorrow Night Eighties</p>
 <h2 id="zsh">zsh：</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ brew install zsh
+############# 安装完成后还会提示将 ncurses 加入到 PATH 中 ##############
+ncurses is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+
+If you need to have ncurses first in your PATH run:
+  echo &#39;export PATH=&#34;/usr/local/opt/ncurses/bin:$PATH&#34;&#39; &gt;&gt; ~/.zshrc
+
+For compilers to find ncurses you may need to set:
+  export LDFLAGS=&#34;-L/usr/local/opt/ncurses/lib&#34;
+  export CPPFLAGS=&#34;-I/usr/local/opt/ncurses/include&#34;
 </code></pre></td></tr></table>
 </div>
 </div><p>将 <code>/usr/local/bin/zsh</code> 加入到 <code>/etc/shells</code> 中：</p>

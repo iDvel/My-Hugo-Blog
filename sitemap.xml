@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://Dvel.xyz/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://Dvel.xyz/post/</loc>
     <lastmod>2020-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -353,13 +360,6 @@
   
   <url>
     <loc>https://Dvel.xyz/about/</loc>
-    <lastmod>1992-08-26T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://Dvel.xyz/</loc>
     <lastmod>1992-08-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
