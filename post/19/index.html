@@ -362,21 +362,21 @@ if (!doNotTrack) {
 </ul>
 <p>思路：</p>
 <h4 id="1-直接描绘出所有的潜在数字候选数字candidates">1. 直接描绘出所有的潜在数字/候选数字（candidates）：</h4>
-<p><img src="http://ih.dvel.xyz/20200620LorPBD.png" alt="数独"></p>
+<p><img src="https://img.dvel.xyz/20200620LorPBD.png" alt="数独"></p>
 <h4 id="-每次填充数字删除同宫行列的潜在数字">*. 每次填充数字，删除同宫、行、列的潜在数字</h4>
 <p>数独规则：同一个宫、行、列有且仅有一种数字，所以确定正确数字后，删除同宫、行、列的潜在数字，以供后面的方法进行准确寻找。</p>
 <h4 id="2-排除法">2. 排除法</h4>
-<p><img src="http://ih.dvel.xyz/202006208zgVAV.png" alt="数独"></p>
+<p><img src="https://img.dvel.xyz/202006208zgVAV.png" alt="数独"></p>
 <p>第 3 行、第 6 列的格子，在其宫、行、列中已经有了「12345789」8 种数字，所以它必定是缺失的 6。</p>
 <p>同样，6 一确定，第 3 行 仅剩一个 9，所以必定是 9。</p>
 <p><em><strong>代码思路</strong></em>：这个格子只有一个候选数字，就是它了！</p>
 <h4 id="3-扫看法">3. 扫看法</h4>
 <p>按人类逻辑可以很快用扫看法推算出下一个数字，用代码来实现这种思路感觉很麻烦，但是现在已经漏出一些端倪了。</p>
-<p><img src="http://ih.dvel.xyz/20200620JGFBCt.png" alt="数独"></p>
+<p><img src="https://img.dvel.xyz/20200620JGFBCt.png" alt="数独"></p>
 <p><em><strong>代码思路</strong></em>：候选数字在当前宫唯一，则此格为此数。</p>
 <h4 id="4-剔除潜在数字">*4. 剔除潜在数字</h4>
 <p>当宫内某一批候选数字形成一行或以列，则其他宫的此行此列的候选数字需要被剔除。</p>
-<p><img src="http://ih.dvel.xyz/20200620AE0HbR.png" alt="数独"></p>
+<p><img src="https://img.dvel.xyz/20200620AE0HbR.png" alt="数独"></p>
 <p><em><strong>代码思路</strong></em>：遍历宫中个数 &lt;= 3 的候选数字，如果它们在同一行、列，则删除其他宫中同一行、列的候选数字</p>
 <p>转换成代码太麻烦了。。。跳过这一步吧，而且经过我的测试，高级数独补上这一步也是不可解状态</p>
 <h4 id="5-循环">5. 循环</h4>
