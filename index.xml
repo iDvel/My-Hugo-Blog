@@ -2933,7 +2933,7 @@ $ git push --tags
 &lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/20200620JGFBCt.png&#34; alt=&#34;数独&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;代码思路&lt;/strong&gt;&lt;/em&gt;：候选数字在当前宫唯一，则此格为此数。&lt;/p&gt;
 &lt;h4 id=&#34;4-剔除潜在数字&#34;&gt;*4. 剔除潜在数字&lt;/h4&gt;
-&lt;p&gt;当宫内某一批候选数字形成一行或以列，则其他宫的此行此列的候选数字需要被剔除。&lt;/p&gt;
+&lt;p&gt;当宫内某一批候选数字形成一行或一列，则其他宫的此行此列的候选数字需要被剔除。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/20200620AE0HbR.png&#34; alt=&#34;数独&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;代码思路&lt;/strong&gt;&lt;/em&gt;：遍历宫中个数 &amp;lt;= 3 的候选数字，如果它们在同一行、列，则删除其他宫中同一行、列的候选数字&lt;/p&gt;
 &lt;p&gt;转换成代码太麻烦了。。。跳过这一步吧，而且经过我的测试，高级数独补上这一步也是不可解状态&lt;/p&gt;
@@ -4047,9 +4047,12 @@ $ echo &amp;#39;theme = &amp;#34;jane&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 &lt;p&gt;样图：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/201807304hC1ln.png&#34; alt=&#34;zsh&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;iterm-2&#34;&gt;iTerm 2&lt;/h2&gt;
-&lt;p&gt;配置一番。&lt;/p&gt;
 &lt;p&gt;主题：&lt;a href=&#34;https://github.com/chriskempson/tomorrow-theme&#34;&gt;Tomorrow Night&lt;/a&gt; - Tomorrow Night Eighties&lt;/p&gt;
+&lt;p&gt;我习惯只保留一个窗口，并使用 &lt;strong&gt;shift+空格&lt;/strong&gt; 来从左侧或上侧呼出，在 Profiles - Window - Style 可以设置。&lt;/p&gt;
+&lt;p&gt;快捷键在 Profiles → Keys → Hotkey Window 设置。&lt;/p&gt;
 &lt;h2 id=&#34;zsh&#34;&gt;zsh：&lt;/h2&gt;
+&lt;p&gt;zsh 有很多优点，比如兼容 &lt;code&gt;!#/bin/bash&lt;/code&gt;，更强大的 tab 补全功能，大小写自动更正，丰富的主题，命令智能纠错等等。&lt;/p&gt;
+&lt;p&gt;现在 macOS 默认就是 zsh 而不是 bash 了，不过我习惯不使用系统自带的东西，可以用 brew 自己装一个。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -4102,13 +4105,17 @@ For compilers to find ncurses you may need to set:
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ echo $SHELL
+/usr/local/bin/zsh
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;OK.&lt;/p&gt;
 &lt;h2 id=&#34;oh-my-zshhttpsgithubcomrobbyrusselloh-my-zsh&#34;&gt;&lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh&#34;&gt;oh-my-zsh&lt;/a&gt;：&lt;/h2&gt;
+&lt;p&gt;oh-my-zsh 是一款社区驱动的、基于 zsh 的的扩展工具集，用它可以方便的更新和定制 zsh，提供了方便的主题配置、插件配置和一些内置的便捷操作。&lt;/p&gt;
+&lt;p&gt;安装：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
