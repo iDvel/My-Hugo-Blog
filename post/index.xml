@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 20 Feb 2020 12:07:42 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 31 Jan 2021 17:20:04 +0800</lastBuildDate>
     
 	<atom:link href="https://Dvel.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我的 Rime 配置</title>
+      <link>https://Dvel.xyz/post/30/</link>
+      <pubDate>Sun, 31 Jan 2021 17:20:04 +0800</pubDate>
+      
+      <guid>https://Dvel.xyz/post/30/</guid>
+      <description>我的 Rime 配置 本文是我的 Rime 配置的一些参考说明，可以结合配置方案共同食用 ↓ 全拼简中输入方案配置：https://github.com/iDvel/</description>
+    </item>
     
     <item>
       <title>用 sleepwatcher 让 Mac 在睡眠及唤醒时自动执行一些脚本</title>
@@ -98,7 +107,7 @@
       <pubDate>Mon, 30 Jul 2018 02:49:46 +0800</pubDate>
       
       <guid>https://Dvel.xyz/post/12/</guid>
-      <description>折腾完，做个备忘 样图： iTerm 2 主题：Tomorrow Night - Tomorrow Night Eighties 我习惯只保留一个窗口，并使用 shift+空格 来从左侧或上侧呼出，在 Profiles - Window - Style 可以设</description>
+      <description>折腾完，做个备忘 样图： iTerm 2 主题 Tomorrow Night - Tomorrow Night Eighties Hotkey Window 我习惯只保留一个窗口，并使用 shift+空格 来从左侧或上侧呼出，在 Profiles - Window - Style 可以设置。 呼出的快</description>
     </item>
     
     <item>
