@@ -13,14 +13,14 @@
     
     <item>
       <title>我的 Rime 配置</title>
-      <link>https://Dvel.xyz/post/30/</link>
+      <link>https://Dvel.xyz/post/24/</link>
       <pubDate>Sun, 31 Jan 2021 17:20:04 +0800</pubDate>
       
-      <guid>https://Dvel.xyz/post/30/</guid>
+      <guid>https://Dvel.xyz/post/24/</guid>
       
-        <description>&lt;h1 id=&#34;我的-rime-配置&#34;&gt;我的 Rime 配置&lt;/h1&gt;
-&lt;p&gt;本文是我的 Rime 配置的一些参考说明，可以结合配置方案共同食用 ↓&lt;/p&gt;
-&lt;p&gt;全拼简中输入方案配置：https://github.com/iDvel/rime-settings&lt;/p&gt;
+        <description>&lt;p&gt;已更新，详见 &lt;a href=&#34;https://dvel.xyz/post/30&#34;&gt;我的 Rime 配置 2021&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;我的-rime-配置&#34;&gt;我的 Rime 配置&lt;/h2&gt;
+&lt;p&gt;方案：luna_pinyin_simp 简中全拼&lt;/p&gt;
 &lt;h2 id=&#34;输入法全局设定-defaultcustomyaml&#34;&gt;输入法全局设定 &lt;code&gt;default.custom.yaml&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;常规设置，最好开启 Tab 移动光标的功能，这个太好用啦！&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -196,12 +196,14 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;engine/filters&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- simplifier&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- uniquifier&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- charset_filter@gb2312&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- simplifier@emoji-symbol&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- uniquifier&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;缺点是切换繁体时，需要同时切换繁体+切换字符集，如果开启了快捷键的话也很方便，只要顺着按 Control+Shift+4 和 5 就切换到繁体了：&lt;/p&gt;
@@ -224,12 +226,26 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;engine/filters&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- simplifier&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- uniquifier&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- charset_filter@gbk&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- simplifier@emoji-symbol&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- uniquifier&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;在-gb2312-下打出破折号&#34;&gt;在 GB2312 下打出破折号&lt;/h3&gt;
+&lt;p&gt;参考于 &lt;a href=&#34;https://github.com/rime/home/issues/469&#34;&gt;https://github.com/rime/home/issues/469&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;gb2312/tags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;abc&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;reverse_lookup&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;luna_pinyin_lookup&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;stroke_lookup&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;easy-english-nano&#34;&gt;Easy English Nano&lt;/h3&gt;
@@ -337,6 +353,95 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;引入参考配置文件中的 &lt;code&gt;lua&lt;/code&gt; 文件即可，也可以在 &lt;code&gt;lua&lt;/code&gt; 文件改变或注释掉不喜欢的格式。&lt;/p&gt;
+&lt;h3 id=&#34;加入-emoji-symbol-并换成-v-模式&#34;&gt;加入 emoji-symbol 并换成 “v” 模式&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;引入文件，位于 &lt;code&gt;opencc&lt;/code&gt; 文件夹。&lt;/li&gt;
+&lt;li&gt;加入开关&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;switches&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;emoji-symbol&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;reset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;引入 emoji-symbol&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;emoji-symbol&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;opencc_config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;emoji-symbol.json&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;option_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;emoji-symbol&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;换成并编辑 “v” 模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;punctuator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;import_preset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;symbols&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 引入“v”模式&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;symbols&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;&amp;#34;vv&amp;#34;: &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;/bq&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 表情&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;&amp;#34;vs&amp;#34;: &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;/ss&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 手势&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;&amp;#34;vam&amp;#34;: &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;/am&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 动物&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;&amp;#34;vk&amp;#34;: &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;/aj&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 键盘符号&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;&amp;#34;vf&amp;#34;: &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;/fs&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 分号&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;&amp;#34;vb&amp;#34;: &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;/fh&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 标志&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;&amp;#34;vx&amp;#34;: &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;/xh&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 星号&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;&amp;#34;vm&amp;#34;: &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;/hb&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# money&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# “/”模式转为“v”模式&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;recognizer/patterns/punct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;^v([a-z]+|[0-9]0?)$&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;emoji 需要 UTF8 字符集来支持，幸好 Rime 支持了 &lt;code&gt;simplifier@emoji-symbol&lt;/code&gt; 功能，不必使用大字符集也可以使用 emoji：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;k&#34;&gt;engine/filters&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- simplifier&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- charset_filter@gb2312&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- simplifier@emoji-symbol&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- uniquifier&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;测试发现如果 &lt;code&gt;uniquifier&lt;/code&gt; 不放在最后一个，比如打 [zeng] [综] 这个字会出现两个。&lt;/p&gt;
 &lt;h2 id=&#34;同步功能&#34;&gt;同步功能&lt;/h2&gt;
 &lt;p&gt;在 &lt;code&gt;installation.yaml&lt;/code&gt; 中添加 &lt;code&gt;sync_dir&lt;/code&gt;：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -360,18 +465,155 @@
 &lt;p&gt;链接：&lt;a href=&#34;https://github.com/rime&#34;&gt;rime&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/rime/rime-pinyin-simp&#34;&gt;rime-pinyin-simp&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;袖珍方案（pinyin_simp）有很多问题，还是推荐使用朙月拼音简化字（luna_pinyin_simp）方案。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;词库太差&lt;/li&gt;
-&lt;li&gt;预设词频不太人性化，很多常用字词都没有排在前面&lt;/li&gt;
 &lt;li&gt;同样使用 GB2312 过滤后，袖珍方案的生僻字反而更多&lt;/li&gt;
 &lt;li&gt;不能在这个方案下切换繁体&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;也可能不是这个词库的问题，可能是 Rime 过滤器的问题，但总之这个和 luna_pinyin 相比不能过滤掉更多的生僻字，还是不推荐使用。&lt;/p&gt;
 &lt;h2 id=&#34;词库的大小&#34;&gt;词库的大小&lt;/h2&gt;
 &lt;p&gt;个人倾向于保留必要的词库即可，词库太大会增加不常用词的出现，且删除时需要一个一个文件的找到手动删除。&lt;/p&gt;
-&lt;p&gt;而自造词只需要按下 &lt;code&gt;Fn+Shift+Del&lt;/code&gt; 就可以删除。&lt;/p&gt;
-&lt;h2 id=&#34;词库中词汇权重&#34;&gt;词库中词汇权重&lt;/h2&gt;
-&lt;p&gt;词库中的第三项数字，也就是权重，反映的是候选的初始排序，但是用户输入调频优先级更高（https://github.com/rime/home/issues/657#issuecomment-738556718）。&lt;/p&gt;
-&lt;p&gt;所以现阶段 Rime 并没有固定词频的方法，也无需在自己定制的词库中写入单字并给予很高的权重，因为并无卵用。&lt;/p&gt;
-&lt;p&gt;只有靠自己日常输入的积累，来让 Rime 自己学会了。。。&lt;/p&gt;
+&lt;p&gt;自造词只需要按下 &lt;code&gt;Fn+Shift+Del&lt;/code&gt; 就可以删除。&lt;/p&gt;
+&lt;p&gt;比如网上适用于 Rime 的搜狗的主词库，一大堆生僻词汇，其实日常使用自带的 luna_pinyin.dict 已经完全够用。&lt;/p&gt;
+&lt;p&gt;可以加入诗词、医学、计算机等不会干扰日常用词的扩展词库。&lt;/p&gt;
+&lt;h2 id=&#34;词库中的权重&#34;&gt;词库中的权重&lt;/h2&gt;
+&lt;p&gt;词库中的第三项数字，也就是权重，反映的是候选的初始排序，但是用户输入的调频优先级更高（https://github.com/rime/home/issues/657#issuecomment-738556718）。&lt;/p&gt;
+&lt;p&gt;也就是说在词库中给的权重哪怕是 999999999999999999 也没有卵用，固定词频参考下面。&lt;/p&gt;
+&lt;h2 id=&#34;固定词频固定候选项顺序&#34;&gt;固定词频（固定候选项顺序）&lt;/h2&gt;
+&lt;p&gt;固定候选项顺序，即输入特定编码后，前 X 项永远固定，不参与调频。&lt;/p&gt;
+&lt;p&gt;这里如果放入了一些单字+全拼音的配置，可能会导致这个字无法和其他字组词，因为这本质上另一个解释器，Rime 不支持两个解释器之间混合造词。&lt;/p&gt;
+&lt;p&gt;示例，固定单编码的第一候选项词频：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;去	q
+我	w
+呃	e
+有	y
+有	u
+一	i
+哦	o
+是	s
+的	d
+个	g
+和	h
+就	j
+了	l
+在	z
+小	x
+不	b
+你	n
+没	m
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;示例，固定他、她、它在前三：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;他	t	3
+她	t	2
+它	t	1
+他	ta	3
+她	ta	2
+它	ta	1
+他们	tamen	3
+她们	tamen	2
+它们	tamen	1
+他的	tade	3
+她的	tade	2
+它的	tade	1
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>我的 Rime 配置 2021</title>
+      <link>https://Dvel.xyz/post/30/</link>
+      <pubDate>Sun, 31 Jan 2021 17:20:04 +0800</pubDate>
+      
+      <guid>https://Dvel.xyz/post/30/</guid>
+      
+        <description>&lt;p&gt;更新到 Squirrel 0.15.0 后，Rime 取消了 &lt;code&gt;charset_filter&lt;/code&gt;，这样就不能使用 GB2312 过滤大部分生僻字了，只好切换到袖珍简体字方案。&lt;/p&gt;
+&lt;p&gt;在简型八股文和搜狗的简体百万词库的支持下，长句输入体验非常好！&lt;/p&gt;
+&lt;h2 id=&#34;基本展示&#34;&gt;基本展示&lt;/h2&gt;
+&lt;p&gt;配置文件：&lt;a href=&#34;https://github.com/iDvel&#34;&gt;iDvel&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/iDvel/rime-settings&#34;&gt;rime-settings&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/202102061DA3VO.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;基本套路&#34;&gt;基本套路&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Squirrel 0.15.0&lt;/li&gt;
+&lt;li&gt;袖珍简体字方案及主词库&lt;/li&gt;
+&lt;li&gt;8150 简体字，去除大量生僻字&lt;/li&gt;
+&lt;li&gt;简型八股文长句模型&lt;/li&gt;
+&lt;li&gt;袖珍简体字也能打繁体&lt;/li&gt;
+&lt;li&gt;日常英文、中英混拼&lt;/li&gt;
+&lt;li&gt;常用全拼自动纠错&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;基本法&#34;&gt;基本法&lt;/h2&gt;
+&lt;h3 id=&#34;搜狗百万词库&#34;&gt;搜狗百万词库&lt;/h3&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/liuour&#34;&gt;liuour&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/liuour/rime&#34;&gt;rime&lt;/a&gt;&lt;/strong&gt; 提供转换好的词库配置。&lt;/p&gt;
+&lt;p&gt;在此方案下，挂载的词库都应该是简体词库。&lt;/p&gt;
+&lt;h3 id=&#34;袖珍简体字&#34;&gt;袖珍简体字&lt;/h3&gt;
+&lt;p&gt;这个袖珍简体字方案如果直接使用，并没有之前的版本用朙月拼音+过滤 GB2312 来的舒服，生僻字反而更多了。&lt;/p&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/mozillazg&#34;&gt;mozillazg&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/mozillazg/pinyin-data&#34;&gt;pinyin-data&lt;/a&gt;&lt;/strong&gt; 提供了完善的汉字拼音数据。&lt;/p&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/placeless&#34;&gt;placeless&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/placeless/squirrel_config&#34;&gt;squirrel_config&lt;/a&gt;&lt;/strong&gt; 提供了成品的过滤后的 8105 简体字，让人可以愉快的使用袖珍简体字方案了。&lt;/p&gt;
+&lt;p&gt;另外在 &lt;code&gt;*.userdb.txt&lt;/code&gt; 中也以简体来展示自己的输入历史了。&lt;/p&gt;
+&lt;h3 id=&#34;英文中英混输&#34;&gt;英文、中英混输&lt;/h3&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/mityliu&#34;&gt;mityliu&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/mityliu/rime-custom&#34;&gt;rime-custom&lt;/a&gt;&lt;/strong&gt; 提供了 Easy English Nano 方案，相比 easy_en 可以以大写的方式进行输入。&lt;/p&gt;
+&lt;p&gt;感谢 瑾昀 &lt;a href=&#34;mailto:cokunhui@gmail.com&#34;&gt;cokunhui@gmail.com&lt;/a&gt; 提供了 cn_en 中英混输词库。&lt;/p&gt;
+&lt;p&gt;在此方案下，cn_en 词库应该取消拼音之间的空格，否则无法解析。（已修正）&lt;/p&gt;
+&lt;p&gt;关于英文输入的问题，如果 Easy English Nano 方案给的权重小于 0，则有些英文永远不会出现在第一候选项。&lt;/p&gt;
+&lt;p&gt;对于这点，只好给予 0 权重，并且启用 custom_phrase 并在其中配置 26 个字母的单编码最高优先候选项。&lt;/p&gt;
+&lt;h3 id=&#34;简入繁出&#34;&gt;简入繁出&lt;/h3&gt;
+&lt;p&gt;感谢 &lt;strong&gt;&lt;a href=&#34;https://github.com/Ace-Who&#34;&gt;Ace-Who&lt;/a&gt;&lt;/strong&gt; 在 &lt;a href=&#34;https://github.com/rime/home/issues/388#issuecomment-504572224&#34;&gt;rime/home/issues#388&lt;/a&gt; 展示的简入繁出方法，袖珍简体方案也可以愉快的打繁体字了。&lt;/p&gt;
+&lt;h3 id=&#34;emoji&#34;&gt;emoji&lt;/h3&gt;
+&lt;p&gt;没有使用 emoji，不过在 &lt;code&gt;symbols.custom&lt;/code&gt; 中存入了一些，并且使用 “v” 模式来调用，可以设置一个自己常用的快捷键和一些表情。&lt;/p&gt;
+&lt;h3 id=&#34;自动纠错&#34;&gt;自动纠错&lt;/h3&gt;
+&lt;p&gt;些了几个常用的自动纠错，简直太好用了，比如示例图中的：&lt;/p&gt;
+&lt;p&gt;ni zia gna she me → 你在干什么&lt;/p&gt;
+&lt;p&gt;zia → zai：由 &lt;code&gt;derive/([wtpsdghkzcbnm])ai$/$1ia/&lt;/code&gt; 转换。&lt;/p&gt;
+&lt;p&gt;gna → gan：由 &lt;code&gt;derive/([wrtypsdfghjklzcbnm])a([on])$/$1$2a/&lt;/code&gt; 转换。&lt;/p&gt;
+&lt;p&gt;she me → shen me：由个人词库添加的容错词转换。&lt;/p&gt;
+&lt;h3 id=&#34;简型八股文&#34;&gt;简型八股文&lt;/h3&gt;
+&lt;p&gt;长句输入效果直接翻了个倍。&lt;/p&gt;
+&lt;p&gt;推荐一个打字练习网站来试验以下：https://dazi.kukuw.com/&lt;/p&gt;
+&lt;h3 id=&#34;词库统一管理&#34;&gt;词库统一管理&lt;/h3&gt;
+&lt;p&gt;在 &lt;code&gt;&amp;lt;方案&amp;gt;.custom.yaml&lt;/code&gt; 中以 &lt;code&gt;translator/dictionary: pinyin_simp.extended&lt;/code&gt; 挂载词库。&lt;/p&gt;
+&lt;p&gt;就可以在 &lt;code&gt;pinyin_simp.extended&lt;/code&gt; 中统一挂载所有词库，并且可以放在文件夹中，让赵配置的时候主目录不那么凌乱。&lt;/p&gt;
+&lt;h3 id=&#34;皮肤&#34;&gt;皮肤&lt;/h3&gt;
+&lt;p&gt;感谢 &amp;lt;雨過之後、佛振&amp;gt; 提供的 Rime 默认皮肤之一 《純粹的形式／Purity of Form》，试了一次后太喜欢了。&lt;/p&gt;
+&lt;p&gt;稍微暗化了一点点，让在亮色和暗色下都不太刺眼。&lt;/p&gt;
 </description>
       
     </item>
@@ -5439,458 +5681,6 @@ $ gitbook build --gitbook=2.6.7 // 生成对应版本的，本地无此版本会
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;参考感谢&#34;&gt;参考&amp;amp;感谢&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/zhangjikai/gitbook-use&#34;&gt;hangjikai/gitbook-use&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>你好, Hexo！</title>
-      <link>https://Dvel.xyz/post/0/</link>
-      <pubDate>Sun, 27 Nov 2016 00:48:36 +0000</pubDate>
-      
-      <guid>https://Dvel.xyz/post/0/</guid>
-      
-        <description>&lt;p&gt;因为之前的 WordPress 博客域名被墙，加上 Hexo 正好满足于简单的书写要求，所以更换为 Hexo。&lt;/p&gt;
-&lt;p&gt;主要还是记录了自己的搭建过程，因为对 Linux 不太熟悉，以备忘为主。&lt;/p&gt;
-&lt;p&gt;后面换到了Coding Pages 上搭建，主要是简单方便省心，自带了 https，速度也凑合。&lt;/p&gt;
-&lt;h1 id=&#34;方法一&#34;&gt;方法一：&lt;/h1&gt;
-&lt;h2 id=&#34;本地搭建&#34;&gt;本地搭建&lt;/h2&gt;
-&lt;h3 id=&#34;安装-nodejs&#34;&gt;安装 node.js&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ brew install node
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;安装-hexo&#34;&gt;安装 Hexo&lt;/h3&gt;
-&lt;p&gt;先cd进入创建好的hexo目录：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ sudo npm install -g hexo-cli
-$ hexo init
-$ npm install
-$ hexo d -fg
-$ hexo serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;打开http://localhost:4000如果看到hexo的初始页面证明安装成功。&lt;/p&gt;
-&lt;h3 id=&#34;ssh-秘钥&#34;&gt;ssh 秘钥&lt;/h3&gt;
-&lt;p&gt;一路回车生成公钥和私钥：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ ssh-keygen -t rsa -C &amp;#34;email@example.com&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;之后在本地目录 &lt;code&gt;~/.ssh/&lt;/code&gt; 下可以看到私钥 &lt;code&gt;id_rsa&lt;/code&gt; 和公钥 &lt;code&gt;id_rsa.pub&lt;/code&gt; 已经生成。&lt;/p&gt;
-&lt;p&gt;安装 &lt;code&gt;ssh-copy-id&lt;/code&gt; 等会用，方便上传公钥。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ brew install ssh-copy-id
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;vps-端搭建&#34;&gt;VPS 端搭建&lt;/h2&gt;
-&lt;h3 id=&#34;更新与安装centos&#34;&gt;更新与安装（centOS）&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ yum update
-$ yum install nginx -y
-$ yum install git-core
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;创建-git-用户及设置-ssh-免密码登陆&#34;&gt;创建 git 用户及设置 ssh 免密码登陆&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ adduser git
-$ passwd git
-$ chmod 740 /etc/sudoers
-$ vim /etc/sudoers
-(提示没有安装vim的可以用vi命令，或安装vim:)
-$ yum -y install vim*
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;在编辑器中找到以下内容并添加一行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Allow root to run any commands anywhere
-root    ALL=(ALL)     ALL
-git     ALL=(ALL)     ALL (这行是添加的)
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;保存退出并执行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ chmod 440 /etc/sudoers
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;接下来切到本地的终端，上传公钥：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ ssh-copy-id -i ~/.ssh/id_rsa.pub git@123.123.123.123
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;测试一下，如果 &lt;code&gt;$ ssh git@VPS的IP地址&lt;/code&gt; ,能够免密码登录的话，则表示成功。&lt;/p&gt;
-&lt;h3 id=&#34;回到-vps创建-git-仓库&#34;&gt;回到 VPS，创建 git 仓库:&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ su git
-$ cd ~
-$ mkdir hexo.git &amp;amp;&amp;amp; cd hexo.git
-$ git init --bare
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;创建网站目录并赋予-git-对网站目录的所有权&#34;&gt;创建网站目录并赋予 git 对网站目录的所有权&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ su root
-$ cd /var/www
-$ mkdir hexo
-$ chown git:git -R /var/www/hexo
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;配置-git-hooks&#34;&gt;配置 git hooks&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ su git
-$ cd /home/git/hexo.git/hooks
-$ vim post-receive
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;写入以下内容：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
-&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;GIT_REPO&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/home/git/hexo.git &lt;span class=&#34;c1&#34;&gt;#git仓库&lt;/span&gt;
-&lt;span class=&#34;nv&#34;&gt;TMP_GIT_CLONE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/tmp/hexo
-&lt;span class=&#34;nv&#34;&gt;PUBLIC_WWW&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/var/www/hexo &lt;span class=&#34;c1&#34;&gt;#网站目录&lt;/span&gt;
-rm -rf &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;TMP_GIT_CLONE&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;
-git clone &lt;span class=&#34;nv&#34;&gt;$GIT_REPO&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$TMP_GIT_CLONE&lt;/span&gt;
-rm -rf &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;PUBLIC_WWW&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/*
-cp -rf &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;TMP_GIT_CLONE&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/* &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;PUBLIC_WWW&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;然后赋予脚本的执行权限&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ chmod +x post-receive
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;配置-nginx&#34;&gt;配置 Nginx&lt;/h3&gt;
-&lt;p&gt;启动 nginX:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;systemctl status nginx.service      // 查看服务当前状态
-systemctl start nginx.service       // 启动nginx服务
-systemctl restart nginx.service     // 重新启动服务
-
-systemctl enable nginx.service      // 设置开机自启动
-systemctl disable nginx.service     // 停止开机自启动
-
-systemctl list-units --type=service // 查看所有已启动的服务
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;然后：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ vim /etc/nginx/conf.d/hexo.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;插入如下代码：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;server {
-    listen         80 ;
-    root /var/www/hexo;//这里可以改成你的网站目录地址，我将网站放在/var/www/hexo
-    server_name example.com www.example.com;//这里输入你的域名或IP地址
-    access_log  /var/log/nginx/hexo_access.log;
-    error_log   /var/log/nginx/hexo_error.log;
-    location ~* ^.+\.(ico|gif|jpg|jpeg|png)$ {
-            root /var/www/hexo;
-            access_log   off;
-            expires      1d;
-    }
-    location ~* ^.+\.(css|js|txt|xml|swf|wav)$ {
-        root /var/www/hexo;
-        access_log   off;
-        expires      10m;
-    }
-    location / {
-        root /var/www/hexo;//这里可以改成你的网站目录地址，我将网站放在/var/www/hexo
-        if (-f $request_filename) {
-            rewrite ^/(.*)$  /$1 break;
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;然后重启nginx，此时刷新网页应该显示的是403。&lt;/p&gt;
-&lt;h2 id=&#34;本机的最后配置&#34;&gt;本机的最后配置&lt;/h2&gt;
-&lt;p&gt;位于 &lt;code&gt;hexo&lt;/code&gt; 文件夹下，&lt;code&gt;_config.yml &lt;/code&gt;,修改 &lt;code&gt;deploy&lt;/code&gt; 选项，例如：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;deploy:
-  type: git
-  message: update  # 这个可以不写，会默认生成update日期
-  repo: git@123.123.123.123:hexo.git,master # 逗号后面写分支
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;部署到多个仓库可以这么写：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;deploy: 
-  - type: git
-    repo: git@git.coding.net:Dvel/Dvel.git,master
-  - type: git
-    repo: git@github.com:iDvel/Dvel-Hexo.git,master
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;每次更新博客也可以让github上长点绿草了。。。&lt;/p&gt;
-&lt;p&gt;接下来安装 &lt;strong&gt;hexo-deployer-git&lt;/strong&gt; ，否则部署时会报这个错&amp;rdquo;&lt;em&gt;ERROR Deployer not found: git&lt;/em&gt;&amp;quot;。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ npm install hexo-deployer-git --save
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;接着&lt;code&gt;$ hexo g &amp;amp;&amp;amp; hexo d&lt;/code&gt;，如果一切正常，静态文件已经被成功的push到了blog的仓库里。&lt;/p&gt;
-&lt;p&gt;期间我忘了还出了个什么错，删除&lt;code&gt;hexo&lt;/code&gt;目录下的&lt;code&gt;.deploy_git&lt;/code&gt;后再次&lt;code&gt;hexo g &amp;amp;&amp;amp; hexo d&lt;/code&gt;就可以了。&lt;/p&gt;
-&lt;p&gt;以上，博客已经完全建好了。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$ hexo generate&lt;/code&gt;是生成静态文件。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$ hexo deploy&lt;/code&gt;是部署，我们这里选择了Git，Hexo还支持其他部署形式。&lt;/p&gt;
-&lt;p&gt;所以每次写完文章，执行这两个命令后，就对网站完成了更新。&lt;/p&gt;
-&lt;p&gt;简化操作就是：&lt;code&gt;$ hexo g &amp;amp;&amp;amp; hexo d&lt;/code&gt; ，再简化就是&lt;code&gt;$ hexo d -g&lt;/code&gt;，效果一样。&lt;/p&gt;
-&lt;h1 id=&#34;方法二利用一键安装包&#34;&gt;方法二，利用一键安装包&lt;/h1&gt;
-&lt;p&gt;因为不太熟悉 Linux，所以我选择了一键安装包，多站点管理方便些。&lt;/p&gt;
-&lt;p&gt;我用的这个 -&amp;gt; &lt;a href=&#34;https://oneinstack.com/&#34;&gt;OneinStack官网&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;步骤和上面差不多，但是很多路径要改一下，也可以很简单的搭建出Hexo。&lt;/p&gt;
-&lt;h1 id=&#34;方法三coding-pages&#34;&gt;方法三，Coding Pages&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;coding 中创建项目&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;站点配置文件&lt;code&gt;_config.yml&lt;/code&gt; 中 &lt;code&gt;deploy&lt;/code&gt; 中写好 coding 项目的 git 地址&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;push 上去：&lt;code&gt;$ hexo d -g&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在 coding 上你的项目，开启 Pages 服务：可以自定义分支，绑定域名，开启 https&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;大功告成&lt;/p&gt;
-&lt;p&gt;​&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这个相对简单一些，Coding Pages 服务目前提供 100M 空间的支持，一般来说没有写文章的话，生成的 &lt;code&gt;public&lt;/code&gt; 文件夹大约小于5M。&lt;/p&gt;
-&lt;p&gt;100M 基本够写很多年的博客，至于图片应该另寻图床，不要放到 coding 上，否则空间很快用完。&lt;/p&gt;
-&lt;h1 id=&#34;编写文章更新博客&#34;&gt;编写文章、更新博客&lt;/h1&gt;
-&lt;p&gt;使用一款 MarkDown 编辑器写文章 ，写完后将文件以 *.md 的格式保存在本地 &lt;code&gt;[网站目录]\source_posts&lt;/code&gt; 中。&lt;/p&gt;
-&lt;p&gt;Markdown 编辑器，强烈安利 Typora。&lt;/p&gt;
-&lt;p&gt;每篇 Blog 都有固定的参数必须填写，参数如下，注意每个参数的 : 后都有一个空格。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;title: title
-date: yyyy-mm-dd
-categories: category  
-tags: tag
-#多标签请这样写：  
-#tags: [tag1,tag2,tag3]
-#或者这样写： 
-#tags:
-#- tag1 
-#- tag2  
-#- tag3  
----  
-正文  
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;或者使用 &lt;code&gt;$ hexo new&lt;/code&gt; 命令，具体官网有详细说明。&lt;/p&gt;
-&lt;p&gt;编写完后，只需要在hexo文件夹下执行 &lt;code&gt;hexo g &amp;amp;&amp;amp; hexo d&lt;/code&gt;，博客即可更新。&lt;/p&gt;
-&lt;h1 id=&#34;遇到的坑&#34;&gt;遇到的坑&lt;/h1&gt;
-&lt;p&gt;设置了 ssh 免密码登陆后，依然需要密码&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;这整段是以前使用的方法，过时了。。。
-设置ssh免密码登陆：
-su git
-cd ~
-mkdir .ssh &amp;amp;&amp;amp; cd .ssh
-touch authorized_keys
-vim authorized_keys  //在这个文件中粘贴进刚刚申请的key（在id_rsa.pub文件中）
-设置权限：
-chmod o-w ~/
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/authorized_keys
-
-测试免密码登陆
-ssh -vvT git@123.123.123.123   // 你的VPS的IP地址
-发现依然需要密码，搜了好几天没找到解决办法，后来采用了ssh-copy-id，解决了这个问题。
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;如果过程中重新初始化过 VPS 的磁盘，ssh 连接 VPS 的时候可能会提示 &lt;code&gt;Host key verification failed.&lt;/code&gt; 。&lt;br&gt;
-运行此命令即可：&lt;code&gt;$ ssh-keygen -R 123.123.123.123&lt;/code&gt;，将 123.123.123.123 改成你的 VPS 的 IP。&lt;br&gt;
-或者简单粗暴直接删除 &lt;code&gt;known_hosts&lt;/code&gt; 文件。&lt;/p&gt;
-&lt;h1 id=&#34;参考感谢&#34;&gt;参考&amp;amp;感谢&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo官网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://tiktoking.github.io/2016/01/26/hexo/#u521B_u5EFA_u7F51_u7AD9_u76EE_u5F55&#34;&gt;在VPS上搭建hexo博客，利用git更新 - WikiLibrary&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://buzhidao.me/2016/02/01/%E5%9C%A8VPS%E4%B8%8A%E9%85%8D%E7%BD%AEhexo%E5%8D%9A%E5%AE%A2/&#34;&gt;在VPS上配置hexo博客 - Springwon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://huifeng.me/2015/08/16/deploy-hexo-to-vps/&#34;&gt;Deploy Hexo sites to VPS - 回风.Me&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
       
     </item>

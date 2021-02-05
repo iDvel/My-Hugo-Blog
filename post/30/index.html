@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>我的 Rime 配置 - Dvel&#39;s Blog</title>
+  <title>我的 Rime 配置 2021 - Dvel&#39;s Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Dvel" />
-  <meta name="description" content="我的 Rime 配置 本文是我的 Rime 配置的一些参考说明，可以结合配置方案共同食用 ↓ 全拼简中输入方案配置：https://github.com/iDvel/" />
+  <meta name="description" content="更新到 Squirrel 0.15.0 后，Rime 取消了 charset_filter，这样就不能使用 GB2312 过滤大部分生僻字了，只好切换到袖珍简体字方案。 在简型八股文和搜狗的" />
 
   <meta name="keywords" content="Dvel" />
 
@@ -59,24 +59,24 @@
 
 
 
-<meta property="og:title" content="我的 Rime 配置" />
-<meta property="og:description" content="我的 Rime 配置 本文是我的 Rime 配置的一些参考说明，可以结合配置方案共同食用 ↓ 全拼简中输入方案配置：https://github.com/iDvel/" />
+<meta property="og:title" content="我的 Rime 配置 2021" />
+<meta property="og:description" content="更新到 Squirrel 0.15.0 后，Rime 取消了 charset_filter，这样就不能使用 GB2312 过滤大部分生僻字了，只好切换到袖珍简体字方案。 在简型八股文和搜狗的" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Dvel.xyz/post/30/" />
 <meta property="article:published_time" content="2021-01-31T17:20:04+08:00" />
 <meta property="article:modified_time" content="2021-01-31T17:20:04+08:00" />
-<meta itemprop="name" content="我的 Rime 配置">
-<meta itemprop="description" content="我的 Rime 配置 本文是我的 Rime 配置的一些参考说明，可以结合配置方案共同食用 ↓ 全拼简中输入方案配置：https://github.com/iDvel/">
+<meta itemprop="name" content="我的 Rime 配置 2021">
+<meta itemprop="description" content="更新到 Squirrel 0.15.0 后，Rime 取消了 charset_filter，这样就不能使用 GB2312 过滤大部分生僻字了，只好切换到袖珍简体字方案。 在简型八股文和搜狗的">
 <meta itemprop="datePublished" content="2021-01-31T17:20:04+08:00" />
 <meta itemprop="dateModified" content="2021-01-31T17:20:04+08:00" />
-<meta itemprop="wordCount" content="2851">
+<meta itemprop="wordCount" content="919">
 
 
 
 <meta itemprop="keywords" content="Rime,Squirrel," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="我的 Rime 配置"/>
-<meta name="twitter:description" content="我的 Rime 配置 本文是我的 Rime 配置的一些参考说明，可以结合配置方案共同食用 ↓ 全拼简中输入方案配置：https://github.com/iDvel/"/>
+<meta name="twitter:title" content="我的 Rime 配置 2021"/>
+<meta name="twitter:description" content="更新到 Squirrel 0.15.0 后，Rime 取消了 charset_filter，这样就不能使用 GB2312 过滤大部分生僻字了，只好切换到袖珍简体字方案。 在简型八股文和搜狗的"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -249,7 +249,7 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">我的 Rime 配置</h1>
+      <h1 class="post-title">我的 Rime 配置 2021</h1>
       
       <div class="post-meta">
         <time datetime="2021-01-31" class="post-time">
@@ -277,23 +277,21 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#输入法全局设定-defaultcustomyaml">输入法全局设定 <code>default.custom.yaml</code></a></li>
-    <li><a href="#皮肤与静默中文设定-squirrelcustomyaml">皮肤与静默中文设定 <code>squirrel.custom.yaml</code></a></li>
-    <li><a href="#集中管理词库">集中管理词库</a></li>
-    <li><a href="#简体拼音方案设定-luna_pinyin_simpcustomyaml">简体拼音方案设定 <code>luna_pinyin_simp.custom.yaml</code></a>
+    <li><a href="#基本展示">基本展示</a></li>
+    <li><a href="#基本套路">基本套路</a></li>
+    <li><a href="#基本法">基本法</a>
       <ul>
-        <li><a href="#enginefilters"><code>engine/filters</code></a></li>
-        <li><a href="#easy-english-nano">Easy English Nano</a></li>
-        <li><a href="#cn_en-中英混输方案">cn_en 中英混输方案</a></li>
-        <li><a href="#标点符号的候选设定与取消">标点符号的候选设定与取消</a></li>
+        <li><a href="#搜狗百万词库">搜狗百万词库</a></li>
+        <li><a href="#袖珍简体字">袖珍简体字</a></li>
+        <li><a href="#英文中英混输">英文、中英混输</a></li>
+        <li><a href="#简入繁出">简入繁出</a></li>
+        <li><a href="#emoji">emoji</a></li>
         <li><a href="#自动纠错">自动纠错</a></li>
-        <li><a href="#日期时间">日期、时间</a></li>
+        <li><a href="#简型八股文">简型八股文</a></li>
+        <li><a href="#词库统一管理">词库统一管理</a></li>
+        <li><a href="#皮肤">皮肤</a></li>
       </ul>
     </li>
-    <li><a href="#同步功能">同步功能</a></li>
-    <li><a href="#袖珍简化字拼音">袖珍简化字拼音</a></li>
-    <li><a href="#词库的大小">词库的大小</a></li>
-    <li><a href="#词库中词汇权重">词库中词汇权重</a></li>
   </ul>
 </nav>
   </div>
@@ -301,360 +299,55 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <h1 id="我的-rime-配置">我的 Rime 配置</h1>
-<p>本文是我的 Rime 配置的一些参考说明，可以结合配置方案共同食用 ↓</p>
-<p>全拼简中输入方案配置：https://github.com/iDvel/rime-settings</p>
-<h2 id="输入法全局设定-defaultcustomyaml">输入法全局设定 <code>default.custom.yaml</code></h2>
-<p>常规设置，最好开启 Tab 移动光标的功能，这个太好用啦！</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># move_by_word_with_tab: </span><span class="w">
-</span><span class="w"></span>- {<span class="w"> </span><span class="k">when: composing, accept: ISO_Left_Tab, send</span><span class="p">:</span><span class="w"> </span>Shift+Left<span class="w"> </span>}<span class="w">
-</span><span class="w"></span>- {<span class="w"> </span><span class="k">when: composing, accept: Shift+Tab, send</span><span class="p">:</span><span class="w"> </span>Shift+Left<span class="w"> </span>}<span class="w">
-</span><span class="w"></span>- {<span class="w"> </span><span class="k">when: composing, accept: Tab, send</span><span class="p">:</span><span class="w"> </span>Shift+Right<span class="w"> </span>}<span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><h2 id="皮肤与静默中文设定-squirrelcustomyaml">皮肤与静默中文设定 <code>squirrel.custom.yaml</code></h2>
-<p>我使用的皮肤，照着落格输入法的暗色皮肤弄的，不过高亮色我选用了绿色：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">luoge</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>落格输入法暗色配色<span class="w">
-</span><span class="w">  </span><span class="k">author</span><span class="p">:</span><span class="w"> </span>Dvel<span class="w">
-</span><span class="w">  </span><span class="k">back_color</span><span class="p">:</span><span class="w"> </span>0x2C2B2B<span class="w">    </span><span class="c"># 候选条背景色，24位色值，16进制，BGR顺序</span><span class="w">
-</span><span class="w">  </span><span class="k">border_color</span><span class="p">:</span><span class="w"> </span>0x0A0C0F<span class="w">    </span><span class="c"># 边框色</span><span class="w">
-</span><span class="w">  </span><span class="k">text_color</span><span class="p">:</span><span class="w"> </span>0xFFFFFF<span class="w">    </span><span class="c"># 拼音行文字颜色</span><span class="w">
-</span><span class="w">  </span><span class="k">hilited_back_color</span><span class="p">:</span><span class="w"> </span>0x282C34<span class="w">    </span><span class="c"># 第一候选项背景背景色</span><span class="w">
-</span><span class="w">  </span><span class="k">hilited_candidate_text_color</span><span class="p">:</span><span class="w"> </span>0xFFFFFF<span class="w">    </span><span class="c"># 第一候选项文字颜色</span><span class="w">
-</span><span class="w">  </span><span class="k">hilited_candidate_label_color</span><span class="p">:</span><span class="w"> </span>0xFFFFFF<span class="w">   </span><span class="c"># 第一候选项编号颜色</span><span class="w">
-</span><span class="w">  </span><span class="k">hilited_candidate_back_color</span><span class="p">:</span><span class="w"> </span>0x578E3A<span class="w"> </span><span class="c"># 第一候选项背景颜色</span><span class="w">
-</span><span class="w">  </span><span class="k">hilited_comment_text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x999999</span><span class="w">    </span><span class="c"># 注解文字高亮</span><span class="w">
-</span><span class="w">  </span><span class="k">hilited_text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x999999</span><span class="w">    </span><span class="c"># 高亮拼音 (需要开启内嵌编码)</span><span class="w">
-</span><span class="w">  </span><span class="k">candidate_text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0xe9e9ea</span><span class="w">    </span><span class="c"># 预选项文字颜色</span><span class="w">
-</span><span class="w">  </span><span class="k">comment_text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x999999</span><span class="w">    </span><span class="c"># 拼音等提示文字颜色</span><span class="w">
-</span><span class="w">  </span><span class="k">horizontal</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">    </span><span class="c"># 水平排列</span><span class="w">
-</span><span class="w">  </span><span class="k">inline_preedit</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">    </span><span class="c"># 单行显示，false双行显示</span><span class="w">
-</span><span class="w">  </span><span class="k">label_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x999999</span><span class="w">   </span><span class="c"># 预选栏编号颜色</span><span class="w">
-</span><span class="w">  </span><span class="k">candidate_format</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;%c\u2005%@&#34;</span><span class="w">    </span><span class="c"># 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。</span><span class="w">
-</span><span class="w">  </span><span class="k">font_face</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;PingFangSC&#34;</span><span class="w">   </span><span class="c"># 候选词编号字体</span><span class="w">
-</span><span class="w">  </span><span class="k">font_point</span><span class="p">:</span><span class="w"> </span><span class="m">17</span><span class="w">    </span><span class="c"># 候选文字大小</span><span class="w">
-</span><span class="w">  </span><span class="k">label_font_point</span><span class="p">:</span><span class="w"> </span><span class="m">13</span><span class="w">    </span><span class="c"># 候选编号大小</span><span class="w">
-</span><span class="w">  </span><span class="k">corner_radius</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">    </span><span class="c"># 候选条圆角</span><span class="w">
-</span><span class="w">  </span><span class="k">hilited_corner_radius</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">    </span><span class="c"># 高亮圆角</span><span class="w">
-</span><span class="w">  </span><span class="k">border_height</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">     </span><span class="c"># 窗口上下高度</span><span class="w">
-</span><span class="w">  </span><span class="k">border_width</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">   </span><span class="c"># 窗口左右宽度</span><span class="w">
-</span><span class="w">  </span><span class="k">border_color_width</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">   </span><span class="c">#输入条边框宽度</span><span class="w">
-</span><span class="w">  </span><span class="c">#label_font_face: &#34;SFCompactText-Regular&#34;  # 候选词编号字体</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><h2 id="集中管理词库">集中管理词库</h2>
-<p>GitHub 上很多配置都乱糟糟的，找起文件来很麻烦，建议统一将词库文件放进一个文件夹里。</p>
+      <p>更新到 Squirrel 0.15.0 后，Rime 取消了 <code>charset_filter</code>，这样就不能使用 GB2312 过滤大部分生僻字了，只好切换到袖珍简体字方案。</p>
+<p>在简型八股文和搜狗的简体百万词库的支持下，长句输入体验非常好！</p>
+<h2 id="基本展示">基本展示</h2>
+<p>配置文件：<a href="https://github.com/iDvel">iDvel</a>/<strong><a href="https://github.com/iDvel/rime-settings">rime-settings</a></strong></p>
+<p><img src="https://img.dvel.xyz/202102061DA3VO.jpg" alt=""></p>
+<h2 id="基本套路">基本套路</h2>
 <ul>
-<li>设置配置项：</li>
+<li>Squirrel 0.15.0</li>
+<li>袖珍简体字方案及主词库</li>
+<li>8150 简体字，去除大量生僻字</li>
+<li>简型八股文长句模型</li>
+<li>袖珍简体字也能打繁体</li>
+<li>日常英文、中英混拼</li>
+<li>常用全拼自动纠错</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">&#34;translator/dictionary&#34;: </span>luna_pinyin.extended<span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>创建单独的词库文件夹 <code>ext_dict/</code> 并将所有词库文件移入</li>
-<li>创建词库管理文件 <code>luna_pinyin.extended.dict.yaml</code> 并写入以下配置：</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
-</span><span class="w"></span><span class="k">name</span><span class="p">:</span><span class="w"> </span>luna_pinyin.extended<span class="w">
-</span><span class="w"></span><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;2021-01-31&#34;</span><span class="w">
-</span><span class="w"></span><span class="k">sort</span><span class="p">:</span><span class="w"> </span>by_weight<span class="w">
-</span><span class="w"></span><span class="k">use_preset_vocabulary</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="k">import_tables</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="c"># 主要的：</span><span class="w">
-</span><span class="w">  </span>- ext_dict/luna_pinyin<span class="w">
-</span><span class="w">  </span><span class="c"># cn_en</span><span class="w">
-</span><span class="w">  </span>- ext_dict/luna_pinyin.cn_en<span class="w">
-</span><span class="w">  </span><span class="c"># 自己的：</span><span class="w">
-</span><span class="w">  </span>- ext_dict/d<span class="w">
-</span><span class="w">  </span><span class="c"># 有点用的：</span><span class="w">
-</span><span class="w">  </span>- ext_dict/luna_pinyin.i<span class="w">
-</span><span class="w">  </span>- ext_dict/luna_pinyin.computer<span class="w">
-</span><span class="w">  </span>- ext_dict/luna_pinyin.chengyusuyu<span class="w">
-</span><span class="w">  </span>- ext_dict/luna_pinyin.kaifazhuanyongciku<span class="w">
-</span><span class="w">  </span>- ext_dict/luna_pinyin.poetry<span class="w">
-</span><span class="w">  </span>- ext_dict/luna_pinyin.mingxing<span class="w">
-</span><span class="w">  </span><span class="c"># 其他：</span><span class="w">
-</span><span class="w">  </span><span class="c"># - ext_dict/luna_pinyin.xiandaihanyuchangyongcibiao</span><span class="w">
-</span><span class="w">  </span><span class="c"># - ext_dict/luna_pinyin.dianshiju</span><span class="w">
-</span><span class="w">  </span><span class="c"># - ext_dict/luna_pinyin.falv</span><span class="w">
-</span><span class="w">  </span><span class="c"># - ext_dict/luna_pinyin.gushici</span><span class="w">
-</span><span class="w">  </span><span class="c"># - ext_dict/luna_pinyin.movie</span><span class="w">
-</span><span class="w">  </span><span class="c"># - ext_dict/luna_pinyin.music</span><span class="w">
-</span><span class="w">  </span><span class="c"># - ext_dict/luna_pinyin.sgmain</span><span class="w">
-</span><span class="w">  </span><span class="c"># - ext_dict/luna_pinyin.shoujicihui</span><span class="w">
-</span><span class="w">  </span><span class="c"># - ext_dict/luna_pinyin.wangluoliuxingci</span><span class="w">
-</span><span class="w">  </span><span class="c"># - ext_dict/luna_pinyin.yixue</span><span class="w">
-</span><span class="w"></span>...<span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><p>将所有词库文件移动到这个文件夹内，在配置文件中写入即可。</p>
-<h2 id="简体拼音方案设定-luna_pinyin_simpcustomyaml">简体拼音方案设定 <code>luna_pinyin_simp.custom.yaml</code></h2>
-<h3 id="enginefilters"><code>engine/filters</code></h3>
-<p>使用 GB2312 的优点：对于普通的简中用户而言，很少输入繁体，也很少输入简体字中的生僻字，所以使用 GB2312 过滤后可以去掉很多生僻字。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">engine/filters</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span>- simplifier<span class="w">
-</span><span class="w">  </span>- uniquifier<span class="w">
-</span><span class="w">  </span>- charset_filter@gb2312<span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><p>缺点是切换繁体时，需要同时切换繁体+切换字符集，如果开启了快捷键的话也很方便，只要顺着按 Control+Shift+4 和 5 就切换到繁体了：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># 注意 toggle 的值应该是你在 switches 设置的开关名称</span><span class="w">
-</span><span class="w"></span>- {<span class="w"> </span><span class="k">when: always, accept: Control+Shift+4, toggle</span><span class="p">:</span><span class="w"> </span>zh_simp<span class="w"> </span>}<span class="w">
-</span><span class="w"></span>- {<span class="w"> </span><span class="k">when: always, accept: Control+Shift+5, toggle</span><span class="p">:</span><span class="w"> </span>gb2312<span class="w"> </span>}<span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><p>也可以使用 GBK，这样字符集更大：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">engine/filters</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span>- simplifier<span class="w">
-</span><span class="w">  </span>- uniquifier<span class="w">
-</span><span class="w">  </span>- charset_filter@gbk<span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id="easy-english-nano">Easy English Nano</h3>
-<p>在 <a href="https://github.com/mityliu/rime-custom">https://github.com/mityliu/rime-custom</a> 找到了一份更好的 easy_en 方案，支持了首字母为大写字母的英文输入。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">&#34;schema/dependencies/@next&#34;: </span>melt_eng<span class="w">
-</span><span class="w"></span><span class="k">&#34;engine/translators/@before 0&#34;: </span>table_translator@melt_eng<span class="w">
-</span><span class="w"></span><span class="k">melt_eng</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">dictionary</span><span class="p">:</span><span class="w"> </span>melt_eng<span class="w">
-</span><span class="w">  </span><span class="k">spelling_hints</span><span class="p">:</span><span class="w"> </span><span class="m">9</span><span class="w">
-</span><span class="w">  </span><span class="k">enable_completion</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">  </span><span class="k">enable_sentence</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="w">  </span><span class="c"># 值为-1时，在能得到中文结果的情况下英文永远不会出现在第一个候选项。</span><span class="w">
-</span><span class="w">  </span><span class="c"># 还是应该设置为 -1，否则按我的词典，输入“i”得到“一”，值为0时，字母会一直占据第一个候选项</span><span class="w">
-</span><span class="w">  </span><span class="k">initial_quality</span><span class="p">:</span><span class="w"> </span>-<span class="m">1</span><span class="w"> 
-</span><span class="w"></span><span class="c"># 令輸入方案對大寫字符生效</span><span class="w">
-</span><span class="w"></span><span class="c"># 删掉了 - 和 _ 两个字符，影响日常输入体验，但如果词库中有连字符就无法打出了</span><span class="w">
-</span><span class="w"></span><span class="c"># &#34;speller/alphabet/+&#34;: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA-_</span><span class="w">
-</span><span class="w"></span><span class="k">&#34;speller/alphabet/+&#34;: </span>zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA<span class="w">
-</span><span class="w"></span><span class="k">recognizer/patterns/up	percase</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id="cn_en-中英混输方案">cn_en 中英混输方案</h3>
-<p>解决了如 “U盘” “T恤” 等词语的输入。</p>
-<p>建议一定要开启这一项：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># 改写拼音运算，使得含英文的字词（位于 luna_pinyin.cn_en.dict.yaml 中）不影响简拼功能（注意，此功能只适用于於朙月拼音系列方案，不适用于各类双拼方案）</span><span class="w">
-</span><span class="w"></span><span class="c"># 本条补丁只在「小狼毫 0.9.30」、「鼠须管 0.9.25 」、「Rime-1.2」及更高的版本中起作用</span><span class="w">
-</span><span class="w"></span><span class="k">&#34;speller/algebra/@before 0&#34;: </span>xform/^(<span class="p">[</span>b-df-np-z<span class="p">]</span>)$/$1_/<span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id="标点符号的候选设定与取消">标点符号的候选设定与取消</h3>
-<p>基于以前的使用习惯，我并不习惯 Rime 默认的这种标点输入方法，参考配置文件，全部取消掉就可以了。</p>
+<h2 id="基本法">基本法</h2>
+<h3 id="搜狗百万词库">搜狗百万词库</h3>
+<p>感谢 <a href="https://github.com/liuour">liuour</a>/<strong><a href="https://github.com/liuour/rime">rime</a></strong> 提供转换好的词库配置。</p>
+<p>在此方案下，挂载的词库都应该是简体词库。</p>
+<h3 id="袖珍简体字">袖珍简体字</h3>
+<p>这个袖珍简体字方案如果直接使用，并没有之前的版本用朙月拼音+过滤 GB2312 来的舒服，生僻字反而更多了。</p>
+<p>感谢 <a href="https://github.com/mozillazg">mozillazg</a>/<strong><a href="https://github.com/mozillazg/pinyin-data">pinyin-data</a></strong> 提供了完善的汉字拼音数据。</p>
+<p>感谢 <a href="https://github.com/placeless">placeless</a>/<strong><a href="https://github.com/placeless/squirrel_config">squirrel_config</a></strong> 提供了成品的过滤后的 8105 简体字，让人可以愉快的使用袖珍简体字方案了。</p>
+<p>另外在 <code>*.userdb.txt</code> 中也以简体来展示自己的输入历史了。</p>
+<h3 id="英文中英混输">英文、中英混输</h3>
+<p>感谢 <a href="https://github.com/mityliu">mityliu</a>/<strong><a href="https://github.com/mityliu/rime-custom">rime-custom</a></strong> 提供了 Easy English Nano 方案，相比 easy_en 可以以大写的方式进行输入。</p>
+<p>感谢 瑾昀 <a href="mailto:cokunhui@gmail.com">cokunhui@gmail.com</a> 提供了 cn_en 中英混输词库。</p>
+<p>在此方案下，cn_en 词库应该取消拼音之间的空格，否则无法解析。（已修正）</p>
+<p>关于英文输入的问题，如果 Easy English Nano 方案给的权重小于 0，则有些英文永远不会出现在第一候选项。</p>
+<p>对于这点，只好给予 0 权重，并且启用 custom_phrase 并在其中配置 26 个字母的单编码最高优先候选项。</p>
+<h3 id="简入繁出">简入繁出</h3>
+<p>感谢 <strong><a href="https://github.com/Ace-Who">Ace-Who</a></strong> 在 <a href="https://github.com/rime/home/issues/388#issuecomment-504572224">rime/home/issues#388</a> 展示的简入繁出方法，袖珍简体方案也可以愉快的打繁体字了。</p>
+<h3 id="emoji">emoji</h3>
+<p>没有使用 emoji，不过在 <code>symbols.custom</code> 中存入了一些，并且使用 “v” 模式来调用，可以设置一个自己常用的快捷键和一些表情。</p>
 <h3 id="自动纠错">自动纠错</h3>
-<p>如果设置写成了 <code>'speller/algebra':</code> 发现丢失了超级简拼的功能，加上加号即可。</p>
-<p>Rime 的自动纠错设计的真是好用，基于正则表达式语法，可以很简单的设置：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">&#39;speller/algebra/+&#39;</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span>- derive/zai$/zia/<span class="w">  </span><span class="c"># 输入[zia]，得到[zai]</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><p>利用正则表达式，可以写出很多实用的纠错功能：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml">- derive/^(<span class="p">[</span>nl<span class="p">]</span>)ve$/$1ue/<span class="w">  </span><span class="c"># nve = nue, lve = lue</span><span class="w">
-</span><span class="w"></span>- derive/ua$/au/<span class="w">  </span><span class="c"># shau =&gt; shua</span><span class="w">
-</span><span class="w"></span>- derive/(<span class="p">[</span>iu<span class="p">]</span>)a(o|ng<span class="p">?</span>)$/a$<span class="m">1</span>$<span class="m">2</span>/<span class="w">   </span><span class="c"># tain =&gt; tian</span><span class="w">
-</span><span class="w"></span>- derive/a(<span class="p">[</span>on<span class="p">]</span>)$/$1a/<span class="w">  </span><span class="c"># hoa =&gt; hao  hna  =&gt; han</span><span class="w">
-</span><span class="w"></span>- derive/zai$/zia/<span class="w">   </span><span class="c"># zia =&gt; zai</span><span class="w">
-</span><span class="w"></span>- derive/(<span class="p">[</span>zcs<span class="p">]</span>)hi$/$1ih/<span class="w"> </span><span class="c"># zih =&gt; zhi cih =&gt; chi sih =&gt; shi</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><p>编写时注意，例如你写成了 <code>/ai$/ia/</code>，输入[zia]确实可以纠错成[zai]，但输入[lia]也会变成[lai]，输入[lai]也会变成[lia]。</p>
-<p>“来”和“俩”都是正确的发音，编写时注意不要写出这种纠错就可以了。</p>
-<h3 id="日期时间">日期、时间</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># librime-lua 输入动态时间和日期</span><span class="w">
-</span><span class="w"></span><span class="k">engine/translators/+</span><span class="p">:</span><span class="w"> 
-</span><span class="w">  </span>- lua_translator@date_translator<span class="w">
-</span><span class="w">  </span>- lua_translator@time_translator<span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><p>引入参考配置文件中的 <code>lua</code> 文件即可，也可以在 <code>lua</code> 文件改变或注释掉不喜欢的格式。</p>
-<h2 id="同步功能">同步功能</h2>
-<p>在 <code>installation.yaml</code> 中添加 <code>sync_dir</code>：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># 默认为随机的 UUID，可以起一个好记的名字</span><span class="w">
-</span><span class="w"></span><span class="k">installation_id</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;my computer&#34;</span><span class="w">
-</span><span class="w"></span><span class="c"># 需要手动添加下行，设定用户同步目录</span><span class="w">
-</span><span class="w"></span><span class="k">sync_dir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/Users/&lt;your username&gt;/Dropbox/Rime_Sync&#34;</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><p>如果同时使用两台电脑，只要使用方案一致，不必手动去合并 <code>*.userdb.txt</code> 这个用户个人词库。</p>
-<p>点击 [重新部署]，用户设定目录 → 同步目录，单向操作。</p>
-<p>点击 [同步用户数据]，用户设定目录 ←→ 同步目录，双向同步，Rime 会自动合并引入所有 ID 下的个人词库。</p>
-<h2 id="袖珍简化字拼音">袖珍简化字拼音</h2>
-<p>链接：<a href="https://github.com/rime">rime</a>/<strong><a href="https://github.com/rime/rime-pinyin-simp">rime-pinyin-simp</a></strong></p>
-<p>袖珍方案（pinyin_simp）有很多问题，还是推荐使用朙月拼音简化字（luna_pinyin_simp）方案。</p>
-<ul>
-<li>词库太差</li>
-<li>预设词频不太人性化，很多常用字词都没有排在前面</li>
-<li>同样使用 GB2312 过滤后，袖珍方案的生僻字反而更多</li>
-<li>不能在这个方案下切换繁体</li>
-</ul>
-<h2 id="词库的大小">词库的大小</h2>
-<p>个人倾向于保留必要的词库即可，词库太大会增加不常用词的出现，且删除时需要一个一个文件的找到手动删除。</p>
-<p>而自造词只需要按下 <code>Fn+Shift+Del</code> 就可以删除。</p>
-<h2 id="词库中词汇权重">词库中词汇权重</h2>
-<p>词库中的第三项数字，也就是权重，反映的是候选的初始排序，但是用户输入调频优先级更高（https://github.com/rime/home/issues/657#issuecomment-738556718）。</p>
-<p>所以现阶段 Rime 并没有固定词频的方法，也无需在自己定制的词库中写入单字并给予很高的权重，因为并无卵用。</p>
-<p>只有靠自己日常输入的积累，来让 Rime 自己学会了。。。</p>
+<p>些了几个常用的自动纠错，简直太好用了，比如示例图中的：</p>
+<p>ni zia gna she me → 你在干什么</p>
+<p>zia → zai：由 <code>derive/([wtpsdghkzcbnm])ai$/$1ia/</code> 转换。</p>
+<p>gna → gan：由 <code>derive/([wrtypsdfghjklzcbnm])a([on])$/$1$2a/</code> 转换。</p>
+<p>she me → shen me：由个人词库添加的容错词转换。</p>
+<h3 id="简型八股文">简型八股文</h3>
+<p>长句输入效果直接翻了个倍。</p>
+<p>推荐一个打字练习网站来试验以下：https://dazi.kukuw.com/</p>
+<h3 id="词库统一管理">词库统一管理</h3>
+<p>在 <code>&lt;方案&gt;.custom.yaml</code> 中以 <code>translator/dictionary: pinyin_simp.extended</code> 挂载词库。</p>
+<p>就可以在 <code>pinyin_simp.extended</code> 中统一挂载所有词库，并且可以放在文件夹中，让赵配置的时候主目录不那么凌乱。</p>
+<h3 id="皮肤">皮肤</h3>
+<p>感谢 &lt;雨過之後、佛振&gt; 提供的 Rime 默认皮肤之一 《純粹的形式／Purity of Form》，试了一次后太喜欢了。</p>
+<p>稍微暗化了一点点，让在亮色和暗色下都不太刺眼。</p>
 
     </div>
 
@@ -710,6 +403,19 @@ if (!doNotTrack) {
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/24/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">我的 Rime 配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
           <a class="next" href="/post/23/">
             <span class="next-text nav-default">用 sleepwatcher 让 Mac 在睡眠及唤醒时自动执行一些脚本</span>
