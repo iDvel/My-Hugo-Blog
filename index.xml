@@ -608,6 +608,8 @@
 &lt;h3 id=&#34;简型八股文&#34;&gt;简型八股文&lt;/h3&gt;
 &lt;p&gt;长句输入效果直接翻了个倍。&lt;/p&gt;
 &lt;p&gt;推荐一个打字练习网站来试验以下：https://dazi.kukuw.com/&lt;/p&gt;
+&lt;h3 id=&#34;动态日期时间&#34;&gt;动态日期时间&lt;/h3&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/KyleBing&#34;&gt;KyleBing&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/KyleBing/rime-wubi86-jidian&#34;&gt;rime-wubi86-jidian&lt;/a&gt;&lt;/strong&gt; 提供 lua 脚本。&lt;/p&gt;
 &lt;h3 id=&#34;词库统一管理&#34;&gt;词库统一管理&lt;/h3&gt;
 &lt;p&gt;在 &lt;code&gt;&amp;lt;方案&amp;gt;.custom.yaml&lt;/code&gt; 中以 &lt;code&gt;translator/dictionary: pinyin_simp.extended&lt;/code&gt; 挂载词库。&lt;/p&gt;
 &lt;p&gt;就可以在 &lt;code&gt;pinyin_simp.extended&lt;/code&gt; 中统一挂载所有词库，并且可以放在文件夹中，让赵配置的时候主目录不那么凌乱。&lt;/p&gt;
