@@ -6,19 +6,10 @@
     <description>Recent content in Rime on Dvel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 31 Jan 2021 17:20:04 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2020 17:20:04 +0800</lastBuildDate>
     
 	<atom:link href="https://Dvel.xyz/tags/rime/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>我的 Rime 配置 2021</title>
-      <link>https://Dvel.xyz/post/30/</link>
-      <pubDate>Sun, 31 Jan 2021 17:20:04 +0800</pubDate>
-      
-      <guid>https://Dvel.xyz/post/30/</guid>
-      <description>基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 袖珍简体字方案及主词库 8150 简体字，去除大量生僻字 简型八股文长句模型 袖珍简体</description>
-    </item>
     
     <item>
       <title>我的 Rime 配置</title>
