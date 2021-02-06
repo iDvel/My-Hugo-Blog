@@ -12,21 +12,21 @@
     
     
     <item>
-      <title>我的 Rime 配置</title>
-      <link>https://Dvel.xyz/post/24/</link>
-      <pubDate>Sun, 31 Jan 2021 17:20:04 +0800</pubDate>
-      
-      <guid>https://Dvel.xyz/post/24/</guid>
-      <description>已更新，详见 我的 Rime 配置 2021 我的 Rime 配置 方案：luna_pinyin_simp 简中全拼 输入法全局设定 default.custom.yaml 常规设置，最好开启 Tab 移动光标的功能，这个太好</description>
-    </item>
-    
-    <item>
       <title>我的 Rime 配置 2021</title>
       <link>https://Dvel.xyz/post/30/</link>
       <pubDate>Sun, 31 Jan 2021 17:20:04 +0800</pubDate>
       
       <guid>https://Dvel.xyz/post/30/</guid>
-      <description>更新到 Squirrel 0.15.0 后，Rime 取消了 charset_filter，这样就不能使用 GB2312 过滤大部分生僻字了，只好切换到袖珍简体字方案。 在简型八股文和搜狗的</description>
+      <description>基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 袖珍简体字方案及主词库 8150 简体字，去除大量生僻字 简型八股文长句模型 袖珍简体</description>
+    </item>
+    
+    <item>
+      <title>我的 Rime 配置</title>
+      <link>https://Dvel.xyz/post/24/</link>
+      <pubDate>Tue, 31 Mar 2020 17:20:04 +0800</pubDate>
+      
+      <guid>https://Dvel.xyz/post/24/</guid>
+      <description>已更新，详见 我的 Rime 配置 2021 我的 Rime 配置 方案：luna_pinyin_simp 简中全拼 输入法全局设定 default.custom.yaml 常规设置，最好开启 Tab 移动光标的功能，这个太好</description>
     </item>
     
   </channel>

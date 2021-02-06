@@ -12,9 +12,83 @@
     
     
     <item>
+      <title>我的 Rime 配置 2021</title>
+      <link>https://Dvel.xyz/post/30/</link>
+      <pubDate>Sun, 31 Jan 2021 17:20:04 +0800</pubDate>
+      
+      <guid>https://Dvel.xyz/post/30/</guid>
+      
+        <description>&lt;h2 id=&#34;基本展示&#34;&gt;基本展示&lt;/h2&gt;
+&lt;p&gt;配置文件：&lt;a href=&#34;https://github.com/iDvel&#34;&gt;iDvel&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/iDvel/rime-settings&#34;&gt;rime-settings&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/202102061DA3VO.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;基本套路&#34;&gt;基本套路&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Squirrel 0.15.0&lt;/li&gt;
+&lt;li&gt;袖珍简体字方案及主词库&lt;/li&gt;
+&lt;li&gt;8150 简体字，去除大量生僻字&lt;/li&gt;
+&lt;li&gt;简型八股文长句模型&lt;/li&gt;
+&lt;li&gt;袖珍简体字也能打繁体&lt;/li&gt;
+&lt;li&gt;日常英文、中英混拼&lt;/li&gt;
+&lt;li&gt;常用全拼自动纠错&lt;/li&gt;
+&lt;li&gt;动态日期、时间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;基本法&#34;&gt;基本法&lt;/h2&gt;
+&lt;h3 id=&#34;搜狗百万词库&#34;&gt;搜狗百万词库&lt;/h3&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/liuour&#34;&gt;liuour&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/liuour/rime&#34;&gt;rime&lt;/a&gt;&lt;/strong&gt; 提供转换好的词库配置。&lt;/p&gt;
+&lt;p&gt;在此方案下，挂载的词库都应该是简体词库。&lt;/p&gt;
+&lt;h3 id=&#34;袖珍简体字与简化词库&#34;&gt;袖珍简体字与简化词库&lt;/h3&gt;
+&lt;p&gt;这个袖珍简体字方案如果直接使用，并没有之前的版本用朙月拼音+过滤 GB2312 来的舒服，生僻字也很多。&lt;/p&gt;
+&lt;p&gt;更新到 Squirrel 0.15.0 后，已经没有了 &lt;code&gt;charset_filter&lt;/code&gt;，这样就不能使用 GB2312 过滤大部分生僻字了，如果用 lua 脚本过滤的话太耗费性能了。&lt;/p&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/mozillazg&#34;&gt;mozillazg&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/mozillazg/pinyin-data&#34;&gt;pinyin-data&lt;/a&gt;&lt;/strong&gt; 提供了完善的汉字拼音数据。&lt;/p&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/placeless&#34;&gt;placeless&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/placeless/squirrel_config&#34;&gt;squirrel_config&lt;/a&gt;&lt;/strong&gt; 提供了成品的过滤后的 8105 简体字，让人可以愉快的使用袖珍简体字方案了。&lt;/p&gt;
+&lt;p&gt;另外在 &lt;code&gt;*.userdb.txt&lt;/code&gt; 中也以简体来展示自己的输入历史了。&lt;/p&gt;
+&lt;h3 id=&#34;英文中英混输&#34;&gt;英文、中英混输&lt;/h3&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/mityliu&#34;&gt;mityliu&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/mityliu/rime-custom&#34;&gt;rime-custom&lt;/a&gt;&lt;/strong&gt; 提供了 Easy English Nano 方案，相比 easy_en 可以以大写的方式进行输入。&lt;/p&gt;
+&lt;p&gt;感谢 瑾昀 &lt;a href=&#34;mailto:cokunhui@gmail.com&#34;&gt;cokunhui@gmail.com&lt;/a&gt; 提供了 cn_en 中英混输词库。&lt;/p&gt;
+&lt;p&gt;在此方案下，cn_en 词库应该取消拼音之间的空格，否则无法解析。（已修正）&lt;/p&gt;
+&lt;p&gt;关于英文输入的问题，如果 Easy English Nano 方案给的权重小于 0，则有些英文永远不会出现在第一候选项。&lt;/p&gt;
+&lt;p&gt;对于这点，只好给予 0 权重，为了优化拼音打字体验，启用 custom_phrase 并在其中配置 26 个字母的单编码最高优先候选项，这样英文就不会在单编码的时候顶到最前面来了。&lt;/p&gt;
+&lt;h3 id=&#34;custom_phrase&#34;&gt;custom_phrase&lt;/h3&gt;
+&lt;p&gt;袖珍方案没有写这个，照着之前的方案抄了一份，可以固顶一些字词，但是如果固顶了大量的单字并且给予了完整的拼音，如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;会	hui	
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这样以「会」结尾的自造词就无法被输入法记住，可能是因为两个不同的解释器之间不能混拼。&lt;/p&gt;
+&lt;p&gt;希望以后能有方便的固定候选项顺序且不影响自造词的方法。&lt;/p&gt;
+&lt;h3 id=&#34;简入繁出&#34;&gt;简入繁出&lt;/h3&gt;
+&lt;p&gt;感谢 &lt;strong&gt;&lt;a href=&#34;https://github.com/Ace-Who&#34;&gt;Ace-Who&lt;/a&gt;&lt;/strong&gt; 在 &lt;a href=&#34;https://github.com/rime/home/issues/388#issuecomment-504572224&#34;&gt;rime/home/issues#388&lt;/a&gt; 展示的简入繁出方法，袖珍简体方案也可以愉快的打繁体字了。&lt;/p&gt;
+&lt;h3 id=&#34;emoji&#34;&gt;emoji&lt;/h3&gt;
+&lt;p&gt;没有使用 emoji，不过在 &lt;code&gt;symbols.custom&lt;/code&gt; 中存入了一些，并且使用 “v” 模式来调用，可以设置一个自己常用的快捷键和一些表情。&lt;/p&gt;
+&lt;h3 id=&#34;自动纠错&#34;&gt;自动纠错&lt;/h3&gt;
+&lt;p&gt;写了几个常用的自动纠错，简直太好用了，比如示例图中的：&lt;/p&gt;
+&lt;p&gt;ni zia gna she me → 你在干什么&lt;/p&gt;
+&lt;p&gt;zia → zai：由 &lt;code&gt;derive/([wtpsdghkzcbnm])ai$/$1ia/&lt;/code&gt; 转换。&lt;/p&gt;
+&lt;p&gt;gna → gan：由 &lt;code&gt;derive/([wrtypsdfghjklzcbnm])a([on])$/$1$2a/&lt;/code&gt; 转换。&lt;/p&gt;
+&lt;p&gt;she me → shen me：由个人词库添加的容错词转换。&lt;/p&gt;
+&lt;h3 id=&#34;简型八股文&#34;&gt;简型八股文&lt;/h3&gt;
+&lt;p&gt;长句输入效果直接翻了个倍。&lt;/p&gt;
+&lt;p&gt;推荐一个打字练习网站来试验以下：https://dazi.kukuw.com/&lt;/p&gt;
+&lt;h3 id=&#34;动态日期时间&#34;&gt;动态日期时间&lt;/h3&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/KyleBing&#34;&gt;KyleBing&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/KyleBing/rime-wubi86-jidian&#34;&gt;rime-wubi86-jidian&lt;/a&gt;&lt;/strong&gt; 提供 lua 脚本。&lt;/p&gt;
+&lt;h3 id=&#34;词库统一管理&#34;&gt;词库统一管理&lt;/h3&gt;
+&lt;p&gt;在 &lt;code&gt;&amp;lt;方案&amp;gt;.custom.yaml&lt;/code&gt; 中以 &lt;code&gt;translator/dictionary: pinyin_simp.extended&lt;/code&gt; 挂载词库。&lt;/p&gt;
+&lt;p&gt;就可以在 &lt;code&gt;pinyin_simp.extended&lt;/code&gt; 中统一挂载所有词库，并且可以放在文件夹中，让找配置的时候主目录不那么凌乱。&lt;/p&gt;
+&lt;h3 id=&#34;皮肤&#34;&gt;皮肤&lt;/h3&gt;
+&lt;p&gt;感谢 &amp;lt;雨過之後、佛振&amp;gt; 提供的 Rime 默认皮肤之一 《純粹的形式／Purity of Form》，试了一次后太喜欢了。&lt;/p&gt;
+&lt;p&gt;稍微暗化了一点点，让平常使用时不太刺眼。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>我的 Rime 配置</title>
       <link>https://Dvel.xyz/post/24/</link>
-      <pubDate>Sun, 31 Jan 2021 17:20:04 +0800</pubDate>
+      <pubDate>Tue, 31 Mar 2020 17:20:04 +0800</pubDate>
       
       <guid>https://Dvel.xyz/post/24/</guid>
       
@@ -555,68 +629,6 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>我的 Rime 配置 2021</title>
-      <link>https://Dvel.xyz/post/30/</link>
-      <pubDate>Sun, 31 Jan 2021 17:20:04 +0800</pubDate>
-      
-      <guid>https://Dvel.xyz/post/30/</guid>
-      
-        <description>&lt;p&gt;更新到 Squirrel 0.15.0 后，Rime 取消了 &lt;code&gt;charset_filter&lt;/code&gt;，这样就不能使用 GB2312 过滤大部分生僻字了，只好切换到袖珍简体字方案。&lt;/p&gt;
-&lt;p&gt;在简型八股文和搜狗的简体百万词库的支持下，长句输入体验非常好！&lt;/p&gt;
-&lt;h2 id=&#34;基本展示&#34;&gt;基本展示&lt;/h2&gt;
-&lt;p&gt;配置文件：&lt;a href=&#34;https://github.com/iDvel&#34;&gt;iDvel&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/iDvel/rime-settings&#34;&gt;rime-settings&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/202102061DA3VO.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;基本套路&#34;&gt;基本套路&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Squirrel 0.15.0&lt;/li&gt;
-&lt;li&gt;袖珍简体字方案及主词库&lt;/li&gt;
-&lt;li&gt;8150 简体字，去除大量生僻字&lt;/li&gt;
-&lt;li&gt;简型八股文长句模型&lt;/li&gt;
-&lt;li&gt;袖珍简体字也能打繁体&lt;/li&gt;
-&lt;li&gt;日常英文、中英混拼&lt;/li&gt;
-&lt;li&gt;常用全拼自动纠错&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;基本法&#34;&gt;基本法&lt;/h2&gt;
-&lt;h3 id=&#34;搜狗百万词库&#34;&gt;搜狗百万词库&lt;/h3&gt;
-&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/liuour&#34;&gt;liuour&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/liuour/rime&#34;&gt;rime&lt;/a&gt;&lt;/strong&gt; 提供转换好的词库配置。&lt;/p&gt;
-&lt;p&gt;在此方案下，挂载的词库都应该是简体词库。&lt;/p&gt;
-&lt;h3 id=&#34;袖珍简体字&#34;&gt;袖珍简体字&lt;/h3&gt;
-&lt;p&gt;这个袖珍简体字方案如果直接使用，并没有之前的版本用朙月拼音+过滤 GB2312 来的舒服，生僻字反而更多了。&lt;/p&gt;
-&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/mozillazg&#34;&gt;mozillazg&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/mozillazg/pinyin-data&#34;&gt;pinyin-data&lt;/a&gt;&lt;/strong&gt; 提供了完善的汉字拼音数据。&lt;/p&gt;
-&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/placeless&#34;&gt;placeless&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/placeless/squirrel_config&#34;&gt;squirrel_config&lt;/a&gt;&lt;/strong&gt; 提供了成品的过滤后的 8105 简体字，让人可以愉快的使用袖珍简体字方案了。&lt;/p&gt;
-&lt;p&gt;另外在 &lt;code&gt;*.userdb.txt&lt;/code&gt; 中也以简体来展示自己的输入历史了。&lt;/p&gt;
-&lt;h3 id=&#34;英文中英混输&#34;&gt;英文、中英混输&lt;/h3&gt;
-&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/mityliu&#34;&gt;mityliu&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/mityliu/rime-custom&#34;&gt;rime-custom&lt;/a&gt;&lt;/strong&gt; 提供了 Easy English Nano 方案，相比 easy_en 可以以大写的方式进行输入。&lt;/p&gt;
-&lt;p&gt;感谢 瑾昀 &lt;a href=&#34;mailto:cokunhui@gmail.com&#34;&gt;cokunhui@gmail.com&lt;/a&gt; 提供了 cn_en 中英混输词库。&lt;/p&gt;
-&lt;p&gt;在此方案下，cn_en 词库应该取消拼音之间的空格，否则无法解析。（已修正）&lt;/p&gt;
-&lt;p&gt;关于英文输入的问题，如果 Easy English Nano 方案给的权重小于 0，则有些英文永远不会出现在第一候选项。&lt;/p&gt;
-&lt;p&gt;对于这点，只好给予 0 权重，并且启用 custom_phrase 并在其中配置 26 个字母的单编码最高优先候选项。&lt;/p&gt;
-&lt;h3 id=&#34;简入繁出&#34;&gt;简入繁出&lt;/h3&gt;
-&lt;p&gt;感谢 &lt;strong&gt;&lt;a href=&#34;https://github.com/Ace-Who&#34;&gt;Ace-Who&lt;/a&gt;&lt;/strong&gt; 在 &lt;a href=&#34;https://github.com/rime/home/issues/388#issuecomment-504572224&#34;&gt;rime/home/issues#388&lt;/a&gt; 展示的简入繁出方法，袖珍简体方案也可以愉快的打繁体字了。&lt;/p&gt;
-&lt;h3 id=&#34;emoji&#34;&gt;emoji&lt;/h3&gt;
-&lt;p&gt;没有使用 emoji，不过在 &lt;code&gt;symbols.custom&lt;/code&gt; 中存入了一些，并且使用 “v” 模式来调用，可以设置一个自己常用的快捷键和一些表情。&lt;/p&gt;
-&lt;h3 id=&#34;自动纠错&#34;&gt;自动纠错&lt;/h3&gt;
-&lt;p&gt;些了几个常用的自动纠错，简直太好用了，比如示例图中的：&lt;/p&gt;
-&lt;p&gt;ni zia gna she me → 你在干什么&lt;/p&gt;
-&lt;p&gt;zia → zai：由 &lt;code&gt;derive/([wtpsdghkzcbnm])ai$/$1ia/&lt;/code&gt; 转换。&lt;/p&gt;
-&lt;p&gt;gna → gan：由 &lt;code&gt;derive/([wrtypsdfghjklzcbnm])a([on])$/$1$2a/&lt;/code&gt; 转换。&lt;/p&gt;
-&lt;p&gt;she me → shen me：由个人词库添加的容错词转换。&lt;/p&gt;
-&lt;h3 id=&#34;简型八股文&#34;&gt;简型八股文&lt;/h3&gt;
-&lt;p&gt;长句输入效果直接翻了个倍。&lt;/p&gt;
-&lt;p&gt;推荐一个打字练习网站来试验以下：https://dazi.kukuw.com/&lt;/p&gt;
-&lt;h3 id=&#34;动态日期时间&#34;&gt;动态日期时间&lt;/h3&gt;
-&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/KyleBing&#34;&gt;KyleBing&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/KyleBing/rime-wubi86-jidian&#34;&gt;rime-wubi86-jidian&lt;/a&gt;&lt;/strong&gt; 提供 lua 脚本。&lt;/p&gt;
-&lt;h3 id=&#34;词库统一管理&#34;&gt;词库统一管理&lt;/h3&gt;
-&lt;p&gt;在 &lt;code&gt;&amp;lt;方案&amp;gt;.custom.yaml&lt;/code&gt; 中以 &lt;code&gt;translator/dictionary: pinyin_simp.extended&lt;/code&gt; 挂载词库。&lt;/p&gt;
-&lt;p&gt;就可以在 &lt;code&gt;pinyin_simp.extended&lt;/code&gt; 中统一挂载所有词库，并且可以放在文件夹中，让赵配置的时候主目录不那么凌乱。&lt;/p&gt;
-&lt;h3 id=&#34;皮肤&#34;&gt;皮肤&lt;/h3&gt;
-&lt;p&gt;感谢 &amp;lt;雨過之後、佛振&amp;gt; 提供的 Rime 默认皮肤之一 《純粹的形式／Purity of Form》，试了一次后太喜欢了。&lt;/p&gt;
-&lt;p&gt;稍微暗化了一点点，让在亮色和暗色下都不太刺眼。&lt;/p&gt;
-</description>
       
     </item>
     
