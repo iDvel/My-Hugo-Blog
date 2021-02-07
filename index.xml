@@ -33,7 +33,7 @@
 &lt;li&gt;动态日期、时间&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;基本法&#34;&gt;基本法&lt;/h2&gt;
-&lt;h3 id=&#34;袖珍简体字与简化词库&#34;&gt;袖珍简体字与简化词库&lt;/h3&gt;
+&lt;h3 id=&#34;袖珍简化字方案与简化词库&#34;&gt;袖珍简化字方案与简化词库&lt;/h3&gt;
 &lt;p&gt;这个袖珍简体字方案如果直接使用，并没有之前的版本用朙月拼音+过滤 GB2312 来的舒服，生僻字也很多。&lt;/p&gt;
 &lt;p&gt;更新到 Squirrel 0.15.0 后，已经没有了 &lt;code&gt;charset_filter&lt;/code&gt;，这样就不能使用 GB2312 过滤大部分生僻字了，如果用 lua 脚本过滤的话太耗费性能了。&lt;/p&gt;
 &lt;p&gt;感谢 &lt;a href=&#34;https://github.com/mozillazg&#34;&gt;mozillazg&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/mozillazg/pinyin-data&#34;&gt;pinyin-data&lt;/a&gt;&lt;/strong&gt; 提供了完善的汉字拼音数据。&lt;/p&gt;
@@ -67,20 +67,23 @@
 &lt;p&gt;没有使用 emoji，不过在 &lt;code&gt;symbols.custom&lt;/code&gt; 中存入了一些，并且使用 “v” 模式来调用，可以设置一个自己常用的快捷键和一些表情，或在 opencc 中添加 emoji 支持文件。&lt;/p&gt;
 &lt;h3 id=&#34;自动纠错&#34;&gt;自动纠错&lt;/h3&gt;
 &lt;p&gt;写了几个常用的自动纠错，简直太好用了，比如示例图中的：&lt;/p&gt;
-&lt;p&gt;ni zia gna she me → 你在干什么&lt;/p&gt;
+&lt;p&gt;ni tina tain do zia gna she me → 你天天都在干什么&lt;/p&gt;
+&lt;p&gt;tina → tian：由 &lt;code&gt;derive/ian$/ina/&lt;/code&gt; 转换。&lt;/p&gt;
+&lt;p&gt;tain → tian：由 &lt;code&gt;derive/([iu])a(o|ng?)$/a$1$2/&lt;/code&gt; 转换。&lt;/p&gt;
+&lt;p&gt;do → dou：由 &lt;code&gt;derive/([dtngkhrzcs])o(u)$/$1o/&lt;/code&gt; 转换。&lt;/p&gt;
 &lt;p&gt;zia → zai：由 &lt;code&gt;derive/([wtpsdghkzcbnm])ai$/$1ia/&lt;/code&gt; 转换。&lt;/p&gt;
 &lt;p&gt;gna → gan：由 &lt;code&gt;derive/([wrtypsdfghjklzcbnm])a([on])$/$1$2a/&lt;/code&gt; 转换。&lt;/p&gt;
-&lt;p&gt;she me → shen me：由个人词库添加的容错词转换。&lt;/p&gt;
+&lt;p&gt;she me → shen me：由词库中添加的容错词转换。&lt;/p&gt;
 &lt;h3 id=&#34;简型八股文&#34;&gt;简型八股文&lt;/h3&gt;
-&lt;p&gt;长句输入效果直接翻了个倍。&lt;/p&gt;
-&lt;p&gt;推荐一个打字练习网站来试验以下：https://dazi.kukuw.com/&lt;/p&gt;
+&lt;p&gt;长句输入效果直接翻了个倍，不过大长句和搜狗比还差了十倍，毕竟是单机个人词库。&lt;/p&gt;
+&lt;p&gt;但在日常聊天的小长句输入上已经完美了，userdb 攒的越久，用起来越舒服。&lt;/p&gt;
 &lt;h3 id=&#34;动态日期时间&#34;&gt;动态日期时间&lt;/h3&gt;
-&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/KyleBing&#34;&gt;KyleBing&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/KyleBing/rime-wubi86-jidian&#34;&gt;rime-wubi86-jidian&lt;/a&gt;&lt;/strong&gt; 提供 lua 脚本。&lt;/p&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://github.com/KyleBing&#34;&gt;KyleBing&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/KyleBing/rime-wubi86-jidian&#34;&gt;rime-wubi86-jidian&lt;/a&gt;&lt;/strong&gt; 提供的 lua 脚本。&lt;/p&gt;
 &lt;h3 id=&#34;词库统一管理&#34;&gt;词库统一管理&lt;/h3&gt;
 &lt;p&gt;在 &lt;code&gt;&amp;lt;方案&amp;gt;.custom.yaml&lt;/code&gt; 中以 &lt;code&gt;translator/dictionary: pinyin_simp.extended&lt;/code&gt; 挂载词库。&lt;/p&gt;
 &lt;p&gt;就可以在 &lt;code&gt;pinyin_simp.extended&lt;/code&gt; 中统一挂载所有词库，并且可以放在文件夹中，让找配置的时候主目录不那么凌乱。&lt;/p&gt;
 &lt;h3 id=&#34;皮肤&#34;&gt;皮肤&lt;/h3&gt;
-&lt;p&gt;感谢 &amp;lt;雨過之後、佛振&amp;gt; 提供的 Rime 默认皮肤之一 《純粹的形式／Purity of Form》，试了一次后太喜欢了。&lt;/p&gt;
+&lt;p&gt;感谢 &amp;lt;雨過之後、佛振&amp;gt; 编写的 Rime 默认皮肤之一 《純粹的形式／Purity of Form》，试了一次后太喜欢了。&lt;/p&gt;
 &lt;p&gt;稍微暗化了一点点，让平常使用时不太刺眼。&lt;/p&gt;
 </description>
       

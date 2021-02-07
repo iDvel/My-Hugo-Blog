@@ -69,7 +69,7 @@
 <meta itemprop="description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 袖珍简体字方案及主词库 8150 简体字，去除大量生僻字 简型八股文长句模型 袖珍简体">
 <meta itemprop="datePublished" content="2020-03-31T17:21:05+08:00" />
 <meta itemprop="dateModified" content="2020-03-31T17:21:05+08:00" />
-<meta itemprop="wordCount" content="1186">
+<meta itemprop="wordCount" content="1252">
 
 
 
@@ -281,7 +281,7 @@ if (!doNotTrack) {
     <li><a href="#基本套路">基本套路</a></li>
     <li><a href="#基本法">基本法</a>
       <ul>
-        <li><a href="#袖珍简体字与简化词库">袖珍简体字与简化词库</a></li>
+        <li><a href="#袖珍简化字方案与简化词库">袖珍简化字方案与简化词库</a></li>
         <li><a href="#搜狗百万词库">搜狗百万词库</a></li>
         <li><a href="#英文中英混输">英文、中英混输</a></li>
         <li><a href="#custom_phrase">custom_phrase</a></li>
@@ -316,7 +316,7 @@ if (!doNotTrack) {
 <li>动态日期、时间</li>
 </ul>
 <h2 id="基本法">基本法</h2>
-<h3 id="袖珍简体字与简化词库">袖珍简体字与简化词库</h3>
+<h3 id="袖珍简化字方案与简化词库">袖珍简化字方案与简化词库</h3>
 <p>这个袖珍简体字方案如果直接使用，并没有之前的版本用朙月拼音+过滤 GB2312 来的舒服，生僻字也很多。</p>
 <p>更新到 Squirrel 0.15.0 后，已经没有了 <code>charset_filter</code>，这样就不能使用 GB2312 过滤大部分生僻字了，如果用 lua 脚本过滤的话太耗费性能了。</p>
 <p>感谢 <a href="https://github.com/mozillazg">mozillazg</a>/<strong><a href="https://github.com/mozillazg/pinyin-data">pinyin-data</a></strong> 提供了完善的汉字拼音数据。</p>
@@ -350,20 +350,23 @@ if (!doNotTrack) {
 <p>没有使用 emoji，不过在 <code>symbols.custom</code> 中存入了一些，并且使用 “v” 模式来调用，可以设置一个自己常用的快捷键和一些表情，或在 opencc 中添加 emoji 支持文件。</p>
 <h3 id="自动纠错">自动纠错</h3>
 <p>写了几个常用的自动纠错，简直太好用了，比如示例图中的：</p>
-<p>ni zia gna she me → 你在干什么</p>
+<p>ni tina tain do zia gna she me → 你天天都在干什么</p>
+<p>tina → tian：由 <code>derive/ian$/ina/</code> 转换。</p>
+<p>tain → tian：由 <code>derive/([iu])a(o|ng?)$/a$1$2/</code> 转换。</p>
+<p>do → dou：由 <code>derive/([dtngkhrzcs])o(u)$/$1o/</code> 转换。</p>
 <p>zia → zai：由 <code>derive/([wtpsdghkzcbnm])ai$/$1ia/</code> 转换。</p>
 <p>gna → gan：由 <code>derive/([wrtypsdfghjklzcbnm])a([on])$/$1$2a/</code> 转换。</p>
-<p>she me → shen me：由个人词库添加的容错词转换。</p>
+<p>she me → shen me：由词库中添加的容错词转换。</p>
 <h3 id="简型八股文">简型八股文</h3>
-<p>长句输入效果直接翻了个倍。</p>
-<p>推荐一个打字练习网站来试验以下：https://dazi.kukuw.com/</p>
+<p>长句输入效果直接翻了个倍，不过大长句和搜狗比还差了十倍，毕竟是单机个人词库。</p>
+<p>但在日常聊天的小长句输入上已经完美了，userdb 攒的越久，用起来越舒服。</p>
 <h3 id="动态日期时间">动态日期时间</h3>
-<p>感谢 <a href="https://github.com/KyleBing">KyleBing</a>/<strong><a href="https://github.com/KyleBing/rime-wubi86-jidian">rime-wubi86-jidian</a></strong> 提供 lua 脚本。</p>
+<p>感谢 <a href="https://github.com/KyleBing">KyleBing</a>/<strong><a href="https://github.com/KyleBing/rime-wubi86-jidian">rime-wubi86-jidian</a></strong> 提供的 lua 脚本。</p>
 <h3 id="词库统一管理">词库统一管理</h3>
 <p>在 <code>&lt;方案&gt;.custom.yaml</code> 中以 <code>translator/dictionary: pinyin_simp.extended</code> 挂载词库。</p>
 <p>就可以在 <code>pinyin_simp.extended</code> 中统一挂载所有词库，并且可以放在文件夹中，让找配置的时候主目录不那么凌乱。</p>
 <h3 id="皮肤">皮肤</h3>
-<p>感谢 &lt;雨過之後、佛振&gt; 提供的 Rime 默认皮肤之一 《純粹的形式／Purity of Form》，试了一次后太喜欢了。</p>
+<p>感谢 &lt;雨過之後、佛振&gt; 编写的 Rime 默认皮肤之一 《純粹的形式／Purity of Form》，试了一次后太喜欢了。</p>
 <p>稍微暗化了一点点，让平常使用时不太刺眼。</p>
 
     </div>
