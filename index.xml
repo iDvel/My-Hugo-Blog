@@ -61,7 +61,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这样以「会」结尾的自造词就无法被输入法记住，可能是因为两个不同的解释器之间不能混拼。&lt;/p&gt;
 &lt;p&gt;希望以后能有方便的固定候选项顺序且不影响自造词的方法。&lt;/p&gt;
-&lt;h3 id=&#34;简入繁出&#34;&gt;简入繁出&lt;/h3&gt;
+&lt;h3 id=&#34;袖珍方案输出繁体&#34;&gt;袖珍方案输出繁体&lt;/h3&gt;
 &lt;p&gt;感谢 &lt;strong&gt;&lt;a href=&#34;https://github.com/Ace-Who&#34;&gt;Ace-Who&lt;/a&gt;&lt;/strong&gt; 在 &lt;a href=&#34;https://github.com/rime/home/issues/388#issuecomment-504572224&#34;&gt;rime/home/issues#388&lt;/a&gt; 展示的简入繁出方法，袖珍简体方案也可以愉快的打繁体字了。&lt;/p&gt;
 &lt;h3 id=&#34;emoji&#34;&gt;emoji&lt;/h3&gt;
 &lt;p&gt;没有使用 emoji，不过在 &lt;code&gt;symbols.custom&lt;/code&gt; 中存入了一些，并且使用 “v” 模式来调用，可以设置一个自己常用的快捷键和一些表情，或在 opencc 中添加 emoji 支持文件。&lt;/p&gt;
