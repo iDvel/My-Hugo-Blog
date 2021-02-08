@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Dvel" />
-  <meta name="description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 袖珍简体字方案及主词库 8150 简体字，去除大量生僻字 简型八股文长句模型 袖珍简体" />
+  <meta name="description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 简中全拼 0.15.0 后 charset_filter@gb2312失效，放弃了朙月拼" />
 
   <meta name="keywords" content="Dvel" />
 
@@ -60,23 +60,23 @@
 
 
 <meta property="og:title" content="我的 Rime 配置 2021" />
-<meta property="og:description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 袖珍简体字方案及主词库 8150 简体字，去除大量生僻字 简型八股文长句模型 袖珍简体" />
+<meta property="og:description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 简中全拼 0.15.0 后 charset_filter@gb2312失效，放弃了朙月拼" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Dvel.xyz/post/30/" />
 <meta property="article:published_time" content="2020-03-31T17:21:05+08:00" />
 <meta property="article:modified_time" content="2020-03-31T17:21:05+08:00" />
 <meta itemprop="name" content="我的 Rime 配置 2021">
-<meta itemprop="description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 袖珍简体字方案及主词库 8150 简体字，去除大量生僻字 简型八股文长句模型 袖珍简体">
+<meta itemprop="description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 简中全拼 0.15.0 后 charset_filter@gb2312失效，放弃了朙月拼">
 <meta itemprop="datePublished" content="2020-03-31T17:21:05+08:00" />
 <meta itemprop="dateModified" content="2020-03-31T17:21:05+08:00" />
-<meta itemprop="wordCount" content="1256">
+<meta itemprop="wordCount" content="1560">
 
 
 
 <meta itemprop="keywords" content="Rime,Squirrel," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="我的 Rime 配置 2021"/>
-<meta name="twitter:description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 袖珍简体字方案及主词库 8150 简体字，去除大量生僻字 简型八股文长句模型 袖珍简体"/>
+<meta name="twitter:description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 简中全拼 0.15.0 后 charset_filter@gb2312失效，放弃了朙月拼"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -287,6 +287,7 @@ if (!doNotTrack) {
         <li><a href="#custom_phrase">custom_phrase</a></li>
         <li><a href="#袖珍方案输出繁体">袖珍方案输出繁体</a></li>
         <li><a href="#emoji">emoji</a></li>
+        <li><a href="#symbols">symbols</a></li>
         <li><a href="#自动纠错">自动纠错</a></li>
         <li><a href="#简型八股文">简型八股文</a></li>
         <li><a href="#动态日期时间">动态日期时间</a></li>
@@ -306,14 +307,19 @@ if (!doNotTrack) {
 <p><img src="https://img.dvel.xyz/202102061DA3VO.jpg" alt=""></p>
 <h2 id="基本套路">基本套路</h2>
 <ul>
-<li>Squirrel 0.15.0</li>
-<li>袖珍简体字方案及主词库</li>
-<li>8150 简体字，去除大量生僻字</li>
-<li>简型八股文长句模型</li>
-<li>袖珍简体字也能打繁体</li>
-<li>日常英文、中英混拼</li>
-<li>常用全拼自动纠错</li>
-<li>动态日期、时间</li>
+<li>Squirrel 0.15.0 简中全拼</li>
+<li>0.15.0 后 <code>charset_filter@gb2312</code>失效，放弃了朙月拼音方案，直接使用袖珍简化字方案 <a href="https://github.com/rime">rime</a>/<strong><a href="https://github.com/rime/rime-pinyin-simp">rime-pinyin-simp</a></strong></li>
+<li>8105 简体字，去除大量生僻字 <a href="https://github.com/placeless">placeless</a>/<strong><a href="https://github.com/placeless/squirrel_config">squirrel_config</a></strong> （太太太太感谢了！要没这个我还在用 0.14.0）</li>
+<li>简型八股文模型 <a href="https://github.com/lotem">lotem</a>/<strong><a href="https://github.com/lotem/rime-octagram-data/tree/hans">rime-octagram-data/tree/hans</a></strong></li>
+<li>英文输入方案 Easy English Nano <a href="https://github.com/mityliu">mityliu</a>/<strong><a href="https://github.com/mityliu/rime-custom">rime-custom</a></strong></li>
+<li>中英混输词库 &lt;瑾昀 <a href="mailto:cokunhui@gmail.com">cokunhui@gmail.com</a>&gt;</li>
+<li>袖珍方案输出繁体，参考了五笔的简入繁出 <a href="https://github.com/rime/home/issues/388#issuecomment-504572224">rime/home/issues#388</a></li>
+<li>搜狗两百万词库 <a href="https://github.com/liuour">liuour</a>/<strong><a href="https://github.com/liuour/rime">rime</a></strong></li>
+<li>动态日期、时间、星期 <a href="https://github.com/KyleBing">KyleBing</a>/<strong><a href="https://github.com/KyleBing/rime-wubi86-jidian">rime-wubi86-jidian</a></strong></li>
+<li>所有标点符号直接上屏，并将「/」模式改为「v」模式</li>
+<li>增加了 <code>opencc/</code> 键盘符号映射，删除了 emoji 映射，如需要 emoji 可参考 <a href="https://github.com/liuour">liuour</a>/<strong><a href="https://github.com/liuour/rime">rime</a></strong></li>
+<li>symbols 改为简体字（如节气、八卦），增加一些自定义符号</li>
+<li>常用全拼自动纠错：<code>ni tina tain do zia gna she me</code> → <code>你天天都在干什么</code></li>
 </ul>
 <h2 id="基本法">基本法</h2>
 <h3 id="袖珍简化字方案与简化词库">袖珍简化字方案与简化词库</h3>
@@ -347,18 +353,21 @@ if (!doNotTrack) {
 <h3 id="袖珍方案输出繁体">袖珍方案输出繁体</h3>
 <p>感谢 <strong><a href="https://github.com/Ace-Who">Ace-Who</a></strong> 在 <a href="https://github.com/rime/home/issues/388#issuecomment-504572224">rime/home/issues#388</a> 展示的简入繁出方法，袖珍简体方案也可以愉快的打繁体字了。</p>
 <h3 id="emoji">emoji</h3>
-<p>没有使用 emoji，不过在 <code>symbols.custom</code> 中存入了一些，并且使用 “v” 模式来调用，可以设置一个自己常用的快捷键和一些表情，或在 opencc 中添加 emoji 支持文件。</p>
+<p>没有使用 emoji，不过在 <code>symbols.custom</code> 中存入了一些，并且使用 “v” 模式来调用，可以设置一个自己常用的快捷键和一些表情，或在 opencc 中添加 emoji 支持文件。如需要 emoji 可参考 <a href="https://github.com/liuour">liuour</a>/<strong><a href="https://github.com/liuour/rime">rime</a></strong>。</p>
+<h3 id="symbols">symbols</h3>
+<p>自建的名字取为了 <code>symbols.custom</code>，将所有的 「/」前缀改为了「v」，里面的繁体字符改为简体字（如节气、八卦），增加一些自定义符号。</p>
+<p>取消了半角符号的候选项，全部直接上屏。</p>
 <h3 id="自动纠错">自动纠错</h3>
 <p>写了几个常用的自动纠错，简直太好用了，比如示例图中的：</p>
-<p>ni tina tain do zia gna she me → 你天天都在干什么</p>
-<p>tina → tian：由 <code>derive/ian$/ina/</code> 转换。</p>
-<p>tain → tian：由 <code>derive/([iu])a(o|ng?)$/a$1$2/</code> 转换。</p>
-<p>do → dou：由 <code>derive/([dtngkhrzcs])o(u)$/$1o/</code> 转换。</p>
-<p>zia → zai：由 <code>derive/([wtpsdghkzcbnm])ai$/$1ia/</code> 转换。</p>
-<p>gna → gan：由 <code>derive/([wrtypsdfghjklzcbnm])a([on])$/$1$2a/</code> 转换。</p>
-<p>she me → shen me：由词库中添加的容错词转换。</p>
+<p><code>ni tina tain do zia gna she me</code> → <code>你天天都在干什么</code></p>
+<p><code>tina → tian</code>：由 <code>derive/ian$/ina/</code> 转换。</p>
+<p><code>tain → tian</code>：由 <code>derive/([iu])a(o|ng?)$/a$1$2/</code> 转换。</p>
+<p><code>do → dou</code>：由 <code>derive/([dtngkhrzcs])o(u)$/$1o/</code> 转换。</p>
+<p><code>zia → zai</code>：由 <code>derive/([wtpsdghkzcbnm])ai$/$1ia/</code> 转换。</p>
+<p><code>gna → gan</code>：由 <code>derive/([wrtypsdfghjklzcbnm])a([on])$/$1$2a/</code> 转换。</p>
+<p><code>she me → shen me</code>：由词库中添加的容错词转换。</p>
 <h3 id="简型八股文">简型八股文</h3>
-<p>长句输入效果直接翻了个倍，不过大长句和搜狗比还差了十倍，毕竟是单机个人词库。</p>
+<p>长句输入效果直接翻了个倍，不过大长句和搜狗比还差了很多，毕竟是单机个人词库。</p>
 <p>但在日常聊天的小长句输入上已经完美了，userdb 攒的越久，用起来越舒服。</p>
 <h3 id="动态日期时间">动态日期时间</h3>
 <p>感谢 <a href="https://github.com/KyleBing">KyleBing</a>/<strong><a href="https://github.com/KyleBing/rime-wubi86-jidian">rime-wubi86-jidian</a></strong> 提供的 lua 脚本。</p>
