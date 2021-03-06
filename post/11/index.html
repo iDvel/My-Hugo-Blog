@@ -69,7 +69,7 @@
 <meta itemprop="description" content="新 MBP 到手后，我就预感要折腾好一阵子，因为之前把系统整的太凌乱，决定不使用 Time Machine，从头开始对 MBP 新装新居。 记录一下，为了以后再次更换设">
 <meta itemprop="datePublished" content="2018-07-27T17:35:04+00:00" />
 <meta itemprop="dateModified" content="2018-07-27T17:35:04+00:00" />
-<meta itemprop="wordCount" content="915">
+<meta itemprop="wordCount" content="926">
 
 
 
@@ -295,7 +295,7 @@ if (!doNotTrack) {
 <li>Dock：将窗口最小化为应用程序图标，连按最小化
 <ul>
 <li>吮吸效果：<code>defaults write com.apple.dock mineffect suck; Killall Dock</code></li>
-<li>添加空白格：<code>defaults write com.apple.dock persistent-apps -array-add '{&quot;tile-type&quot;=&quot;spacer-tile&quot;;}'; Killall Dock</code></li>
+<li>添加空白格：<code> defaults write com.apple.dock persistent-apps -array-add '{&quot;tile-type&quot;=&quot;spacer-tile&quot;;}'; Killall Dock</code></li>
 <li>堆栈区网格高亮：<code>defaults write com.apple.dock mouse-over-hilite-stack -bool TRUE;killall Dock</code></li>
 </ul>
 </li>
@@ -318,6 +318,7 @@ if (!doNotTrack) {
 <p>部分快捷键重设（个人偏好）</p>
 <ul>
 <li>双击 command：Alfred</li>
+<li>双击 option：Alfred 剪贴板</li>
 <li>command + 空格：切换输入法</li>
 <li>option + 空格：Alfred - File search - Navigation</li>
 <li>control + 空格：spotlight</li>

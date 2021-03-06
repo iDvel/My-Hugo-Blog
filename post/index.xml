@@ -17,16 +17,7 @@
       <pubDate>Tue, 31 Mar 2020 17:21:05 +0800</pubDate>
       
       <guid>https://Dvel.xyz/post/30/</guid>
-      <description>基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 简中全拼 0.15.0 后 charset_filter@gb2312失效，放弃了朙月拼</description>
-    </item>
-    
-    <item>
-      <title>我的 Rime 配置</title>
-      <link>https://Dvel.xyz/post/24/</link>
-      <pubDate>Tue, 31 Mar 2020 17:20:04 +0800</pubDate>
-      
-      <guid>https://Dvel.xyz/post/24/</guid>
-      <description>已更新，详见 我的 Rime 配置 2021 我的 Rime 配置 方案：luna_pinyin_simp 简中全拼 输入法全局设定 default.custom.yaml 常规设置，最好开启 Tab 移动光标的功能，这个太好</description>
+      <description>基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 简中全拼 0.15.0 后 charset_filter@gb2312 失效，放弃了朙月拼音方案，改用袖珍简化字方案 rime/rime-pinyin-simp 在袖珍简化字</description>
     </item>
     
     <item>
@@ -189,6 +180,15 @@
       
       <guid>https://Dvel.xyz/post/2/</guid>
       <description>偶尔可能要写一些生成本地文件发给朋友看，所以。。。 简单生成本地静态 HTML 的方法 安装：$ npm install gitbook-cli -g 生成：$ gitbook build 结果：左侧目录无法点击。 $ gitbook serve 可通过l</description>
+    </item>
+    
+    <item>
+      <title>你好, Hexo！</title>
+      <link>https://Dvel.xyz/post/0/</link>
+      <pubDate>Sun, 27 Nov 2016 00:48:36 +0000</pubDate>
+      
+      <guid>https://Dvel.xyz/post/0/</guid>
+      <description>因为之前的 WordPress 博客域名被墙，加上 Hexo 正好满足于简单的书写要求，所以更换为 Hexo。 主要还是记录了自己的搭建过程，因为对 Linux 不太熟悉，以备忘为主。 后</description>
     </item>
     
   </channel>
