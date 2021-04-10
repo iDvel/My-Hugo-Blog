@@ -69,7 +69,7 @@
 <meta itemprop="description" content="虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。 整体是按照 Github 官方教程，由牛客网翻译的视频 的">
 <meta itemprop="datePublished" content="2019-04-07T03:33:15+08:00" />
 <meta itemprop="dateModified" content="2019-04-07T03:33:15+08:00" />
-<meta itemprop="wordCount" content="7085">
+<meta itemprop="wordCount" content="7150">
 
 
 
@@ -565,8 +565,8 @@ $ git commit -m &#34;bug fix&#34;
 <p>版本库即 <code>.git</code> 这个隐藏目录，真正存储各版本代码库的地方。</p>
 <p><strong>远程仓库（Remote）</strong></p>
 <p>协作开发时或个人备份用，存储在 GitHub 等平台或自建 git 的远端仓库，可用于多方共同开发。</p>
-<p><img src="http://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt=""></p>
-<p><img src="http://www.yiibai.com/uploads/images/201707/1207/683090701_88630.jpg" alt=""></p>
+<p><img src="https://img.dvel.xyz/20210410qwe005.webp" alt=""></p>
+<p><img src="https://img.dvel.xyz/20210410qwe006.webp" alt=""></p>
 <p>日常操作与几大区的关系：</p>
 <p>-&gt; 修改代码、新建文件等操作，工作区发生改动</p>
 <p>-&gt; add：将改动内容&quot;登记&quot;到暂存区</p>
@@ -1482,6 +1482,26 @@ $ git tag -a v0.1 -m &#34;version 0.1 released&#34; 1094adb
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git tag -d 标签内容
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<p>删除远端标签：</p>
+<p>如果已经 push 到了 GitHub 上，想删除 GitHub 上的标签：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git push --delete &lt;远端名成&gt; &lt;标签名称&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git push --delete origin v1.0
 </code></pre></td></tr></table>
 </div>
 </div><!-- raw HTML omitted -->

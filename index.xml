@@ -20,7 +20,7 @@
       
         <description>&lt;h2 id=&#34;基本展示&#34;&gt;基本展示&lt;/h2&gt;
 &lt;p&gt;配置文件：&lt;a href=&#34;https://github.com/iDvel&#34;&gt;iDvel&lt;/a&gt;/&lt;strong&gt;&lt;a href=&#34;https://github.com/iDvel/rime-settings&#34;&gt;rime-settings&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/202102061DA3VO.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/202102061DA3VO.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;基本套路&#34;&gt;基本套路&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Squirrel 0.15.0 简中全拼&lt;/li&gt;
@@ -1976,8 +1976,8 @@ $ git commit -m &amp;#34;bug fix&amp;#34;
 &lt;p&gt;版本库即 &lt;code&gt;.git&lt;/code&gt; 这个隐藏目录，真正存储各版本代码库的地方。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;远程仓库（Remote）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;协作开发时或个人备份用，存储在 GitHub 等平台或自建 git 的远端仓库，可用于多方共同开发。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://www.yiibai.com/uploads/images/201707/1207/683090701_88630.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/20210410qwe005.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/20210410qwe006.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;日常操作与几大区的关系：&lt;/p&gt;
 &lt;p&gt;-&amp;gt; 修改代码、新建文件等操作，工作区发生改动&lt;/p&gt;
 &lt;p&gt;-&amp;gt; add：将改动内容&amp;quot;登记&amp;quot;到暂存区&lt;/p&gt;
@@ -2893,6 +2893,26 @@ $ git tag -a v0.1 -m &amp;#34;version 0.1 released&amp;#34; 1094adb
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ git tag -d 标签内容
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;删除远端标签：&lt;/p&gt;
+&lt;p&gt;如果已经 push 到了 GitHub 上，想删除 GitHub 上的标签：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ git push --delete &amp;lt;远端名成&amp;gt; &amp;lt;标签名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;$ git push --delete origin v1.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
@@ -3886,7 +3906,7 @@ def p(c):
 &lt;p&gt;在满足人员配置后，一次性补足「精神」和「DNA」，如果先补这俩但是数量不足，病人就会去排大长队。&lt;/p&gt;
 &lt;p&gt;所有规划完毕后，上培训，慢慢就进入后期了。&lt;/p&gt;
 &lt;h1 id=&#34;摩天塔通关配置&#34;&gt;摩天塔通关配置&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/C6W7albd.png&#34; alt=&#34;双点医院摩天塔&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/20210410qwe003.webp&#34; alt=&#34;双点医院摩天塔&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;中间为集中诊断区，左下为治疗区，右下就放了个培训室。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3936,7 +3956,7 @@ def p(c):
 &lt;/ul&gt;
 &lt;p&gt;玩过 Rimworld 后很难接受这种糟糕的管理方式了，尤其是最后一关铺大医院的时候，我需要统计全科的员工人数、精神和DNA的员工人数，病房专属的员工人数等等来方便我招聘，你只能一页一页的翻。&lt;/p&gt;
 &lt;p&gt;逼得我自己使用表格进行管理，如图。。。：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/q5oUgQFR.png&#34; alt=&#34;双点医院&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/20210410qwe004.webp&#34; alt=&#34;双点医院&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;绿底色为【诊断】，红色字为【诊断+治疗】&lt;/p&gt;
 &lt;p&gt;表格我放谷歌文档上了 &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1n93n7JlrkRTsPIibfZGoCDb4gzwXMyQmjeulHPflnJk/edit?usp=sharing&#34;&gt;https://docs.google.com/spreadsheets/d/1n93n7JlrkRTsPIibfZGoCDb4gzwXMyQmjeulHPflnJk/edit?usp=sharing&lt;/a&gt;&lt;/p&gt;
@@ -4973,7 +4993,7 @@ Apple Developer Program Support
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.v2ex.co/19qZI4ms.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.dvel.xyz/20170424qwe002.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
       
     </item>
