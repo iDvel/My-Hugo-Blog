@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Dvel" />
-  <meta name="description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 简中全拼 0.15.0 后 charset_filter@gb2312 失效，放弃了朙月拼音方案，改用袖珍简化字方案 rime/rime-pinyin-simp 在袖珍简化字" />
+  <meta name="description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.2 简中全拼 0.15.0 后 charset_filter@gb2312 失效了，放弃了「朙月拼音·简化字」方案，改用「袖珍简化字方" />
 
   <meta name="keywords" content="Dvel" />
 
@@ -60,23 +60,23 @@
 
 
 <meta property="og:title" content="我的 Rime 配置 2021" />
-<meta property="og:description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 简中全拼 0.15.0 后 charset_filter@gb2312 失效，放弃了朙月拼音方案，改用袖珍简化字方案 rime/rime-pinyin-simp 在袖珍简化字" />
+<meta property="og:description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.2 简中全拼 0.15.0 后 charset_filter@gb2312 失效了，放弃了「朙月拼音·简化字」方案，改用「袖珍简化字方" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Dvel.xyz/post/30/" />
 <meta property="article:published_time" content="2020-03-31T17:21:05+08:00" />
-<meta property="article:modified_time" content="2020-03-31T17:21:05+08:00" />
+<meta property="article:modified_time" content="2021-04-21T00:00:00+00:00" />
 <meta itemprop="name" content="我的 Rime 配置 2021">
-<meta itemprop="description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 简中全拼 0.15.0 后 charset_filter@gb2312 失效，放弃了朙月拼音方案，改用袖珍简化字方案 rime/rime-pinyin-simp 在袖珍简化字">
+<meta itemprop="description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.2 简中全拼 0.15.0 后 charset_filter@gb2312 失效了，放弃了「朙月拼音·简化字」方案，改用「袖珍简化字方">
 <meta itemprop="datePublished" content="2020-03-31T17:21:05+08:00" />
-<meta itemprop="dateModified" content="2020-03-31T17:21:05+08:00" />
-<meta itemprop="wordCount" content="1733">
+<meta itemprop="dateModified" content="2021-04-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1275">
 
 
 
 <meta itemprop="keywords" content="Rime,Squirrel," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="我的 Rime 配置 2021"/>
-<meta name="twitter:description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.0 简中全拼 0.15.0 后 charset_filter@gb2312 失效，放弃了朙月拼音方案，改用袖珍简化字方案 rime/rime-pinyin-simp 在袖珍简化字"/>
+<meta name="twitter:description" content="基本展示 配置文件：iDvel/rime-settings 基本套路 Squirrel 0.15.2 简中全拼 0.15.0 后 charset_filter@gb2312 失效了，放弃了「朙月拼音·简化字」方案，改用「袖珍简化字方"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -283,17 +283,12 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#袖珍简化字方案">袖珍简化字方案</a></li>
         <li><a href="#精简字表">精简字表</a></li>
-        <li><a href="#rime-不能热删除词汇">Rime 不能热删除词汇</a></li>
-        <li><a href="#英文中英混输">英文、中英混输</a></li>
-        <li><a href="#custom_phrase">custom_phrase</a></li>
-        <li><a href="#袖珍方案输出繁体">袖珍方案输出繁体</a></li>
-        <li><a href="#emoji">emoji</a></li>
+        <li><a href="#词库的选择与修正">词库的选择与修正</a></li>
+        <li><a href="#增加功能">增加功能</a></li>
         <li><a href="#symbols">symbols</a></li>
-        <li><a href="#自动纠错">自动纠错</a></li>
-        <li><a href="#简型八股文">简型八股文</a></li>
-        <li><a href="#动态日期时间">动态日期时间</a></li>
-        <li><a href="#词库统一管理">词库统一管理</a></li>
-        <li><a href="#皮肤">皮肤</a></li>
+        <li><a href="#拼音纠错">拼音纠错</a></li>
+        <li><a href="#自定义编码">自定义编码</a></li>
+        <li><a href="#tab-切光标">Tab 切光标</a></li>
       </ul>
     </li>
     <li><a href="#基本论">基本论</a></li>
@@ -309,87 +304,54 @@ if (!doNotTrack) {
 <p><img src="https://img.dvel.xyz/202102061DA3VO.webp" alt=""></p>
 <h2 id="基本套路">基本套路</h2>
 <ul>
-<li>Squirrel 0.15.0 简中全拼</li>
-<li>0.15.0 后  <code>charset_filter@gb2312</code> 失效，放弃了朙月拼音方案，改用袖珍简化字方案 <a href="https://github.com/rime">rime</a>/<strong><a href="https://github.com/rime/rime-pinyin-simp">rime-pinyin-simp</a></strong></li>
-<li>在袖珍简化字词库基础上精简了字表</li>
-<li>扩展词库只保留了成语俗语、古诗词、医药名称，需要大量词库的可参考  <a href="https://github.com/liuour">liuour</a>/<strong><a href="https://github.com/liuour/rime">rime</a></strong></li>
-<li>简型八股文模型 <a href="https://github.com/lotem">lotem</a>/<strong><a href="https://github.com/lotem/rime-octagram-data/tree/hans">rime-octagram-data/tree/hans</a></strong></li>
+<li>Squirrel 0.15.2 简中全拼</li>
+<li>0.15.0 后  <code>charset_filter@gb2312</code> 失效了，放弃了「朙月拼音·简化字」方案，改用「袖珍简化字方案」 <a href="https://github.com/rime">rime</a>/<strong><a href="https://github.com/rime/rime-pinyin-simp">rime-pinyin-simp</a></strong></li>
+<li>精简了字表</li>
+<li>华宇拼音（紫光拼音）的系统词库 <a href="http://unispim.com/wordlib/wordlib_detail.php?id=8">http://unispim.com/wordlib/wordlib_detail.php?id=8</a></li>
 <li>英文输入方案 Easy English Nano <a href="https://github.com/mityliu">mityliu</a>/<strong><a href="https://github.com/mityliu/rime-custom">rime-custom</a></strong></li>
 <li>袖珍方案输出繁体，参考了五笔的简入繁出 <a href="https://github.com/rime/home/issues/388#issuecomment-504572224">rime/home/issues#388</a></li>
 <li>动态日期、时间、星期 <a href="https://github.com/KyleBing">KyleBing</a>/<strong><a href="https://github.com/KyleBing/rime-wubi86-jidian">rime-wubi86-jidian</a></strong></li>
-<li>所有标点符号直接上屏</li>
-<li>「/」模式改为「v」模式，「/」直接上屏</li>
-<li>在 <code>opencc/</code> 增加了一些符号映射，如 「⌘」「⌥」「⌃」</li>
-<li>没有 emoji 候选，<code>symbols</code> 里有一点点，如需要 emoji 可参考  <a href="https://github.com/liuour">liuour</a>/<strong><a href="https://github.com/liuour/rime">rime</a></strong></li>
-<li><code>symbols</code> 中都改为简体字（如节气、八卦），增加一些自定义符号</li>
-<li>常用全拼自动纠错：<code>ni tina tain do zia gna she me</code> → <code>你天天都在干什么</code></li>
+<li>所有标点符号直接上屏，「/」模式改为「v」模式，「/」直接上屏</li>
+<li>没有 emoji，只在 <code>symbols</code> 里保留了不到 10 个常用的，如需要可参考 <a href="https://github.com/maomiui">maomiui</a>/<strong><a href="https://github.com/maomiui/rime">rime</a></strong> 、<a href="https://github.com/fkxxyz">fkxxyz</a>/<strong><a href="https://github.com/fkxxyz/rime-cloverpinyin">rime-cloverpinyin</a></strong> 等。</li>
+<li>增加了许多全拼纠错（手速太快经常按错😅）</li>
+<li>参考谷歌、《现代汉语规范词典》、<a href="https://wucuozi.com/cuobiezi/yixingzi/">异形词整理表</a>、<a href="https://wucuozi.com/bian/">错别字辨析</a> 修正了大量的异形词、错别字。</li>
 </ul>
 <h2 id="基本法">基本法</h2>
 <h3 id="袖珍简化字方案">袖珍简化字方案</h3>
-<p>在 <code>*.userdb.txt</code> 中也以简体来展示自己的输入历史了。</p>
-<p>这个袖珍简体字方案如果直接使用，并没有之前的版本用朙月拼音+过滤 GB2312 来的舒服。</p>
-<p>生僻字不仅多，而且多多了，有足足一万七千多个字。</p>
-<p>更新到 Squirrel 0.15.0 后，已经没有了 <code>charset_filter</code>，这样就不能使用 GB2312 过滤大部分生僻字了。</p>
+<p>了解到「朙月拼音·简化字」其实就是用了 opencc 来做简繁转换，所以不如直接使用一套简化字方案，也就是使用简体的字表词库，所以采用了「袖珍简化字」方案。</p>
 <h3 id="精简字表">精简字表</h3>
+<p>这个方案的自带词库容纳了极大的字表，约 17K 多，而《通用规范汉字表》才只收录了 8105 字。</p>
+<p>所以精简了几个字表出来：</p>
 <ul>
 <li><code>pinyin_simp_3500</code> 《通用规范汉字表》的第一级 3500 常用字</li>
 <li><code>pinyin_simp_gb2312</code> GB2312 6763个字</li>
 <li><code>pinyin_simp_8105</code> 《通用规范汉字表》 8105 字</li>
 <li><code>pinyin_simp</code> 原版袖珍简化字词库，大约一万七千个字左右</li>
 </ul>
-<h3 id="rime-不能热删除词汇">Rime 不能热删除词汇</h3>
-<p>比如打一些词发现太多不常用的词汇，无法直接删除，只能去词库里删除，然后重新部署。</p>
-<p>这样有点累了，所以只添加了成语与诗词的词库，并删除了其中的两个字的词。</p>
-<p>自己慢慢养自己的词库吧，而且自造词是可以用 <code>Fn + Shift + Del</code>  删除的。</p>
-<h3 id="英文中英混输">英文、中英混输</h3>
-<p>感谢 <a href="https://github.com/mityliu">mityliu</a>/<strong><a href="https://github.com/mityliu/rime-custom">rime-custom</a></strong> 提供了 Easy English Nano 方案，相比 easy_en 可以以大写的方式进行输入。</p>
-<p>感谢 瑾昀 <a href="mailto:cokunhui@gmail.com">cokunhui@gmail.com</a> 提供了 cn_en 中英混输词库。</p>
-<p>在此方案下，cn_en 词库应该取消拼音之间的空格，否则无法解析。（已修正）</p>
-<p>关于英文输入的问题，如果 Easy English Nano 方案给的权重小于 0，则有些英文比如「never」，永远只留在了第二个候选项，而第一个候选项啥也不是。</p>
-<p>对于这点，只好给予 0 权重，为了优化拼音打字体验，启用 custom_phrase 并在其中配置 26 个字母的单编码最高优先候选项，这样英文就不会在单编码的时候顶到最前面来了。</p>
-<h3 id="custom_phrase">custom_phrase</h3>
-<p>袖珍方案没有写这个，照着之前的方案抄了一份，可以固顶一些字词，但是如果固顶了大量的单字并且给予了完整的拼音，如</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">会	hui	
-</code></pre></td></tr></table>
-</div>
-</div><p>这样以「会」结尾的自造词就无法被输入法记住，可能是因为两个不同的解释器之间不能混拼。</p>
-<p>希望以后能有方便的固定候选项顺序且不影响自造词的方法。</p>
-<h3 id="袖珍方案输出繁体">袖珍方案输出繁体</h3>
-<p>感谢 <strong><a href="https://github.com/Ace-Who">Ace-Who</a></strong> 在 <a href="https://github.com/rime/home/issues/388#issuecomment-504572224">rime/home/issues#388</a> 展示的五笔简入繁出方法，袖珍简体方案也可以愉快的打繁体字了。</p>
-<h3 id="emoji">emoji</h3>
-<p>没有使用 emoji，不过在 <code>symbols.custom</code> 中存入了一些，并且使用 “v” 模式来调用，可以设置一个自己常用的快捷键和一些表情，或在 opencc 中添加 emoji 支持文件。如需要 emoji 可参考 <a href="https://github.com/liuour">liuour</a>/<strong><a href="https://github.com/liuour/rime">rime</a></strong>。</p>
+<p>初期我使用了 3500 字字表，确实偶尔会遇到打不出来的字，主要是别人的名字，在积累了一些用户词库后，更换到了 8105 字字表做平常使用。</p>
+<h3 id="词库的选择与修正">词库的选择与修正</h3>
+<p>主要是对异形词、错别字等进行修正，而 Rime 官方的袖珍简化字的词库与八股文都含有了大量的错误，八股文由于没有注音反而容易让人把多音字给记错。</p>
+<p>无奈找不到百度或搜狗的系统词库，于是找到了很久以前的华宇（紫光）拼音输入法的系统词库。</p>
+<p>并对此进行了大量的修正（无聊闲的），参考谷歌、《现代汉语规范词典》、<a href="https://wucuozi.com/cuobiezi/yixingzi/">异形词整理表</a>、<a href="https://wucuozi.com/bian/">错别字辨析</a> 修正了大量的异形词、错别字。</p>
+<p>对于那个维基词库，也还是决定删掉了，里面也包含了大量的错误用法。</p>
+<p>希望即便词库小一些，但是基础是正确的就好。</p>
+<h3 id="增加功能">增加功能</h3>
+<p>然后前后参考了很多 repo，增加了简繁切换、动态日期、英文输入等功能。</p>
 <h3 id="symbols">symbols</h3>
-<p>自建的名字取为了 <code>symbols.custom</code>，将所有的 「/」前缀改为了「v」，里面的繁体字符改为简体字（如节气、八卦），增加一些自定义符号。</p>
-<p>取消了半角符号的候选项，全部直接上屏。</p>
-<h3 id="自动纠错">自动纠错</h3>
-<p>写了几个常用的自动纠错，简直太好用了，比如示例图中的：</p>
-<p><code>ni tina tain do zia gna she me</code> → <code>你天天都在干什么</code></p>
-<p><code>tina → tian</code>：由 <code>derive/ian$/ina/</code> 转换。</p>
-<p><code>tain → tian</code>：由 <code>derive/([iu])a(o|ng?)$/a$1$2/</code> 转换。</p>
-<p><code>do → dou</code>：由 <code>derive/([dtngkhrzcs])o(u)$/$1o/</code> 转换。</p>
-<p><code>zia → zai</code>：由 <code>derive/([wtpsdghkzcbnm])ai$/$1ia/</code> 转换。</p>
-<p><code>gna → gan</code>：由 <code>derive/([wrtypsdfghjklzcbnm])a([on])$/$1$2a/</code> 转换。</p>
-<p><code>she me → shen me</code>：由词库中添加的容错词转换。</p>
-<h3 id="简型八股文">简型八股文</h3>
-<p>长句输入效果直接翻了个倍，不过大长句和搜狗比还差了很多，毕竟是单机个人词库。</p>
-<p>但在日常聊天的小长句输入上已经完美了，userdb 攒的越久，用起来越舒服。</p>
-<h3 id="动态日期时间">动态日期时间</h3>
-<p>感谢 <a href="https://github.com/KyleBing">KyleBing</a>/<strong><a href="https://github.com/KyleBing/rime-wubi86-jidian">rime-wubi86-jidian</a></strong> 提供的 lua 脚本。</p>
-<h3 id="词库统一管理">词库统一管理</h3>
-<p>在 <code>&lt;方案&gt;.custom.yaml</code> 中以 <code>translator/dictionary: pinyin_simp.extended</code> 挂载词库。</p>
-<p>就可以在 <code>pinyin_simp.extended</code> 中统一挂载所有词库，并且可以放在文件夹中，让找配置的时候主目录不那么凌乱。</p>
-<h3 id="皮肤">皮肤</h3>
-<p>感谢 &lt;雨過之後、佛振&gt; 编写的 Rime 默认皮肤之一 《純粹的形式／Purity of Form》，试了一次后太喜欢了。</p>
-<p>稍微暗化了一点点，让平常使用时不太刺眼。</p>
+<p>比较适应以前的输入法习惯，并不希望很多符号都做二次选择，所以都设置为直接上屏了。</p>
+<p>由于写代码经常需要「/」，所以把「/」模式改为了「v」模式，「/」直接上屏。</p>
+<h3 id="拼音纠错">拼音纠错</h3>
+<p>对于拼音纠错比较重视，因为手速过快经常按错，Rime 在这点上真是舒服极了，我可以随意的创造我需要的纠错。</p>
+<h3 id="自定义编码">自定义编码</h3>
+<p>在  <code>custom_phrase.txt</code> 中添加了很多输入习惯，主要是单编码的固顶字，让平常打字变得很方便。</p>
+<p>在  <code>custom_phrase.txt</code> 中可以设置某些字词永远只出现在前 N 个候选项，但是这样设置之后，这些字词就不能与正常的字共同造词。现在不知道如何能完美的固定某些字词的候选项顺序。</p>
+<p>所以只是添加了单编码等不与正常字词冲突的编码，平时单独打出来。</p>
+<p>如果 Rime 支持固定候选项顺序那就太方便了，有生之年希望可以有这个功能，</p>
+<h3 id="tab-切光标">Tab 切光标</h3>
+<p>这个功能真的是用过就离不开了，初期偶尔切回系统自带拼音输入法感受，总是希望有这个功能。</p>
 <h2 id="基本论">基本论</h2>
-<p>还是不知道怎么设置固顶候选项顺序且不影响自造词，而这个功能在其他很多主流输入法上都有。</p>
-<p>Rime 可以靠扩展词库增加词库量，但很多日常口语化的词语还是需要自己慢慢积累，不过输入体验也是在以肉眼可见的速度增长，用了 Rime 后常常没事去打字练习的网站打几篇《三体》的节选，感受很明显。</p>
-<p>日常使用，最常用的功能还是 Tab 切换光标，在个人词库慢慢累积的情况下，也越来越少用了。</p>
+<p>没有隐私问题，可定制性强，可选词库也很多，很多功能自己不会写也可以借鉴 GitHub。</p>
+<p>日常聊天越用越舒服，打文章练习的时候却明显不足，长句输入上相比云输入法差了很多，毕竟单机词库，需要自己长期的积累词库。</p>
 
     </div>
 
@@ -403,7 +365,7 @@ if (!doNotTrack) {
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2020-03-31
+      2021-04-21
       
     </span>
   </p>

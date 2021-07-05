@@ -69,7 +69,7 @@
 <meta itemprop="description" content="虽然用了很久的 Git 了，但基本上只是 add、commit、push、pull，这次系统性的学习了一遍。 整体是按照 Github 官方教程，由牛客网翻译的视频 的">
 <meta itemprop="datePublished" content="2019-04-07T03:33:15+08:00" />
 <meta itemprop="dateModified" content="2019-04-07T03:33:15+08:00" />
-<meta itemprop="wordCount" content="7150">
+<meta itemprop="wordCount" content="7222">
 
 
 
@@ -1372,7 +1372,7 @@ $ git reset --mixed e285589 # 同上
 <li>暂存区：变成此版本</li>
 <li>版本库：HEAD 指向此版本</li>
 </ul>
-<h1 id="压缩提交">压缩提交</h1>
+<h1 id="压缩提交--合并提交">压缩提交 / 合并提交</h1>
 <p>例子：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1437,7 +1437,8 @@ e285589 2
 116eee9 1
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="tag">Tag</h1>
+</div><p>除了用 <code>reset</code>，在图形化工具 GitHub Desktop 中，选中多个 commit 后点击“Squash n(选中的个数) Commit”，就可以将选中的 n 个提交合并成一个。</p>
+<h1 id="tag">Tag</h1>
 <p>比起混乱的 commit id，标签可以更方便的标记出重要的版本。</p>
 <p>狗书《Flask Web 开发》作者配合使用 Tag 功能做了一个相当方便的时光穿梭机，比如第一章第一部分代码使用 1a 作为标签，第二章第三部分代码使用 2c 作为标签，读者只需执行 <code>git checkout 2c</code> 即可查看此次代码。</p>
 <!-- raw HTML omitted -->
